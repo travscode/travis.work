@@ -3,9 +3,9 @@ export const projects = [
     label: "Perth Web Design & App Developer | Consultant",
     useH1: true,
     year: "2025",
-    imageUrl: "/assets/media/welcome2.jpg",
+    imageUrl: "/assets/media/welcome4.jpg",
     // services: "Consultant, App Development, Gen AI, AI Development, Creative Direction, Branding & Identity, UI/UX",
-    title: "Hello — I'm Travis, an award-winning Perth based digital designer, developer, and creative consultant who loves bringing ideas to life.",
+    title: "Hello — I'm Travis, an award-winning Perth based digital designer, developer and creative consultant who loves bringing ideas to life.",
     other: "Over the past two decades, I've built digital experiences for everyone from small start-ups, to record labels, to local businesses, to the United Nations and Google. I've worked on projects of all shapes and sizes. My work has been recognised by The One Show, AWARD Awards, the ACS, and even featured globally by Apple on their App Store. I've been fortunate enough to work with some of the world's top agencies — including VML and Wunderman Thompson — shaping digital experiences for brands like Wendy's, KitKat, Heinz, Synergy, and HBF. Today, I'm focused on building my own thing, continuing to push the boundaries of design, technology, and creativity. <br /><br />If you're interested in working together, feel free to drop me a note by clicking contact above.",
     tags: ["Design", "Development", "AI", "Consultant", "UI/UX", "Creative Direction", "Brand Identity", "Web Development", "AI Development"],
   },
@@ -152,7 +152,8 @@ export const projects = [
     date: "May 2024",
     client: "Personal Project",
     agency: "Independent",
-    link: "",
+    linkLabel: "Link",
+    link: "https://instagram.com/tr_____av",
     notes: "Personal art project exploring what I could create while in transit on my daily train rides with just an iPad and a pencil."
   },
   
@@ -166,7 +167,7 @@ export const projects = [
     client: "Incubus",
     agency: "Music Industry Creative",
     link: "https://makeyourselffoundation.org",
-    notes: "Back in the day, I had the honour of helping Incubus create a new website for their charity foundation project: \"The Make Yourself Foundation\". I was responsible for the design & build of the website. To this day, I still can't believe I was lucky enough to have the opportunity to work with them."
+    notes: "Back in the day, I had the honour of helping Incubus create a new website for their charity foundation project: \"The Make Yourself Foundation\". I was responsible for the design & build of the website. To this day, I still can't believe I was lucky enough to have the opportunity to work with them. And full disclaimer, I have no affiliation with the current site."
   },
     
   {
@@ -189,7 +190,7 @@ export const projects = [
     client: "The Raveonettes",
     agency: "Columbia Records",
     link: "https://theraveonettes.komi.io/",
-    notes: "This one is a blast from the past when bands made websites to release their albums. I worked for a number of bands back in the day, but working for the Raveonettes was a memorable experience. I am a big fan of their music, and I was lucky enough to work with them on a project that would help them promote their music."
+    notes: "This one is a blast from the past when bands made websites to release their albums. I worked for a number of bands back in the day, but working for the Raveonettes was a memorable experience. I am a big fan of their music, and I was lucky enough to work with them on a project that would help them promote their music. And full disclaimer, I have no affiliation with the current site."
   },
   // {
   //   label: "STEAM",

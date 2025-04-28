@@ -51,16 +51,16 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-      <div className="bg-tw-black border border-tw-grey-dark max-w-md w-full rounded-md shadow-lg relative">
+    <div className="fixed inset-0 bg-tw-black/95 backdrop-blur supports-[backdrop-filter]:bg-tw-black/80 flex items-center justify-center z-50 p-4">
+      <div className="bg-tw-black border border-tw-grey-dark max-w-md w-full rounded-xl shadow-2xl relative">
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 text-tw-white hover:text-tw-accent cursor-pointer"
+          className="absolute top-6 right-6 text-tw-white hover:text-tw-accent cursor-pointer"
         >
           <X size={24} />
         </button>
         
-        <div className="p-6">
+        <div className="p-8">
           <h2 className="text-2xl font-object-bold text-tw-white mb-6">Let's chat...</h2>
 
           <p className='text-tw-white text-xs'>Every great thing starts with a single step — and this is yours. I can't wait to hear about what you're up to and how I might be able to help. Also, feel free to find me and send me a DM on socials if that's more your thing.</p>

@@ -310,7 +310,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                   project relative cursor-pointer border-b border-tw-grey-dark pb-15
                   transition-all duration-300
                   text-tw-white
-                `, project.useH1 ? 'pt-18' : 'pt-10')}
+                `, project.useH1 ? '' : 'pt-10')}
               >
                 {isMobile && !project.useH1 && (
                 <div className="flex justify-between items-center mb-4 hidden">
@@ -321,7 +321,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 
                   <div className="flex flex-col space-y-4">
                     <img 
-                      className="w-full h-[65vh] object-cover rounded-md border border-tw-grey-dark mb-6"
+                      className={cn("w-full object-cover rounded-2xl border border-tw-grey-dark mb-6", project.useH1 ? 'h-[50vh] object-bottom' : 'h-[80vh]')}
                       src={project.imageUrl}
                       alt={project.label}
                     />
