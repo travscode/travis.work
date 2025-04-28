@@ -1,6 +1,6 @@
 export const projects = [
   {
-    label: "Perth Web Design & Website Developer | Freelancer",
+    label: "Perth Web Design & App Developer | Freelancer",
     useH1: true,
     year: "2025",
     imageUrl: "/assets/media/welcome2.jpg",
