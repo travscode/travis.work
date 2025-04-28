@@ -306,13 +306,13 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 key={index}
                 onClick={() => handleProjectClick(index)}
                 className={cn(`
-                  project relative cursor-pointer border-b border-tw-grey pb-10
+                  project relative cursor-pointer border-b border-tw-grey-dark pb-15
                   transition-all duration-300
                   text-tw-white
-                `, project.useH1 ? '' : 'pt-10')}
+                `, project.useH1 ? 'pt-18' : 'pt-10')}
               >
                 {isMobile && !project.useH1 && (
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex justify-between items-center mb-4 hidden">
                   <h3 className="font-object-bold text-lg">{project.label}</h3>
                   <span className="text-sm">{project.year}</span>
                 </div>
