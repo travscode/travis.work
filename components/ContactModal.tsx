@@ -63,7 +63,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <div className="p-6">
           <h2 className="text-2xl font-object-bold text-tw-white mb-6">Let's chat...</h2>
 
-          <p className='text-tw-white text-sm'>Every great journey starts with a single step — and this is yours. I can't wait to hear about what you're up to and how I might be able to help. Also, feel free to find me and send me a DM on socials if that's more your thing.</p>
+          <p className='text-tw-white text-xs'>Every great thing starts with a single step — and this is yours. I can't wait to hear about what you're up to and how I might be able to help. Also, feel free to find me and send me a DM on socials if that's more your thing.</p>
 
 
           <div className="flex space-x-4 my-4 mb-10">
@@ -105,10 +105,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="name" className="block text-tw-white mb-2 text-xs font-object-regular">Name</label>
+              {/* <label htmlFor="name" className="block text-tw-white mb-2 text-xs font-object-regular">Name</label> */}
               <input
                 type="text"
                 id="name"
+                placeholder="Your name*"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full p-2 text-tw-white border border-tw-grey rounded-md focus:outline-none focus:ring-2 focus:ring-tw-accent"
@@ -117,11 +118,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             </div>
             
             <div className="mb-4">
-              <label htmlFor="email" className="block text-tw-white mb-2 text-xs font-object-regular">Email</label>
+              {/* <label htmlFor="email" className="block text-tw-white mb-2 text-xs font-object-regular">Email</label> */}
               <input
                 type="email"
                 id="email"
                 value={email}
+                placeholder='Your email*'
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-2 text-tw-white border border-tw-grey rounded-md focus:outline-none focus:ring-2 focus:ring-tw-accent"
                 required
@@ -129,10 +131,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             </div>
             
             <div className="mb-6">
-              <label htmlFor="message" className="block text-tw-white mb-2 text-xs font-object-regular">Message</label>
+              {/* <label htmlFor="message" className="block text-tw-white mb-2 text-xs font-object-regular">How can I help?</label> */}
               <textarea
                 id="message"
                 value={message}
+                placeholder='How can I help?'
                 onChange={(e) => setMessage(e.target.value)}
                 rows={4}
                 className="w-full p-2 text-tw-white border border-tw-grey rounded-md focus:outline-none focus:ring-2 focus:ring-tw-accent"
