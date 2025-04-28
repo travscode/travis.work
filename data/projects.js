@@ -5,8 +5,8 @@ export const projects = [
     year: "2025",
     imageUrl: "/assets/media/welcome2.jpg",
     // services: "Consultant, App Development, Gen AI, AI Development, Creative Direction, Branding & Identity, UI/UX",
-    title: "Welcome — I'm Travis, an award-winning Perth based digital designer, developer, and creative consultant who brings ideas to life.",
-    other: "Over the past two decades, I've built award-winning digital experiences for everyone from start-ups, to record labels, to small businesses, to the United Nations and the U.S. Marine Corps. My work has been recognised by The One Show, AWARD Awards, the ACS, and even featured globally by Apple on their App Store. I've been fortunate enough to work with some of the world's top agencies — including VML and Wunderman Thompson — shaping digital experiences for brands like Wendy's, KitKat, Heinz, Synergy, and HBF. Today, I'm focused on building my own thing, continuing to push the boundaries of design, technology, and creativity. <br /><br />If you're interested in working together, feel free to drop me a note by clicking contact above.",
+    title: "Welcome — I'm Travis, an award-winning Perth based digital designer, developer, and creative consultant who loves bringing ideas to life.",
+    other: "Over the past two decades, I've built digital experiences for everyone from start-ups, to record labels, to small businesses, to the United Nations and the U.S. Marine Corps. My work has been recognised by The One Show, AWARD Awards, the ACS, and even featured globally by Apple on their App Store. I've been fortunate enough to work with some of the world's top agencies — including VML and Wunderman Thompson — shaping digital experiences for brands like Wendy's, KitKat, Heinz, Synergy, and HBF. Today, I'm focused on building my own thing, continuing to push the boundaries of design, technology, and creativity. <br /><br />If you're interested in working together, feel free to drop me a note by clicking contact above.",
     tags: ["Design", "Development", "AI", "Consultant", "UI/UX", "Creative Direction", "Brand Identity", "Web Development", "AI Development"],
   },
   {
