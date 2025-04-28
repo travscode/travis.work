@@ -22,6 +22,7 @@ interface Project {
   other?: string;
   title?: string;
   tags?: string[];
+  useH1?: boolean;
 }
 
 interface ProjectGalleryProps {
@@ -172,17 +173,20 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 ${index !== activeIndex ? '[&_.info]:hidden' : ''}
               `)}
             >
-              <div className="
-                datas absolute bottom-0 
-                font-object-regular font-medium text-[1.5vw] leading-[2.6vw]
-                -tracking-[0.03em] rotate-[-90deg] origin-[1vw_50%]
-                w-[calc(100vh-2.6vw-100px)] flex flex-row justify-between
-                md:transform-none md:left-auto m-[calc(1vw-2px)]
-                md:text-[1.2vw] 2xl:text-[1vw] transition-all duration-500 pr-3 pl-1.5
-              ">
-                <p className="label">{project.label}</p>
-                <p className="year text-[1.25vw]">{project.year}</p>
-              </div>
+              
+                <div className="
+                  datas absolute bottom-0 
+                  font-object-regular font-medium text-[1.5vw] leading-[2.6vw]
+                  -tracking-[0.03em] rotate-[-90deg] origin-[1vw_50%]
+                  w-[calc(100vh-2.6vw-100px)] flex flex-row justify-between
+                  md:transform-none md:left-auto m-[calc(1vw-2px)]
+                  md:text-[1.2vw] 2xl:text-[1vw] transition-all duration-500 pr-3 pl-1.5
+                ">
+                  <p className="label">{project.label}</p>
+                  <p className="year text-[1.25vw]">{project.year}</p>
+                </div>
+              
+              
               <img 
                 className="
                   media h-[calc(100%-2.6vw)] w-auto m-[1.3vw_1.3vw_0_4vw]
@@ -192,10 +196,16 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 src={project.imageUrl}
                 alt={project.label}
               />
-              <div className="info text-xs h-[calc(100%-2.6vw)] w-auto m-[1.3vw_3.3vw_0_0] flex flex-col gap-4 max-w-[340px] w-[300px] overflow-hidden p-5">
-                <div className='info_block w-[300px] font-object-bold text-xl whitespace-normal pb-6'>
-                  {project.title }
-                </div>
+              <div className="info text-xs h-[calc(100%-2.6vw)] w-auto m-[1.3vw_3.3vw_0_0] flex flex-col gap-4 max-w-[340px] w-[300px] overflow-hidden p-3">
+                {project.useH1 ? (
+                  <h1 className='info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2'>
+                    {project.title || project.label}
+                  </h1>
+                ) : (
+                  <div className='info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2'>
+                    {project.title || project.label}
+                  </div>
+                )}
                 {project.services && (
                   <div className='info_block w-[300px]'>
                     <div className='label'>
@@ -254,7 +264,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 )}
 
                 {project.notes && (
-                  <div className='info_block pt-8'>
+                  <div className='info_block pt-4'>
                     <div className='label'>
                       Notes
                     </div>
@@ -265,7 +275,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 )}
 
                 {project.other && (
-                  <div className='info_block pt-8'>
+                  <div className='info_block pt-4'>
                     
                     <div className='content w-[300px] max-w-[300px] word-wrap whitespace-normal' dangerouslySetInnerHTML={{ __html: project.other}}>
                     
@@ -296,16 +306,17 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 key={index}
                 onClick={() => handleProjectClick(index)}
                 className={cn(`
-                  project relative cursor-pointer border-b border-tw-grey pb-10 pt-10
+                  project relative cursor-pointer border-b border-tw-grey pb-10
                   transition-all duration-300
                   text-tw-white
-                `)}
+                `, project.useH1 ? '' : 'pt-10')}
               >
+                {isMobile && !project.useH1 && (
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="font-object-bold text-lg">{project.label}</h3>
                   <span className="text-sm">{project.year}</span>
                 </div>
-                
+                )}
                 
                   <div className="flex flex-col space-y-4">
                     <img 
@@ -315,11 +326,15 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                     />
                     
                     <div className="info text-xs flex flex-col gap-4">
-                      {project.title && (
-                        <div className='info_block font-object-bold text-xl whitespace-normal pb-2'>
-                          {project.title}
-                        </div>
-                      )}
+                    {project.useH1 ? (
+                      <h1 className='info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2'>
+                        {project.title || project.label}
+                      </h1>
+                    ) : (
+                      <div className='info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2'>
+                        {project.title || project.label}
+                      </div>
+                    )}
                       
                       {project.services && (
                         <div className='info_block'>
