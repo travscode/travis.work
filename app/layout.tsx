@@ -16,6 +16,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Travis Weerts | Award-winning Perth based indie digital designer, developer, and creative consultant",
   description: "Helping startups ditch the dull and launch with style—think killer design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+  authors: [{ name: "Travis Weerts", url: "https://travis.work" }],
+  openGraph: {
+    title: "Travis Weerts | Award-winning Perth based indie digital designer, developer, and creative consultant",
+    description:
+      "Helping startups ditch the dull and launch with style—think killer design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+    images: ["https://travis.work/cover-image.jpg"],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
