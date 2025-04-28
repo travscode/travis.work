@@ -67,7 +67,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
 
           <div className="flex space-x-4 my-4 mb-10">
-            <a 
+            {/* <a 
               href="https://instagram.com/tr_____av" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -78,7 +78,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
-            </a>
+            </a> */}
             <a 
               href="https://au.linkedin.com/in/travisweerts" 
               target="_blank" 
