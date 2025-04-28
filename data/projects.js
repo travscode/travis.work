@@ -17,7 +17,8 @@ export const projects = [
     date: "Launching soon...",
     client: "OZ Music",
     agency: "Independent",
-    link: "https://ozmusic.app",
+    linkLabel: "Demo",
+    link: "https://youtu.be/mKoiok_7C3E",
     notes: "Ever wanted to run your own unique radio station? Now you can. Oz Music lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. It's been a personal project of mine, and I've designed and built everything from the logo all the way to the server infrastructure that runs the thing."
   },
   {
@@ -81,6 +82,7 @@ export const projects = [
     imageUrl: "/assets/media/mystic.png",
     services: "App Development, UI/UX, Brand Identity, Marketing",
     date: "November 2017",
+    linkLabel: "Demo",
     link: "https://youtu.be/ryY7R7X_Pys",
     agency: "Independent",
     notes: "MYSTIC* is a unique photo editing app that's more than just an app. It gives you the ability to open your eyes to the little things that make life so special. It was a concept I created and designed, and I'm very proud of it. It was even selected and featured by Apple globally across all of their app stores. It charted in the top 10 across dozens of countries, and even went as far as #2 in Germany. <br /><br />Watch demo video on Youtube (link above)."

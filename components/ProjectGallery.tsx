@@ -23,6 +23,7 @@ interface Project {
   title?: string;
   tags?: string[];
   useH1?: boolean;
+  linkLabel?: string;
 }
 
 interface ProjectGalleryProps {
@@ -253,7 +254,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 {project.link && (
                   <div className='info_block'>
                     <div className='label'>
-                      Link
+                    {project.linkLabel || 'Link'}
                     </div>
                     <div className='content whitespace-normal underline hover:text-tw-accent'>
                       <a href={project.link} target='_blank' rel='noopener noreferrer'>
@@ -366,7 +367,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                       
                       {project.link && (
                         <div className='info_block'>
-                          <div className='label'>Link</div>
+                          <div className='label'>{project.linkLabel || 'Link'}</div>
                           <div className='content whitespace-normal underline hover:text-tw-accent'>
                             <a href={project.link} target='_blank' rel='noopener noreferrer'>
                               {project.link}
