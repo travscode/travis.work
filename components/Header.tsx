@@ -37,7 +37,7 @@ const Header: FC<HeaderProps> = ({ title = 'My Website', paddingBottom = 110 }) 
     <>
     <header className="sticky top-0 md:fixed z-50 w-full  bg-tw-black/95 backdrop-blur supports-[backdrop-filter]:bg-tw-black/80 py-4 px-4 pr-4 text-tw-white shadow-2xl border-b border-tw-grey-dark ">
       <nav className={cn(`mx-auto flex flex-row md:flex-row justify-between items-center md:items-start`)} style={{paddingBottom: isMobile ? 0 : paddingBottom * (40/110) + 'px'}}>
-        <Link href="/" className="text-xl font-bold uppercase pr-30">
+        <Link href="/" className="text-xl font-bold uppercase md:pr-30">
           <Logo />
         </Link>
         
