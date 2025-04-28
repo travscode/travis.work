@@ -309,7 +309,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 
                   <div className="flex flex-col space-y-4">
                     <img 
-                      className="w-full h-[50vh] object-cover rounded-md border border-tw-grey-dark mb-6"
+                      className="w-full h-[65vh] object-cover rounded-md border border-tw-grey-dark mb-6"
                       src={project.imageUrl}
                       alt={project.label}
                     />
