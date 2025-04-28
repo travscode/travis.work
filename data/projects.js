@@ -1,6 +1,7 @@
 export const projects = [
   {
-    label: "Welcome",
+    label: "Perth Web Design & Website Designer | Freelancer",
+    useH1: true,
     year: "2025",
     imageUrl: "/assets/media/welcome2.jpg",
     // services: "Consultant, App Development, Gen AI, AI Development, Creative Direction, Branding & Identity, UI/UX",
