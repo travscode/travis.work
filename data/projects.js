@@ -12,7 +12,7 @@ export const projects = [
   {
     label: "OZ Music",
     year: "2025",
-    imageUrl: "/assets/media/oz2.png",
+    imageUrl: "/assets/media/oz2.jpg",
     services: "App Development, AI Development, Creative Direction, Brand Identity, UI/UX",
     date: "Launching soon...",
     client: "OZ Music",
