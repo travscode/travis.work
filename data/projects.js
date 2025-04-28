@@ -19,7 +19,7 @@ export const projects = [
     agency: "Independent",
     linkLabel: "Demo",
     link: "https://youtu.be/mKoiok_7C3E",
-    notes: "Ever wanted to run your own unique radio station? Now you can. Oz Music lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. It's been a personal project of mine, and I've designed and built everything from the logo all the way to the server infrastructure that runs the thing."
+    notes: "Ever wanted to run your own unique radio station? Now you can. Oz Music lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. "
   },
   {
     label: "United Nations / Don't Choose Extinction",
