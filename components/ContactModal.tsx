@@ -63,7 +63,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <div className="p-8">
           <h2 className="text-2xl font-object-bold text-tw-white mb-6">Let's chat...</h2>
 
-          <p className='text-tw-white text-xs'>Every great thing starts with a single step — and this is yours. I can't wait to hear about what you're up to and how I might be able to help. Also, feel free to find me and send me a DM on socials if that's more your thing.</p>
+          <p className='text-tw-white text-xs'>Every great thing starts with a single step — and this is yours. I can't wait to hear about what you're up to and how I might be able to help. Also, feel free to find me and send me a DM on social if that's more your thing. (you can find me on LinkedIn)</p>
 
 
           <div className="flex space-x-4 my-4 mb-10">
@@ -83,7 +83,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               href="https://au.linkedin.com/in/travisweerts" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-tw-white hover:text-tw-accent transition-colors"
+              className="text-tw-white hover:text-tw-accent transition-colors border border-tw-white hover:border-tw-accent p-2 rounded-md"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
