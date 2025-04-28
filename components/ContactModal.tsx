@@ -63,7 +63,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <div className="p-6">
           <h2 className="text-2xl font-object-bold text-tw-white mb-6">Let's chat...</h2>
 
-          <p className='text-tw-white text-sm'>Please use this form to contact me directly, but if forms aren't your thing, feel free to find me and send me a DM on socials.</p>
+          <p className='text-tw-white text-sm'>Every great journey starts with a single step — and this is yours. I can't wait to hear about what you're up to and how I might be able to help. Also, feel free to find me and send me a DM on socials if that's more your thing.</p>
 
 
           <div className="flex space-x-4 my-4 mb-10">
