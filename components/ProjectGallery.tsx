@@ -33,9 +33,32 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    // Check if we're on mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
 
   const handleProjectClick = (index: number) => {
     //setActiveIndex(index);
+    if (isMobile) {
+      setActiveIndex(index === activeIndex ? -1 : index); // Toggle active state on mobile
+      return;
+    }
 
     if (scrollTriggerRef.current) {
       const progress = index / (projects.length - 1);
@@ -53,6 +76,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
   };
 
   useEffect(() => {
+    if (isMobile) return; // Skip GSAP setup on mobile
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     
     const lenis = new Lenis({
@@ -101,6 +125,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
 
   return (
     <section className="bg-tw-black">
+      {!isMobile ? (
       <div className="pin-height h-[300vh] overflow-hidden">
 
         
@@ -262,6 +287,109 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
           ))}
         </div>
       </div>
+      ) : (
+        // Mobile view - vertical stacking
+        <div className="py-4 px-4">
+          <div className="flex flex-col space-y-6">
+            {projects.map((project, index) => (
+              <div 
+                key={index}
+                onClick={() => handleProjectClick(index)}
+                className={cn(`
+                  project relative cursor-pointer border-b border-tw-grey pb-10 pt-10
+                  transition-all duration-300
+                  text-tw-white
+                `)}
+              >
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="font-object-bold text-lg">{project.label}</h3>
+                  <span className="text-sm">{project.year}</span>
+                </div>
+                
+                
+                  <div className="flex flex-col space-y-4">
+                    <img 
+                      className="w-full h-[50vh] object-cover rounded-md border border-tw-grey-dark mb-6"
+                      src={project.imageUrl}
+                      alt={project.label}
+                    />
+                    
+                    <div className="info text-xs flex flex-col gap-4">
+                      {project.title && (
+                        <div className='info_block font-object-bold text-xl whitespace-normal pb-2'>
+                          {project.title}
+                        </div>
+                      )}
+                      
+                      {project.services && (
+                        <div className='info_block'>
+                          <div className='label'>Services</div>
+                          <div className='content whitespace-normal'>{project.services}</div>
+                        </div>
+                      )}
+                      
+                      {project.date && (
+                        <div className='info_block'>
+                          <div className='label'>Date</div>
+                          <div className='content whitespace-normal'>{project.date}</div>
+                        </div>
+                      )}
+                      
+                      {project.client && (
+                        <div className='info_block'>
+                          <div className='label'>Client</div>
+                          <div className='content whitespace-normal'>{project.client}</div>
+                        </div>
+                      )}
+                      
+                      {project.agency && (
+                        <div className='info_block'>
+                          <div className='label'>Agency</div>
+                          <div className='content whitespace-normal'>{project.agency}</div>
+                        </div>
+                      )}
+                      
+                      {project.link && (
+                        <div className='info_block'>
+                          <div className='label'>Link</div>
+                          <div className='content whitespace-normal underline hover:text-tw-accent'>
+                            <a href={project.link} target='_blank' rel='noopener noreferrer'>
+                              {project.link}
+                            </a>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {project.notes && (
+                        <div className='info_block pt-4'>
+                          <div className='label'>Notes</div>
+                          <div className='content whitespace-normal' dangerouslySetInnerHTML={{ __html: project.notes}}></div>
+                        </div>
+                      )}
+                      
+                      {project.other && (
+                        <div className='info_block pt-4'>
+                          <div className='content whitespace-normal' dangerouslySetInnerHTML={{ __html: project.other}}></div>
+                        </div>
+                      )}
+                      
+                      {project.tags && ( 
+                        <div className='info_block pt-4 whitespace-normal flex flex-wrap gap-2'>
+                          {project.tags.map((tag, tagIndex) => (
+                            <div key={tagIndex} className='tag rounded-full border p-1 px-3 inline border-tw-white'>
+                              {tag}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };
