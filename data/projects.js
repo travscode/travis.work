@@ -32,17 +32,7 @@ export const projects = [
     link: "https://www.vml.com/work/dont-choose-extinction",
     notes: "Multi award winning global campaign to raise awareness about climate change and extinction. The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All being rolled out by the end of 2022."
   },
-  {
-    label: "IOOKI Labs",
-    year: "2024",
-    imageUrl: "/assets/media/iooki.png",
-    services: "AI Development, Voice Modeling, Brand Identity, Web Development, UIUX",
-    date: "Late 2024 - 2025",
-    client: "IOOKI Labs",
-    agency: "Independent",
-    link: "https://iooki.io",
-    notes: "Technology research lab branding"
-  },
+  
   {
     label: "Fervor",
     year: "2024",
@@ -66,6 +56,27 @@ export const projects = [
     notes: "I helped build the website for the Olympics Brisbane 2032. I can't believe I just got to write that sentence."
   },
   {
+    label: "IOOKI Labs",
+    year: "2024",
+    imageUrl: "/assets/media/iooki.png",
+    services: "AI Development, Voice Modeling, Brand Identity, Web Development, UIUX",
+    date: "Late 2024 - 2025",
+    client: "IOOKI Labs",
+    agency: "Independent",
+    link: "https://iooki.io",
+    notes: "Technology research lab branding"
+  },
+  {
+    label: "VML / Foundation Day",
+    year: "2024",
+    imageUrl: "/assets/media/vml_foundation_day_travis_weerts.jpg",
+    services: "Ideation, UI/UX, WebGL, Spotify Integration, Voice Modeling, Chat",
+    date: "April 2025",
+    client: "VML",
+    agency: "VML",
+    link: "https://foundationday.vml.com/",
+  },
+  {
     label: "Xingo",
     year: "2025",
     imageUrl: "/assets/media/xingo2.jpg",
@@ -75,6 +86,7 @@ export const projects = [
     link: "https://xingo.ai",
     notes: "I helped shape Xingo from the ground up — taking it from a raw idea to a fully realized product. I led the journey across product strategy, design, and development, crafting a platform that blends AI with real-world interpreter training. I also played a key role in refining the pitch, which ultimately helped Xingo earn a spot as a Top 5 Finalist in the AI for GOOD awards, backed by the United Nations. <br /><br />Xingo is an AI-powered interpreter training platform, offering self-paced, assessment-aligned modules and realistic role-play simulations to prepare candidates for certification and elevate ongoing professional practice."
   },
+  
   {
     label: "Wendy's Hamburgers",
     year: "2025",
