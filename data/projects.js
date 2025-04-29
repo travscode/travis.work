@@ -71,7 +71,7 @@ export const projects = [
     year: "2024",
     imageUrl: "/assets/media/vml_foundation_day_travis_weerts.jpg",
     services: "Ideation, UI/UX, WebGL, Spotify Integration, Voice Modeling, Chat",
-    date: "April 2025",
+    date: "2024",
     client: "VML",
     agency: "VML",
     link: "https://foundationday.vml.com/",
