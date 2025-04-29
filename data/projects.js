@@ -115,6 +115,17 @@ export const projects = [
   //   imageUrl: "/assets/media/skigh.png"
   // },
   {
+    label: "Paint with your mind",
+    year: "2022",
+    imageUrl: "/assets/media/paint_with_your_mind_by_travis_weerts.jpg",
+    services: "AI Sentiment analysis, Digital Art, UI/UX, Innovation",
+    link: "https://medium.com/@travisaweerts/visualising-emotions-using-a-i-to-painting-with-your-mind-f3d6896589df",
+    notes: "Check out the medium link for a deep dive on this project. <br /><br />For a demo checkout the link here: <br /><a href='https://howyougoing.travis.work' class='underline'>Demo link</a>",
+    date: "Sometime in 2022ish?",
+    client: "Murdoch University",
+    agency: "Independent",
+  },
+  {
     label: "Udio Systems",
     year: "2025",
     imageUrl: "/assets/media/udio3.png",
@@ -178,6 +189,7 @@ export const projects = [
     link: "https://instagram.com/tr_____av",
     notes: "Personal art project exploring what I could create while in transit on my daily train rides with just an iPad and a pencil."
   },
+  
   
     
   {
