@@ -64,7 +64,7 @@ export const projects = [
     client: "IOOKI Labs",
     agency: "Independent",
     link: "https://iooki.io",
-    notes: "Technology research lab branding"
+    notes: "IOOKI Labs is a creative technology studio exploring the edges of AI, voice, and computer vision. We design and build next-generation experiences that blend imagination and innovation — from voice-driven AI agents to augmented reality and beyond. At IOOKI Labs, we believe the future belongs to the curious, the brave, and the ones willing to build what doesn't exist yet."
   },
   {
     label: "VML / Foundation Day",
@@ -75,6 +75,7 @@ export const projects = [
     client: "VML",
     agency: "VML",
     link: "https://foundationday.vml.com/",
+    notes: "Last year, I designed and built the VML Foundation Day website, helping take the spirit of Foundation Day \"on tour\" with a music-driven campaign that amplified the energy of a global Day of Good. As VML offices around the world rolled up their sleeves to give back, the site became a rallying point — connecting teams, sharing stories, and turning 24 hours of service into a worldwide movement.",
   },
   {
     label: "Xingo",
