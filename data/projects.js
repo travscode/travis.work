@@ -17,9 +17,9 @@ export const projects = [
     date: "Launching soon...",
     client: "OZ Music",
     agency: "Independent",
-    linkLabel: "Demo",
+    linkLabel: "Demo video",
     link: "https://youtu.be/mKoiok_7C3E",
-    notes: "Ever wanted to run your own unique radio station? Now you can. Oz Music lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. "
+    notes: "Ever wanted to run your own unique radio station? Now you can. Oz Music lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. <br /><br />Artwork in screenshot by <br /><a href='https://soundcloud.com/the-found-sound-orchestra' class='underline cursor-pointer hover:text-tw-accent hover:cursor-pointer' target='_blank'>The Found Sound Orchestra</a>"
   },
   {
     label: "United Nations / Don't Choose Extinction",
