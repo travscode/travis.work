@@ -66,6 +66,16 @@ export const projects = [
     notes: "I helped build the website for the Olympics Brisbane 2032. I can't believe I just got to write that sentence."
   },
   {
+    label: "Xingo",
+    year: "2025",
+    imageUrl: "/assets/media/xingo2.jpg",
+    services: "AI Development, UI/UX, Brand Identity, Concepting, Ideation",
+    date: "April 2025",
+    agency: "Independent",
+    link: "https://xingo.ai",
+    notes: "I helped shape Xingo from the ground up — taking it from a raw idea to a fully realized product. I led the journey across product strategy, design, and development, crafting a platform that blends AI with real-world interpreter training. I also played a key role in refining the pitch, which ultimately helped Xingo earn a spot as a Top 5 Finalist in the AI for GOOD awards, backed by the United Nations. <br /><br />Xingo is an AI-powered interpreter training platform, offering self-paced, assessment-aligned modules and realistic role-play simulations to prepare candidates for certification and elevate ongoing professional practice."
+  },
+  {
     label: "Wendy's Hamburgers",
     year: "2025",
     imageUrl: "/assets/media/wendys_website_travis_weerts.png",
