@@ -63,7 +63,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <div className="p-8">
           <h2 className="text-2xl font-object-bold text-tw-white mb-6">Let's chat...</h2>
 
-          <p className='text-tw-white text-xs'>Every great thing starts with a single step — and this is yours. I can't wait to hear about what you're up to and how I might be able to help. Also, feel free to find me and send me a DM on social if that's more your thing. (you can find me on LinkedIn)</p>
+          <p className='text-tw-white text-xs'>Every great thing starts with a single step — and this might be ours. Can't wait to hear from you.</p>
 
 
           <div className="flex space-x-4 my-4 mb-10">
