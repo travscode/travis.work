@@ -124,7 +124,7 @@ export const projects = [
     notes: "Check out the medium link for a deep dive on this project. <br /><br />For a demo checkout the link here: <br /><a href='https://howyougoing.travis.work' class='underline'>Demo link</a>",
     date: "Sometime in 2022ish?",
     client: "Murdoch University",
-    agency: "Independent",
+    agency: "Wunderman Thompson",
   },
   {
     label: "Udio Systems",
