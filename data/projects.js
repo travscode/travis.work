@@ -32,7 +32,17 @@ export const projects = [
     link: "https://www.vml.com/work/dont-choose-extinction",
     notes: "Multi award winning global campaign to raise awareness about climate change and extinction. The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All rolled out by the United Nations in the largest campaign they've ever done."
   },
-  
+  {
+    label: "Smilebooth",
+    year: "2013",
+    imageUrl: "/assets/media/smilebooth.jpg",
+    services: "App Design, Graphic Design, Development, UI/UX",
+    date: "2012-2013",
+    link: "https://smilebooth.com",
+    agency: "Independent",
+    client: "Smilebooth",
+    notes: "I was lucky enough to be one of the OGs at Smilebooth. Back in the early days, I was the go-to tech guy—working on the apps, websites, server stuff, social sharing, event software, all of it. No joke, Smilebooth is still one of the things I’m most proud of being a part of. Total bucket list kind of project. It was a wild ride. The photo to the left is Jeff Bridges hanging out in the booth with one of his awards—he’s probably my all-time favorite actor. But honestly, seeing people like that became kind of normal at Smilebooth. So many amazing people, brands, and celebrities just naturally gravitated toward it. There was something about Smilebooth that was pure magic."
+  },
   {
     label: "Fervor",
     year: "2024",
@@ -87,17 +97,7 @@ export const projects = [
     link: "https://xingo.ai",
     notes: "I helped shape Xingo from the ground up — taking it from a raw idea to a fully realized product. I led the journey across product strategy, design, and development, crafting a platform that blends AI with real-world interpreter training. I also played a key role in refining the pitch, which ultimately helped Xingo earn a spot as a Top 5 Finalist in the AI for GOOD awards, backed by the United Nations. <br /><br />Xingo is an AI-powered interpreter training platform, offering self-paced, assessment-aligned modules and realistic role-play simulations to prepare candidates for certification and elevate ongoing professional practice."
   },
-  {
-    label: "Smilebooth",
-    year: "2013",
-    imageUrl: "/assets/media/smilebooth.jpg",
-    services: "App Design, Graphic Design, Development, UI/UX",
-    date: "2012-2013",
-    link: "https://smilebooth.com",
-    agency: "Independent",
-    client: "Smilebooth",
-    notes: "I was lucky enough to be one of the OGs at Smilebooth. Back in the early days, I was the go-to tech guy—working on the apps, websites, server stuff, social sharing, event software, all of it. No joke, Smilebooth is still one of the things I’m most proud of being a part of. Total bucket list kind of project. It was a wild ride. The photo to the left is Jeff Bridges hanging out in the booth with one of his awards—he’s probably my all-time favorite actor. But honestly, seeing people like that became kind of normal at Smilebooth. So many amazing people, brands, and celebrities just naturally gravitated toward it. There was something about Smilebooth that was pure magic."
-  },
+  
   {
     label: "Wendy's Hamburgers",
     year: "2025",
@@ -136,17 +136,17 @@ export const projects = [
     client: "Murdoch University",
     agency: "Wunderman Thompson",
   },
-  {
-    label: "Udio Systems",
-    year: "2025",
-    imageUrl: "/assets/media/udio3.png",
-    services: "Consultanting, UI/UX Design, Product Development, User Research",
-    date: "February 2025",
-    client: "Udio Systems",
-    agency: "Independent",
-    link: "https://udiosystems.com",
-    notes: "I worked with Udio to consult on product development, refine their UI/UX, and help evolve their class management platform into a seamless, all-in-one solution. The goal was to streamline complex operations — from bookings to customer interactions — into a user experience that feels intuitive, efficient, and empowering for businesses. Through strategic UX improvements and product development insights, we focused on simplifying workflows, enhancing customer journeys, and positioning Udio as the go-to platform for elevating class-based businesses."
-  },
+  // {
+  //   label: "Udio Systems",
+  //   year: "2025",
+  //   imageUrl: "/assets/media/udio3.png",
+  //   services: "Consultanting, UI/UX Design, Product Development, User Research",
+  //   date: "February 2025",
+  //   client: "Udio Systems",
+  //   agency: "Independent",
+  //   link: "https://udiosystems.com",
+  //   notes: "I worked with Udio to consult on product development, refine their UI/UX, and help evolve their class management platform into a seamless, all-in-one solution. The goal was to streamline complex operations — from bookings to customer interactions — into a user experience that feels intuitive, efficient, and empowering for businesses. Through strategic UX improvements and product development insights, we focused on simplifying workflows, enhancing customer journeys, and positioning Udio as the go-to platform for elevating class-based businesses."
+  // },
     
   {
     label: "BOOBOOK Bottles & Bar",
