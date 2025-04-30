@@ -87,7 +87,17 @@ export const projects = [
     link: "https://xingo.ai",
     notes: "I helped shape Xingo from the ground up — taking it from a raw idea to a fully realized product. I led the journey across product strategy, design, and development, crafting a platform that blends AI with real-world interpreter training. I also played a key role in refining the pitch, which ultimately helped Xingo earn a spot as a Top 5 Finalist in the AI for GOOD awards, backed by the United Nations. <br /><br />Xingo is an AI-powered interpreter training platform, offering self-paced, assessment-aligned modules and realistic role-play simulations to prepare candidates for certification and elevate ongoing professional practice."
   },
-  
+  {
+    label: "Smilebooth",
+    year: "2013",
+    imageUrl: "/assets/media/smilebooth.jpg",
+    services: "App Design, Graphic Design, Development, UI/UX",
+    date: "2012-2013",
+    link: "https://smilebooth.com",
+    agency: "Independent",
+    client: "Smilebooth",
+    notes: "I was lucky enough to be one of the OG's @Smilebooth. In the early days, I was the tech dude. I helped design the apps, websites, server setups, social sharing, event software, etc... No joke, Smilebooth is probably one of proudest projects to be a part of. Bucket list type stuff happened while I worked on that project. It was a wild ride. I included the photo to left of Jeff Bridges enjoying one of his awards inside the Smilebooth. He's probably my all time fave actor. But seeing the likes of people like that was pretty normal @Smilebooth. It was crazy to see all of the people, brands and celebrities that just gravitate towards the booth. Something about Smilebooth is just magic."
+  },
   {
     label: "Wendy's Hamburgers",
     year: "2025",
