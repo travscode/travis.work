@@ -96,7 +96,7 @@ export const projects = [
     link: "https://smilebooth.com",
     agency: "Independent",
     client: "Smilebooth",
-    notes: "I was lucky enough to be one of the OG's @Smilebooth. In the early days, I was the tech dude. I helped design the apps, websites, server setups, social sharing, event software, etc... No joke, Smilebooth is probably one of proudest projects to be a part of. Bucket list type stuff happened while I worked on that project. It was a wild ride. I included the photo to left of Jeff Bridges enjoying one of his awards inside the Smilebooth. He's probably my all time fave actor. But seeing the likes of people like that was pretty normal @Smilebooth. It was crazy to see all of the people, brands and celebrities that just gravitate towards the booth. Something about Smilebooth is just magic."
+    notes: "I was lucky enough to be one of the OG's @Smilebooth. In the early days, I was the tech dude. I helped design the apps, websites, server setups, social sharing, event software, etc... No joke, Smilebooth is probably one of proudest projects to be a part of. Bucket list type stuff happened while I worked on that project. It was a wild ride. I included the photo to left of Jeff Bridges enjoying one of his awards inside the Smilebooth. He's probably my all time fave actor. But seeing the likes of people like that was pretty normal @Smilebooth. It was crazy to see all of the people, brands and celebrities that just gravitated towards the booth. Something about Smilebooth is just magic."
   },
   {
     label: "Wendy's Hamburgers",
