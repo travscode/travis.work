@@ -30,7 +30,7 @@ export const projects = [
     client: "United Nations",
     agency: "VML / Wunderman Thompson",
     link: "https://www.vml.com/work/dont-choose-extinction",
-    notes: "Multi award winning global campaign to raise awareness about climate change and extinction. The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All being rolled out by the end of 2022."
+    notes: "Multi award winning global campaign to raise awareness about climate change and extinction. The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All rolled out by the United Nations in the largest campaign they've ever done."
   },
   
   {
@@ -96,7 +96,7 @@ export const projects = [
     link: "https://smilebooth.com",
     agency: "Independent",
     client: "Smilebooth",
-    notes: "I was lucky enough to be one of the OG's @Smilebooth. In the early days, I was the tech dude. I helped design the apps, websites, server setups, social sharing, event software, etc... No joke, Smilebooth is probably one of proudest projects to be a part of. Bucket list type stuff happened while I worked on that project. It was a wild ride. I included the photo to left of Jeff Bridges enjoying one of his awards inside the Smilebooth. He's probably my all time fave actor. But seeing the likes of people like that was pretty normal @Smilebooth. It was crazy to see all of the people, brands and celebrities that just gravitated towards the booth. Something about Smilebooth is just magic."
+    notes: "I was lucky enough to be one of the OGs at Smilebooth. Back in the early days, I was the go-to tech guy—working on the apps, websites, server stuff, social sharing, event software, all of it. No joke, Smilebooth is still one of the things I’m most proud of being a part of. Total bucket list kind of project. It was a wild ride. The photo to the left is Jeff Bridges hanging out in the booth with one of his awards—he’s probably my all-time favorite actor. But honestly, seeing people like that became kind of normal at Smilebooth. So many amazing people, brands, and celebrities just naturally gravitated toward it. There was something about Smilebooth that was pure magic."
   },
   {
     label: "Wendy's Hamburgers",
