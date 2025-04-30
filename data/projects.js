@@ -91,7 +91,7 @@ export const projects = [
     label: "Xingo",
     year: "2025",
     imageUrl: "/assets/media/xingo2.jpg",
-    services: "AI Development, UI/UX, Brand Identity, Concepting, Ideation",
+    services: "AI Development, Voice Modeling, UI/UX, Brand Identity, Concepting, Ideation",
     date: "April 2025",
     agency: "Independent",
     link: "https://xingo.ai",
