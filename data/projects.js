@@ -95,7 +95,7 @@ export const projects = [
     date: "April 2025",
     agency: "Independent",
     link: "https://xingo.ai",
-    notes: "I helped shape Xingo from the ground up — taking it from a raw idea to a fully realized product. I led the journey across product strategy, design, and development, crafting a platform that blends AI with real-world interpreter training. I also played a key role in refining the pitch, which ultimately helped Xingo earn a spot as a Top 5 Finalist in the AI for GOOD awards, backed by the United Nations. <br /><br />Xingo is an AI-powered interpreter training platform, offering self-paced, assessment-aligned modules and realistic role-play simulations to prepare candidates for certification and elevate ongoing professional practice. <br /><br /><a href='https://aiforgood.itu.int/event/ai-for-good-innovation-factory-australia/' target='_blank'><img src='/assets/media/top5_2.png' height='60' style='margin-top: 15px;' /></a>"
+    notes: "I helped shape Xingo from the ground up — taking it from a raw idea to a fully realized product. I led the journey across product strategy, design, and development, crafting a platform that blends AI with real-world interpreter training. I also played a key role in refining the pitch, which ultimately helped Xingo earn a spot as a Top 5 Finalist in the AI for GOOD awards, backed by the United Nations. <br /><br />Xingo is an AI-powered interpreter training platform, offering self-paced, assessment-aligned modules and realistic role-play simulations to prepare candidates for certification and elevate ongoing professional practice. <br /><br /><a href='https://aiforgood.itu.int/event/ai-for-good-innovation-factory-australia/' target='_blank'><img src='/assets/media/top5_2.png' height='60' style='margin-top: 15px; height: 65px;' /></a>"
   },
   
   {
@@ -118,7 +118,7 @@ export const projects = [
     linkLabel: "Demo",
     link: "https://youtu.be/ryY7R7X_Pys",
     agency: "Independent",
-    notes: "MYSTIC* is a unique photo editing app that's more than just an app. It gives you the ability to open your eyes to the little things that make life so special. It was a concept I created and designed, and I'm very proud of it. It was even selected and featured by Apple globally across all of their app stores. It charted in the top 10 across dozens of countries, and even went as far as #2 in Germany. <br /><br />Watch demo video on Youtube (link above)."
+    notes: "MYSTIC* is a unique photo editing app that's more than just an app. It gives you the ability to open your eyes to the little things that make life so special. It was a concept I created and designed, and I'm very proud of it. It was even selected and featured by Apple globally across all of their app stores. It charted in the top 10 across dozens of countries, and even went as far as #2 in Germany. <br /><br />Watch demo video on Youtube (link above). <br /><br /><img src='/assets/media/featured_by_apple_travis_weerts.png' height='60' style='margin-top: 15px; height: 65px;' />"
   },
   // {
   //   label: "Skigh Wines",
