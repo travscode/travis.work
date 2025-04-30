@@ -118,7 +118,7 @@ export const projects = [
     linkLabel: "Demo",
     link: "https://youtu.be/ryY7R7X_Pys",
     agency: "Independent",
-    notes: "MYSTIC* is a unique photo editing app that's more than just an app. It gives you the ability to open your eyes to the little things that make life so special. It was a concept I created and designed, and I'm very proud of it. It was even selected and featured by Apple globally across all of their app stores. It charted in the top 10 across dozens of countries, and even went as far as #2 in Germany. <br /><br />Watch demo video on Youtube (link above). <br /><br /><img src='/assets/media/featured_by_apple_travis_weerts.png' height='60' style='margin-top: 15px; height: 65px;' />"
+    notes: "MYSTIC* is a unique photo editing app that's more than just an app. It gives you the ability to open your eyes to the little things that make life so special. It was a concept I created and designed, and I'm very proud of it. It was even selected and featured by Apple globally across all of their app stores. It charted in the top 10 across dozens of countries, and even went as far as #2 in Germany. <br /><br />Watch demo video on Youtube (link above). <br /><br /><img src='/assets/media/featured_by_apple_travis_weerts_mystic.png' height='60' style='margin-top: 15px; height: 65px;' />"
   },
   // {
   //   label: "Skigh Wines",
