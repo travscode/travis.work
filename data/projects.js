@@ -24,13 +24,13 @@ export const projects = [
   {
     label: "United Nations / Don't Choose Extinction",
     year: "2022",
-    imageUrl: "/assets/media/united_nations_undp_jack_black_dicaprio_dont_choose_extinction_travis_weerts.webp",
+    imageUrl: "/assets/media/united_nations_undp_jack_black_dicaprio_dont_choose_extinction_travis_weerts_sl.webp",
     services: "UI/UX Design, Web Development",
     date: "2022",
     client: "United Nations",
     agency: "VML / Wunderman Thompson",
     link: "https://www.lovethework.com/work-awards/campaigns/dont-choose-extinction-754948",
-    notes: "Multi award winning global campaign to raise awareness about climate change and extinction. The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All rolled out by the United Nations in the largest campaign they've ever done."
+    notes: "Multi award winning global campaign to raise awareness about climate change and extinction. <br /><br />The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All rolled out by the United Nations in the largest campaign they've ever done."
   },
   {
     label: "Smilebooth",
