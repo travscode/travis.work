@@ -6,7 +6,7 @@ export const projects = [
     imageUrl: "/assets/media/welcome4.jpg",
     // services: "Consultant, App Development, Gen AI, AI Development, Creative Direction, Branding & Identity, UI/UX",
     title: "Hello — I'm Travis, an award-winning Perth based digital designer, developer and creative consultant who loves bringing ideas to life.",
-    other: "Over the last 20 years, I've built all kinds of digital stuff — from apps for startups and record labels to projects for Google and the UN. My work's been featured by Apple and picked up awards from The One Show, AWARD Awards, and the ACS. I've worked with top agencies like VML and Wunderman Thompson, helping brands like Wendy's, KitKat, HBF and Heinz bring their ideas to life.<br /><br />I love stepping into the unknown, knowing that real change often arrives shrouded in misunderstanding. I don't chase titles or jobs. I aim for roles that unite and uplift, always focused on the greater mission. I try to be a person of purpose — the type others turn to when limits need to be redefined. <br /><br />If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. ",
+    other: "Over the last 20 years, I've built all kinds of digital stuff — from apps for startups and record labels to projects for Google and the UN. My work's been featured by Apple and picked up awards from Cannes, D&AD, Spike, The One Show, AWARD Awards, and the ACS. I've worked with top agencies like VML and Wunderman Thompson, helping brands like Wendy's, KitKat, HBF and Heinz bring their ideas to life.<br /><br />I love stepping into the unknown, knowing that real change often arrives shrouded in misunderstanding. I don't chase titles or jobs. I aim for roles that unite and uplift, always focused on the greater mission. I try to be a person of purpose — the type others turn to when limits need to be redefined. <br /><br />If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. ",
     tags: ["Design", "Development", "AI", "Consultant", "UI/UX", "Creative Direction", "Brand Identity", "Web Development", "AI Development"],
   },
   {
@@ -24,12 +24,12 @@ export const projects = [
   {
     label: "United Nations / Don't Choose Extinction",
     year: "2022",
-    imageUrl: "/assets/media/dontchooseextinction_united_nations_travis_weerts.png",
+    imageUrl: "/assets/media/united_nations_undp_dont_choose_extinction_travis_weerts.webp",
     services: "UI/UX Design, Web Development",
     date: "2022",
     client: "United Nations",
     agency: "VML / Wunderman Thompson",
-    link: "https://www.vml.com/work/dont-choose-extinction",
+    link: "https://www.lovethework.com/work-awards/campaigns/dont-choose-extinction-754948",
     notes: "Multi award winning global campaign to raise awareness about climate change and extinction. The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All rolled out by the United Nations in the largest campaign they've ever done."
   },
   {
