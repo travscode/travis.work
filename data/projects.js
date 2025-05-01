@@ -37,11 +37,11 @@ export const projects = [
     year: "2013",
     imageUrl: "/assets/media/smilebooth_travis_weerts2.webp",
     services: "App Design, Graphic Design, Development, UI/UX",
-    date: "2012-2013",
+    date: "2010-2013",
     link: "https://smilebooth.com",
     agency: "Independent",
     client: "Smilebooth",
-    notes: "I was lucky enough to be one of the OGs at Smilebooth. Back in the early days, I was the go-to tech guy—working on the apps, websites, server stuff, social sharing, event software, all of it. No joke, Smilebooth is still one of the things I’m most proud of being a part of. Total bucket list kind of project. It was a wild ride. The photo to the left is Jeff Bridges hanging out in the booth with one of his awards—he’s probably my all-time favorite actor. But honestly, seeing people like that became kind of normal at Smilebooth. So many amazing people, brands, and celebrities just naturally gravitated toward it. There was something about Smilebooth that was pure magic."
+    notes: "I was lucky enough to be one of the OGs at Smilebooth. Back in the early days, I was the go-to tech guy—working on the apps, websites, server stuff, social sharing, event software, all of it. No joke, Smilebooth is still one of the things I'm most proud of being a part of. Total bucket list kind of project. It was a wild ride. The photos you see are just scratching the surface of some of the familiar faces I got to see in the booth, including Jeff Bridges — and for the record, he's probably my all-time favorite actor. So it was pretty cool. But honestly, seeing people like that is pretty normal around a Smilebooth. So many amazing people, brands, and celebrities just naturally gravitate towards it. There is something about Smilebooth that is pure magic."
   },
   {
     label: "Fervor",
