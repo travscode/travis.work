@@ -35,7 +35,7 @@ export const projects = [
   {
     label: "Smilebooth",
     year: "2013",
-    imageUrl: "/assets/media/smilebooth.jpg",
+    imageUrl: "/assets/media/smilebooth_travis_weerts.webp",
     services: "App Design, Graphic Design, Development, UI/UX",
     date: "2012-2013",
     link: "https://smilebooth.com",
