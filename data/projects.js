@@ -24,7 +24,7 @@ export const projects = [
   {
     label: "United Nations / Don't Choose Extinction",
     year: "2022",
-    imageUrl: "/assets/media/united_nations_undp_dont_choose_extinction_travis_weerts.webp",
+    imageUrl: "/assets/media/united_nations_undp_jack_black_dicaprio_dont_choose_extinction_travis_weerts.webp",
     services: "UI/UX Design, Web Development",
     date: "2022",
     client: "United Nations",
