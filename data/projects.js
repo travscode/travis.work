@@ -109,6 +109,7 @@ export const projects = [
     link: "https://wendys.com",
     notes: "While working for VML, I built the Australian website for Wendy's Hamburgers to promote their launch in Australia."
   },
+  
   {
     label: "Mystic",
     year: "2017",
@@ -125,6 +126,16 @@ export const projects = [
   //   year: "2025",
   //   imageUrl: "/assets/media/skigh.png"
   // },
+  {
+    label: "Looksee",
+    year: "2025",
+    imageUrl: "/assets/media/looksee.jpg",
+    services: "Creative Direction, Brand Identity, App Development, UIUX",
+    date: "May 2025",
+    agency: "Independent",
+    link: "https://trylooksee.com",
+    notes: "Want to see how new floors, blinds or lights will actually look in your space—before you hit “buy”? My mate, Marcus, and I made that a reality. Jump on our beta list at <a href='https://trylooksee.com' class='underline'>trylooksee.com</a> and get early access to LookSee. First in, first styled."
+  },
   {
     label: "Paint with your mind",
     year: "2022",
