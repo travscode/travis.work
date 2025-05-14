@@ -86,7 +86,6 @@ export default function RootLayout({
               "https://github.com/travscode",
               "https://instagram.com/tr_____av"
             ],
-            hasOccupation: "Creative Developer & Designer",
             jobTitle: "Creative Developer & Designer",
             award: [
               "Top 5 AI Startup in Australia",
