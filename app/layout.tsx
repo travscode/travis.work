@@ -91,16 +91,6 @@ export default function RootLayout({
               name: "IOOKI Labs"
             },
             nationality: "Australian",
-            location: {
-              "@type": "Place",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Perth",
-                addressRegion: "WA",
-                postalCode: "6000",
-                addressCountry: "Australia"
-              }
-            },
             knowsAbout: [
               "UI/UX Design",
               "Web Development",
