@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { objectBold, objectRegular, objectThin, objectHeavy } from "@/app/fonts";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import Head from 'next/head'
+import Script from 'next/script'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,64 +71,60 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-<Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Travis Weerts",
-              url: "https://travis.work",
-              image: "https://travis.work/cover-image.jpg", // replace with actual image URL
-              sameAs: [
-                "https://linkedin.com/in/travisweerts",
-                "https://github.com/travscode" // optional
-              ],
-              jobTitle: "Creative Developer & Designer",
-              worksFor: {
-                "@type": "Organization",
-                name: "IOOKI Labs"
-              },
-              nationality: "Australian",
-              location: {
-                "@type": "Place",
-                address: {
-                  "@type": "PostalAddress",
-                  addressLocality: "Perth",
-                  addressRegion: "WA",
-                  postalCode: "6000",
-                  addressCountry: "Australia"
-                }
-              },
-              knowsAbout: [
-                "UI/UX Design",
-                "Web Development",
-                "AI Integration",
-                "Product Design",
-                "AI Development",
-                "Digital Marketing",
-                "Digital Strategy",
-                "Brand Design",
-                "Branding",
-                "Social Media Management",
-                "Content Creation",
-                "Digital Strategy",
-                "Brand Development",
-                "Brand Identity",
-                "Brand Guidelines",
-                "Brand Marketing",
-                "Brand Consulting",
-              ],
-              description: "Travis Weerts is a multi-award-winning designer and developer creating digital experiences at the intersection of art, code, and AI.",
-              email: "mailto:travisaweerts@gmail.com"
-            }),
-          }}
-        />
-      </Head>
-
-
+      <Script
+        id="schema-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Travis Weerts",
+            url: "https://travis.work",
+            image: "https://travis.work/cover-image.jpg",
+            sameAs: [
+              "https://linkedin.com/in/travisweerts",
+              "https://github.com/travscode"
+            ],
+            jobTitle: "Creative Developer & Designer",
+            worksFor: {
+              "@type": "Organization",
+              name: "IOOKI Labs"
+            },
+            nationality: "Australian",
+            location: {
+              "@type": "Place",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Perth",
+                addressRegion: "WA",
+                postalCode: "6000",
+                addressCountry: "Australia"
+              }
+            },
+            knowsAbout: [
+              "UI/UX Design",
+              "Web Development",
+              "AI Integration",
+              "Product Design",
+              "AI Development",
+              "Digital Marketing",
+              "Digital Strategy",
+              "Brand Design",
+              "Branding",
+              "Social Media Management",
+              "Content Creation",
+              "Digital Strategy",
+              "Brand Development",
+              "Brand Identity",
+              "Brand Guidelines",
+              "Brand Marketing",
+              "Brand Consulting",
+            ],
+            description: "Travis Weerts is a multi-award-winning designer and developer creating digital experiences at the intersection of art, code, and AI.",
+            email: "mailto:travisaweerts@gmail.com"
+          })
+        }}
+      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${objectHeavy.variable} ${objectBold.variable} ${objectThin.variable} ${objectRegular.variable} antialiased bg-tw-black text-tw-white`}
       >
