@@ -83,9 +83,19 @@ export default function RootLayout({
             image: "https://travis.work/cover-image.jpg",
             sameAs: [
               "https://linkedin.com/in/travisweerts",
-              "https://github.com/travscode"
+              "https://github.com/travscode",
+              "https://instagram.com/tr_____av"
             ],
+            hasOccupation: "Creative Developer & Designer",
             jobTitle: "Creative Developer & Designer",
+            award: [
+              "Top 5 AI Startup in Australia",
+              "AWARD Awards",
+              "Cannes Lions",
+              "Spike Awards",
+              "D&AD", "The One Show",
+              "PADC Awards",
+            ],
             worksFor: {
               "@type": "Organization",
               name: "IOOKI Labs"
