@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://travis.work
+
+# Sitemaps
+Sitemap: https://travis.work/sitemap.xml
