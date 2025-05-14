@@ -91,9 +91,16 @@ export default function RootLayout({
                 "@type": "Organization",
                 name: "IOOKI Labs"
               },
-              alumniOf: {
-                "@type": "EducationalOrganization",
-                name: "Your university or training org here"
+              nationality: "Australian",
+              location: {
+                "@type": "Place",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Perth",
+                  addressRegion: "WA",
+                  postalCode: "6000",
+                  addressCountry: "Australia"
+                }
               },
               knowsAbout: [
                 "UI/UX Design",
