@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   themeColor: "#000000",
   colorScheme: "dark",
   openGraph: {
-    title: "Travis Weerts | Award-winning designer, developer, and creative in Perth",
+    title: "Travis Weerts | Award-winning designer, developer, and creative in the Perth Hills",
     description:
       "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
     images: ["https://travis.work/cover-image.jpg"],
