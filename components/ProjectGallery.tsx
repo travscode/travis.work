@@ -6,6 +6,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import Lenis from 'lenis'
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 
 
@@ -123,7 +124,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       lenis.destroy();
     };
-  }, [projects.length]);
+  }, [projects.length, isMobile]);
 
   return (
     <section className="bg-tw-black">
@@ -313,14 +314,14 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                 `, project.useH1 ? '' : 'pt-10')}
               >
                 {isMobile && !project.useH1 && (
-                <div className="flex justify-between items-center mb-4 hidden">
+                <div className="justify-between items-center mb-4 hidden">
                   <h3 className="font-object-bold text-lg">{project.label}</h3>
                   <span className="text-sm">{project.year}</span>
                 </div>
                 )}
                 
                   <div className="flex flex-col space-y-4">
-                    <img 
+                    <Image 
                       className={cn("w-full object-cover rounded-2xl border border-tw-grey-dark mb-6", project.useH1 ? 'h-[50vh] object-bottom' : 'h-[80vh]')}
                       src={project.imageUrl}
                       alt={project.label}
@@ -332,15 +333,15 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ projects, paddingTop = 
                         {project.title || project.label}
                       </h1>
                     ) : (
-                      <div className='info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2'>
+                      <h3 className='info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2'>
                         {project.title || project.label}
-                      </div>
+                      </h3>
                     )}
                       
                       {project.services && (
                         <div className='info_block'>
                           <div className='label'>Services</div>
-                          <div className='content whitespace-normal'>{project.services}</div>
+                          <h2 className='content whitespace-normal'>{project.services}</h2>
                         </div>
                       )}
                       

@@ -13,9 +13,11 @@ export default function Home() {
 
         <div itemScope itemType="https://schema.org/Person" className="max-w-2xl mx-auto text-center hidden">
           <Image
-            src="https://travis.work/cover_image.jpg"
+            src="/cover_image.jpg"
             alt="Travis Weerts"
             itemProp="image"
+            width={200}
+            height={200}
             className="rounded-full w-32 h-32 mx-auto mb-4"
           />
 

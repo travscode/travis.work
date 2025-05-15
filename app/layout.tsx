@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Travis Weerts | Award-winning designer, developer, and creative in Perth",
-  description: "Helping startups ditch the dull and launch with style—think killer design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+  title: "Web Designer Perth Hills | Award-winning designer, developer, and creative in Perth",
+  description: "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
   authors: [{ name: "Travis Weerts", url: "https://travis.work" }],
   keywords: [
     "Travis Weerts",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Travis Weerts | Award-winning designer, developer, and creative in Perth",
     description:
-      "Helping startups ditch the dull and launch with style—think killer design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+      "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
     images: ["https://travis.work/cover-image.jpg"],
     type: "website",
     url: "https://travis.work",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Travis Weerts | Award-winning designer, developer, and creative in Perth",
     description:
-      "Helping startups ditch the dull and launch with style—think killer design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+      "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
     images: ["https://travis.work/cover-image.jpg"],
     card: "summary_large_image",
     creator: "@travisweerts",
