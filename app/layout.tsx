@@ -101,6 +101,12 @@ export default function RootLayout({
             },
             nationality: "Australian",
             knowsAbout: [
+              "Artificial Intelligence",
+              "App Development",
+              "UX Design",
+              "AI Services",
+              "UX Research",
+              "UI Design",
               "UI/UX Design",
               "Web Development",
               "AI Integration",
