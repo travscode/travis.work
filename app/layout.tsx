@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { objectBold, objectRegular, objectThin, objectHeavy } from "@/app/fonts";
+import {
+  objectBold,
+  objectRegular,
+  objectThin,
+  objectHeavy,
+} from "@/app/fonts";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import Script from 'next/script'
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,12 +21,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Web Designer Perth Hills | Award-winning designer, developer, and creative in Perth",
-  description: "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+  title:
+    "Web Designer Perth Hills | Award-winning designer, developer, and creative in Perth",
+  description:
+    "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
   authors: [{ name: "Travis Weerts", url: "https://travis.work" }],
+  alternates: {
+    canonical: "https://travis.work",
+  },
   keywords: [
     "Travis Weerts",
     "design",
+    "web design perth",
+    "web developer perth",
+    "web designer perth hills",
+    "web developer perth hills",
     "developer",
     "creative",
     "Perth",
@@ -44,7 +58,8 @@ export const metadata: Metadata = {
   themeColor: "#000000",
   colorScheme: "dark",
   openGraph: {
-    title: "Travis Weerts | Award-winning designer, developer, and creative in the Perth Hills",
+    title:
+      "Travis Weerts | Award-winning designer, developer, and creative in the Perth Hills",
     description:
       "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
     images: ["https://travis.work/cover-image.jpg"],
@@ -54,14 +69,15 @@ export const metadata: Metadata = {
     locale: "en_AU",
   },
   twitter: {
-    title: "Travis Weerts | Award-winning designer, developer, and creative in Perth",
+    title:
+      "Travis Weerts | Award-winning designer, developer, and creative in Perth",
     description:
       "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
     images: ["https://travis.work/cover-image.jpg"],
     card: "summary_large_image",
     creator: "@travisweerts",
     site: "@travisweerts",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -84,7 +100,7 @@ export default function RootLayout({
             sameAs: [
               "https://linkedin.com/in/travisweerts",
               "https://github.com/travscode",
-              "https://instagram.com/tr_____av"
+              "https://instagram.com/tr_____av",
             ],
             jobTitle: "Creative Developer & Designer",
             award: [
@@ -92,12 +108,13 @@ export default function RootLayout({
               "AWARD Awards",
               "Cannes Lions",
               "Spike Awards",
-              "D&AD", "The One Show",
+              "D&AD",
+              "The One Show",
               "PADC Awards",
             ],
             worksFor: {
               "@type": "Organization",
-              name: "IOOKI Labs"
+              name: "IOOKI Labs",
             },
             nationality: "Australian",
             knowsAbout: [
@@ -125,9 +142,10 @@ export default function RootLayout({
               "Brand Marketing",
               "Brand Consulting",
             ],
-            description: "Travis Weerts is a multi-award-winning designer and developer creating digital experiences at the intersection of art, code, and AI.",
-            email: "mailto:travisaweerts@gmail.com"
-          })
+            description:
+              "Travis Weerts is a multi-award-winning designer and developer creating digital experiences at the intersection of art, code, and AI.",
+            email: "mailto:travisaweerts@gmail.com",
+          }),
         }}
       />
       <body
