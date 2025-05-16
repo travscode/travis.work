@@ -20,10 +20,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const descr =
+  "If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. I help businesses ditch the dull and show up with style—through bold branding, smart design, and clean development. From strategy to pixels, we build brands that actually get noticed. Forget boring. This is where standout starts.";
+
 export const metadata: Metadata = {
   title: "Web Design Perth Hills | Award-Winning Creative Developer",
-  description:
-    "If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. I help businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+  description: descr,
   authors: [{ name: "Travis Weerts", url: "https://travis.work" }],
   alternates: {
     canonical: "https://travis.work",
@@ -58,8 +60,7 @@ export const metadata: Metadata = {
   colorScheme: "dark",
   openGraph: {
     title: "Web Design Perth Hills | Award-Winning Creative Developer",
-    description:
-      "If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. I help businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+    description: descr,
     images: ["https://travis.work/cover-image.jpg"],
     type: "website",
     url: "https://travis.work",
@@ -68,8 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "Web Design Perth Hills | Award-Winning Creative Developer",
-    description:
-      "If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. I help businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+    description: descr,
     images: ["https://travis.work/cover-image.jpg"],
     card: "summary_large_image",
     creator: "@travisweerts",
