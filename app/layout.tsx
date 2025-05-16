@@ -21,10 +21,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Web Designer Perth Hills | Award-winning designer, developer, and creative in Perth",
+  title: "Web Design Perth Hills | Award-Winning Creative Developer",
   description:
-    "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+    "If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. I help businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
   authors: [{ name: "Travis Weerts", url: "https://travis.work" }],
   alternates: {
     canonical: "https://travis.work",
@@ -58,10 +57,9 @@ export const metadata: Metadata = {
   themeColor: "#000000",
   colorScheme: "dark",
   openGraph: {
-    title:
-      "Travis Weerts | Award-winning designer, developer, and creative in the Perth Hills",
+    title: "Web Design Perth Hills | Award-Winning Creative Developer",
     description:
-      "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+      "If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. I help businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
     images: ["https://travis.work/cover-image.jpg"],
     type: "website",
     url: "https://travis.work",
@@ -69,10 +67,9 @@ export const metadata: Metadata = {
     locale: "en_AU",
   },
   twitter: {
-    title:
-      "Travis Weerts | Award-winning designer, developer, and creative in Perth",
+    title: "Web Design Perth Hills | Award-Winning Creative Developer",
     description:
-      "Helping businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
+      "If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. I help businesses ditch the dull and show up with style—think bold design, sharp dev, and brands that actually get noticed. Boring? Nope, not here.",
     images: ["https://travis.work/cover-image.jpg"],
     card: "summary_large_image",
     creator: "@travisweerts",

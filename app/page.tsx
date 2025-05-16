@@ -31,9 +31,9 @@ export default function Home() {
               className="rounded-full w-32 h-32 mx-auto mb-4"
             />
 
-            <h1 itemProp="name" className="text-3xl font-bold mb-2">
+            <h2 itemProp="name" className="text-3xl font-bold mb-2">
               Travis Weerts
-            </h1>
+            </h2>
 
             <p className="text-lg mb-2">
               <span itemProp="jobTitle">Creative Developer & Designer</span> at
