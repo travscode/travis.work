@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 const descr =
-  "If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. I help businesses ditch the dull and show up with style—through bold branding, smart design, and clean development. From strategy to pixels, I build brands that actually get noticed. Forget boring. This is where standout starts.";
+  "Tired of that dream being stuck in your head? You've come to the right place. I help businesses ditch the dull and stand out with bold branding, sharp design, and clean development. From strategy to pixels—this is where standout starts.";
 
 export const metadata: Metadata = {
   title: "Web Design Perth Hills | Award-Winning Creative Developer",
