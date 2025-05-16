@@ -145,6 +145,90 @@ export default function RootLayout({
           }),
         }}
       />
+
+      <Script
+        id="schema-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Travis Weerts Creative",
+            url: "https://travis.work",
+            image: "https://travis.work/cover-image.jpg",
+            sameAs: [
+              "https://linkedin.com/in/travisweerts",
+              "https://github.com/travscode",
+              "https://x.com/travisweerts",
+              "https://instagram.com/tr_____av",
+            ],
+            jobTitle: "Creative Developer & Designer",
+            award: [
+              "Top 5 AI Startup in Australia",
+              "AWARD Awards",
+              "Cannes Lions",
+              "Spike Awards",
+              "D&AD",
+              "The One Show",
+              "PADC Awards",
+            ],
+
+            knowsAbout: [
+              "Artificial Intelligence",
+              "App Development",
+              "UX Design",
+              "AI Services",
+              "UX Research",
+              "UI Design",
+              "UI/UX Design",
+              "Web Development",
+              "AI Integration",
+              "Product Design",
+              "AI Development",
+              "Digital Marketing",
+              "Digital Strategy",
+              "Brand Design",
+              "Branding",
+              "Social Media Management",
+              "Content Creation",
+              "Digital Strategy",
+              "Brand Development",
+              "Brand Identity",
+              "Brand Guidelines",
+              "Brand Marketing",
+              "Brand Consulting",
+            ],
+            description:
+              "Travis Weerts is a multi-award-winning designer and developer creating digital experiences at the intersection of art, code, and AI.",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "",
+              addressLocality: "Gooseberry Hill",
+              addressRegion: "WA",
+              postalCode: "6076",
+              addressCountry: "AU",
+            },
+          }),
+        }}
+      />
+
+      <Script
+        id="schema-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWorkSeries",
+            name: "Digital Creative",
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5",
+              bestRating: "5",
+              ratingCount: "0",
+            },
+          }),
+        }}
+      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${objectHeavy.variable} ${objectBold.variable} ${objectThin.variable} ${objectRegular.variable} antialiased bg-tw-black text-tw-white`}
       >
