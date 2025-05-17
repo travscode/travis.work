@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 const descr =
-  "Tired of that dream being stuck in your head? You've come to the right place. I help businesses ditch the dull and stand out with bold branding, sharp design, and clean development. From strategy to pixels—this is where standout starts.";
+  "Award-winning web designer in the Perth Hills. Tired of that dream being stuck in your head? You've come to the right place. I help businesses ditch the dull and stand out with bold branding, sharp design, and clean development. From strategy to pixels—this is where standout starts.";
 
 export const metadata: Metadata = {
   title: "Web Design Perth Hills | Award-Winning Creative Developer",
