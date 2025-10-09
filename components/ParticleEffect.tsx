@@ -20,12 +20,12 @@ export const ParticleEffect: FC = () => {
     if (!canvas) return;
 
     // Get WebGL2 context
+    // Get WebGL2 context
     const gl = canvas.getContext("webgl2");
     if (!gl) {
       console.warn("WebGL2 not supported, falling back to WebGL1");
       // Fallback to WebGL1
-      const gl1 =
-        canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+      const gl1 = canvas.getContext("webgl") as WebGLRenderingContext | null;
       if (!gl1) {
         console.error("WebGL not supported");
         return;
