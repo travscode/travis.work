@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voice Ducking Demo</title>
+  </head>
+  <body>
+    <h1>🎙️ Voice Ducking Music Example</h1>
+    <button id="start">Start Music + Mic</button>
+
+    <script>
+      const startBtn = document.getElementById("start");
+
+      startBtn.onclick = async () => {
+        const audioCtx = new (window.AudioContext ||
+          window.webkitAudioContext)();
+
+        // Load a music file
+        const response = await fetch(
+          "https://cdn.jsdelivr.net/gh/mdn/webaudio-examples/voice-change-o-matic/audio/concert-crowd.ogg"
+        );
+        const musicArrayBuffer = await response.arrayBuffer();
+        const musicBuffer = await audioCtx.decodeAudioData(musicArrayBuffer);
+
+        // Music source
+        const musicSource = audioCtx.createBufferSource();
+        musicSource.buffer = musicBuffer;
+        musicSource.loop = true;
+
+        // Gain node to control volume
+        const musicGain = audioCtx.createGain();
+        musicGain.gain.value = 1.0;
+
+        // Connect music to gain -> destination
+        musicSource.connect(musicGain).connect(audioCtx.destination);
+        musicSource.start();
+
+        // Mic input
+        const micStream = await navigator.mediaDevices.getUserMedia({
+          audio: true,
+        });
+        const micSource = audioCtx.createMediaStreamSource(micStream);
+
+        // Analyser for mic
+        const analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 2048;
+        const dataArray = new Uint8Array(analyser.fftSize);
+
+        micSource.connect(analyser);
+
+        // Check mic levels every 100ms
+        function detectVoice() {
+          analyser.getByteTimeDomainData(dataArray);
+
+          let sum = 0;
+          for (let i = 0; i < dataArray.length; i++) {
+            const val = (dataArray[i] - 128) / 128;
+            sum += val * val;
+          }
+
+          const rms = Math.sqrt(sum / dataArray.length);
+          const speaking = rms > 0.03;
+
+          // Duck or restore music volume
+          musicGain.gain.setTargetAtTime(
+            speaking ? 0.2 : 1.0,
+            audioCtx.currentTime,
+            0.1
+          );
+
+          if (speaking) {
+            console.log("Speaking");
+          }
+
+          requestAnimationFrame(detectVoice);
+        }
+
+        detectVoice();
+      };
+    </script>
+  </body>
+</html>
