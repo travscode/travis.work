@@ -25,7 +25,8 @@ const descr =
   "Award-winning web designer in the Perth Hills. Tired of that dream being stuck in your head? You've come to the right place. I help businesses ditch the dull and stand out with bold branding, sharp design, and clean development. From strategy to pixels—this is where standout starts.";
 
 export const metadata: Metadata = {
-  title: "Web Design Perth Hills | Award-Winning Creative Developer",
+  title:
+    "Full-Stack Developer in Perth Hills | Award-Winning Apps & Creative Digital Solutions",
   description: descr,
   authors: [{ name: "Travis Weerts", url: "https://travis.work" }],
   alternates: {
@@ -60,7 +61,8 @@ export const metadata: Metadata = {
   themeColor: "#000000",
   colorScheme: "dark",
   openGraph: {
-    title: "Web Design Perth Hills | Award-Winning Creative Developer",
+    title:
+      "Full-Stack Developer in Perth Hills | Award-Winning Apps & Creative Digital Solutions",
     description: descr,
     images: ["https://travis.work/cover-image.jpg"],
     type: "website",
@@ -69,7 +71,8 @@ export const metadata: Metadata = {
     locale: "en_AU",
   },
   twitter: {
-    title: "Web Design Perth Hills | Award-Winning Creative Developer",
+    title:
+      "Full-Stack Developer in Perth Hills | Award-Winning Apps & Creative Digital Solutions",
     description: descr,
     images: ["https://travis.work/cover-image.jpg"],
     card: "summary_large_image",
