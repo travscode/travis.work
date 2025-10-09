@@ -47,6 +47,18 @@ export const projects = [
       "Multi award winning global campaign to raise awareness about climate change and extinction. <br /><br />The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All rolled out by the United Nations in the largest campaign they've ever done.",
   },
   {
+    label: "HBF / Digital Transformation",
+    year: "2024",
+    imageUrl: "/assets/media/hbf.jpg",
+    services: "UI/UX Design, Web Development, Digital Experience",
+    date: "2024",
+    client: "HBF Health Insurance",
+    agency: "Wunderman Thompson",
+    link: "https://www.hbf.com.au",
+    notes:
+      "UI/UX design and web development for HBF's comprehensive digital transformation - a multi-year program serving over 1 million members. <br /><br />The project involved migrating from legacy mainframe systems to modern cloud-based infrastructure, including a complete website redesign, enhanced myHBF member portal, and streamlined digital experience across all touchpoints. Key deliverables included front-of-house member interfaces and back-of-house employee systems with a new 'single pane of glass' for customer service teams. <br /><br />The transformation enables seamless self-service interactions across HBF's website, mobile app, and member portal, with 80% of member interactions now happening through digital channels. The new systems provide intuitive claim submissions, payment management, and personalized health insights while supporting HBF's scaled agile operating model with business-led Tribes and Squads.",
+  },
+  {
     label: "Smilebooth",
     year: "2013",
     imageUrl: "/assets/media/smilebooth_travis_weerts2.webp",
@@ -98,7 +110,7 @@ export const projects = [
       "IOOKI Labs is a creative technology studio exploring the edges of AI, voice, and computer vision. We design and build next-generation experiences that blend imagination and innovation — from voice-driven AI agents to augmented reality and beyond. At IOOKI Labs, we believe the future belongs to the curious, the brave, and the ones willing to build what doesn't exist yet.",
   },
   {
-    label: "OZ Music",
+    label: "OZZ FM",
     year: "2025",
     imageUrl: "/assets/media/oz2.jpg",
     services:
@@ -107,9 +119,9 @@ export const projects = [
     client: "OZ Music",
     agency: "Independent",
     linkLabel: "Demo video",
-    link: "https://youtu.be/mKoiok_7C3E",
+    link: "https://ozz.fm",
     notes:
-      "Ever wanted to run your own unique radio station? Now you can. Oz Music lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. <br /><br />Artwork in screenshot by <br /><a href='https://soundcloud.com/the-found-sound-orchestra' class='underline cursor-pointer hover:text-tw-accent hover:cursor-pointer' target='_blank'>The Found Sound Orchestra</a>",
+      "Ever wanted to run your own unique radio station? Now you can. Ozz FM lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. <br /><br />Artwork in screenshot by <br /><a href='https://soundcloud.com/the-found-sound-orchestra' class='underline cursor-pointer hover:text-tw-accent hover:cursor-pointer' target='_blank'>The Found Sound Orchestra</a>",
   },
 
   {
