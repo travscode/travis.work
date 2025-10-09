@@ -5,7 +5,7 @@ import { FC, useEffect, useRef } from "react";
 // WebGL Particle Effect Component with Bayer Dithering
 export const ParticleEffect: FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const mouseRef = useRef({ x: -1, y: -1 });
   const glRef = useRef<WebGL2RenderingContext | null>(null);
   const programRef = useRef<WebGLProgram | null>(null);
