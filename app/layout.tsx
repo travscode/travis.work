@@ -5,6 +5,7 @@ import {
   objectRegular,
   objectThin,
   objectHeavy,
+  crtFont,
 } from "@/app/fonts";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -230,7 +231,7 @@ export default function RootLayout({
         }}
       />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${objectHeavy.variable} ${objectBold.variable} ${objectThin.variable} ${objectRegular.variable} antialiased bg-tw-black text-tw-white`}
+        className={`${geistSans.variable} ${geistMono.variable} ${objectHeavy.variable} ${crtFont.variable} ${objectBold.variable} ${objectThin.variable} ${objectRegular.variable} antialiased bg-tw-black text-tw-white`}
       >
         {children}
       </body>

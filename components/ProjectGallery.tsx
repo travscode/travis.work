@@ -184,7 +184,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                   datas absolute bottom-0 
                   font-object-regular font-medium text-[1.5vw] leading-[2.6vw]
                   -tracking-[0.03em] rotate-[-90deg] origin-[1vw_50%]
-                  w-[calc(100vh-2.6vw-100px)] flex flex-row justify-between
+                  w-[calc(100vh-2.6vw-65px)] flex flex-row justify-between
                   md:transform-none md:left-auto m-[calc(1vw-2px)]
                   md:text-[1.2vw] 2xl:text-[1vw] transition-all duration-500 pr-3 pl-1.5
                 "
@@ -333,6 +333,8 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                     )}
                     src={project.imageUrl}
                     alt={project.label}
+                    width={300}
+                    height={600}
                   />
 
                   <div className="info text-xs flex flex-col gap-4">

@@ -1,5 +1,10 @@
 import localFont from "next/font/local";
 
+export const crtFont = localFont({
+  variable: "--font-crt",
+  src: [{ path: "./crt.woff", weight: "500 700", style: "normal" }],
+});
+
 export const objectBold = localFont({
   variable: "--font-object-bold",
   src: [
@@ -16,9 +21,7 @@ export const objectHeavy = localFont({
 
 export const objectRegular = localFont({
   variable: "--font-object-regular",
-  src: [
-    { path: "./PPObjectSans-Regular.otf", weight: "400", style: "normal" },
-  ],
+  src: [{ path: "./PPObjectSans-Regular.otf", weight: "400", style: "normal" }],
 });
 
 export const objectThin = localFont({

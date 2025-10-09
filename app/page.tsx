@@ -4,7 +4,7 @@ import ProjectGallery from "@/components/ProjectGallery";
 import { projects } from "@/data/projects";
 import Image from "next/image";
 
-const paddingTop = 150;
+const paddingTop = 100;
 export default function Home() {
   return (
     <>

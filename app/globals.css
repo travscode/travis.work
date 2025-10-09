@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin "tailwindcss-animate";
 
@@ -9,6 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-crt: var(--font-crt);
   --font-object-bold: var(--font-object-bold);
   --font-object-heavy: var(--font-object-heavy);
   --font-object-regular: var(--font-object-regular);
@@ -49,11 +50,10 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --color-tw-black: #111111;
-  --color-tw-white: #E0D3BD;
-  --color-tw-grey: #736B5E;
-  --color-tw-grey-dark: #3B3730;
-  --color-tw-accent: #FFAE24;
- 
+  --color-tw-white: #e0d3bd;
+  --color-tw-grey: #736b5e;
+  --color-tw-grey-dark: #3b3730;
+  --color-tw-accent: #ffae24;
 }
 
 :root {

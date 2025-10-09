@@ -22,18 +22,16 @@ export const projects = [
     ],
   },
   {
-    label: "OZ Music",
-    year: "2025",
-    imageUrl: "/assets/media/oz2.jpg",
-    services:
-      "App Development, AI Development, Creative Direction, Brand Identity, UI/UX",
-    date: "Launching soon...",
-    client: "OZ Music",
-    agency: "Independent",
-    linkLabel: "Demo video",
-    link: "https://youtu.be/mKoiok_7C3E",
+    label: "Olympics / Brisbane 2032",
+    year: "2024",
+    imageUrl: "/assets/media/olympics.png",
+    services: "Web Development, NextJS, UI/UX",
+    date: "April 2024",
+    client: "The Olympics Brisbane 2032",
+    agency: "VML",
+    link: "https://olympics.com/brisbane2032",
     notes:
-      "Ever wanted to run your own unique radio station? Now you can. Oz Music lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. <br /><br />Artwork in screenshot by <br /><a href='https://soundcloud.com/the-found-sound-orchestra' class='underline cursor-pointer hover:text-tw-accent hover:cursor-pointer' target='_blank'>The Found Sound Orchestra</a>",
+      "I helped build the website for the Olympics Brisbane 2032. I can't believe I just got to write that sentence.",
   },
   {
     label: "United Nations / Don't Choose Extinction",
@@ -72,17 +70,19 @@ export const projects = [
     notes:
       "I had the privilege of helping launch Fervor Wines, creating their brand identity, naming, and product packaging design. Inspired by Mike and Callum's passion for cool climate winemaking and the deep relationships they've built over 25 years across Western Australia and Victoria, the brand needed to feel authentic, spirited, and rooted in connection. The name \"Fervor\" captures the energy and love they pour into their craft. The visual identity and packaging reflect the elegance of the Great Southern Region, balanced with a sense of exploration and modern design, setting the tone for a label that feels both classic and vibrant — just like the wines themselves.",
   },
+
   {
-    label: "Olympics / Brisbane 2032",
+    label: "VML / Foundation Day",
     year: "2024",
-    imageUrl: "/assets/media/olympics.png",
-    services: "Web Development, NextJS, UI/UX",
-    date: "April 2024",
-    client: "The Olympics Brisbane 2032",
+    imageUrl: "/assets/media/vml_foundation_day_travis_weerts.jpg",
+    services:
+      "Ideation, UI/UX, WebGL, Spotify Integration, Voice Modeling, Chat",
+    date: "2024",
+    client: "VML",
     agency: "VML",
-    link: "https://olympics.com/brisbane2032",
+    link: "https://foundationday.vml.com/",
     notes:
-      "I helped build the website for the Olympics Brisbane 2032. I can't believe I just got to write that sentence.",
+      'Last year, I designed and built the VML Foundation Day website, helping take the spirit of Foundation Day "on tour" with a music-driven campaign that amplified the energy of a global Day of Good. As VML offices around the world rolled up their sleeves to give back, the site became a rallying point — connecting teams, sharing stories, and turning 24 hours of service into a worldwide movement.',
   },
   {
     label: "IOOKI Labs",
@@ -98,18 +98,20 @@ export const projects = [
       "IOOKI Labs is a creative technology studio exploring the edges of AI, voice, and computer vision. We design and build next-generation experiences that blend imagination and innovation — from voice-driven AI agents to augmented reality and beyond. At IOOKI Labs, we believe the future belongs to the curious, the brave, and the ones willing to build what doesn't exist yet.",
   },
   {
-    label: "VML / Foundation Day",
-    year: "2024",
-    imageUrl: "/assets/media/vml_foundation_day_travis_weerts.jpg",
+    label: "OZ Music",
+    year: "2025",
+    imageUrl: "/assets/media/oz2.jpg",
     services:
-      "Ideation, UI/UX, WebGL, Spotify Integration, Voice Modeling, Chat",
-    date: "2024",
-    client: "VML",
-    agency: "VML",
-    link: "https://foundationday.vml.com/",
+      "App Development, AI Development, Creative Direction, Brand Identity, UI/UX",
+    date: "Launching soon...",
+    client: "OZ Music",
+    agency: "Independent",
+    linkLabel: "Demo video",
+    link: "https://youtu.be/mKoiok_7C3E",
     notes:
-      'Last year, I designed and built the VML Foundation Day website, helping take the spirit of Foundation Day "on tour" with a music-driven campaign that amplified the energy of a global Day of Good. As VML offices around the world rolled up their sleeves to give back, the site became a rallying point — connecting teams, sharing stories, and turning 24 hours of service into a worldwide movement.',
+      "Ever wanted to run your own unique radio station? Now you can. Oz Music lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. <br /><br />Artwork in screenshot by <br /><a href='https://soundcloud.com/the-found-sound-orchestra' class='underline cursor-pointer hover:text-tw-accent hover:cursor-pointer' target='_blank'>The Found Sound Orchestra</a>",
   },
+
   {
     label: "Xingo",
     year: "2025",
