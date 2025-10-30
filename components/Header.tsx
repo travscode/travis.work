@@ -116,6 +116,14 @@ const Header: FC<HeaderProps> = ({
               WORK
             </Link>
 
+            <Link
+              href="https://medium.com/@travisaweerts"
+              className=" md:leading-[14px] text-sm hidden md:block hover:text-tw-grey-dark"
+              onMouseEnter={handleMouseLeave}
+            >
+              THOUGHTS
+            </Link>
+
             {/* <div
               ref={servicesLinkRef}
               className="relative hidden md:block md:leading-[14px]"
