@@ -105,7 +105,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
             scrub: true,
             onUpdate: (self) => {
               const closestIndex = Math.round(
-                self.progress * (projects.length - 1)
+                self.progress * (projects.length - 1),
               );
               setActiveIndex(closestIndex);
             },
@@ -313,7 +313,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                   transition-all duration-300
                   text-tw-white
                 `,
-                  project.useH1 ? "" : "pt-10"
+                  project.useH1 ? "" : "pt-10",
                 )}
               >
                 {isMobile && !project.useH1 && (
@@ -329,7 +329,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                   <Image
                     className={cn(
                       "w-full object-cover rounded-2xl border border-tw-grey-dark mb-6",
-                      project.useH1 ? "h-[50vh] object-bottom" : "h-[80vh]"
+                      project.useH1 ? "h-[50vh] object-center" : "h-[80vh]",
                     )}
                     src={project.imageUrl}
                     alt={project.label}
