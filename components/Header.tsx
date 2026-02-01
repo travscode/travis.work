@@ -84,7 +84,7 @@ const Header: FC<HeaderProps> = ({
   };
 
   const servicesForDropdown = Object.values(services).filter(
-    (service) => service.showInServices
+    (service) => service.showInServices,
   );
 
   return (
@@ -92,7 +92,7 @@ const Header: FC<HeaderProps> = ({
       <header className="sticky top-0 md:fixed z-[99] w-full  bg-tw-black/95 backdrop-blur supports-[backdrop-filter]:bg-tw-black/80 py-4 px-4 pr-4 text-tw-white shadow-2xl border-b border-tw-grey-dark ">
         <nav
           className={cn(
-            `mx-auto flex flex-row md:flex-row justify-between items-center`
+            `mx-auto flex flex-row md:flex-row justify-between items-center`,
           )}
           // style={{
           //   paddingBottom: isMobile ? 0 : paddingBottom * (40 / 110) + "px",
@@ -170,7 +170,7 @@ const Header: FC<HeaderProps> = ({
               "fixed inset-0 bg-tw-black z-[59]",
               isClosing
                 ? "animate-out fade-out duration-300"
-                : "animate-in fade-in duration-700"
+                : "animate-in fade-in duration-700",
             )}
           >
             <ParticleEffect />
@@ -180,7 +180,7 @@ const Header: FC<HeaderProps> = ({
               "fixed z-[60] w-200 shadow-2xl bg-tw-black/50 backdrop-blur h-dvh",
               isClosing
                 ? "animate-out  fade-out duration-500"
-                : "animate-in  fade-in duration-500"
+                : "animate-in  fade-in duration-500",
             )}
             style={{
               top: dropdownPosition.top,
@@ -200,7 +200,7 @@ const Header: FC<HeaderProps> = ({
                       "block text-sm hover:bg-tw-grey-dark/20 hover:text-t-accent transition-all duration-200 text-tw-white",
                       isClosing
                         ? "animate-out slide-out-to-left-6 fade-out"
-                        : "animate-in slide-in-from-left-6 fade-in"
+                        : "animate-in slide-in-from-left-6 fade-in",
                     )}
                     style={{
                       animationDuration: "400ms",
