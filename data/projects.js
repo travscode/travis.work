@@ -27,6 +27,7 @@ export const projects = [
     label: "Wilson / Australian Open AI Photobooth",
     year: "2025",
     videoUrl: "/assets/media/aussieopen.mp4",
+    imageUrl: "/assets/media/aussieopen.jpg",
     services: "UI/UX",
     client: "Wilson & Australian Open",
     agency: "Two-Eyed People",
