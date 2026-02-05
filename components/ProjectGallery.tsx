@@ -17,6 +17,7 @@ interface Project {
   date?: string;
   client?: string;
   agency?: string;
+  agencyLink?: string;
   link?: string;
   notes?: string;
   other?: string;
@@ -396,7 +397,17 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                       <div className="info_block">
                         <div className="label">Agency</div>
                         <div className="content whitespace-normal">
-                          {project.agency}
+                          {project.agencyLink ? (
+                            <a
+                              href={project.agencyLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {project.agency}
+                            </a>
+                          ) : (
+                            <>{project.agency}</>
+                          )}
                         </div>
                       </div>
                     )}

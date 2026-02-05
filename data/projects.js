@@ -31,6 +31,7 @@ export const projects = [
     services: "UI/UX",
     client: "Wilson & Australian Open",
     agency: "Two-Eyed People",
+    agencyLink: "https://twoeyedpeople.com/",
     date: "Jan 2026",
     notes:
       "I did the UI/UX development for an AI-powered photobooth activation for Wilson at the Australian Open. The experience used generative AI to create stylized, tennis-themed portraits for fans. ",
@@ -45,6 +46,7 @@ export const projects = [
     services:
       "Converational AI, App Development, Prompt Engineering, Computer Vision, UI/UX",
     agency: "Two-Eyed People",
+    agencyLink: "https://twoeyedpeople.com/",
     date: "Christmas 2025",
     client: "Melbourne Airport",
     link: "https://medium.com/@travisaweerts/are-we-talking-to-the-walls-now-0fe158b442ea",
@@ -60,6 +62,7 @@ export const projects = [
     date: "April 2024",
     client: "The Olympics Brisbane 2032",
     agency: "VML",
+    agencyLink: "https://vml.com/",
     link: "https://olympics.com/brisbane2032",
     notes:
       "I helped build the website for the Olympics Brisbane 2032. I can't believe I just got to write that sentence.",
@@ -73,6 +76,7 @@ export const projects = [
     date: "2022",
     client: "United Nations",
     agency: "VML / Wunderman Thompson",
+    agencyLink: "https://wundermanthompson.com/",
     link: "https://www.lovethework.com/work-awards/campaigns/dont-choose-extinction-754948",
     notes:
       "Multi award winning global campaign to raise awareness about climate change and extinction. <br /><br />The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All rolled out by the United Nations in the largest campaign they've ever done.",
@@ -85,6 +89,7 @@ export const projects = [
     date: "2024",
     client: "HBF Health Insurance",
     agency: "Wunderman Thompson",
+    agencyLink: "https://wundermanthompson.com/",
     link: "https://www.hbf.com.au",
     notes:
       "UI/UX design and web development for HBF's comprehensive digital transformation - a multi-year program serving over 1 million members. <br /><br />The project involved migrating from legacy mainframe systems to modern cloud-based infrastructure, including a complete website redesign, enhanced myHBF member portal, and streamlined digital experience across all touchpoints. Key deliverables included front-of-house member interfaces and back-of-house employee systems with a new 'single pane of glass' for customer service teams. <br /><br />The transformation enables seamless self-service interactions across HBF's website, mobile app, and member portal, with 80% of member interactions now happening through digital channels. The new systems provide intuitive claim submissions, payment management, and personalized health insights while supporting HBF's scaled agile operating model with business-led Tribes and Squads.",
@@ -123,6 +128,7 @@ export const projects = [
     date: "2024",
     client: "VML",
     agency: "VML",
+    agencyLink: "https://vml.com/",
     link: "https://foundationday.vml.com/",
     notes:
       'Last year, I designed and built the VML Foundation Day website, helping take the spirit of Foundation Day "on tour" with a music-driven campaign that amplified the energy of a global Day of Good. As VML offices around the world rolled up their sleeves to give back, the site became a rallying point — connecting teams, sharing stories, and turning 24 hours of service into a worldwide movement.',
@@ -176,6 +182,7 @@ export const projects = [
     date: "January 2025",
     client: "Wendy's International",
     agency: "VML",
+    agencyLink: "https://vml.com/",
     link: "https://wendys.com",
     notes:
       "While working for VML, I built the Australian website for Wendy's Hamburgers to promote their launch in Australia.",
@@ -266,6 +273,7 @@ export const projects = [
     date: "September 2024",
     client: "DUET Property Group",
     agency: "Wunderman Thompson",
+    agencyLink: "https://wundermanthompson.com/",
     link: "https://duetproperty.com.au/",
     notes:
       "I led the UI/UX design for Duet, a real estate property group built around the idea of creating instant connections between people and homes. The goal was to design a digital experience that felt as intuitive and emotional as the moment someone finds \"the one.\" I crafted a clean, elegant interface that balanced warmth with sophistication, making it easy for users to explore properties while feeling personally guided. Every interaction was designed to reflect Duet's deep understanding of community, connection, and the care they bring to matching people with places they'll call home.",
