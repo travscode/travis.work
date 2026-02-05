@@ -12,6 +12,7 @@ interface Project {
   label: string;
   year: string;
   imageUrl: string;
+  videoUrl?: string;
   services?: string;
   date?: string;
   client?: string;
@@ -193,22 +194,38 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                   <p className="year text-[1.25vw]">{project.year}</p>
                 </div>
 
-                <img
-                  className="
-                  media h-[calc(100%-2.6vw)] w-auto m-[1.3vw_1.3vw_0_4vw]
-                  object-cover rounded-[0.6vw] max-w-none inline
-                  border border-tw-grey-dark
-                "
-                  src={project.imageUrl}
-                  alt={project.label}
-                />
+                {project.videoUrl ? (
+                  <video
+                    className="
+                      media h-[calc(100%-2.6vw)] w-auto m-[1.3vw_1.3vw_0_4vw]
+                      object-cover rounded-[0.6vw] max-w-none inline
+                      border border-tw-grey-dark
+                    "
+                    src={project.videoUrl}
+                    poster={project.imageUrl}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    className="
+                      media h-[calc(100%-2.6vw)] w-auto m-[1.3vw_1.3vw_0_4vw]
+                      object-cover rounded-[0.6vw] max-w-none inline
+                      border border-tw-grey-dark
+                    "
+                    src={project.imageUrl}
+                    alt={project.label}
+                  />
+                )}
                 <div className="info text-xs h-[calc(100%-2.6vw)] w-auto m-[1.3vw_3.3vw_0_0] flex flex-col gap-4 max-w-[340px] w-[300px] overflow-hidden p-3">
                   {project.useH1 ? (
-                    <h1 className="info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2">
+                    <h1 className="info_block w-[300px] font-object-bold text-xl leading-tight whitespace-normal">
                       {project.title || project.label}
                     </h1>
                   ) : (
-                    <h3 className="info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2">
+                    <h3 className="info_block w-[300px] font-object-bold text-xl leading-tight whitespace-normal">
                       {project.title || project.label}
                     </h3>
                   )}
@@ -274,7 +291,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                   )}
 
                   {project.other && (
-                    <div className="info_block pt-4">
+                    <div className="info_block">
                       <div
                         className="content w-[300px] max-w-[300px] word-wrap whitespace-normal"
                         dangerouslySetInnerHTML={{ __html: project.other }}
@@ -283,7 +300,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                   )}
 
                   {project.tags && (
-                    <div className="info_block pt-8 whitespace-normal flex flex-wrap gap-2">
+                    <div className="info_block whitespace-normal flex flex-wrap gap-2">
                       {project.tags.map((tag, index) => (
                         <h2
                           key={index}
@@ -337,13 +354,13 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                     height={600}
                   />
 
-                  <div className="info text-xs flex flex-col gap-4">
+                  <div className="info text-xs flex flex-col gap-2">
                     {project.useH1 ? (
-                      <h1 className="info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2">
+                      <h1 className="info_block w-[300px] font-object-bold text-xl leading-tight whitespace-normal">
                         {project.title || project.label}
                       </h1>
                     ) : (
-                      <h3 className="info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2">
+                      <h3 className="info_block w-[300px] font-object-bold text-xl whitespace-normal pb-2 leading-tight">
                         {project.title || project.label}
                       </h3>
                     )}
