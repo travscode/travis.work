@@ -24,6 +24,18 @@ export const projects = [
     ],
   },
   {
+    label: "Wilson / Australian Open AI Photobooth",
+    year: "2025",
+    videoUrl: "/assets/media/aussieopen.mp4",
+    services: "UI/UX",
+    client: "Wilson & Australian Open",
+    agency: "Two-Eyed People",
+    date: "Jan 2026",
+    notes:
+      "I did the UI/UX development for an AI-powered photobooth activation for Wilson at the Australian Open. The experience used generative AI to create stylized, tennis-themed portraits for fans. ",
+  },
+
+  {
     label: "Melbourne Airport Activation",
     year: "2025",
     imageUrl: "/assets/media/melbourne_airport.png",
@@ -38,6 +50,7 @@ export const projects = [
     notes:
       "I built a live voice real-time AI agent for Melbourne Airport to help travelers with wayfinding using natural voice. I developed the full application, integrating real-time voice processing, phoneme lip-syncing, and privacy-safe facial recognition. The result was a 'talking Christmas koala' that turned a standard kiosk interaction into an engaging, human-like experience.",
   },
+
   {
     label: "Olympics / Brisbane 2032",
     year: "2024",
