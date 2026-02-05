@@ -261,7 +261,18 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                     <div className="info_block">
                       <div className="label">Agency</div>
                       <div className="content whitespace-normal">
-                        {project.agency}
+                        {project.agencyLink ? (
+                          <a
+                            href={project.agencyLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline hover:text-tw-accent"
+                          >
+                            {project.agency}
+                          </a>
+                        ) : (
+                          <>{project.agency}</>
+                        )}
                       </div>
                     </div>
                   )}
@@ -402,6 +413,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                               href={project.agencyLink}
                               target="_blank"
                               rel="noopener noreferrer"
+                              className="underline"
                             >
                               {project.agency}
                             </a>

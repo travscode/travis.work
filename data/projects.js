@@ -34,7 +34,7 @@ export const projects = [
     agencyLink: "https://twoeyedpeople.com/",
     date: "Jan 2026",
     notes:
-      "I did the UI/UX development for an AI-powered photobooth activation for Wilson at the Australian Open. The experience used generative AI to create stylized, tennis-themed portraits for fans. ",
+      "I collaborated with Two-Eyed People on a project for Wilson / AO. I did UI/UX development for an AI-powered photobooth activation for Wilson at the Australian Open. The experience used generative AI to create stylized, tennis-themed portraits for fans. #dreamjob",
   },
 
   {
