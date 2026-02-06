@@ -77,7 +77,7 @@ export const projects = [
     client: "United Nations",
     agency: "VML / Wunderman Thompson",
     agencyLink: "https://wundermanthompson.com/",
-    link: "https://www.lovethework.com/work-awards/campaigns/dont-choose-extinction-754948",
+    link: "https://www.undp.org/press-releases/dinosaur-disrupts-cannes-lions-climate-action-message-dont-choose-extinction",
     notes:
       "Multi award winning global campaign to raise awareness about climate change and extinction. <br /><br />The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All rolled out by the United Nations in the largest campaign they've ever done.",
   },
