@@ -167,7 +167,7 @@ export const projects = [
     date: "Launching soon...",
     client: "OZ Music",
     agency: "Independent",
-    linkLabel: "Demo video",
+    linkLabel: "Link",
     link: "https://ozz.fm",
     notes:
       "Ever wanted to run your own unique radio station? Now you can. Ozz FM lets you create live AI-generated stations, craft your DJ persona, engage listeners in real time, and build a collective sound together. It's radio reimagined — dynamic, unpredictable, and unmistakably Oz. <br /><br />Artwork in screenshot by <br /><a href='https://soundcloud.com/the-found-sound-orchestra' class='underline cursor-pointer hover:text-tw-accent hover:cursor-pointer' target='_blank'>The Found Sound Orchestra</a>",
