@@ -157,7 +157,7 @@ const Header: FC<HeaderProps> = ({
             )}
           </div>
           <div className="hidden md:block font-object-thin text-3xl leading-[24px] tracking-[-2px]  md:w-[300px] text-right">
-            20 — 25
+            20 — 26
           </div>
         </nav>
       </header>

@@ -82,6 +82,18 @@ export const projects = [
       "Multi award winning global campaign to raise awareness about climate change and extinction. <br /><br />The World of Excuses is a digital eco-system that aims to propel people beyond awareness, and inspire the world to move from apathy to action and help save the planet. The experience allows users to click into each excuse that threaten our survival, pictured as asteroids looming above the earth that threaten to do the same. Within each they will find information and tools to provide direct action. The tools include a Chrome Plugin Thesaurus Rex, designed to help people navigated the terms around fossil fuels online, The Voice of Reason, an Alexa skill that disarmingly rebuts every climate change myth or excuse; a spin on The Birds and The Bees with an e-book that gives children the arguments they need to convince their parents and peers. All rolled out by the United Nations in the largest campaign they've ever done.",
   },
   {
+    label: "CODA",
+    year: "2025",
+    imageUrl: "/assets/media/coda.webp",
+    services: "Brand Identity, Product Design, Package Design",
+    date: "Mid 2025",
+    client: "Skigh Wines",
+    agency: "Independent",
+    link: "https://www.skighwine.com.au/",
+    notes:
+      "I led the redesign of the highly acclaimed Coda range for Skigh Wines, crafting a bold, refined aesthetic that reinforced the label's core identity. The objective was to elevate the visual language while honoring the brand's established character, resulting in a sophisticated design that speaks to both modern sensibilities and timeless quality.",
+  },
+  {
     label: "HBF / Digital Transformation",
     year: "2024",
     imageUrl: "/assets/media/hbf.jpg",
@@ -109,7 +121,7 @@ export const projects = [
   {
     label: "Fervor",
     year: "2024",
-    imageUrl: "/assets/media/fervor.png",
+    imageUrl: "/assets/media/fervor.webp",
     services: "Brand Identity, Product Design, Product Naming",
     date: "March 2024",
     client: "Fervor Wines",
