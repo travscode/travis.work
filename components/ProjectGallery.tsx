@@ -355,16 +355,31 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                 )}
 
                 <div className="flex flex-col space-y-4">
-                  <Image
-                    className={cn(
-                      "w-full object-cover rounded-2xl border border-tw-grey-dark mb-6",
-                      project.useH1 ? "h-[50vh] object-center" : "h-[80vh]",
-                    )}
-                    src={project.imageUrl}
-                    alt={project.label}
-                    width={300}
-                    height={600}
-                  />
+                  {project.videoUrl ? (
+                    <video
+                      className={cn(
+                        "w-full object-cover rounded-2xl border border-tw-grey-dark mb-6",
+                        project.useH1 ? "h-[50vh] object-center" : "h-[80vh]",
+                      )}
+                      src={project.videoUrl}
+                      poster={project.imageUrl}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  ) : (
+                    <Image
+                      className={cn(
+                        "w-full object-cover rounded-2xl border border-tw-grey-dark mb-6",
+                        project.useH1 ? "h-[50vh] object-center" : "h-[80vh]",
+                      )}
+                      src={project.imageUrl}
+                      alt={project.label}
+                      width={300}
+                      height={600}
+                    />
+                  )}
 
                   <div className="info text-xs flex flex-col gap-2">
                     {project.useH1 ? (
