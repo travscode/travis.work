@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   colorScheme: "dark",
   openGraph: {
     title:
-      "Full-Stack Developer in Perth Hills | Award-Winning Apps & Creative Digital Solutions",
+      "Creative Designer Developer in Perth Hills | Award-Winning Apps, Websites & Digital Things",
     description: descr,
     images: ["https://travis.work/cover-image.jpg"],
     type: "website",
