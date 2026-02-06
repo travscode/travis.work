@@ -26,7 +26,7 @@ const descr =
 
 export const metadata: Metadata = {
   title:
-    "Full-Stack Developer in Perth Hills | Award-Winning Apps & Creative Digital Solutions",
+    "Creative Designer Developer in Perth Hills | Award-Winning Apps, Websites & Digital Things",
   description: descr,
   authors: [{ name: "Travis Weerts", url: "https://travis.work" }],
   alternates: {
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title:
-      "Full-Stack Developer in Perth Hills | Award-Winning Apps & Creative Digital Solutions",
+      "Creative Designer Developer in Perth Hills | Award-Winning Apps, Websites & Digital Things",
     description: descr,
     images: ["https://travis.work/cover-image.jpg"],
     card: "summary_large_image",
