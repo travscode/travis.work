@@ -2,66 +2,71 @@ export const services = {
   brand: {
     title: "Brand + Design",
     slug: "brand",
-    metaTitle: "Brand + Design in Perth | Logo & Identity Design",
+    metaTitle: "Branding Perth | Logo & Identity Design",
     metaDescription:
-      "Professional brand design services in Perth Hills. Create memorable brand identities that connect with your audience and drive business growth.",
+      "Professional branding in Perth. Build distinctive brand identities that connect with your audience and drive growth.",
     tag: "Brand + Design",
     showInServices: true,
     images: {
-      header: "wordpress-hero.jpg",
-      bg: "wordpress-bg.jpg",
-      feature: "wordpress-feature.jpg",
-      trust: "wordpress-trust.jpg",
+      header: "brand-hero.jpg",
+      bg: "brand-bg.jpg",
+      feature: "brand-feature.jpg",
+      trust: "brand-trust.jpg",
       square: "brand-design-perth-service.jpeg",
     },
     hero: {
       headline: "Brands That Make an Impact",
       subheadline: "Distinctive identities that connect with your audience",
       description:
-        "Build a powerful brand that stands out from the competition and creates lasting connections with your customers.",
+        "Build a powerful brand in Perth that stands out and creates lasting connections. From strategy to visual identity, we craft brands that actually get noticed.",
       cta: "Build Your Brand",
     },
     benefits: [
       {
         title: "Memorable Identity",
         description:
-          "Create a distinctive brand that customers remember and trust",
+          "Create a distinctive Perth brand that customers remember, trust, and come back to.",
       },
       {
         title: "Consistent Messaging",
-        description: "Unified brand voice across all touchpoints and channels",
+        description:
+          "Keep your brand voice unified across websites, socials, emails and marketing.",
       },
       {
         title: "Market Differentiation",
-        description: "Stand out from competitors with unique brand positioning",
+        description:
+          "Stand out in your industry with a clear brand positioning that’s all yours.",
       },
       {
         title: "Customer Connection",
         description:
-          "Build emotional connections that drive loyalty and advocacy",
+          "Build emotional connections that turn customers into loyal advocates.",
       },
     ],
     process: [
       {
         step: 1,
         title: "Brand Discovery",
-        description: "Understanding your business, values, and target audience",
+        description:
+          "We start by understanding your business, values, audience, and what makes you different.",
       },
       {
         step: 2,
         title: "Strategy Development",
-        description: "Defining brand positioning and messaging strategy",
+        description:
+          "Define your brand’s positioning, messaging, and tone so every touchpoint feels intentional.",
       },
       {
         step: 3,
         title: "Visual Identity",
-        description: "Creating logos, colors, typography, and visual elements",
+        description:
+          "Design logos, colour palettes, typography, and visual elements that capture your brand’s personality.",
       },
       {
         step: 4,
         title: "Brand Guidelines",
         description:
-          "Comprehensive guidelines for consistent brand application",
+          "Deliver clear guidelines so your brand stays consistent across all platforms and future projects.",
       },
     ],
     features: [
@@ -77,6 +82,7 @@ export const services = {
       timeline: "3-5 weeks",
     },
   },
+
   "web-design": {
     title: "Web Design Perth Hills",
     slug: "web-design",

@@ -44,7 +44,7 @@ export const projects = [
     videoUrl:
       "/assets/media/melbourne_airport_travis_weerts_conversational_ai.mp4",
     services:
-      "Converational AI, App Development, Prompt Engineering, Computer Vision, UI/UX",
+      "Conversational AI, App Development, Prompt Engineering, Computer Vision, UI/UX",
     agency: "Two-Eyed People",
     agencyLink: "https://twoeyedpeople.com/",
     date: "Christmas 2025",

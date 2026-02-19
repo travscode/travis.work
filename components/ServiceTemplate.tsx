@@ -48,7 +48,7 @@ const ServiceTemplate: FC<ServiceTemplateProps> = ({ service }) => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const clientLogos = [
-    { name: "United Nations", logo: "/assets/logos/un.svg" },
+    { name: "United Nations", logo: "/assets/logos/unitednations.svg" },
     { name: "Google", logo: "/assets/logos/google.svg" },
     { name: "Apple", logo: "/assets/logos/apple.svg" },
     { name: "VML", logo: "/assets/logos/vml.svg" },
@@ -98,7 +98,7 @@ const ServiceTemplate: FC<ServiceTemplateProps> = ({ service }) => {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-object-heavy mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-object-heavy mb-6 leading-tight">
             {service.hero.headline}
           </h1>
           <p className="text-xl md:text-2xl text-t-gray mb-8 max-w-3xl mx-auto">
@@ -118,7 +118,7 @@ const ServiceTemplate: FC<ServiceTemplateProps> = ({ service }) => {
       </section>
 
       {/* Trust Indicators with Trust Image */}
-      <section className="relative py-16 px-4 border-t border-t-gray-dark overflow-hidden">
+      <section className="relative py-16 px-4 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -136,7 +136,15 @@ const ServiceTemplate: FC<ServiceTemplateProps> = ({ service }) => {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-60">
             {clientLogos.map((client, index) => (
               <div key={index} className="text-center">
-                <div className="h-12 flex items-center justify-center">
+                <div className="h-12 flex flex-col items-center justify-center">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    className="object-cover opacity-10"
+                    width={100}
+                    height={100}
+                  />
+
                   <span className="text-t-gray font-object-bold text-sm">
                     {client.name}
                   </span>
