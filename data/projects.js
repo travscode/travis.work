@@ -26,6 +26,20 @@ export const projects = [
     ],
   },
   {
+    label: "Hunter Markets",
+    year: "2026",
+    videoUrl: "/assets/media/huntermarkets.mp4",
+    imageUrl: "/assets/media/huntermarkets.jpg",
+    services: "App Development, UI/UX, iOS, Android",
+    client: "Hunter Markets",
+    agency: "Dilate",
+    agencyLink: "https://dilate.com.au/",
+    link: "https://apps.apple.com/au/app/hunter-markets/id6752556791",
+    date: "Jun 2026",
+    notes:
+      "A collab with the Hunter Markets & Dilate teams to design and build their social marketplace app for iOS and Android. We launched with Sopha Dopha selling her wardrobe for charity, and somehow our little indie app shot to #5 in Shopping on the Australian App Store almost overnight. Pretty surreal.",
+  },
+  {
     label: "Wilson / Australian Open AI Photobooth",
     year: "2026",
     videoUrl: "/assets/media/aussieopen.mp4",
