@@ -26,6 +26,18 @@ export const projects = [
     ],
   },
   {
+    label: "Paint with your mind",
+    year: "2026",
+    imageUrl: "/assets/media/paint_with_your_mind_by_travis_weerts.jpg",
+    services: "AI Sentiment analysis, Digital Art, UI/UX, Innovation",
+    link: "https://medium.com/@travisaweerts/visualising-emotions-using-a-i-to-painting-with-your-mind-f3d6896589df",
+    notes:
+      "Check out the medium link for a deep dive on this project. It originally started in 2022 for Murdoch University, but it's continually evolving.<br /><br />To play with it: <br /><a href='https://paint.travis.work/canvas/scitech-october-2026' class='underline'>Start painting</a>",
+    date: "Oct 2026",
+    client: "Murdoch University + SciTech",
+    agency: "Wunderman Thompson",
+  },
+  {
     label: "Hunter Markets",
     year: "2026",
     videoUrl: "/assets/media/huntermarkets.mp4",
@@ -244,18 +256,7 @@ export const projects = [
     notes:
       "Want to see how new floors, blinds or lights will actually look in your space—before you hit “buy”? My mate, Marcus, and I made that a reality. Jump on our beta list at <a href='https://trylooksee.com' class='underline'>trylooksee.com</a> and get early access to LookSee. First in, first styled.",
   },
-  {
-    label: "Paint with your mind",
-    year: "2022",
-    imageUrl: "/assets/media/paint_with_your_mind_by_travis_weerts.jpg",
-    services: "AI Sentiment analysis, Digital Art, UI/UX, Innovation",
-    link: "https://medium.com/@travisaweerts/visualising-emotions-using-a-i-to-painting-with-your-mind-f3d6896589df",
-    notes:
-      "Check out the medium link for a deep dive on this project. <br /><br />For a demo checkout the link here: <br /><a href='https://paint.travis.work/canvas/scitech-october-2026' class='underline'>Demo link</a>",
-    date: "Sometime in 2022ish?",
-    client: "Murdoch University",
-    agency: "Wunderman Thompson",
-  },
+
   // {
   //   label: "Udio Systems",
   //   year: "2025",
