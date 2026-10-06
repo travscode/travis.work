@@ -251,7 +251,7 @@ export const projects = [
     services: "AI Sentiment analysis, Digital Art, UI/UX, Innovation",
     link: "https://medium.com/@travisaweerts/visualising-emotions-using-a-i-to-painting-with-your-mind-f3d6896589df",
     notes:
-      "Check out the medium link for a deep dive on this project. <br /><br />For a demo checkout the link here: <br /><a href='https://howyougoing.travis.work' class='underline'>Demo link</a>",
+      "Check out the medium link for a deep dive on this project. <br /><br />For a demo checkout the link here: <br /><a href='https://paint.travis.work/canvas/scitech-october-2026' class='underline'>Demo link</a>",
     date: "Sometime in 2022ish?",
     client: "Murdoch University",
     agency: "Wunderman Thompson",
