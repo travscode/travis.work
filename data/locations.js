@@ -13,7 +13,7 @@ export const locations = [
     name: "Perth CBD & West Perth",
     short: "Perth CBD",
     group: "Perth",
-    metaTitle: "Web Designer Perth CBD & West Perth | Websites, Apps & Branding",
+    metaTitle: "Web Designer Perth CBD & West Perth | Websites & Branding",
     metaDescription:
       "Freelance web designer and developer for businesses in the Perth CBD, West Perth, Northbridge and Leederville. Websites, branding, apps and SEO, with fixed quotes.",
     h1: "Web design and development for the Perth CBD and West Perth.",
@@ -35,7 +35,7 @@ export const locations = [
     name: "Perth's Western Suburbs",
     short: "Western Suburbs",
     group: "Perth",
-    metaTitle: "Web Designer Western Suburbs Perth | Subiaco, Claremont, Nedlands, Cottesloe",
+    metaTitle: "Web Designer Western Suburbs Perth | Subiaco, Claremont",
     metaDescription:
       "Web design, branding and SEO for businesses in Subiaco, Claremont, Nedlands, Cottesloe and Perth's western suburbs. Award-winning work, local and personal.",
     h1: "Web design for Subiaco, Claremont, Nedlands and the western suburbs.",
@@ -57,7 +57,7 @@ export const locations = [
     name: "The Perth Hills",
     short: "Perth Hills",
     group: "Perth",
-    metaTitle: "Web Designer Perth Hills | Kalamunda, Mundaring, Darlington & Roleystone",
+    metaTitle: "Web Designer Perth Hills | Kalamunda, Mundaring & Darlington",
     metaDescription:
       "Local web designer for the Perth Hills: Kalamunda, Mundaring, Darlington, Lesmurdie, Glen Forrest and Roleystone. Websites, branding, print and SEO for Hills businesses.",
     h1: "Web design for businesses in the Perth Hills.",
@@ -101,7 +101,7 @@ export const locations = [
     name: "Perth's Northern Suburbs",
     short: "Northern Suburbs",
     group: "Perth",
-    metaTitle: "Web Designer Joondalup & Northern Suburbs Perth | Scarborough, Wanneroo",
+    metaTitle: "Web Designer Joondalup & Northern Suburbs Perth WA",
     metaDescription:
       "Web design, SEO and branding for businesses in Joondalup, Wanneroo, Scarborough, Hillarys, Osborne Park and Perth's northern suburbs. Fixed quotes, monthly payments.",
     h1: "Web design for Joondalup, Scarborough and the northern suburbs.",
@@ -123,7 +123,7 @@ export const locations = [
     name: "Perth's Southern Suburbs",
     short: "Southern Suburbs",
     group: "Perth",
-    metaTitle: "Web Designer Southern Suburbs Perth | Victoria Park, Canning Vale, Applecross",
+    metaTitle: "Web Designer Southern Suburbs Perth | Victoria Park & Applecross",
     metaDescription:
       "Websites, branding and SEO for businesses in Victoria Park, South Perth, Applecross, Canning Vale, Murdoch and Perth's southern suburbs.",
     h1: "Web design for Victoria Park, South Perth and the southern suburbs.",
@@ -145,7 +145,7 @@ export const locations = [
     name: "Midland & the Swan Valley",
     short: "Midland & Swan Valley",
     group: "Perth",
-    metaTitle: "Web Designer Midland & Swan Valley | Websites for Wineries & Local Business",
+    metaTitle: "Web Designer Midland & Swan Valley | Wineries & Local Business",
     metaDescription:
       "Web design and branding for Midland, Guildford, Ellenbrook and Swan Valley businesses, including wineries, breweries and tourism. Award-winning, local and affordable.",
     h1: "Web design for Midland, Guildford and the Swan Valley.",
@@ -191,7 +191,7 @@ export const locations = [
     name: "Margaret River & the South West",
     short: "Margaret River",
     group: "Western Australia",
-    metaTitle: "Web Designer Margaret River & South West WA | Wine, Tourism & Hospitality",
+    metaTitle: "Web Designer Margaret River & South West WA",
     metaDescription:
       "Websites and branding for Margaret River, Dunsborough, Busselton and South West WA businesses: wineries, breweries, tourism and hospitality.",
     h1: "Web design and branding for Margaret River and the South West.",
@@ -213,7 +213,7 @@ export const locations = [
     name: "Albany, Denmark & the Great Southern",
     short: "Great Southern",
     group: "Western Australia",
-    metaTitle: "Web Designer Albany & Denmark WA | Great Southern Websites & Branding",
+    metaTitle: "Web Designer Albany & Denmark WA | Great Southern",
     metaDescription:
       "Web design, branding and packaging for businesses in Albany, Denmark, Mount Barker and the Great Southern. Award-winning, remote-friendly and personal.",
     h1: "Web design and branding for Albany, Denmark and the Great Southern.",
@@ -237,7 +237,7 @@ export const locations = [
     name: "Melbourne",
     short: "Melbourne",
     group: "Australia",
-    metaTitle: "Freelance Web & App Developer for Melbourne Businesses | Travis Weerts",
+    metaTitle: "Freelance Web & App Developer for Melbourne Businesses",
     metaDescription:
       "Freelance web designer and app developer working with Melbourne businesses and startups. Behind work for Hunter Markets, Melbourne Airport and the Australian Open.",
     h1: "Web and app development for Melbourne businesses and startups.",
@@ -259,7 +259,7 @@ export const locations = [
     name: "Sydney",
     short: "Sydney",
     group: "Australia",
-    metaTitle: "Freelance Web Designer & App Developer for Sydney Startups | Travis Weerts",
+    metaTitle: "Freelance Web & App Developer for Sydney Startups",
     metaDescription:
       "Remote freelance web designer, app and AI developer for Sydney startups and businesses. Senior, award-winning work without Sydney agency rates.",
     h1: "Web, app and AI development for Sydney startups and businesses.",
@@ -281,7 +281,7 @@ export const locations = [
     name: "Brisbane",
     short: "Brisbane",
     group: "Australia",
-    metaTitle: "Freelance Web Developer for Brisbane Businesses | Travis Weerts",
+    metaTitle: "Freelance Web Developer for Brisbane Businesses",
     metaDescription:
       "Freelance web designer and developer working with Brisbane businesses. Helped build the Brisbane 2032 website with VML. Websites, apps and branding, remote-friendly.",
     h1: "Web design and development for Brisbane businesses.",
@@ -303,7 +303,7 @@ export const locations = [
     name: "The Gold Coast",
     short: "Gold Coast",
     group: "Australia",
-    metaTitle: "Freelance Web Designer for Gold Coast Businesses | Travis Weerts",
+    metaTitle: "Freelance Web Designer for Gold Coast Businesses",
     metaDescription:
       "Remote freelance web designer for Gold Coast hospitality, tourism and lifestyle brands. Built the Wendy's Australia launch website. Websites, branding and SEO.",
     h1: "Web design for Gold Coast hospitality, tourism and lifestyle brands.",
@@ -325,7 +325,7 @@ export const locations = [
     name: "Adelaide & the Barossa",
     short: "Adelaide",
     group: "Australia",
-    metaTitle: "Freelance Web Designer for Adelaide & Barossa Businesses | Travis Weerts",
+    metaTitle: "Freelance Web Designer for Adelaide & the Barossa",
     metaDescription:
       "Remote freelance web designer and brand designer for Adelaide, Barossa and South Australian businesses, including wineries. Websites, branding and packaging.",
     h1: "Web design and branding for Adelaide and the Barossa.",

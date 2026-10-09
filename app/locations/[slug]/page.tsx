@@ -5,7 +5,7 @@ import { locations, getLocation } from "@/data/locations";
 import { getService, priceLabel } from "@/data/services";
 import { projects } from "@/data/projects";
 import { projectHref } from "@/lib/slug";
-import { SITE_URL, OG_IMAGE, BUSINESS_ID, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { SITE_URL, BUSINESS_ID, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: l.metaTitle },
     description: l.metaDescription,
     alternates: { canonical: url },
-    openGraph: { title: l.metaTitle, description: l.metaDescription, url, images: [OG_IMAGE], siteName: "Travis Weerts", locale: "en_AU", type: "website" },
-    twitter: { card: "summary_large_image", title: l.metaTitle, description: l.metaDescription, images: [OG_IMAGE] },
+    openGraph: { title: l.metaTitle, description: l.metaDescription, url, siteName: "Travis Weerts", locale: "en_AU", type: "website" },
+    twitter: { card: "summary_large_image", title: l.metaTitle, description: l.metaDescription },
   };
 }
 

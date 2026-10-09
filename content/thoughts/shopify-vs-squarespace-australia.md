@@ -1,5 +1,6 @@
 ---
 title: "Shopify vs Squarespace for Australian Small Businesses: An Honest Comparison"
+seoTitle: "Shopify vs Squarespace for Australian Small Business"
 description: "Should you use Shopify or Squarespace? An honest comparison for Australian small businesses, plus when WooCommerce, Webflow or Framer make more sense."
 date: "2026-10-09"
 tags: ["shopify", "squarespace", "ecommerce", "small business", "platforms"]

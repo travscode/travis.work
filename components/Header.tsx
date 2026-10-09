@@ -62,10 +62,10 @@ const Header: FC<HeaderProps> = ({ variant = "dark" }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: EASE_OUT }}
         className={cn(
-          "sticky top-0 md:fixed z-[99] w-full backdrop-blur py-4 px-4 pr-4 border-b transition-colors duration-500",
+          "sticky top-0 md:fixed z-[99] w-full py-4 px-4 pr-4 border-b transition-colors duration-500",
           isLight && !isMenuOpen
             ? "bg-tw-white/80 text-tw-black border-tw-black/10"
-            : "bg-tw-black/95 supports-[backdrop-filter]:bg-tw-black/80 text-tw-white border-tw-grey-dark shadow-2xl",
+            : "bg-tw-black text-tw-white border-tw-grey-dark shadow-2xl",
         )}
       >
         <nav className="mx-auto flex flex-row justify-between items-center">

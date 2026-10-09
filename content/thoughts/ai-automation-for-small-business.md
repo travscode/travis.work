@@ -1,5 +1,6 @@
 ---
 title: "AI Automation for Small Businesses: Practical Wins That Actually Pay Off"
+seoTitle: "AI Automation for Small Business: Practical Wins"
 description: "Practical, affordable ways Australian small businesses are using AI automation and chatbots today, and how to avoid expensive AI projects that go nowhere."
 date: "2026-10-09"
 tags: ["ai", "automation", "chatbots", "small business"]

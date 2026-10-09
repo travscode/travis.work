@@ -1,5 +1,6 @@
 ---
 title: "AI SEO in Perth WA: What GEO Is and Whether Your Business Needs It"
+seoTitle: "AI SEO in Perth WA: What GEO Is & Do You Need It?"
 description: "GEO, AEO, AI SEO: what the new acronyms mean, how they differ from regular SEO, and whether a Perth small business should invest in them yet."
 date: "2026-10-09"
 tags: ["geo", "aeo", "ai search", "seo", "perth"]

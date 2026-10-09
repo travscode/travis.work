@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import { getAllServices } from "@/data/services";
 import ContactExperience from "@/components/contact/ContactExperience";
-import { SITE_URL, OG_IMAGE, BUSINESS_ID, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { SITE_URL, BUSINESS_ID, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 
 const title = "Contact Travis Weerts | Web Designer & Developer Perth";
 const description =
-  "Start a project with Travis Weerts — award-winning web designer, app developer and AI creative in Perth. Tell me about your idea and I'll reply personally within one business day.";
+  "Start a project with Travis Weerts, award-winning web designer and app developer in Perth WA. Tell me your idea and I'll reply personally within a day.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -16,11 +16,10 @@ export const metadata: Metadata = {
     description,
     url: `${SITE_URL}/contact`,
     siteName: "Travis Weerts",
-    images: [OG_IMAGE],
     locale: "en_AU",
     type: "website",
   },
-  twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE] },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function ContactPage() {

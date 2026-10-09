@@ -1,5 +1,6 @@
 ---
 title: "How Much Does a Logo and Branding Cost in Australia?"
+seoTitle: "How Much Does a Logo & Branding Cost in Australia?"
 description: "What a logo and brand identity cost in Australia in 2026, from DIY and marketplaces to freelance designers and agencies, and what you get at each level."
 date: "2026-10-09"
 tags: ["branding", "logo design", "pricing", "small business"]

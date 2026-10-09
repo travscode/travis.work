@@ -1,5 +1,6 @@
 ---
 title: "Freelancer or Agency? How to Choose Who Builds Your Website"
+seoTitle: "Freelancer or Agency? Choosing Who Builds Your Website"
 description: "An honest look at hiring a freelance web designer versus an agency: costs, risks, quality and how to choose, from someone who has done both."
 date: "2026-10-09"
 tags: ["web design", "freelance", "agency", "small business"]

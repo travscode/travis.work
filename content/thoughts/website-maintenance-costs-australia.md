@@ -1,5 +1,6 @@
 ---
 title: "Website Maintenance Costs in Australia: What You Should Actually Pay Each Year"
+seoTitle: "Website Maintenance Costs in Australia (2026 Guide)"
 description: "What it really costs to run and maintain a small business website in Australia each year: domains, hosting, updates, security and support."
 date: "2026-10-09"
 tags: ["web design", "maintenance", "pricing", "small business"]

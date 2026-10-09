@@ -1,5 +1,6 @@
 ---
 title: "How to Get Your Business Recommended by ChatGPT (A Guide for Australian Small Businesses)"
+seoTitle: "How to Get Your Business Recommended by ChatGPT"
 description: "A practical guide to showing up in ChatGPT, Gemini, Perplexity and Google AI Overviews, written for Australian small businesses."
 date: "2026-10-09"
 tags: ["geo", "ai search", "chatgpt", "seo", "small business"]

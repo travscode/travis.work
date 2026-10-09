@@ -14,6 +14,7 @@ const DIR = path.join(process.cwd(), "content", "thoughts");
 export interface PostMeta {
   slug: string;
   title: string;
+  seoTitle?: string;
   description: string;
   date: string;
   tags: string[];
@@ -43,6 +44,7 @@ function meta(file: string, data: Record<string, unknown>, content: string): Pos
   return {
     slug: file.replace(/\.md$/, ""),
     title: String(data.title || file),
+    seoTitle: data.seoTitle ? String(data.seoTitle) : undefined,
     description: String(data.description || ""),
     date: String(data.date || ""),
     tags: Array.isArray(data.tags) ? (data.tags as string[]) : [],

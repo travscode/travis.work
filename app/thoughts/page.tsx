@@ -3,9 +3,9 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import SiteFooter from "@/components/services/SiteFooter";
 import { getPosts } from "@/lib/thoughts";
-import { SITE_URL, OG_IMAGE, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { SITE_URL, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 
-const title = "Thoughts | Web Design, AI & Creative Tech Articles by Travis Weerts";
+const title = "Thoughts | Web Design, SEO & AI Articles by Travis Weerts";
 const description =
   "Articles from Perth designer and developer Travis Weerts on web design, SEO, AI search, app development, creative technology and running a small business online.";
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: `${SITE_URL}/thoughts` },
-  openGraph: { title, description, url: `${SITE_URL}/thoughts`, images: [OG_IMAGE], siteName: "Travis Weerts", locale: "en_AU", type: "website" },
+  openGraph: { title, description, url: `${SITE_URL}/thoughts`, siteName: "Travis Weerts", locale: "en_AU", type: "website" },
 };
 
 const fmt = (d: string) =>

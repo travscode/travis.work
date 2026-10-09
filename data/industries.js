@@ -7,9 +7,9 @@ export const industries = [
     name: "Websites for Tradies",
     short: "tradies",
     group: "Industries",
-    metaTitle: "Websites for Tradies Perth WA & Australia | Builders, Electricians, Plumbers",
+    metaTitle: "Websites for Tradies | Perth WA & Australia-Wide",
     metaDescription:
-      "Affordable website design for tradies in Perth WA and Australia: builders, electricians, plumbers, landscapers and cleaners. Fast, mobile-first sites that make the phone ring.",
+      "Affordable websites for tradies in Perth WA and Australia: builders, electricians, plumbers and landscapers. Fast, mobile-first sites that make the phone ring.",
     h1: "Websites for tradies that make the phone ring.",
     intro:
       "You're on the tools all day, not writing website copy. I build fast, mobile-first websites for builders, electricians, plumbers, landscapers and cleaners that show what you do, where you work and why people should call you, then help you get found on Google.",
@@ -32,9 +32,9 @@ export const industries = [
     name: "Websites for Psychologists & Allied Health",
     short: "allied health",
     group: "Industries",
-    metaTitle: "Website Design for Psychologists & Allied Health | Perth WA & Australia",
+    metaTitle: "Website Design for Psychologists & Allied Health | Australia",
     metaDescription:
-      "Calm, trustworthy website design for psychologists, physiotherapists, dietitians and allied health practices across Australia. Online booking, clear services and local SEO.",
+      "Calm, trustworthy websites for psychologists, physios, dietitians and allied health practices across Australia. Online booking, clear services, local SEO.",
     h1: "Calm, trustworthy websites for psychologists and allied health.",
     intro:
       "When someone is looking for a psychologist, physio or dietitian, they're often anxious, in pain or unsure where to start. Your website should feel like a deep breath: clear, warm and easy to book from. That's what I design.",
@@ -56,7 +56,7 @@ export const industries = [
     name: "Winery Website & Label Design",
     short: "wineries",
     group: "Industries",
-    metaTitle: "Winery Website Design & Wine Label Branding | Perth WA & Australia",
+    metaTitle: "Winery Website Design & Wine Label Branding | Australia",
     metaDescription:
       "Winery website design, wine label branding and online wine shops for Australian wineries. Behind brands for Fervor, Skigh Wine's Coda range and Cirillo Estate.",
     h1: "Websites, labels and brands for wineries.",

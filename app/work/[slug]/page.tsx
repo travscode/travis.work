@@ -22,14 +22,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { project } = found;
   const details = getDetails(project);
   const description = (details?.intro || plain(project.notes || project.other)).slice(0, 158);
-  const title = `${project.label}${project.client && !project.label.includes(project.client) ? ` for ${project.client}` : ""} | Travis Weerts`;
+  const overlaps = project.client?.split(/\W+/).some((w) => w.length > 3 && project.label.includes(w));
+  const base = `${project.label}${project.client && !overlaps ? ` for ${project.client}` : ""}`;
+  const title = base.length > 48 ? base : `${base} | Travis Weerts`;
   const url = `${SITE_URL}/work/${slug}`;
   return {
     title: { absolute: title },
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, images: [`${SITE_URL}${project.imageUrl}`], type: "article", siteName: "Travis Weerts", locale: "en_AU" },
-    twitter: { card: "summary_large_image", title, description, images: [`${SITE_URL}${project.imageUrl}`] },
+    openGraph: { title, description, url, type: "article", siteName: "Travis Weerts", locale: "en_AU" },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 

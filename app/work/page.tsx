@@ -2,17 +2,17 @@ import { Metadata } from "next";
 import WorkIndex from "@/components/work/WorkIndex";
 import { getWork, getDetails } from "@/lib/work";
 import { projectSlug } from "@/lib/slug";
-import { SITE_URL, OG_IMAGE, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { SITE_URL, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 
 const title = "Work | Websites, Apps, Brands & AI by Travis Weerts, Perth";
 const description =
-  "Selected projects by Perth designer and developer Travis Weerts: apps featured by Apple, websites for the UN, Olympics and Wendy's, and brands for local wineries, bars and startups.";
+  "Projects by Perth designer and developer Travis Weerts: apps featured by Apple, sites for the UN, the Olympics and Wendy's, and brands for wineries and startups.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: `${SITE_URL}/work` },
-  openGraph: { title, description, url: `${SITE_URL}/work`, images: [OG_IMAGE], siteName: "Travis Weerts", locale: "en_AU", type: "website" },
+  openGraph: { title, description, url: `${SITE_URL}/work`, siteName: "Travis Weerts", locale: "en_AU", type: "website" },
 };
 
 export default function WorkPage() {

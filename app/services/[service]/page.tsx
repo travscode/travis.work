@@ -6,7 +6,6 @@ import { projectHref } from "@/lib/slug";
 import ServicePage from "@/components/services/ServicePage";
 import {
   SITE_URL,
-  OG_IMAGE,
   PERSON_ID,
   BUSINESS_ID,
   breadcrumbJsonLd,
@@ -50,13 +49,6 @@ export async function generateMetadata({
       description: service.metaDescription,
       url,
       siteName: "Travis Weerts",
-      images: [
-        {
-          url: `${SITE_URL}/assets/media/${service.images.square}`,
-          alt: `${service.title} by Travis Weerts`,
-        },
-        { url: OG_IMAGE, alt: "Travis Weerts" },
-      ],
       locale: "en_AU",
       type: "website",
     },
@@ -64,7 +56,6 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: service.metaTitle,
       description: service.metaDescription,
-      images: [`${SITE_URL}/assets/media/${service.images.square}`],
       creator: "@travisweerts",
     },
   };

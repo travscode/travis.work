@@ -43,6 +43,13 @@ export const metadata: Metadata = {
   creator: "Travis Weerts",
   publisher: "Travis Weerts",
   formatDetection: { telephone: false },
+  // Set these in your hosting env to verify ownership with Google / Bing
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    other: process.env.BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
+      : undefined,
+  },
   robots: {
     index: true,
     follow: true,
@@ -57,7 +64,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteTitle,
     description: descr,
-    images: [{ url: OG_IMAGE, alt: "Travis Weerts — designer & developer, Perth" }],
     type: "website",
     url: SITE_URL,
     siteName: "Travis Weerts",
@@ -66,7 +72,6 @@ export const metadata: Metadata = {
   twitter: {
     title: siteTitle,
     description: descr,
-    images: [OG_IMAGE],
     card: "summary_large_image",
     creator: "@travisweerts",
     site: "@travisweerts",

@@ -3,9 +3,9 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import SiteFooter from "@/components/services/SiteFooter";
 import { locations } from "@/data/locations";
-import { SITE_URL, OG_IMAGE, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { SITE_URL, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 
-const title = "Areas I Work In | Perth, WA & Australia-Wide Web Design | Travis Weerts";
+const title = "Areas I Work In | Perth WA & Australia-Wide Web Design";
 const description =
   "Freelance web design, app development, branding and SEO across Perth's suburbs, regional WA and Australia: Melbourne, Sydney, Brisbane, the Gold Coast and Adelaide.";
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: `${SITE_URL}/locations` },
-  openGraph: { title, description, url: `${SITE_URL}/locations`, images: [OG_IMAGE], siteName: "Travis Weerts", locale: "en_AU", type: "website" },
+  openGraph: { title, description, url: `${SITE_URL}/locations`, siteName: "Travis Weerts", locale: "en_AU", type: "website" },
 };
 
 export default function LocationsPage() {

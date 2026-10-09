@@ -3,7 +3,6 @@ import { getAllServices, priceLabel } from "@/data/services";
 import ServicesIndex from "@/components/services/ServicesIndex";
 import {
   SITE_URL,
-  OG_IMAGE,
   BUSINESS_ID,
   breadcrumbJsonLd,
   JsonLd,
@@ -24,7 +23,6 @@ export const metadata: Metadata = {
     description,
     url: `${SITE_URL}/services`,
     siteName: "Travis Weerts",
-    images: [OG_IMAGE],
     locale: "en_AU",
     type: "website",
   },
@@ -32,7 +30,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: [OG_IMAGE],
   },
 };
 

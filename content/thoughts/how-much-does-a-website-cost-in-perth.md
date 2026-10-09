@@ -1,5 +1,6 @@
 ---
 title: "How Much Does a Website Cost in Perth? Real 2026 Prices From a Local Designer"
+seoTitle: "How Much Does a Website Cost in Perth? 2026 Prices"
 description: "What a website really costs in Perth WA in 2026, from DIY builders to custom builds, plus monthly running costs and how to avoid overpaying."
 date: "2026-10-09"
 tags: ["web design", "perth", "pricing", "small business"]

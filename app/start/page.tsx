@@ -1,18 +1,18 @@
 import { Metadata } from "next";
 import StartPage from "@/components/start/StartPage";
 import { START_FAQS } from "@/data/start";
-import { SITE_URL, OG_IMAGE, BUSINESS_ID, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
+import { SITE_URL, BUSINESS_ID, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 
-const title = "Affordable Web Design for Small Business & Startups Perth | Travis Weerts";
+const title = "Affordable Web Design for Small Business & Startups | Perth WA";
 const description =
-  "Affordable websites, branding and SEO for Perth small businesses and indie startups. Award-winning work without the agency price tag. Fixed quotes, monthly payments, free 30-min chat.";
+  "Affordable websites, branding and SEO for Perth small businesses and indie startups. Award-winning work, fixed quotes, monthly payments and a free chat.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
   description,
   alternates: { canonical: `${SITE_URL}/start` },
-  openGraph: { title, description, url: `${SITE_URL}/start`, images: [OG_IMAGE], siteName: "Travis Weerts", locale: "en_AU", type: "website" },
-  twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE] },
+  openGraph: { title, description, url: `${SITE_URL}/start`, siteName: "Travis Weerts", locale: "en_AU", type: "website" },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function Page() {

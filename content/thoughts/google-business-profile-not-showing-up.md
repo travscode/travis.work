@@ -1,5 +1,6 @@
 ---
 title: "Why Your Google Business Profile Isn't Showing Up (and How to Fix It)"
+seoTitle: "Google Business Profile Not Showing Up? How to Fix It"
 description: "Google Business Profile not showing in search or Maps? The common reasons it happens to Australian businesses and the practical fixes."
 date: "2026-10-09"
 tags: ["seo", "local seo", "google business profile", "small business"]

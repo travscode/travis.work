@@ -338,7 +338,7 @@ export const services = {
     showInServices: true,
     visual: "answer",
     metaTitle:
-      "GEO Perth WA | Generative Engine Optimisation for ChatGPT & AI Search",
+      "GEO Perth WA | AI Search Optimisation for ChatGPT & Google",
     metaDescription:
       "Get recommended by ChatGPT, Gemini, Perplexity and Google AI Overviews. Generative Engine Optimisation (GEO) for Perth businesses from a designer who builds with AI.",
     h1: "Get recommended by ChatGPT, not just found on Google.",

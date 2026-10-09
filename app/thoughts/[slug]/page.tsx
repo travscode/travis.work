@@ -23,23 +23,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost(slug);
   if (!post) return { title: "Not found" };
   const url = `${SITE_URL}/thoughts/${slug}`;
-  const image = absolute(post.cover) || OG_IMAGE;
   return {
-    title: { absolute: `${post.title} | Travis Weerts` },
+    title: { absolute: post.seoTitle || (post.title.length > 48 ? post.title : `${post.title} | Travis Weerts`) },
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
-      title: post.title,
+      title: post.seoTitle || post.title,
       description: post.description,
       url,
       type: "article",
       publishedTime: post.date,
       authors: ["Travis Weerts"],
-      images: [image],
       siteName: "Travis Weerts",
       locale: "en_AU",
     },
-    twitter: { card: "summary_large_image", title: post.title, description: post.description, images: [image] },
+    twitter: { card: "summary_large_image", title: post.title, description: post.description },
   };
 }
 

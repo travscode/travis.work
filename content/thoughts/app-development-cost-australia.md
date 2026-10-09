@@ -1,5 +1,6 @@
 ---
 title: "How Much Does It Cost to Build an App in Australia in 2026 (and What AI Changes)"
+seoTitle: "App Development Cost in Australia (2026 Guide)"
 description: "Realistic app development costs in Australia in 2026, from MVPs to full products, what drives the price, and how AI tools are changing the maths."
 date: "2026-10-09"
 tags: ["app development", "startups", "pricing", "ai"]
