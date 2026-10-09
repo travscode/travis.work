@@ -34,7 +34,8 @@ export const projects = [
     label: "Paint with your mind",
     details: "work/paint-with-your-mind.md",
     year: "2026",
-    imageUrl:
+    imageUrl: "/assets/media/paint_with_your_mind_by_travis_weerts.jpg",
+    videoUrl:
       "/assets/media/paint_with_your_mind_by_travis_weerts_murdoch_university.mp4",
     services: "AI Sentiment analysis, Digital Art, UI/UX, Innovation",
     link: "https://medium.com/@travisaweerts/visualising-emotions-using-a-i-to-painting-with-your-mind-f3d6896589df",
