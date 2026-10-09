@@ -4,7 +4,7 @@ intro: The Raveonettes are a Danish duo signed to Columbia Records in the 2000s.
 stats:
   - value: 2
     label: albums released on Columbia Records
-    source: https://en.wikipedia.org/wiki/The_Raveonettes
+    source: "https://en.wikipedia.org/wiki/The_Raveonettes"
 highlights:
   - Web design and development for Columbia Records
   - Built to promote an album release

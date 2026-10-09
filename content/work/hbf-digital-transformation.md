@@ -5,18 +5,18 @@ stats:
   - value: 1
     suffix: M+
     label: members using HBF's new digital channels
-    source: https://www.hbf.com.au/about-hbf/newsroom/hbf-completes-digital-transformation
+    source: "https://www.hbf.com.au/about-hbf/newsroom/hbf-completes-digital-transformation"
   - value: 80
     suffix: "%"
     label: of member interactions now happen digitally
-    source: https://www.hbf.com.au/about-hbf/newsroom/hbf-completes-digital-transformation
+    source: "https://www.hbf.com.au/about-hbf/newsroom/hbf-completes-digital-transformation"
   - value: 1941
     label: year HBF was founded
-    source: https://www.hbf.com.au/about-hbf/newsroom/hbf-completes-digital-transformation
+    source: "https://www.hbf.com.au/about-hbf/newsroom/hbf-completes-digital-transformation"
 quote:
   text: Being there for our members in the moments that matter.
   by: Dr Lachlan Henderson, CEO, HBF
-  source: https://www.hbf.com.au/about-hbf/newsroom/hbf-completes-digital-transformation
+  source: "https://www.hbf.com.au/about-hbf/newsroom/hbf-completes-digital-transformation"
 highlights:
   - Redesigned website and enhanced myHBF member portal
   - Front-of-house member experiences and back-of-house staff tools

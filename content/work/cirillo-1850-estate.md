@@ -4,15 +4,15 @@ intro: Cirillo Estate in the Barossa Valley looks after Grenache and Semillon vi
 stats:
   - value: 1850
     label: year the ancestor vines were planted, per the label
-    source: https://www.differentdrop.com/products/2018-cirillo-1850-ancestor-vine-grenache
+    source: "https://www.differentdrop.com/products/2018-cirillo-1850-ancestor-vine-grenache"
   - value: 99
     suffix: "+"
     label: points from Angus Hughson for the 1850 Ancestor Vine Grenache
-    source: https://www.differentdrop.com/products/2018-cirillo-1850-ancestor-vine-grenache
+    source: "https://www.differentdrop.com/products/2018-cirillo-1850-ancestor-vine-grenache"
 quote:
   text: As good as Barossa Grenache gets.
   by: Angus Hughson
-  source: https://www.differentdrop.com/products/2018-cirillo-1850-ancestor-vine-grenache
+  source: "https://www.differentdrop.com/products/2018-cirillo-1850-ancestor-vine-grenache"
 highlights:
   - Brand-led in-store display design
   - Functional for retailers, beautiful for shoppers

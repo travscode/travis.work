@@ -5,10 +5,10 @@ stats:
   - value: 5
     prefix: "Top "
     label: finalist at the UN/ITU AI for Good Innovation Factory Australia (2025)
-    source: https://aiforgood.itu.int/event/ai-for-good-innovation-factory-australia/
+    source: "https://aiforgood.itu.int/event/ai-for-good-innovation-factory-australia/"
   - value: 22
     label: applicants in that first Australian chapter
-    source: https://startupnews.com.au/event/ai-for-good-innovation-factory-australia/
+    source: "https://startupnews.com.au/event/ai-for-good-innovation-factory-australia/"
 highlights:
   - Realistic spoken role-plays with AI voices
   - Scored against real test criteria

@@ -6,7 +6,7 @@ stats:
     label: Olympic and Paralympic Games, Brisbane
   - value: 4
     label: agencies in the VMLY&R-led consortium behind the Brisbane 2032 brand
-    source: https://www.adnews.com.au/news/vmlyandr-wins-brand-strategy-bid-for-2032-brisbane-olympics
+    source: "https://www.adnews.com.au/news/vmlyandr-wins-brand-strategy-bid-for-2032-brisbane-olympics"
 highlights:
   - Front-end development in Next.js
   - Built to the standards of a global Olympic platform

@@ -4,11 +4,11 @@ intro: BOOBOOK lives in the former Gangemi's on Hay Street in West Perth, believ
 stats:
   - value: 1911
     label: year Gangemi's is believed to have opened
-    source: https://perthisok.com/eat-drink/west-perth-bottle-shop-gangemis-has-transformed-into-euro-wine-bar-boobook/
+    source: "https://perthisok.com/eat-drink/west-perth-bottle-shop-gangemis-has-transformed-into-euro-wine-bar-boobook/"
 quote:
   text: Perched in the window watching the world go by.
   by: Perth Is OK
-  source: https://perthisok.com/eat-drink/west-perth-bottle-shop-gangemis-has-transformed-into-euro-wine-bar-boobook/
+  source: "https://perthisok.com/eat-drink/west-perth-bottle-shop-gangemis-has-transformed-into-euro-wine-bar-boobook/"
 highlights:
   - Brand consulting and visual identity
   - A digital experience for discovering the world's best bottles

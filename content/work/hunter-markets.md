@@ -7,13 +7,13 @@ stats:
     label: in Shopping on the Australian App Store at launch
   - value: 2015
     label: the year Hunter Markets started as a weekend market in Mentone, Melbourne
-    source: https://www.broadsheet.com.au/melbourne/fashion/article/fast-fashion-slows-down-hunter-markets
+    source: "https://www.broadsheet.com.au/melbourne/fashion/article/fast-fashion-slows-down-hunter-markets"
   - value: 2
     label: platforms from one codebase, iOS and Android
 quote:
   text: Fast fashion slows down.
   by: Broadsheet on Hunter Markets
-  source: https://www.broadsheet.com.au/melbourne/fashion/article/fast-fashion-slows-down-hunter-markets
+  source: "https://www.broadsheet.com.au/melbourne/fashion/article/fast-fashion-slows-down-hunter-markets"
 highlights:
   - Social marketplace for buying and selling pre-loved fashion
   - Designed and built for iOS and Android

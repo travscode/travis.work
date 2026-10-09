@@ -4,14 +4,14 @@ intro: Skigh Wine is the Margaret River label of winemaker Skigh McManus. I led 
 stats:
   - value: 2016
     label: year Skigh Wine was founded
-    source: https://younggunofwine.com/winemaker/skigh-wine-skigh-mcmanus/
+    source: "https://younggunofwine.com/winemaker/skigh-wine-skigh-mcmanus/"
   - value: 3
     label: ranges in the Skigh family, Skigh, Coda and Strange Brew
-    source: https://younggunofwine.com/winemaker/skigh-wine-skigh-mcmanus/
+    source: "https://younggunofwine.com/winemaker/skigh-wine-skigh-mcmanus/"
 quote:
   text: The fresh and fruit-forward Coda range.
   by: Young Gun of Wine
-  source: https://younggunofwine.com/winemaker/skigh-wine-skigh-mcmanus/
+  source: "https://younggunofwine.com/winemaker/skigh-wine-skigh-mcmanus/"
 highlights:
   - Label redesign across the Coda range
   - Bold and refined, true to the original character

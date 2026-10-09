@@ -4,7 +4,7 @@ intro: For Melbourne Airport and Two-Eyed People, I built a real-time voice AI a
 quote:
   text: Kids treated it like magic. Adults started hesitant… then leaned in.
   by: Travis Weerts, "Are we talking to the walls now?"
-  source: https://medium.com/@travisaweerts/are-we-talking-to-the-walls-now-0fe158b442ea
+  source: "https://medium.com/@travisaweerts/are-we-talking-to-the-walls-now-0fe158b442ea"
 highlights:
   - Live, natural voice conversation for wayfinding and airport information
   - Phoneme lip-sync so the koala's mouth matched its words

@@ -4,7 +4,7 @@ intro: Space Collective is an architecture and interior design practice in Weste
 stats:
   - value: 17
     label: projects showcased on the new website
-    source: https://spacecollective.com.au/
+    source: "https://spacecollective.com.au/"
 highlights:
   - Brand identity and strategy
   - UI/UX and website design

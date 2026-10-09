@@ -5,18 +5,18 @@ stats:
   - value: 1.8
     suffix: B
     label: views worldwide
-    source: https://www.undp.org/press-releases/dinosaur-disrupts-cannes-lions-climate-action-message-dont-choose-extinction
+    source: "https://www.undp.org/press-releases/dinosaur-disrupts-cannes-lions-climate-action-message-dont-choose-extinction"
   - value: 170
     label: countries where UNDP offices activated the campaign
-    source: https://www.bandt.com.au/?p=1377958
+    source: "https://www.bandt.com.au/?p=1377958"
   - value: 60
     suffix: "+"
     label: languages the film was translated into
-    source: https://motivatevalmorgan.com/2022/05/17/undp-sawa-dont-choose-extinction-global-cinema-ad/
+    source: "https://motivatevalmorgan.com/2022/05/17/undp-sawa-dont-choose-extinction-global-cinema-ad/"
 quote:
   text: The largest possible target audience anyone could have.
   by: João Braga, CCO, Wunderman Thompson
-  source: https://www.bandt.com.au/?p=1377958
+  source: "https://www.bandt.com.au/?p=1377958"
 highlights:
   - Excuses visualised as asteroids looming over Earth
   - Each one opens into facts and actions people can take

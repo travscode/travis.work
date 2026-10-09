@@ -4,7 +4,7 @@ intro: Smilebooth creates interactive photo and video experiences for brand acti
 stats:
   - value: 9
     label: US cities Smilebooth now operates in
-    source: https://smilebooth.com
+    source: "https://smilebooth.com"
   - value: 4
     label: years building apps, sites, servers and event software (2010 to 2013)
 highlights:

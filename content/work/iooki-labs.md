@@ -4,10 +4,10 @@ intro: IOOKI Labs designs and builds next-generation experiences, from voice-dri
 stats:
   - value: 5
     label: finalists chosen from 22 applicants, with IOOKI among them, at the UN/ITU AI for Good Innovation Factory Australia (2025)
-    source: https://startupnews.com.au/event/ai-for-good-innovation-factory-australia/
+    source: "https://startupnews.com.au/event/ai-for-good-innovation-factory-australia/"
   - value: 3
     label: Australian cities with offices, Sydney, Melbourne and Perth
-    source: https://iooki.io
+    source: "https://iooki.io"
 highlights:
   - Products including Xingo, Vision, Bookmate and Playground
   - Voice AI, computer vision and agentic workflows

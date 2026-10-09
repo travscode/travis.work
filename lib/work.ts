@@ -57,7 +57,20 @@ export function getDetails(project: Project): ProjectDetails | null {
     if (!fs.existsSync(file)) return null;
     raw = fs.readFileSync(file, "utf8");
   }
-  const { data, content } = matter(raw);
+  // A typo in the frontmatter shouldn't take the whole build down: fall back
+  // to rendering the body without the extras and warn in the build log.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let data: Record<string, any> = {};
+  let content = raw;
+  try {
+    ({ data, content } = matter(raw));
+  } catch (e) {
+    console.warn(
+      `[work] Couldn't read the frontmatter for "${project.label}" (${project.details}). ` +
+        `Tip: wrap values containing ": " in quotes. ${(e as Error).message.split("\n")[0]}`,
+    );
+    content = raw.replace(/^---\n[\s\S]*?\n---\n?/, "");
+  }
   return {
     headline: data.headline,
     intro: data.intro,

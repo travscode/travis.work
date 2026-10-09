@@ -4,14 +4,14 @@ intro: Fervor is the label of Mike and Callum Garland in Denmark, WA. I created 
 stats:
   - value: 2021
     label: year Fervor was founded
-    source: https://winecompanion.com.au/wineries/western-australia/great-southern/fervor
+    source: "https://winecompanion.com.au/wineries/western-australia/great-southern/fervor"
   - value: 20
     suffix: " ha"
     label: of vineyard in the Great Southern
-    source: https://winecompanion.com.au/wineries/western-australia/great-southern/fervor
+    source: "https://winecompanion.com.au/wineries/western-australia/great-southern/fervor"
   - value: 6000
     label: dozen bottles a year, approximately
-    source: https://winecompanion.com.au/wineries/western-australia/great-southern/fervor
+    source: "https://winecompanion.com.au/wineries/western-australia/great-southern/fervor"
 highlights:
   - Product naming, identity and packaging from scratch
   - A brand that feels authentic, spirited and rooted in connection

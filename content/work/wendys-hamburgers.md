@@ -4,14 +4,14 @@ intro: While at VML, I built the Australian website for Wendy's Hamburgers to su
 stats:
   - value: 200
     label: Wendy's restaurants planned for Australia
-    source: https://www.wendys.com/blog/flynn-group-first-wendys-australia
+    source: "https://www.wendys.com/blog/flynn-group-first-wendys-australia"
   - value: 2025
     label: first restaurant opened, Surfers Paradise, January
-    source: https://www.wendys.com/blog/flynn-group-first-wendys-australia
+    source: "https://www.wendys.com/blog/flynn-group-first-wendys-australia"
 quote:
   text: We're proud to bring a fresh approach to the Australian food scene.
   by: Lauren Leahy, Flynn Group
-  source: https://www.wendys.com/blog/flynn-group-first-wendys-australia
+  source: "https://www.wendys.com/blog/flynn-group-first-wendys-australia"
 highlights:
   - Launch website for a global brand entering a new market
   - Built at VML

@@ -4,11 +4,11 @@ intro: DUET Property Group is a tech-enabled real estate agency in Perth's weste
 stats:
   - value: 2018
     label: year DUET was founded
-    source: https://p-fe-server-find-an-agent.domain.com.au/real-estate-agencies/duetpropertygroup-31822
+    source: "https://p-fe-server-find-an-agent.domain.com.au/real-estate-agencies/duetpropertygroup-31822"
 quote:
   text: A tech-enabled agency, changing the property industry one home at a time.
   by: DUET Property Group
-  source: https://duetproperty.com.au/
+  source: "https://duetproperty.com.au/"
 highlights:
   - Led UI/UX design
   - Listings organised by lifestyle area, from Claremont to Wembley

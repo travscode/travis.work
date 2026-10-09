@@ -4,15 +4,15 @@ intro: Back in 2005 I had the honour of designing and building the website for t
 stats:
   - value: 2003
     label: year the band started the foundation
-    source: https://www.makeyourselffoundation.org/about
+    source: "https://www.makeyourselffoundation.org/about"
   - value: 1
     prefix: "~$"
     suffix: M
     label: raised from Incubus-related items, per the band in 2008
-    source: https://www.nbcnews.com/id/wbna26793229
+    source: "https://www.nbcnews.com/id/wbna26793229"
   - value: 47
     label: partner organisations listed by the foundation
-    source: https://www.makeyourselffoundation.org/about
+    source: "https://www.makeyourselffoundation.org/about"
 highlights:
   - Website design and build
   - A home for the foundation's auctions, causes and updates
