@@ -337,3 +337,45 @@
   font-family: var(--font-object-bold);
   color: #111;
 }
+
+/* Articles */
+.prose-tw img {
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+}
+.prose-tw em {
+  font-style: italic;
+}
+.prose-tw p > em:only-child {
+  display: block;
+  font-size: 0.85rem;
+  color: rgb(17 17 17 / 0.55);
+  margin-top: -0.6em;
+}
+.prose-tw pre {
+  background: #111;
+  color: #e0d3bd;
+  padding: 1.2em;
+  border-radius: 16px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+.prose-tw ol {
+  list-style: decimal;
+  padding-left: 1.3em;
+}
+.prose-tw .embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #111;
+}
+.prose-tw .embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

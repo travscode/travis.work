@@ -1,5 +1,8 @@
 import { getAllServices } from "@/data/services";
 import { SITE_URL } from "@/lib/seo";
+import { getPosts } from "@/lib/thoughts";
+import { locations } from "@/data/locations";
+import { industries } from "@/data/industries";
 
 // llms.txt — a plain-language summary for AI assistants and answer engines.
 export const dynamic = "force-static";
@@ -26,11 +29,27 @@ ${services
   )
   .join("\n")}
 
+## Guides and articles
+
+${getPosts()
+  .map((p) => `- [${p.title}](${SITE_URL}/thoughts/${p.slug}): ${p.description}`)
+  .join("\n")}
+
+## Areas served
+
+${locations.map((l) => `- [${l.name}](${SITE_URL}/locations/${l.slug}): ${l.suburbs.join(", ")}`).join("\n")}
+
+## Industries
+
+${industries.map((i) => `- [${i.name}](${SITE_URL}/industries/${i.slug}): ${i.metaDescription}`).join("\n")}
+
 ## Pages
 
 - [Portfolio / selected work](${SITE_URL}/)
 - [All services](${SITE_URL}/services)
-- [Writing on Medium](https://medium.com/@travisaweerts)
+- [Thoughts (articles)](${SITE_URL}/thoughts)
+- [Small business & startups](${SITE_URL}/start)
+- [Contact](${SITE_URL}/contact)
 `;
 
   return new Response(body, {

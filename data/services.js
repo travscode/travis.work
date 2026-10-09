@@ -14,7 +14,7 @@ export const services = {
     tag: "Web Design",
     showInServices: true,
     visual: "browser",
-    metaTitle: "Web Design Perth | Award-Winning Web Designer, Perth Hills",
+    metaTitle: "Web Design Perth WA | Freelance, Affordable & Award-Winning",
     metaDescription:
       "Custom web design in Perth by an award-winning designer and developer. Fast, beautiful, SEO-ready websites that turn visitors into enquiries. Free 30-min chat.",
     h1: "Web design in Perth that actually brings in work.",
@@ -123,7 +123,7 @@ export const services = {
     tag: "Brand + Design",
     showInServices: true,
     visual: "grid",
-    metaTitle: "Branding Agency Perth | Logo & Brand Identity Design",
+    metaTitle: "Branding Agency Perth WA | Logo & Brand Identity Design",
     metaDescription:
       "Brand identity and logo design in Perth from an award-winning designer. Strategy, naming, visual identity and packaging that make people remember you.",
     h1: "Branding in Perth for people who refuse to blend in.",
@@ -228,7 +228,7 @@ export const services = {
     tag: "SEO",
     showInServices: true,
     visual: "search",
-    metaTitle: "SEO Perth | Local SEO Services That Get You Found on Google",
+    metaTitle: "SEO Perth WA | Local SEO Services That Get You Found on Google",
     metaDescription:
       "SEO services in Perth and the Perth Hills. Technical SEO, local SEO, content and Google Business Profile optimisation that turns searches into phone calls.",
     h1: "SEO in Perth that turns searches into phone calls.",
@@ -338,7 +338,7 @@ export const services = {
     showInServices: true,
     visual: "answer",
     metaTitle:
-      "GEO Perth | Generative Engine Optimisation for ChatGPT & AI Search",
+      "GEO Perth WA | Generative Engine Optimisation for ChatGPT & AI Search",
     metaDescription:
       "Get recommended by ChatGPT, Gemini, Perplexity and Google AI Overviews. Generative Engine Optimisation (GEO) for Perth businesses from a designer who builds with AI.",
     h1: "Get recommended by ChatGPT, not just found on Google.",
@@ -443,7 +443,7 @@ export const services = {
     tag: "App Design",
     showInServices: true,
     visual: "phone",
-    metaTitle: "App Design Perth | iOS & Android UI/UX Design",
+    metaTitle: "App Design Perth WA | iOS & Android UI/UX Design",
     metaDescription:
       "Mobile app design in Perth by a designer featured by Apple. Research-led iOS and Android UI/UX, prototypes and design systems people love to use.",
     h1: "App design in Perth, from a designer featured by Apple.",
@@ -548,7 +548,7 @@ export const services = {
     tag: "App Development",
     showInServices: true,
     visual: "flow",
-    metaTitle: "App Development Perth | iOS & Android App Developer",
+    metaTitle: "App Development Perth WA | iOS & Android App Developer",
     metaDescription:
       "iOS and Android app development in Perth. Cross-platform apps built fast and properly, from MVP to App Store launch, by a designer-developer featured by Apple.",
     h1: "App development in Perth, from idea to App Store.",
@@ -652,7 +652,7 @@ export const services = {
     tag: "AI Development",
     showInServices: true,
     visual: "neural",
-    metaTitle: "AI Development Perth | Custom AI Apps, Agents & Automation",
+    metaTitle: "AI Development Perth WA | Custom AI Apps, Agents & Automation",
     metaDescription:
       "Custom AI development in Perth. AI agents, chatbots, automation and generative AI experiences from a Top 5 Australian AI startup founder. Practical AI that ships.",
     h1: "AI development in Perth that's useful, not just clever.",
@@ -761,7 +761,7 @@ export const services = {
     tag: "UI/UX Design",
     showInServices: true,
     visual: "compose",
-    metaTitle: "UI/UX Design Perth | User Experience & Interface Designer",
+    metaTitle: "UI/UX Design Perth WA | User Experience & Interface Designer",
     metaDescription:
       "UI/UX design in Perth for websites, apps and digital products. Research, wireframes, prototypes and interfaces for brands like HBF, the UN and Wendy's.",
     h1: "UI/UX design in Perth that makes complicated feel simple.",
@@ -975,7 +975,7 @@ export const services = {
     tag: "WordPress",
     showInServices: true,
     visual: "browser",
-    metaTitle: "WordPress Developer Perth | Custom WordPress Websites",
+    metaTitle: "WordPress Developer Perth WA | Custom WordPress Websites",
     metaDescription:
       "Custom WordPress development in Perth. Fast, secure, easy-to-edit WordPress and WooCommerce websites built from scratch — no bloated themes.",
     h1: "WordPress development in Perth, minus the bloat.",
@@ -1086,7 +1086,7 @@ export const services = {
     group: "platform",
     showInServices: false,
     art: "structure",
-    metaTitle: "Shopify Developer Perth | Custom Shopify Stores & Themes",
+    metaTitle: "Shopify Developer Perth WA | Custom Shopify Stores & Themes",
     metaDescription:
       "Shopify developer in Perth building custom stores, themes and apps that sell. Store setup, theme design, migrations and speed fixes from an award-winning designer.",
     h1: "Shopify development in Perth for stores that actually sell.",
@@ -1132,7 +1132,7 @@ export const services = {
     group: "platform",
     showInServices: false,
     art: "layers",
-    metaTitle: "WooCommerce Developer Perth | WordPress E-commerce",
+    metaTitle: "WooCommerce Developer Perth WA | WordPress E-commerce",
     metaDescription:
       "WooCommerce developer in Perth. Custom WordPress online stores, payment and shipping setup, speed fixes and migrations. Own your store, keep your flexibility.",
     h1: "WooCommerce development in Perth, on a store you fully own.",
@@ -1177,7 +1177,7 @@ export const services = {
     group: "platform",
     showInServices: false,
     art: "system",
-    metaTitle: "Squarespace Designer Perth | Custom Squarespace Websites",
+    metaTitle: "Squarespace Designer Perth WA | Custom Squarespace Websites",
     metaDescription:
       "Squarespace designer in Perth. Custom Squarespace websites, redesigns and SEO for small businesses, creatives and studios that want something better than the template.",
     h1: "Squarespace design in Perth that doesn't look like a template.",
@@ -1222,7 +1222,7 @@ export const services = {
     group: "platform",
     showInServices: false,
     art: "rule30",
-    metaTitle: "Webflow Developer Perth | Custom Webflow Websites",
+    metaTitle: "Webflow Developer Perth WA | Custom Webflow Websites",
     metaDescription:
       "Webflow designer and developer in Perth. Custom Webflow websites with rich interactions, a CMS your team will love and SEO built in. From an award-winning designer.",
     h1: "Webflow development in Perth for sites that move.",
@@ -1267,7 +1267,7 @@ export const services = {
     group: "platform",
     showInServices: false,
     art: "touch",
-    metaTitle: "Wix Designer Perth | Wix Website Design & SEO",
+    metaTitle: "Wix Designer Perth WA | Wix Website Design & SEO",
     metaDescription:
       "Wix website designer in Perth. Custom Wix sites, redesigns and Wix SEO for small businesses. Or a smooth move off Wix when you've outgrown it.",
     h1: "Wix website design in Perth, done properly.",
@@ -1312,7 +1312,7 @@ export const services = {
     group: "platform",
     showInServices: false,
     art: "field",
-    metaTitle: "Framer Developer Perth | Framer Websites for Startups",
+    metaTitle: "Framer Developer Perth WA | Framer Websites for Startups",
     metaDescription:
       "Framer designer and developer in Perth. Beautiful, animated Framer websites and landing pages for startups and product launches, live in days not months.",
     h1: "Framer websites in Perth for startups that need to launch yesterday.",

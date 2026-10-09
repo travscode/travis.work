@@ -34,7 +34,8 @@ export const projects = [
     label: "Paint with your mind",
     details: "work/paint-with-your-mind.md",
     year: "2026",
-    imageUrl: "/assets/media/paint_with_your_mind_by_travis_weerts.jpg",
+    imageUrl:
+      "/assets/media/paint_with_your_mind_by_travis_weerts_murdoch_university.mp4",
     services: "AI Sentiment analysis, Digital Art, UI/UX, Innovation",
     link: "https://medium.com/@travisaweerts/visualising-emotions-using-a-i-to-painting-with-your-mind-f3d6896589df",
     notes:
@@ -237,7 +238,7 @@ export const projects = [
     label: "Wendy's Hamburgers",
     details: "work/wendys-hamburgers.md",
     year: "2025",
-    imageUrl: "/assets/media/wendys_website_travis_weerts.png",
+    imageUrl: "/assets/media/wendys.mp4",
     services: "Web Design, UI/UX",
     date: "January 2025",
     client: "Wendy's International",

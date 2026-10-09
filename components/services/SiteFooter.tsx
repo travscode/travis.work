@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllServices } from "@/data/services";
+import { industries } from "@/data/industries";
 
 export default function SiteFooter() {
   const all = getAllServices();
@@ -72,13 +73,22 @@ export default function SiteFooter() {
               </Link>
             </li>
             <li>
-              <a
-                href="https://medium.com/@travisaweerts"
-                className="hover:text-tw-accent transition-colors"
-              >
-                Thoughts (Medium)
-              </a>
+              <Link href="/thoughts" className="hover:text-tw-accent transition-colors">
+                Thoughts
+              </Link>
             </li>
+            <li>
+              <Link href="/locations" className="hover:text-tw-accent transition-colors">
+                Areas I work in
+              </Link>
+            </li>
+            {industries.map((i) => (
+              <li key={i.slug}>
+                <Link href={`/industries/${i.slug}`} className="hover:text-tw-accent transition-colors">
+                  {i.name}
+                </Link>
+              </li>
+            ))}
             <li>
               <a
                 href="https://au.linkedin.com/in/travisweerts"

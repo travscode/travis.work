@@ -115,8 +115,7 @@ const Header: FC<HeaderProps> = ({ variant = "dark" }) => {
             </div>
 
             <FillPill
-              href="https://medium.com/@travisaweerts"
-              external
+              href="/thoughts"
               outline={false}
               fill={pillFill}
               onMouseEnter={closeMenu}

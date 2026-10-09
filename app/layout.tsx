@@ -32,7 +32,7 @@ const geistMono = Geist_Mono({
 const descr =
   "Award-winning web designer, app developer and AI creative in Perth. I help businesses ditch the dull and stand out with bold branding, sharp design and clean development — work for Google, the UN and Wendy's, featured by Apple.";
 
-const siteTitle = "Web Designer & App Developer Perth | Travis Weerts";
+const siteTitle = "Freelance Web Designer & App Developer Perth WA | Travis Weerts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

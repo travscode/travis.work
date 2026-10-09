@@ -59,7 +59,6 @@ export function getDetails(project: Project): ProjectDetails | null {
   }
   // A typo in the frontmatter shouldn't take the whole build down: fall back
   // to rendering the body without the extras and warn in the build log.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let data: Record<string, any> = {};
   let content = raw;
   try {

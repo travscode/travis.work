@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 import { getAllServices } from "@/data/services";
 import { SITE_URL } from "@/lib/seo";
 import { getWork } from "@/lib/work";
+import { getPosts } from "@/lib/thoughts";
+import { locations } from "@/data/locations";
+import { industries } from "@/data/industries";
 import { projectSlug } from "@/lib/slug";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -30,6 +33,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.6,
       images: [`${SITE_URL}${p.imageUrl}`],
+    })),
+    { url: `${SITE_URL}/thoughts`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    ...getPosts().map((p) => ({
+      url: `${SITE_URL}/thoughts/${p.slug}`,
+      lastModified: p.date ? new Date(p.date) : now,
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
+    })),
+    { url: `${SITE_URL}/locations`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    ...locations.map((l) => ({
+      url: `${SITE_URL}/locations/${l.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...industries.map((i) => ({
+      url: `${SITE_URL}/industries/${i.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
     { url: `${SITE_URL}/start`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     {
