@@ -31,7 +31,7 @@ export const projects = [
     ],
   },
   {
-    label: "Paint with your mind",
+    label: "Paint with our minds",
     details: "work/paint-with-your-mind.md",
     year: "2026",
     imageUrl: "/assets/media/paint_with_your_mind_by_travis_weerts.jpg",
@@ -40,7 +40,7 @@ export const projects = [
     services: "AI Sentiment analysis, Digital Art, UI/UX, Innovation",
     link: "https://medium.com/@travisaweerts/visualising-emotions-using-a-i-to-painting-with-your-mind-f3d6896589df",
     notes:
-      "Check out the medium link for a deep dive on this project. It originally started in 2022 for Murdoch University, but it's continually evolving.<br /><br />To play with it: <br /><a href='https://paint.travis.work/canvas/scitech-october-2026' class='underline'>Start painting</a>",
+      "Check out the medium link for a deep dive on this project. It originally started in 2022 for Murdoch University, but it's continually evolving. Recently also shown at Scitech in Perth.<br /><br />To play with it: <br /><a href='https://paint.travis.work/canvas/scitech-october-2026' class='underline'>Start painting</a>",
     date: "Oct 2026",
     client: "Murdoch University + SciTech",
     agency: "Wunderman Thompson",
