@@ -162,14 +162,14 @@ function Hero() {
       </motion.div>
 
       {/* Legibility scrim */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent md:via-black/40" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/0 md:bg-gradient-to-r md:from-black md:via-black/40 md:to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#070708] to-transparent" />
 
       <div className="relative z-10 flex min-h-[100svh] flex-col justify-end px-5 pb-12 pt-28 md:px-10 md:pb-16">
         <div className="rise font-mono text-[11px] uppercase tracking-[0.22em] text-white/70" style={{ animationDelay: "0.05s" }}>
           A bookable AI art activation · Perth + Australia-wide
         </div>
-        <Wordmark className="mt-6 text-[19vw] md:text-[11vw] lg:text-[9.5vw]" />
+        <Wordmark className="mt-6 text-[min(19vw,15svh)] md:text-[min(11vw,15svh)] lg:text-[min(9.5vw,15svh)]" />
         <div className="mt-8 grid gap-8 md:grid-cols-12 md:items-end">
           <p className="rise md:col-span-5 text-lg md:text-xl leading-snug text-white/85" style={{ animationDelay: "0.55s" }}>
             A live painting that listens to the room. Guests talk to it from their phones, and AI turns
@@ -323,7 +323,7 @@ function Stories() {
   }, [paused, inView, go, index]);
 
   return (
-    <section id="stories" className="scroll-mt-20 px-5 py-24 md:px-10 md:py-36 bg-[#0d0d0f]">
+    <section id="stories" className="scroll-mt-20 overflow-hidden px-5 py-24 md:px-10 md:py-36 bg-[#0d0d0f]">
       <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-5">
           <Label>Stories from the canvas</Label>
@@ -377,7 +377,7 @@ function Stories() {
         <div className="lg:col-span-7 flex justify-center">
           <div className="relative flex items-center gap-6">
             {/* Peeking neighbours */}
-            <div className="hidden md:block w-40 aspect-[9/16] overflow-hidden rounded-[22px] opacity-30 scale-90">
+            <div className="hidden xl:block w-40 shrink-0 aspect-[9/16] overflow-hidden rounded-[22px] opacity-30 scale-90">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={stories[(index - 1 + stories.length) % stories.length].poster} alt="" className="h-full w-full object-cover" />
             </div>
@@ -444,7 +444,7 @@ function Stories() {
               <button aria-label="Next story" onClick={() => go(1)} className="absolute inset-y-0 right-0 z-20 w-2/3" />
             </div>
 
-            <div className="hidden md:block w-40 aspect-[9/16] overflow-hidden rounded-[22px] opacity-30 scale-90">
+            <div className="hidden xl:block w-40 shrink-0 aspect-[9/16] overflow-hidden rounded-[22px] opacity-30 scale-90">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={stories[(index + 1) % stories.length].poster} alt="" className="h-full w-full object-cover" />
             </div>
