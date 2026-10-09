@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="bg-tw-grey-dark/30 p-6 rounded-lg mb-4 border border-tw-grey-dark">
                 <p className="font-object-bold mb-2">Travis Weerts</p>
-                <p>Gooseberry Hill, Western Australia, 6076</p>
+                <p>Perth, Western Australia</p>
                 <p>Australia</p>
                 <p className="mt-4">
                   Email:{" "}

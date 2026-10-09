@@ -54,6 +54,8 @@
   --color-tw-grey: #736b5e;
   --color-tw-grey-dark: #3b3730;
   --color-tw-accent: #ffae24;
+  --color-tw-paper: #f4efe6;
+  --color-tw-khaki-dark: #cdbfa6;
 }
 
 :root {
@@ -134,4 +136,204 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Homepage rack: spines slide in like CDs being shelved. CSS (not JS) so it
+   plays before hydration. */
+@keyframes spine-in {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.spine-in {
+  animation: spine-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .spine-in {
+    animation: none;
+  }
+}
+
+/* Endless ticker used on service pages */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+  width: max-content;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Film grain for the khaki pages — subtle, vintage */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Above-the-fold entrances that run before hydration */
+@keyframes word-rise {
+  from {
+    transform: translateY(105%) rotate(4deg);
+  }
+  to {
+    transform: none;
+  }
+}
+.word-rise {
+  animation: word-rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+.rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .word-rise,
+  .rise {
+    animation: none;
+  }
+}
+
+/* Contact page entrance: a black curtain lifts away */
+@keyframes curtain-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+.curtain {
+  animation: curtain-up 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0.15s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .curtain {
+    display: none;
+  }
+}
+
+/* FillPill: background wipes in left → right like a progress bar */
+.pill-fill {
+  clip-path: inset(0 100% 0 0 round 999px);
+  transition: clip-path 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.fill-pill:hover .pill-fill,
+.fill-pill:focus-visible .pill-fill {
+  clip-path: inset(0 0 0 0 round 999px);
+}
+/* RollText: word slides up, its twin rises into place */
+.roll-a,
+.roll-b {
+  transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.roll-b {
+  transform: translateY(105%);
+}
+.fill-pill:hover .roll-a,
+.fill-pill:focus-visible .roll-a {
+  transform: translateY(-105%);
+}
+.fill-pill:hover .roll-b,
+.fill-pill:focus-visible .roll-b {
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pill-fill,
+  .roll-a,
+  .roll-b {
+    transition: none;
+  }
+}
+
+/* Markdown on project pages */
+.prose-tw {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: rgb(17 17 17 / 0.8);
+}
+.prose-tw > div > * + * {
+  margin-top: 1.25em;
+}
+.prose-tw h2 {
+  margin-top: 2.2em;
+  font-family: var(--font-object-heavy);
+  font-size: 2rem;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: #111;
+}
+.prose-tw h3 {
+  margin-top: 1.8em;
+  font-family: var(--font-object-bold);
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+.prose-tw strong {
+  font-family: var(--font-object-bold);
+  color: #111;
+}
+.prose-tw a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgb(17 17 17 / 0.3);
+}
+.prose-tw a:hover {
+  text-decoration-color: #111;
+}
+.prose-tw ul {
+  list-style: none;
+  padding: 0;
+}
+.prose-tw ul li {
+  position: relative;
+  padding-left: 1.4em;
+}
+.prose-tw ul li + li {
+  margin-top: 0.5em;
+}
+.prose-tw ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.45em;
+  height: 0.45em;
+  border-radius: 999px;
+  background: #ffae24;
+}
+.prose-tw blockquote {
+  border-left: 3px solid #111;
+  padding-left: 1.2em;
+  font-family: var(--font-object-bold);
+  color: #111;
 }

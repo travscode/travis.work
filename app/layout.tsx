@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import {
   objectBold,
@@ -9,7 +9,15 @@ import {
 } from "@/app/fonts";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import Script from "next/script";
+import { getAllServices } from "@/data/services";
+import {
+  SITE_URL,
+  OG_IMAGE,
+  PERSON_ID,
+  BUSINESS_ID,
+  WEBSITE_ID,
+  SAME_AS,
+} from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,63 +30,152 @@ const geistMono = Geist_Mono({
 });
 
 const descr =
-  "Award-winning web designer in the Perth Hills. Tired of that dream being stuck in your head? You've come to the right place. I help businesses ditch the dull and stand out with bold branding, sharp design, and clean development. From strategy to pixels—this is where standout starts.";
+  "Award-winning web designer, app developer and AI creative in Perth. I help businesses ditch the dull and stand out with bold branding, sharp design and clean development — work for Google, the UN and Wendy's, featured by Apple.";
+
+const siteTitle = "Web Designer & App Developer Perth | Travis Weerts";
 
 export const metadata: Metadata = {
-  title:
-    "Creative Designer Developer in Perth Hills | Award-Winning Apps, Websites & Digital Things",
+  metadataBase: new URL(SITE_URL),
+  title: siteTitle,
   description: descr,
-  authors: [{ name: "Travis Weerts", url: "https://travis.work" }],
-  alternates: {
-    canonical: "https://travis.work",
+  applicationName: "Travis Weerts",
+  authors: [{ name: "Travis Weerts", url: SITE_URL }],
+  creator: "Travis Weerts",
+  publisher: "Travis Weerts",
+  formatDetection: { telephone: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
-  keywords: [
-    "Travis Weerts",
-    "design",
-    "web design perth",
-    "web developer perth",
-    "web designer perth hills",
-    "web developer perth hills",
-    "developer",
-    "creative",
-    "Perth",
-    "startup",
-    "app developer",
-    "web developer",
-    "web designer",
-    "app designer",
-    "UI/UX designer",
-    "UI designer",
-    "UX designer",
-    "digital designer",
-    "digital developer",
-    "digital creative",
-    "digital agency",
-    "digital agency Perth",
-    "digital agency in Perth",
-    "digital agency Perth WA",
-  ],
-  themeColor: "#000000",
-  colorScheme: "dark",
   openGraph: {
-    title:
-      "Creative Designer Developer in Perth Hills | Award-Winning Apps, Websites & Digital Things",
+    title: siteTitle,
     description: descr,
-    images: ["https://travis.work/cover-image.jpg"],
+    images: [{ url: OG_IMAGE, alt: "Travis Weerts — designer & developer, Perth" }],
     type: "website",
-    url: "https://travis.work",
+    url: SITE_URL,
     siteName: "Travis Weerts",
     locale: "en_AU",
   },
   twitter: {
-    title:
-      "Creative Designer Developer in Perth Hills | Award-Winning Apps, Websites & Digital Things",
+    title: siteTitle,
     description: descr,
-    images: ["https://travis.work/cover-image.jpg"],
+    images: [OG_IMAGE],
     card: "summary_large_image",
     creator: "@travisweerts",
     site: "@travisweerts",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#111111",
+  colorScheme: "dark light",
+};
+
+const services = getAllServices();
+
+// One connected graph: the website, the person, and the business they run.
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": WEBSITE_ID,
+      url: SITE_URL,
+      name: "Travis Weerts",
+      inLanguage: "en-AU",
+      publisher: { "@id": PERSON_ID },
+    },
+    {
+      "@type": "Person",
+      "@id": PERSON_ID,
+      name: "Travis Weerts",
+      url: SITE_URL,
+      image: OG_IMAGE,
+      jobTitle: "Creative Developer & Designer",
+      description:
+        "Travis Weerts is a multi-award-winning designer and developer in Perth, Western Australia, creating digital experiences at the intersection of design, code and AI.",
+      sameAs: SAME_AS,
+      nationality: "Australian",
+      homeLocation: {
+        "@type": "Place",
+        name: "Perth, Western Australia",
+      },
+      worksFor: [{ "@id": BUSINESS_ID }, { "@type": "Organization", name: "IOOKI Labs" }],
+      award: [
+        "Featured by Apple",
+        "Top 5 AI Startup in Australia",
+        "Cannes Lions",
+        "D&AD",
+        "The One Show",
+        "Spike Awards",
+        "AWARD Awards",
+        "PADC Awards",
+      ],
+      knowsAbout: [
+        "Web Design",
+        "Web Development",
+        "App Design",
+        "App Development",
+        "UI/UX Design",
+        "Brand Identity",
+        "Graphic Design",
+        "Search Engine Optimisation",
+        "Generative Engine Optimisation",
+        "Artificial Intelligence",
+        "AI Development",
+        "Creative Direction",
+      ],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": BUSINESS_ID,
+      name: "Travis Weerts Creative",
+      url: SITE_URL,
+      image: OG_IMAGE,
+      logo: `${SITE_URL}/android-chrome-512x512.png`,
+      description: descr,
+      founder: { "@id": PERSON_ID },
+      priceRange: "$$",
+      sameAs: SAME_AS,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Perth",
+        addressRegion: "WA",
+        addressCountry: "AU",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: -31.9523,
+        longitude: 115.8613,
+      },
+      areaServed: [
+        { "@type": "City", name: "Perth" },
+        { "@type": "AdministrativeArea", name: "Perth Hills" },
+        { "@type": "AdministrativeArea", name: "Western Australia" },
+        { "@type": "Country", name: "Australia" },
+      ],
+      knowsAbout: services.map((s) => s.tag),
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Design, development & AI services",
+        itemListElement: services.map((s) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: s.title,
+            url: `${SITE_URL}/services/${s.slug}`,
+          },
+        })),
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -87,155 +184,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Script
-        id="schema-org"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Travis Weerts",
-            url: "https://travis.work",
-            image: "https://travis.work/cover-image.jpg",
-            sameAs: [
-              "https://linkedin.com/in/travisweerts",
-              "https://github.com/travscode",
-              "https://instagram.com/tr_____av",
-            ],
-            jobTitle: "Creative Developer & Designer",
-            award: [
-              "Top 5 AI Startup in Australia",
-              "AWARD Awards",
-              "Cannes Lions",
-              "Spike Awards",
-              "D&AD",
-              "The One Show",
-              "PADC Awards",
-            ],
-            worksFor: {
-              "@type": "Organization",
-              name: "IOOKI Labs",
-            },
-            nationality: "Australian",
-            knowsAbout: [
-              "Artificial Intelligence",
-              "App Development",
-              "UX Design",
-              "AI Services",
-              "UX Research",
-              "UI Design",
-              "UI/UX Design",
-              "Web Development",
-              "AI Integration",
-              "Product Design",
-              "AI Development",
-              "Digital Marketing",
-              "Digital Strategy",
-              "Brand Design",
-              "Branding",
-              "Social Media Management",
-              "Content Creation",
-              "Digital Strategy",
-              "Brand Development",
-              "Brand Identity",
-              "Brand Guidelines",
-              "Brand Marketing",
-              "Brand Consulting",
-            ],
-            description:
-              "Travis Weerts is a multi-award-winning designer and developer creating digital experiences at the intersection of art, code, and AI.",
-            email: "mailto:travisaweerts@gmail.com",
-          }),
-        }}
-      />
-
-      <Script
-        id="schema-org"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "Travis Weerts Creative",
-            url: "https://travis.work",
-            image: "https://travis.work/cover-image.jpg",
-            sameAs: [
-              "https://linkedin.com/in/travisweerts",
-              "https://github.com/travscode",
-              "https://x.com/travisweerts",
-              "https://instagram.com/tr_____av",
-            ],
-            jobTitle: "Creative Developer & Designer",
-            award: [
-              "Top 5 AI Startup in Australia",
-              "AWARD Awards",
-              "Cannes Lions",
-              "Spike Awards",
-              "D&AD",
-              "The One Show",
-              "PADC Awards",
-            ],
-
-            knowsAbout: [
-              "Artificial Intelligence",
-              "App Development",
-              "UX Design",
-              "AI Services",
-              "UX Research",
-              "UI Design",
-              "UI/UX Design",
-              "Web Development",
-              "AI Integration",
-              "Product Design",
-              "AI Development",
-              "Digital Marketing",
-              "Digital Strategy",
-              "Brand Design",
-              "Branding",
-              "Social Media Management",
-              "Content Creation",
-              "Digital Strategy",
-              "Brand Development",
-              "Brand Identity",
-              "Brand Guidelines",
-              "Brand Marketing",
-              "Brand Consulting",
-            ],
-            description:
-              "Travis Weerts is a multi-award-winning designer and developer creating digital experiences at the intersection of art, code, and AI.",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "",
-              addressLocality: "Gooseberry Hill",
-              addressRegion: "WA",
-              postalCode: "6076",
-              addressCountry: "AU",
-            },
-          }),
-        }}
-      />
-
-      <Script
-        id="schema-org"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CreativeWorkSeries",
-            name: "Digital Creative",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "5",
-              bestRating: "5",
-              ratingCount: "0",
-            },
-          }),
-        }}
-      />
+    <html lang="en-AU">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${objectHeavy.variable} ${crtFont.variable} ${objectBold.variable} ${objectThin.variable} ${objectRegular.variable} antialiased bg-tw-black text-tw-white`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+        />
         {children}
       </body>
       <GoogleAnalytics gaId="G-ZQ5KPSBK2Q" />

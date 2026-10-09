@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "ObjHeavy"; src: url(data:font/otf;base64,__HEAVY__) format("opentype"); font-display: block; }
+@font-face { font-family: "ObjReg"; src: url(data:font/otf;base64,__REG__) format("opentype"); font-display: block; }
+html,body{margin:0;background:#000}canvas{display:block}
+</style>
+</head>
+<body>
+<canvas id="c" width="1600" height="1600"></canvas>
+<script>
+const S = 1600;
+const out = document.getElementById("c");
+const octx = out.getContext("2d", { willReadFrequently: true });
+
+/* ---------- deterministic randomness + Perlin noise ---------- */
+function mulberry(seed) { return function () { seed |= 0; seed = seed + 0x6d2b79f5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+let rand = mulberry(1);
+const perm = new Uint8Array(512);
+function seedNoise(r) { const p = [...Array(256).keys()]; for (let i = 255; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [p[i], p[j]] = [p[j], p[i]]; } for (let i = 0; i < 512; i++) perm[i] = p[i & 255]; }
+const fade = t => t * t * t * (t * (t * 6 - 15) + 10);
+const lerp = (a, b, t) => a + (b - a) * t;
+function grad(h, x, y) { const u = (h & 1) ? x : -x, v = (h & 2) ? y : -y; return (h & 4) ? u + v * 0.5 : v + u * 0.5; }
+function noise(x, y) {
+  const X = Math.floor(x) & 255, Y = Math.floor(y) & 255; x -= Math.floor(x); y -= Math.floor(y);
+  const u = fade(x), v = fade(y), a = perm[X] + Y, b = perm[X + 1] + Y;
+  return lerp(lerp(grad(perm[a], x, y), grad(perm[b], x - 1, y), u), lerp(grad(perm[a + 1], x, y - 1), grad(perm[b + 1], x - 1, y - 1), u), v);
+}
+function fbm(x, y, o = 4) { let s = 0, a = 0.5, f = 1; for (let i = 0; i < o; i++) { s += a * noise(x * f, y * f); f *= 2; a *= 0.5; } return s; }
+
+/* ---------- riso inks (real Riso colour references) ---------- */
+const INK = {
+  pink: [255, 72, 176],     // Fluorescent Pink
+  blue: [50, 85, 164],      // Medium Blue
+  yellow: [255, 232, 0],    // Yellow
+  orange: [255, 108, 47],   // Fluorescent Orange
+  teal: [0, 131, 138],      // Teal
+  sunflower: [255, 181, 17],
+  black: [34, 30, 28],
+  green: [0, 169, 92],
+};
+
+/* ---------- paper ---------- */
+let mottle; // low-frequency coverage field, shared by all inks
+function paper() {
+  const img = octx.createImageData(S, S), d = img.data;
+  const base = [242, 234, 216];
+  for (let y = 0; y < S; y++) for (let x = 0; x < S; x++) {
+    const i = (y * S + x) * 4;
+    const f = fbm(x / 260, y / 260, 3) * 7 + (rand() - 0.5) * 7 + (noise(x / 3, y / 40) * 3); // fibres run vertically
+    d[i] = base[0] + f; d[i + 1] = base[1] + f; d[i + 2] = base[2] + f * 1.1; d[i + 3] = 255;
+  }
+  octx.putImageData(img, 0, 0);
+  // coverage mottling at low res
+  mottle = new Float32Array(200 * 200);
+  for (let y = 0; y < 200; y++) for (let x = 0; x < 200; x++) mottle[y * 200 + x] = fbm(x / 18 + 50, y / 18 + 50, 4);
+}
+
+/* ---------- ink layers: draw density in white on black, then print ---------- */
+function layer() {
+  const cv = document.createElement("canvas"); cv.width = cv.height = S;
+  const c = cv.getContext("2d", { willReadFrequently: true }); c.fillStyle = "#000"; c.fillRect(0, 0, S, S);
+  c.fillStyle = "#fff"; c.strokeStyle = "#fff";
+  return c;
+}
+// Stochastic riso screen: each pixel inks if density beats a noisy threshold.
+function print(lc, ink, { dx = 0, dy = 0, opacity = 0.93, grain = 1, spread = 0.6 } = {}) {
+  if (spread) { const t = layer(); t.filter = `blur(${spread}px)`; t.drawImage(lc.canvas, 0, 0); lc = t; }
+  const src = lc.getImageData(0, 0, S, S).data;
+  const img = octx.getImageData(0, 0, S, S), d = img.data;
+  const ir = ink[0] / 255, ig = ink[1] / 255, ib = ink[2] / 255;
+  for (let y = 0; y < S; y++) {
+    const sy = y - dy; if (sy < 0 || sy >= S) continue;
+    for (let x = 0; x < S; x++) {
+      const sx = x - dx; if (sx < 0 || sx >= S) continue;
+      const den = src[(sy * S + sx) * 4] / 255;
+      if (den <= 0.003) continue;
+      const m = mottle[((y / 8) | 0) * 200 + ((x / 8) | 0)];
+      // clumpy threshold: white noise + a little mid-frequency so grain isn't uniform
+      const thr = (rand() * 0.86 + 0.07) * grain + (1 - grain) * 0.5 + m * 0.12;
+      if (den < thr) continue;
+      const a = opacity * (0.86 + m * 0.35);
+      const i = (y * S + x) * 4;
+      d[i] = d[i] * (1 - a + a * ir); d[i + 1] = d[i + 1] * (1 - a + a * ig); d[i + 2] = d[i + 2] * (1 - a + a * ib);
+    }
+  }
+  octx.putImageData(img, 0, 0);
+}
+const reg = () => [Math.round((rand() - 0.5) * 8), Math.round((rand() - 0.5) * 6)];
+
+/* ---------- series frame / marginalia ---------- */
+const TITLES = {
+  "web-design": ["01", "Web Design", "Structure"],
+  brand: ["02", "Branding", "Mark"],
+  seo: ["03", "SEO", "Signal"],
+  geo: ["04", "GEO / AI Search", "Interference"],
+  "app-design": ["05", "App Design", "Touch"],
+  "app-development": ["06", "App Development", "Rule 30"],
+  "ai-development": ["07", "AI Development", "Field"],
+  "ui-ux": ["08", "UI / UX", "System"],
+  "graphic-design": ["09", "Graphic Design", "Ampersand"],
+  wordpress: ["10", "WordPress", "Layers"],
+};
+function marginalia(name) {
+  const [no, title, work] = TITLES[name];
+  const l = layer();
+  l.font = "500 19px Menlo, monospace"; l.textBaseline = "alphabetic";
+  l.fillRect(110, 1468, S - 220, 2);
+  l.fillText(`TW/${no}`, 110, 1508);
+  l.fillText(`${title.toUpperCase()}  ·  "${work}"`, 330, 1508);
+  l.textAlign = "right";
+  l.fillText("31°57′S  115°51′E", S - 110, 1508);
+  l.textAlign = "left";
+  l.fillStyle = "rgba(255,255,255,0.55)";
+  l.fillText("TRAVIS WEERTS · PERTH, WA · SERIES OF TEN", 110, 1540);
+  // crop + registration marks
+  l.fillStyle = "#fff";
+  [[70, 70], [S - 70, 70]].forEach(([x, y]) => {
+    l.fillRect(x - 18, y - 1, 36, 2); l.fillRect(x - 1, y - 18, 2, 36);
+    l.lineWidth = 2; l.beginPath(); l.arc(x, y, 9, 0, Math.PI * 2); l.stroke();
+  });
+  print(l, INK.black, { opacity: 0.88, grain: 0.35, spread: 0.3 });
+}
+
+/* ---------- helpers ---------- */
+function gradRect(c, x, y, w, h, stops, vertical = true) {
+  const g = vertical ? c.createLinearGradient(0, y, 0, y + h) : c.createLinearGradient(x, 0, x + w, 0);
+  stops.forEach(([o, v]) => g.addColorStop(o, `rgba(255,255,255,${v})`)); c.fillStyle = g; c.fillRect(x, y, w, h); c.fillStyle = "#fff";
+}
+function radialFill(c, x, y, r, a0, a1) {
+  const g = c.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, `rgba(255,255,255,${a0})`); g.addColorStop(1, `rgba(255,255,255,${a1})`);
+  c.fillStyle = g; c.beginPath(); c.arc(x, y, r, 0, Math.PI * 2); c.fill(); c.fillStyle = "#fff";
+}
+function flowLine(c, x, y, steps, scale, stepLen, angleFn) {
+  c.beginPath(); c.moveTo(x, y);
+  for (let i = 0; i < steps; i++) { const a = angleFn(x, y); x += Math.cos(a) * stepLen; y += Math.sin(a) * stepLen; if (x < -50 || x > S + 50 || y < -50 || y > S + 50) break; c.lineTo(x, y); }
+  c.stroke();
+}
+
+/* ---------- the ten works ---------- */
+const works = {
+  // Topography of a page: displaced contour lines meeting a precise frame
+  "web-design"() {
+    const A = layer(), B = layer();
+    const x0 = 150, x1 = 1450, y0 = 170, y1 = 1380;
+    A.lineWidth = 2.4;
+    for (let k = 0; k < 120; k++) {
+      const yb = y0 + (k / 119) * (y1 - y0);
+      A.beginPath();
+      for (let x = x0; x <= x1; x += 4) {
+        const env = Math.exp(-Math.pow((x - 900) / 360, 2)) * Math.exp(-Math.pow((yb - 760) / 420, 2));
+        const y = yb - env * (90 + 140 * (fbm(x / 420, yb / 420 + 9, 2) + 0.5));
+        x === x0 ? A.moveTo(x, y) : A.lineTo(x, y);
+      }
+      A.stroke();
+    }
+    gradRect(B, 860, 330, 470, 880, [[0, 1], [0.55, 0.75], [1, 0.12]]);
+    B.fillRect(860, 330, 470, 14);
+    print(B, INK.pink, { dx: 0, dy: 0 });
+    const [dx, dy] = reg(); print(A, INK.blue, { dx, dy });
+    marginalia("web-design");
+  },
+
+  // A study: one mark, twelve states, from star to circle to square
+  brand() {
+    const A = layer(), B = layer(), C = layer();
+    const cols = 4, rows = 3, cw = 300, ch = 360, x0 = (S - cols * cw) / 2 + cw / 2, y0 = 300;
+    const chosen = 6;
+    const superellipse = (c, cx, cy, r, n) => {
+      c.beginPath();
+      for (let i = 0; i <= 240; i++) {
+        const t = (i / 240) * Math.PI * 2, ct = Math.cos(t), st = Math.sin(t);
+        const x = cx + r * Math.sign(ct) * Math.pow(Math.abs(ct), 2 / n);
+        const y = cy + r * Math.sign(st) * Math.pow(Math.abs(st), 2 / n);
+        i ? c.lineTo(x, y) : c.moveTo(x, y);
+      }
+      c.closePath(); c.fill();
+    };
+    for (let i = 0; i < cols * rows; i++) {
+      const gx = i % cols, gy = Math.floor(i / cols);
+      const cx = x0 + gx * cw, cy = y0 + gy * ch;
+      const n = 0.55 * Math.pow(9 / 0.55, i / (cols * rows - 1)); // 0.55 → 9
+      if (i === chosen) {
+        C.fillRect(cx - 140, cy - 140, 280, 280);
+        superellipse(B, cx, cy, 105, n);
+      } else {
+        superellipse(A, cx, cy, 105, n);
+      }
+    }
+    // a fine axis through the chosen state
+    A.fillRect(110, y0 + Math.floor(chosen / cols) * ch - 1, S - 220, 2);
+    print(C, INK.yellow, { opacity: 0.9 });
+    let [dx, dy] = reg(); print(A, INK.blue, { dx, dy });
+    [dx, dy] = reg(); print(B, INK.pink, { dx, dy });
+    marginalia("brand");
+  },
+
+  // Thousands of paths converging on one point
+  seo() {
+    const A = layer(), B = layer();
+    const tx = 1090, ty = 560;
+    A.lineWidth = 1.1; A.globalAlpha = 0.18;
+    for (let i = 0; i < 5200; i++) {
+      let x = 130 + rand() * 1340, y = 150 + rand() * 1250;
+      A.beginPath(); A.moveTo(x, y);
+      for (let s = 0; s < 220; s++) {
+        const toward = Math.atan2(ty - y, tx - x);
+        const n = fbm(x / 380, y / 380, 3) * Math.PI * 2.4;
+        const d = Math.hypot(tx - x, ty - y);
+        const w = Math.min(1, 220 / d);
+        const a = lerp(n, toward, 0.35 + w * 0.6);
+        x += Math.cos(a) * 4; y += Math.sin(a) * 4;
+        A.lineTo(x, y); if (d < 8) break;
+      }
+      A.stroke();
+    }
+    A.globalAlpha = 1;
+    B.beginPath(); B.arc(tx, ty, 30, 0, Math.PI * 2); B.fill();
+    B.lineWidth = 3; B.beginPath(); B.arc(tx, ty, 74, 0, Math.PI * 2); B.stroke();
+    print(A, INK.blue, { grain: 0.9 });
+    const [dx, dy] = reg(); print(B, INK.orange, { dx, dy, grain: 0.4 });
+    marginalia("seo");
+  },
+
+  // Two sets of rings; meaning lives in the interference
+  geo() {
+    const A = layer(), B = layer();
+    const clip = (c) => { c.save(); c.beginPath(); c.arc(800, 760, 600, 0, Math.PI * 2); c.clip(); };
+    clip(A); clip(B);
+    A.lineWidth = 6; B.lineWidth = 6;
+    for (let r = 10; r < 1300; r += 24) { A.beginPath(); A.arc(620, 700, r, 0, Math.PI * 2); A.stroke(); }
+    for (let r = 10; r < 1300; r += 24) { B.beginPath(); B.arc(1010, 840, r, 0, Math.PI * 2); B.stroke(); }
+    A.restore(); B.restore();
+    print(A, INK.teal);
+    const [dx, dy] = reg(); print(B, INK.pink, { dx, dy });
+    marginalia("geo");
+  },
+
+  // A soft field, a capsule, one point of contact
+  "app-design"() {
+    const A = layer(), B = layer(), C = layer();
+    gradRect(A, 110, 130, 1380, 1290, [[0, 0.05], [0.6, 0.55], [1, 1]]);
+    B.save(); B.beginPath(); B.roundRect(640, 250, 420, 1060, 210); B.clip();
+    gradRect(B, 640, 250, 420, 1060, [[0, 1], [0.7, 0.85], [1, 0.35]]); B.restore();
+    C.beginPath(); C.arc(850, 560, 54, 0, Math.PI * 2); C.fill();
+    print(A, INK.yellow, { opacity: 0.95 });
+    let [dx, dy] = reg(); print(B, INK.pink, { dx, dy });
+    [dx, dy] = reg(); print(C, INK.blue, { dx, dy, grain: 0.4 });
+    marginalia("app-design");
+  },
+
+  // Elementary cellular automaton, Rule 30: complexity from one simple rule
+  "app-development"() {
+    const A = layer(), B = layer();
+    const cols = 160, rows = 150, cell = 8.5, x0 = (S - cols * cell) / 2, y0 = 150;
+    let row = new Uint8Array(cols); row[104] = 1;
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) if (row[c]) A.fillRect(x0 + c * cell, y0 + r * cell, cell - 1.6, cell - 1.6);
+      const next = new Uint8Array(cols);
+      for (let c = 0; c < cols; c++) { const l = c > 0 ? row[c - 1] : 0, m = row[c], rr = c < cols - 1 ? row[c + 1] : 0; next[c] = (30 >> (l << 2 | m << 1 | rr)) & 1; }
+      row = next;
+    }
+    gradRect(B, x0 + 104 * cell - 220, y0, 440, rows * cell, [[0, 0.95], [1, 0.25]]);
+    print(B, INK.orange);
+    const [dx, dy] = reg(); print(A, INK.blue, { dx, dy, grain: 0.6 });
+    marginalia("app-development");
+  },
+
+  // Two inks of flow, crossing like weights in a network
+  "ai-development"() {
+    const A = layer(), B = layer();
+    const field = (off) => (x, y) => fbm(x / 520 + off, y / 520, 3) * Math.PI * 3;
+    A.lineWidth = 1.3; B.lineWidth = 1.3; A.globalAlpha = 0.55; B.globalAlpha = 0.55;
+    A.save(); A.beginPath(); A.rect(110, 130, 1380, 1290); A.clip();
+    B.save(); B.beginPath(); B.rect(110, 130, 1380, 1290); B.clip();
+    for (let i = 0; i < 1500; i++) flowLine(A, 110 + rand() * 1380, 130 + rand() * 1290, 160, 0, 3.2, field(0));
+    for (let i = 0; i < 1500; i++) flowLine(B, 110 + rand() * 1380, 130 + rand() * 1290, 160, 0, 3.2, field(3.7));
+    A.restore(); B.restore();
+    print(A, INK.blue, { grain: 0.85 });
+    const [dx, dy] = reg(); print(B, INK.pink, { dx, dy, grain: 0.85 });
+    marginalia("ai-development");
+  },
+
+  // A Gerstner-style programme: one rule, two inks, a grid
+  "ui-ux"() {
+    const A = layer(), B = layer();
+    const n = 9, m = 190, step = (S - m * 2) / (n - 1);
+    for (let gy = 0; gy < n; gy++) for (let gx = 0; gx < n; gx++) {
+      const x = m + gx * step, y = m - 30 + gy * step * 0.98;
+      const t = Math.sin(gx * 0.55 + gy * 0.35) * 0.5 + 0.5;
+      A.beginPath(); A.arc(x, y, 8 + t * 58, 0, Math.PI * 2); A.fill();
+      const u = 1 - t;
+      B.fillRect(x - (6 + u * 46) + step / 2, y - (6 + u * 46) + step / 2, (6 + u * 46) * 2, (6 + u * 46) * 2);
+    }
+    // the clip leaves the final half-row of squares out of frame
+    print(A, INK.blue);
+    const B2 = layer(); B2.save(); B2.beginPath(); B2.rect(110, 130, 1380, 1300); B2.clip(); B2.drawImage(B.canvas, 0, 0); B2.restore();
+    const [dx, dy] = reg(); print(B2, INK.orange, { dx, dy });
+    marginalia("ui-ux");
+  },
+
+  // A single glyph in AM halftone over a solid block
+  "graphic-design"() {
+    const A = layer(), B = layer(), G = layer();
+    B.fillRect(860, 190, 520, 690);
+    G.font = "900 1380px ObjHeavy"; G.textAlign = "center"; G.textBaseline = "alphabetic";
+    G.fillText("&", 760, 1330);
+    const gd = G.getImageData(0, 0, S, S).data;
+    const step = 15, ang = 0.26;
+    for (let yy = -S; yy < S * 2; yy += step) for (let xx = -S; xx < S * 2; xx += step) {
+      const x = (xx * Math.cos(ang) - yy * Math.sin(ang)), y = (xx * Math.sin(ang) + yy * Math.cos(ang));
+      if (x < 0 || y < 0 || x >= S || y >= S) continue;
+      if (!gd[((y | 0) * S + (x | 0)) * 4]) continue;
+      const tone = 0.25 + 0.75 * (1 - y / 1400);
+      A.beginPath(); A.arc(x, y, step * 0.62 * Math.sqrt(tone), 0, Math.PI * 2); A.fill();
+    }
+    print(B, INK.yellow, { opacity: 0.95 });
+    const [dx, dy] = reg(); print(A, INK.pink, { dx, dy, grain: 0.35, spread: 0.4 });
+    marginalia("graphic-design");
+  },
+
+  // Stacked sheets in graded tints, one in a second ink
+  wordpress() {
+    const A = layer(), B = layer();
+    const n = 7;
+    for (let i = 0; i < n; i++) {
+      const x = 160 + i * 92, y = 200 + i * 118, w = 740, h = 520;
+      A.fillStyle = `rgba(255,255,255,${0.1 + i * 0.1})`; A.fillRect(x, y, w, h);
+    }
+    A.fillStyle = "#fff";
+    B.fillRect(160 + 3 * 92, 200 + 3 * 118, 740, 520);
+    print(A, INK.blue);
+    const [dx, dy] = reg(); print(B, INK.pink, { dx, dy, opacity: 0.92 });
+    marginalia("wordpress");
+  },
+};
+
+(async function () {
+  const name = new URLSearchParams(location.search).get("n") || "brand";
+  const seed = [...name].reduce((a, ch) => a * 31 + ch.charCodeAt(0), 7) >>> 0;
+  rand = mulberry(seed); seedNoise(mulberry(seed + 99));
+  await document.fonts.load('900 100px ObjHeavy');
+  paper();
+  works[name]();
+  document.title = "done";
+  const done = document.createElement("div"); done.id = "done"; document.body.appendChild(done);
+})();
+</script>
+</body>
+</html>

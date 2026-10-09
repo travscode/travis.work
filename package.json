@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,14 +12,17 @@
     "@next/third-parties": "^15.3.1",
     "@studio-freight/lenis": "^1.0.42",
     "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.12.7",
     "lenis": "^1.2.3",
     "lucide-react": "^0.503.0",
+    "marked": "^15.0.12",
+    "motion": "^12.43.0",
     "next": "15.3.6",
-    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "resend": "^4.4.1",
+    "server-only": "^0.0.1",
     "tailwind-merge": "^3.2.0",
     "tailwindcss-animate": "^1.0.7"
   },

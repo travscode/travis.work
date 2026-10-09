@@ -1,5 +1,10 @@
 const currentYear = new Date().getFullYear().toString();
 
+// Each project gets a page at /work/<slug>. Optional extras:
+//   slug:    override the URL (defaults to the label, slugified)
+//   details: markdown for the project page. Either a path in /content
+//            ("work/hunter-markets.md") or a markdown string. Frontmatter can
+//            set headline, intro, stats (animated numbers), quote, highlights.
 export const projects = [
   {
     label: "Perth Web Design & App Developer | Consultant",
@@ -8,11 +13,11 @@ export const projects = [
     imageUrl: "/assets/media/welcome4.jpg",
     // services: "Consultant, App Development, Gen AI, AI Development, Creative Direction, Branding & Identity, UI/UX",
     title:
-      "Hello — I'm Travis, an award-winning Perth based digital designer, developer and creative consultant who loves bringing ideas to life.",
+      "Hello... I'm Travis, an award-winning Perth based digital designer, developer and creative consultant who loves bringing ideas to life.",
     // other:
     //   "Over the last 20 years, I've built all kinds of digital stuff — from apps for startups and record labels to projects for Google and the UN. My work's been featured by Apple and picked up awards from Cannes, D&AD, Spike, The One Show, AWARD Awards, and the ACS. I've worked with top agencies like VML and Wunderman Thompson, helping brands like Wendy's, KitKat, HBF and Heinz bring their ideas to life.<br /><br />I love stepping into the unknown, knowing that real change often arrives shrouded in misunderstanding. I don't chase titles or jobs. I aim for roles that unite and uplift, always focused on the greater mission. I try to be a person of purpose — the type others turn to when limits need to be redefined. <br /><br />If you're tired of having a dream inside your head that you need to be reality, you've come to the right place. ",
     other:
-      "Ever since I can remember, I've been designing and building digital things — apps for startups, websites for bands, record labels, local venues, businesses and the occasional project for the likes of the Aussie Open, Google and the UN. Along the way, some of the work's been featured by Apple and recognised by a few industry awards (like Cannes, D&AD, Spike, The One Show, AWARD Awards), which has been nice. I've also had the chance to work with awesome teams like VML and Wunderman Thompson, helping brands such as Wendy's, KitKat, HBF and Heinz turn ideas into things people can actually use.<br /><br />I'm most comfortable working in the grey areas — the early, messy stages where things aren't fully defined yet. I'm less interested in titles and more interested in doing meaningful work with good people, especially when there's a bigger purpose behind it. <br /><br />If you've got something in your head that's been hard to turn into something real, I can help you take the next step.",
+      "Ever since I can remember, I've been designing and building digital things... apps for startups, websites for bands, record labels, local venues, businesses and the occasional project for the likes of the Aussie Open, Google and the UN. Along the way, some of the work's been featured by Apple and recognised by a few industry awards (like Cannes, D&AD, Spike, The One Show, AWARD Awards), which has been nice. I've also had the chance to work with awesome teams like VML and Wunderman Thompson, helping brands such as Wendy's, KitKat, HBF and Heinz turn ideas into things people can actually use.<br /><br />I'm most comfortable working in the grey areas... the early, messy stages where things aren't fully defined yet. I'm less interested in titles and more interested in doing meaningful work with good people, especially when there's a bigger purpose behind it. <br /><br />If you've got something in your head that's been hard to turn into something real, I can help you take the next step.",
     tags: [
       "Design",
       "Development",
@@ -27,6 +32,7 @@ export const projects = [
   },
   {
     label: "Paint with your mind",
+    details: "work/paint-with-your-mind.md",
     year: "2026",
     imageUrl: "/assets/media/paint_with_your_mind_by_travis_weerts.jpg",
     services: "AI Sentiment analysis, Digital Art, UI/UX, Innovation",
@@ -39,6 +45,7 @@ export const projects = [
   },
   {
     label: "Hunter Markets",
+    details: "work/hunter-markets.md",
     year: "2026",
     videoUrl: "/assets/media/huntermarkets.mp4",
     imageUrl: "/assets/media/huntermarkets.jpg",
@@ -53,6 +60,7 @@ export const projects = [
   },
   {
     label: "Wilson / Australian Open AI Photobooth",
+    details: "work/wilson-australian-open-ai-photobooth.md",
     year: "2026",
     videoUrl: "/assets/media/aussieopen.mp4",
     imageUrl: "/assets/media/aussieopen.jpg",
@@ -67,6 +75,7 @@ export const projects = [
 
   {
     label: "Melbourne Airport Activation",
+    details: "work/melbourne-airport-activation.md",
     year: "2025",
     imageUrl: "/assets/media/melbourne_airport.png",
     videoUrl:
@@ -84,6 +93,7 @@ export const projects = [
 
   {
     label: "Olympics / Brisbane 2032",
+    details: "work/olympics-brisbane-2032.md",
     year: "2024",
     imageUrl: "/assets/media/olympics.png",
     services: "Web Development, NextJS, UI/UX",
@@ -97,6 +107,7 @@ export const projects = [
   },
   {
     label: "United Nations / Don't Choose Extinction",
+    details: "work/united-nations-dont-choose-extinction.md",
     year: "2022",
     imageUrl:
       "/assets/media/united_nations_undp_jack_black_dicaprio_dont_choose_extinction_travis_weerts_sl2.webp",
@@ -111,6 +122,7 @@ export const projects = [
   },
   {
     label: "CODA",
+    details: "work/coda.md",
     year: "2025",
     imageUrl: "/assets/media/coda.webp",
     services: "Brand Identity, Product Design, Package Design",
@@ -123,6 +135,7 @@ export const projects = [
   },
   {
     label: "HBF / Digital Transformation",
+    details: "work/hbf-digital-transformation.md",
     year: "2024",
     imageUrl: "/assets/media/hbf.jpg",
     services: "UI/UX Design, Web Development, Digital Experience",
@@ -136,6 +149,7 @@ export const projects = [
   },
   {
     label: "Smilebooth",
+    details: "work/smilebooth.md",
     year: "2013",
     imageUrl: "/assets/media/smilebooth_travis_weerts2.webp",
     services: "App Design, Graphic Design, Development, UI/UX",
@@ -148,6 +162,7 @@ export const projects = [
   },
   {
     label: "Fervor",
+    details: "work/fervor.md",
     year: "2024",
     imageUrl: "/assets/media/fervor.webp",
     services: "Brand Identity, Product Design, Product Naming",
@@ -161,6 +176,7 @@ export const projects = [
 
   {
     label: "VML / Foundation Day",
+    details: "work/vml-foundation-day.md",
     year: "2024",
     imageUrl: "/assets/media/vml_foundation_day_travis_weerts.jpg",
     services:
@@ -175,6 +191,7 @@ export const projects = [
   },
   {
     label: "IOOKI Labs",
+    details: "work/iooki-labs.md",
     year: "2024",
     imageUrl: "/assets/media/iooki.png",
     services:
@@ -188,6 +205,7 @@ export const projects = [
   },
   {
     label: "OZZ FM",
+    details: "work/ozz-fm.md",
     year: "2025",
     imageUrl: "/assets/media/oz2.jpg",
     services:
@@ -203,6 +221,7 @@ export const projects = [
 
   {
     label: "Xingo",
+    details: "work/xingo.md",
     year: "2025",
     imageUrl: "/assets/media/xingo2.jpg",
     services:
@@ -216,6 +235,7 @@ export const projects = [
 
   {
     label: "Wendy's Hamburgers",
+    details: "work/wendys-hamburgers.md",
     year: "2025",
     imageUrl: "/assets/media/wendys_website_travis_weerts.png",
     services: "Web Design, UI/UX",
@@ -223,13 +243,14 @@ export const projects = [
     client: "Wendy's International",
     agency: "VML",
     agencyLink: "https://vml.com/",
-    link: "https://wendys.com",
+    link: "https://www.wendyshamburgers.com.au",
     notes:
       "While working for VML, I built the Australian website for Wendy's Hamburgers to promote their launch in Australia.",
   },
 
   {
     label: "Mystic",
+    details: "work/mystic.md",
     year: "2017",
     imageUrl: "/assets/media/mystic.png",
     services: "App Development, UI/UX, Brand Identity, Marketing",
@@ -247,6 +268,7 @@ export const projects = [
   // },
   {
     label: "Looksee",
+    details: "work/looksee.md",
     year: "2025",
     imageUrl: "/assets/media/looksee.jpg",
     services: "Creative Direction, Brand Identity, App Development, UIUX",
@@ -271,6 +293,7 @@ export const projects = [
 
   {
     label: "BOOBOOK Bottles & Bar",
+    details: "work/boobook-bottles-and-bar.md",
     year: "2024",
     imageUrl: "/assets/media/boobook.png",
     services: "Branding, Identity, ",
@@ -283,6 +306,7 @@ export const projects = [
   },
   {
     label: "Space Collective",
+    details: "work/space-collective.md",
     year: "2024",
     imageUrl: "/assets/media/spacecollective.png",
     services: "UI/UX Design, Web Design, Brand Identity",
@@ -296,6 +320,7 @@ export const projects = [
 
   {
     label: "DUET",
+    details: "work/duet.md",
     year: "2024",
     imageUrl: "/assets/media/duet2.png",
     services: "UI/UX Design, Web Design",
@@ -315,6 +340,7 @@ export const projects = [
 
   {
     label: "Personal train art",
+    details: "work/personal-train-art.md",
     year: "2024",
     imageUrl: "/assets/media/train.png",
     services: "Illustration, Digital Art",
@@ -329,6 +355,7 @@ export const projects = [
 
   {
     label: "Incubus / Make yourself Foundation",
+    details: "work/incubus-make-yourself-foundation.md",
     year: "2005",
     imageUrl: "/assets/media/incubus.png",
     services: "Brand Identity, Print Design",
@@ -342,6 +369,7 @@ export const projects = [
 
   {
     label: "Darlington Arts Festival",
+    details: "work/darlington-arts-festival.md",
     year: "2024",
     imageUrl: "/assets/media/darlingtonarts.png",
     services: "Print Design, Graphic Design, Consulting",
@@ -354,6 +382,7 @@ export const projects = [
   },
   {
     label: "The Raveonettes",
+    details: "work/the-raveonettes.md",
     year: "2006",
     imageUrl: "/assets/media/raveonettes_travis_weerts.png",
     services: "Web design, Web Development",
@@ -372,6 +401,7 @@ export const projects = [
 
   {
     label: "Lume",
+    details: "work/lume.md",
     year: "2022",
     imageUrl: "/assets/media/lume.png",
     services: "Brand Identity, Packaging",
@@ -383,6 +413,7 @@ export const projects = [
   },
   {
     label: "Cirillo 1850 Estate",
+    details: "work/cirillo-1850-estate.md",
     year: "2025",
     imageUrl: "/assets/media/cirillo3.png",
     services: "Brand, Packaging, In-store display",

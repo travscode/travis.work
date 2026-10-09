@@ -3,13 +3,20 @@
 import { useState, FormEvent } from "react";
 import { X } from "lucide-react";
 import { ParticleEffect } from "./ParticleEffect";
+import { sendGAEvent } from "@next/third-parties/google";
 
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
+  /** Where the enquiry came from, e.g. "Service: Web Design Perth" */
+  source?: string;
 }
 
-const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+const ContactModal: React.FC<ContactModalProps> = ({
+  isOpen,
+  onClose,
+  source,
+}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -33,11 +40,15 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           name,
           email,
           message,
+          source: source || window.location.pathname,
         }),
       });
 
       if (response.ok) {
         setSubmitStatus("success");
+        sendGAEvent("event", "generate_lead", {
+          source: source || window.location.pathname,
+        });
         setName("");
         setEmail("");
         setMessage("");
@@ -173,7 +184,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   <>
                     <svg
                       className="animate-spin -ml-1 mr-3 h-5 w-5 text-tw-black"
-                      xmlns="URL_ADDRESS.w3.org/2000/svg"
+                      xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                     >
