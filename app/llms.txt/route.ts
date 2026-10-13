@@ -45,6 +45,7 @@ ${industries.map((i) => `- [${i.name}](${SITE_URL}/industries/${i.slug}): ${i.me
 
 ## Pages
 
+- [About Travis Weerts](${SITE_URL}/about)
 - [Portfolio / selected work](${SITE_URL}/)
 - [All services](${SITE_URL}/services)
 - [Thoughts (articles)](${SITE_URL}/thoughts)

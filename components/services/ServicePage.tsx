@@ -105,6 +105,15 @@ const ART_BY_SLUG: Record<string, ArtKey> = {
   "graphic-design": "ampersand",
   wordpress: "layers",
 };
+// "Web Design" → "web design" mid-sentence, but keep acronyms (SEO, iOS),
+// dotted names (Next.js) and product names (Shopify, React Native) intact.
+const PROPER = /^(Shopify|Squarespace|Webflow|Wix|Framer|Joomla|Drupal|React|Native|Android)$/;
+const headingCase = (tag: string) =>
+  tag
+    .split(" ")
+    .map((w) => (/[A-Z].*[A-Z]|\./.test(w) || PROPER.test(w) ? w : w.toLowerCase()))
+    .join(" ");
+
 const artFor = (s: Service) => (s.art as ArtKey) || ART_BY_SLUG[s.slug] || "layers";
 
 /* Small abstract glyphs for the benefit cards */
@@ -452,7 +461,7 @@ export default function ServicePage({
                 <Eyebrow index="02">What you get</Eyebrow>
                 <SplitHeadline
                   as="h2"
-                  text={`Why people choose me for ${service.tag.toLowerCase()}.`}
+                  text={`Why people choose me for ${headingCase(service.tag)}.`}
                   className="mt-6 font-object-heavy text-5xl md:text-7xl tracking-[-0.04em] leading-[0.95] max-w-4xl"
                 />
               </div>

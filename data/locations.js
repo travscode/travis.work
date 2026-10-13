@@ -2,6 +2,8 @@
 // Keep these genuinely useful (real local work, the suburbs covered, honest
 // notes on how we'd work together). Avoid cloning pages per suburb: list
 // suburbs inside the area page instead.
+// Exception: Kalamunda and Mundaring have their own pages because they're
+// searched for by name and have a different local angle from the wider Hills.
 //
 // work: project labels from data/projects.js that are local proof
 // focus: service slugs to feature first for this area
@@ -23,7 +25,7 @@ export const locations = [
       "City businesses tend to need two things at once: a brand that holds its own next to big names, and a website that turns lunchtime searches into bookings and enquiries. I'm happy to meet in the city for a coffee, or keep things on a call if that suits your week better.",
     suburbs: ["Perth", "West Perth", "East Perth", "Northbridge", "Highgate", "Mount Lawley", "Leederville", "North Perth", "Mount Hawthorn"],
     work: ["BOOBOOK Bottles & Bar", "Space Collective", "HBF / Digital Transformation"],
-    focus: ["web-design", "brand", "seo", "ui-ux"],
+    focus: ["web-design", "web-development", "brand", "seo", "ui-ux"],
     inPerson: true,
     faqs: [
       { q: "Can we meet in person in the city?", a: "Yes. I regularly meet clients in the Perth CBD, West Perth and Northbridge. Most of the work happens remotely after that, so you're not losing hours to meetings." },
@@ -72,6 +74,57 @@ export const locations = [
     faqs: [
       { q: "Are you actually based in the Hills?", a: "Yes. I'm a Perth Hills local, so I'm happy to meet at a cafe up here and I understand the mix of tourism, hospitality and small business that keeps the Hills going." },
       { q: "Can you help with print as well as a website?", a: "Yes. I design the Darlington Arts Festival's print materials and regularly do posters, signage and packaging alongside websites, so everything matches." },
+    ],
+  },
+  {
+    // Sub-area of the Perth Hills with its own angle (wineries, orchards,
+    // trail tourism, the town centre). Keep it distinct from perth-hills.
+    slug: "kalamunda",
+    name: "Kalamunda & the Bickley Valley",
+    short: "Kalamunda",
+    group: "Perth",
+    metaTitle: "Web Designer Kalamunda | Websites, Branding & SEO for Local Business",
+    metaDescription:
+      "Local web designer for Kalamunda, Lesmurdie, Gooseberry Hill, Forrestfield and the Bickley Valley. Websites, branding and SEO for shops, cafes, wineries, orchards and tradies.",
+    h1: "Web design for Kalamunda and the Bickley Valley.",
+    intro:
+      "Kalamunda has a bit of everything: a busy town centre, the Bickley and Carmel wineries and orchards, trail and day-trip tourism, and a lot of tradies and services down the hill in Forrestfield and High Wycombe. I help Kalamunda businesses get found online and look as good as they are in person.",
+    context:
+      "A lot of Kalamunda customers are day-trippers deciding where to stop on their phones, and locals searching for someone nearby they can trust. That means fast mobile pages, clear opening hours and directions, a well-kept Google Business Profile and a brand people remember. Wine and food branding is a real strength of mine, from naming and labels to online shops.",
+    suburbs: ["Kalamunda", "Gooseberry Hill", "Lesmurdie", "Walliston", "Bickley", "Carmel", "Pickering Brook", "Paulls Valley", "Maida Vale", "Forrestfield", "High Wycombe", "Wattle Grove"],
+    work: ["Fervor", "CODA", "Cirillo 1850 Estate"],
+    focus: ["web-design", "brand", "seo", "shopify"],
+    inPerson: true,
+    faqs: [
+      { q: "Can we meet in Kalamunda?", a: "Yes. I'm a Perth Hills local, so I'm happy to meet in Kalamunda or anywhere nearby for a first chat, then keep the rest of the project moving by phone and email." },
+      { q: "Do you work with Bickley Valley wineries and orchards?", a: "Yes. Wine and food branding is one of my favourite kinds of work. I can help with labels, packaging, an online shop, cellar door bookings and the website to tie it together." },
+      { q: "How can a Kalamunda business show up on Google Maps?", a: "A complete, active Google Business Profile with photos, hours and reviews, plus a website with clear location details, does most of the work. I set both up properly." },
+      { q: "Do you build websites for tradies in Forrestfield and High Wycombe?", a: "Yes. Fast mobile pages, a clear list of services and areas, real job photos and a tap-to-call button are what turn searches into calls." },
+    ],
+  },
+  {
+    // Shire of Mundaring angle: arts, makers, trails and hospitality.
+    slug: "mundaring",
+    name: "Mundaring, Darlington & Glen Forrest",
+    short: "Mundaring",
+    group: "Perth",
+    metaTitle: "Web Designer Mundaring | Darlington, Glen Forrest & Mount Helena",
+    metaDescription:
+      "Local web designer for Mundaring, Darlington, Glen Forrest, Greenmount, Mount Helena and Parkerville. Websites, branding, print and SEO for Hills businesses, makers and artists.",
+    h1: "Web design for Mundaring, Darlington and Glen Forrest.",
+    intro:
+      "The Shire of Mundaring runs on small, independent businesses: cafes and pubs, makers and artists, trail and nature tourism, B&Bs, health practitioners and trades. I'm a local, and I help them look great online with websites, brands, print and SEO.",
+    context:
+      "I'm on the committee of the Darlington Arts Festival and design its print materials, so I know how much this community values creativity and how far good design can carry a local event or business. Whether you need a simple website, a new brand or posters for the noticeboard, it'll all look like it belongs together.",
+    suburbs: ["Mundaring", "Darlington", "Glen Forrest", "Greenmount", "Boya", "Helena Valley", "Mahogany Creek", "Sawyers Valley", "Mount Helena", "Parkerville", "Stoneville", "Chidlow", "Swan View"],
+    work: ["Darlington Arts Festival", "Paint with our minds", "BOOBOOK Bottles & Bar"],
+    focus: ["web-design", "brand", "graphic-design", "seo"],
+    inPerson: true,
+    faqs: [
+      { q: "Are you local to Mundaring?", a: "Yes. I'm a Perth Hills local and on the Darlington Arts Festival committee, so I'm happy to meet in Mundaring, Darlington or Glen Forrest." },
+      { q: "Do you design websites for artists and makers?", a: "Yes. Portfolio sites, online shops and galleries that put the work first. If you're after something more experimental, see my creative web development page for the Perth Hills." },
+      { q: "Can you help with posters and print for a local event?", a: "Yes. I design the Darlington Arts Festival's print materials and regularly do posters, flyers, signage and programmes alongside websites." },
+      { q: "Can a small Hills business afford a good website?", a: "Yes. Websites start from around $1,500 with a fixed quote, and you can spread the cost over monthly payments." },
     ],
   },
   {

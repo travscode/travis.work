@@ -279,7 +279,7 @@ export const projects = [
     agency: "Independent",
     link: "https://trylooksee.com",
     notes:
-      "Want to see how new floors, blinds or lights will actually look in your space—before you hit “buy”? My mate, Marcus, and I made that a reality. Jump on our beta list at <a href='https://trylooksee.com' class='underline'>trylooksee.com</a> and get early access to LookSee. First in, first styled.",
+      "Want to see how new floors, blinds or lights will actually look in your space... before you hit “buy”? That's LookSee, an AI interior visualiser from a small founding team I'm part of. The beta is now open to everyone at <a href='https://trylooksee.com' class='underline'>trylooksee.com</a>, so jump in and start styling.",
   },
 
   // {

@@ -14,7 +14,7 @@ export const services = {
     tag: "Web Design",
     showInServices: true,
     visual: "browser",
-    metaTitle: "Web Design Perth WA | Freelance, Affordable & Award-Winning",
+    metaTitle: "Web Designer Perth WA | Freelance Web Design, Award-Winning",
     metaDescription:
       "Custom web design in Perth by an award-winning designer and developer. Fast, beautiful, SEO-ready websites that turn visitors into enquiries. Free 30-min chat.",
     h1: "Web design in Perth that actually brings in work.",
@@ -114,7 +114,89 @@ export const services = {
       },
     ],
     relatedWork: ["Wendy's Hamburgers", "DUET", "The Raveonettes"],
-    related: ["ui-ux", "seo", "wordpress", "brand"],
+    related: ["web-development", "ui-ux", "seo", "wordpress"],
+  },
+
+  // Developer intent ("web developer perth"): people who need something built
+  // or fixed, not just designed. Kept out of the header so the Series of Ten
+  // prints stay at ten.
+  "web-development": {
+    title: "Web Developer Perth",
+    slug: "web-development",
+    tag: "Web Development",
+    showInServices: false,
+    art: "rule30",
+    metaTitle: "Web Developer Perth WA | Custom Websites, Web Apps & Integrations",
+    metaDescription:
+      "Freelance web developer in Perth building custom websites, web apps and integrations in React, Next.js, WordPress, Shopify and more. Helped build the Brisbane 2032 site.",
+    h1: "A Perth web developer for the parts that need real code.",
+    kicker: "React · Next.js · WordPress · Shopify · APIs",
+    images: { square: "services/wordpress-developer-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "A Perth web developer for the parts that need real code.",
+      subheadline: "Custom websites, web apps and integrations, built properly the first time.",
+      description:
+        "I'm a web developer in Perth who also designs, so nothing gets lost between the mockup and the build. I've helped build the Brisbane 2032 Olympic website and the Wendy's Australia launch site, and I build custom sites, portals and integrations for local businesses and startups.",
+      cta: "Talk about your build",
+    },
+    story:
+      "Sometimes a template gets you 80% of the way and the last 20% is the bit that matters: a booking flow, a customer portal, a sync with your CRM, a site that's slowed to a crawl. That's where a developer earns their keep. I write clean, documented code in modern frameworks, test it on real devices, and hand it over in a way the next person can actually work with.",
+    benefits: [
+      { title: "Any platform, done properly", description: "Hand-built in React and Next.js, or on WordPress, Shopify, Squarespace, Wix, Webflow and Joomla, so the site does exactly what your business needs." },
+      { title: "Plays nicely with your tools", description: "Bookings, payments, CRMs, inventory and email connected through proper APIs, so data flows without copy and paste." },
+      { title: "Fast and stable", description: "Core Web Vitals, accessibility and security looked after from the start, then monitored after launch." },
+      { title: "Designer and developer in one", description: "The person who designs it builds it, so details survive and changes don't need a three-way email chain." },
+    ],
+    process: [
+      { step: 1, title: "Scope", description: "A free chat about what you need built, what you already have and what it has to connect to." },
+      { step: 2, title: "Plan", description: "A clear technical plan and fixed quote: stack, hosting, integrations and what's in version one." },
+      { step: 3, title: "Build", description: "Regular previews on a staging link so you can click around and give feedback as it takes shape." },
+      { step: 4, title: "Launch & support", description: "Go-live, monitoring, documentation and ongoing fixes or features when you need them." },
+    ],
+    features: [
+      "React & Next.js",
+      "WordPress & WooCommerce",
+      "Shopify",
+      "Squarespace, Wix & Webflow",
+      "Joomla & Drupal",
+      "Headless CMS",
+      "Web apps & portals",
+      "API integrations",
+      "Payments & bookings",
+      "Performance tuning",
+      "Accessibility",
+      "Hosting & deployment",
+      "Ongoing support",
+    ],
+    pricing: { starting: null, timeline: "Scoped after a free chat" },
+    faqs: [
+      {
+        q: "What's the difference between a web designer and a web developer?",
+        a: "A designer works out how the site looks and flows. A developer writes the code that makes it work. Plenty of small business sites only need light development, but custom features, integrations and web apps need a developer. I do both, so you don't have to coordinate two people.",
+      },
+      {
+        q: "How much does a web developer cost in Perth?",
+        a: "It depends on what's being built. A straightforward business website starts from around $1,500, while custom web apps and integrations are quoted after a free chat. You'll always get a fixed quote, and monthly payments are available.",
+      },
+      {
+        q: "Can you fix or speed up my existing website?",
+        a: "Yes. I regularly take over existing sites to fix bugs, improve load times, tidy up plugins or add new features, without rebuilding from scratch unless it genuinely makes sense.",
+      },
+      {
+        q: "What platforms and technologies do you work with?",
+        a: "Pretty much all the big ones. For custom builds I use React and Next.js, and React Native when you need a mobile app too. For content-managed sites I work with WordPress, WooCommerce, Shopify, Squarespace, Wix, Webflow, Joomla, Drupal and headless CMSs. I'll recommend whatever is simplest for you to run long term, not whatever is trendiest.",
+      },
+      {
+        q: "I'm stuck on an older platform like Joomla. Can you help?",
+        a: "Yes. I can maintain and fix an existing Joomla, Drupal or WordPress site, or plan a careful move to something easier to run, with redirects in place so you keep your Google rankings.",
+      },
+      {
+        q: "Can you build a web app, not just a website?",
+        a: "Yes. Customer portals, booking systems, dashboards and AI-powered tools are all web apps. I'll help you work out the leanest first version to build.",
+      },
+    ],
+    relatedWork: ["Olympics / Brisbane 2032", "Wendy's Hamburgers", "HBF / Digital Transformation"],
+    related: ["web-design", "nextjs", "react-native", "wordpress"],
   },
 
   brand: {
@@ -643,7 +725,7 @@ export const services = {
       },
     ],
     relatedWork: ["Hunter Markets", "OZZ FM", "Melbourne Airport Activation"],
-    related: ["app-design", "ai-development", "ui-ux"],
+    related: ["react-native", "android-app-development", "ios-app-development", "app-design"],
   },
 
   "ai-development": {
@@ -1078,6 +1160,351 @@ export const services = {
   // Platform pages: real pages for search, listed on /services and in the
   // footer, but kept out of the header dropdown (showInServices: false).
   // ---------------------------------------------------------------------
+
+  "react-native": {
+    title: "React Native Developer Perth",
+    slug: "react-native",
+    tag: "React Native",
+    group: "platform",
+    showInServices: false,
+    art: "touch",
+    metaTitle: "React Native Developer Perth | Android & iOS App Development",
+    metaDescription:
+      "React Native developer in Perth building Android and iOS apps from one codebase. Cross-platform app development, Google Play and App Store launch, Expo and APIs.",
+    h1: "React Native development in Perth for Android and iOS apps.",
+    kicker: "React Native · Expo · Android · iOS",
+    images: { square: "services/app-development-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "React Native development in Perth for Android and iOS apps.",
+      subheadline: "One codebase, both app stores, and an app that still feels native.",
+      description:
+        "I'm a React Native developer in Perth building cross-platform apps for Android and iOS. Hunter Markets, a marketplace app I co-designed and built with the Hunter Markets and Dilate teams, launched on both platforms from one codebase and reached #5 in Shopping on the Australian App Store.",
+      cta: "Build your app",
+    },
+    story:
+      "Most businesses don't need two separate apps built by two separate teams. React Native lets one codebase run on Android phones and iPhones, so you launch on Google Play and the App Store at the same time, for a lot less than building twice. The trick is making it feel at home on each platform: Android back gestures, material touches, iOS conventions and fast scrolling on cheaper Android devices, not just the latest iPhone.",
+    benefits: [
+      { title: "Android and iOS together", description: "One React Native codebase ships to Google Play and the App Store, so no one on Android gets a second-class app." },
+      { title: "Less to build, less to maintain", description: "Shared code means lower build costs, faster updates and one set of bugs to fix instead of two." },
+      { title: "Native where it counts", description: "Camera, maps, payments, push notifications and native modules when an app needs to go beyond the basics." },
+      { title: "Tested on real devices", description: "Checked on a range of Android phones and iPhones, including older and budget devices your customers actually use." },
+    ],
+    process: [
+      { step: 1, title: "Scope", description: "Work out the leanest version one, the features that matter and which platforms to launch on first." },
+      { step: 2, title: "Design", description: "App screens designed for Android and iOS conventions, with a clickable prototype to test early." },
+      { step: 3, title: "Build", description: "React Native and Expo development with test builds on your phone every week, on both Android and iOS." },
+      { step: 4, title: "Launch", description: "Google Play and App Store submission, review wrangling, analytics and ongoing updates." },
+    ],
+    features: [
+      "React Native",
+      "Expo",
+      "Android app development",
+      "iOS app development",
+      "Google Play submission",
+      "App Store submission",
+      "Push notifications",
+      "Payments & subscriptions",
+      "APIs & backends",
+      "Over-the-air updates",
+    ],
+    pricing: { starting: null, timeline: "Scoped after a free consult" },
+    faqs: [
+      { q: "What is React Native?", a: "React Native is a framework from Meta for building mobile apps with one codebase that runs on both Android and iOS. Apps from companies like Shopify, Discord and Microsoft use it, and it's a smart choice for most startups and businesses." },
+      { q: "Can you build an Android app?", a: "Yes. I build Android apps with React Native, usually alongside an iOS version from the same code. If you only need Android for now, we can launch on Google Play first and add iOS later without starting again." },
+      { q: "Is React Native as good as a native app?", a: "For most apps, users can't tell the difference. React Native renders real native components, and native modules handle anything platform-specific. I'll tell you honestly if your app is one of the rare cases that needs fully native code." },
+      { q: "How much does a React Native app cost in Perth?", a: "It depends on the features, but building once for Android and iOS is much cheaper than building two native apps. After a free consult I'll scope it and send a fixed quote, with monthly payments available." },
+      { q: "Can you take over or update an existing React Native app?", a: "Yes. I can upgrade old React Native versions, fix crashes, move an app to Expo or add new features to an app another developer started." },
+      { q: "Do you also build the website?", a: "Yes. React Native and React share a lot, so I often build the app and its website or web dashboard together, with a consistent design across both." },
+    ],
+    relatedWork: ["Hunter Markets", "OZZ FM", "Mystic"],
+    related: ["android-app-development", "ios-app-development", "app-development", "web-development"],
+  },
+
+  "android-app-development": {
+    title: "Android App Developer Perth",
+    slug: "android-app-development",
+    tag: "Android Apps",
+    showInServices: false,
+    art: "rule30",
+    metaTitle: "Android App Development Perth | Android App Developer WA",
+    metaDescription:
+      "Android app developer in Perth building apps for Google Play. Android app design and development, Play Store launch and updates, with iOS from the same codebase if you need it.",
+    h1: "Android app development in Perth, built for Google Play.",
+    kicker: "Android · Google Play · Kotlin · React Native",
+    images: { square: "services/app-development-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "Android app development in Perth, built for Google Play.",
+      subheadline: "Android apps that feel right on every phone, not just the flagship ones.",
+      description:
+        "I design and build Android apps for Perth businesses and startups, from first idea to Google Play. Hunter Markets, a marketplace app I co-designed and built with the Hunter Markets and Dilate teams, launched on Android and iOS together.",
+      cta: "Build your Android app",
+    },
+    story:
+      "Android runs on thousands of different phones, from the newest Pixel and Samsung down to the budget handset a lot of your customers actually own. A good Android app has to feel fast and familiar on all of them: the back gesture works, notifications behave, and nothing breaks on a smaller screen. I design and test for that range, then handle the Google Play side so launch day is smooth.",
+    benefits: [
+      { title: "Made for real Android phones", description: "Tested across screen sizes, Android versions and cheaper devices, not just the latest flagship." },
+      { title: "Feels like Android", description: "Back navigation, Material design patterns and Android notification behaviour handled properly." },
+      { title: "Google Play handled", description: "Developer account setup, store listing, screenshots, testing tracks and review, all taken care of." },
+      { title: "iOS when you're ready", description: "Built cross-platform where it makes sense, so adding an iPhone version later doesn't mean starting again." },
+    ],
+    process: [
+      { step: 1, title: "Scope", description: "Who the app is for, the leanest version one and whether to launch Android first or both platforms together." },
+      { step: 2, title: "Design", description: "Screens designed around Android conventions, with a clickable prototype to test early." },
+      { step: 3, title: "Build", description: "Development with test builds on your Android phone through Google Play's internal testing." },
+      { step: 4, title: "Launch", description: "Google Play submission, launch, crash monitoring and ongoing updates." },
+    ],
+    features: [
+      "Android app design",
+      "Android app development",
+      "React Native",
+      "Kotlin & native modules",
+      "Google Play listing",
+      "Internal & beta testing",
+      "Push notifications",
+      "In-app payments",
+      "APIs & backends",
+      "Updates & support",
+    ],
+    pricing: { starting: null, timeline: "Scoped after a free consult" },
+    faqs: [
+      { q: "How much does an Android app cost in Perth?", a: "It depends on what the app needs to do. A focused first version costs far less than a full platform. After a free consult I'll scope it and send a fixed quote, and monthly payments are available." },
+      { q: "Should I build for Android or iPhone first?", a: "It depends on your customers. Android has a big share of phones in Australia and most of the world, while iPhone users tend to spend more in apps. Building cross-platform usually means you don't have to choose." },
+      { q: "Native Android or React Native?", a: "For most business apps, React Native gives you Android and iOS from one codebase with a native feel. I'll use native Kotlin modules for anything that needs deeper access to the phone, and tell you honestly if your app needs to be fully native." },
+      { q: "Can you publish my app on Google Play?", a: "Yes. I set up the store listing, testing tracks and release process, handle Google's review and stick around for updates after launch." },
+      { q: "Can you fix or update an existing Android app?", a: "Yes. I can update apps to meet Google Play's latest requirements, fix crashes and performance issues, or add new features to an app someone else built." },
+    ],
+    relatedWork: ["Hunter Markets"],
+    related: ["react-native", "ios-app-development", "app-design", "app-development"],
+  },
+
+  "ios-app-development": {
+    title: "iOS App Developer Perth",
+    slug: "ios-app-development",
+    tag: "iOS Apps",
+    showInServices: false,
+    art: "touch",
+    metaTitle: "iOS App Developer Perth | iPhone App Development WA",
+    metaDescription:
+      "iOS app developer in Perth with work featured by Apple. iPhone and iPad app design and development, TestFlight, App Store submission and launch, with Android from the same code.",
+    h1: "iPhone app development in Perth, from someone Apple has featured.",
+    kicker: "iOS · iPhone · iPad · App Store",
+    images: { square: "services/app-design-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "iPhone app development in Perth, from someone Apple has featured.",
+      subheadline: "iOS apps with the polish people expect from an iPhone.",
+      description:
+        "I design and build iPhone and iPad apps for Perth businesses and founders. MYSTIC*, a photo app I conceived, designed and launched, was featured by Apple across App Stores worldwide, and Hunter Markets reached #5 in Shopping on the Australian App Store.",
+      cta: "Build your iPhone app",
+    },
+    story:
+      "iPhone users notice details. The way a screen slides in, how a button feels, whether the app respects Dark Mode and Dynamic Type. Those details are a big part of what gets an app good reviews, and sometimes noticed by Apple. I design and build with Apple's Human Interface Guidelines in mind, ship test builds to your phone through TestFlight, and handle App Store review so launch doesn't stall.",
+    benefits: [
+      { title: "Apple-level polish", description: "Interfaces that follow Apple's guidelines and feel at home on iPhone and iPad." },
+      { title: "On your phone every week", description: "TestFlight builds so you can try the real app as it grows, not just look at screenshots." },
+      { title: "App Store review handled", description: "Listing, screenshots, privacy details and review wrangling taken care of, so launch day isn't a guessing game." },
+      { title: "Android too, if you want it", description: "Cross-platform builds mean an Android version can share most of the same code." },
+    ],
+    process: [
+      { step: 1, title: "Scope", description: "The problem the app solves, who it's for and the leanest version one worth launching." },
+      { step: 2, title: "Design", description: "iOS screens and a clickable prototype you can try on your iPhone before any code." },
+      { step: 3, title: "Build", description: "Development with weekly TestFlight builds, tested on a range of iPhones and iPads." },
+      { step: 4, title: "Launch", description: "App Store submission, review, launch and ongoing updates as iOS changes." },
+    ],
+    features: [
+      "iPhone app design",
+      "iOS app development",
+      "iPad apps",
+      "React Native & Swift",
+      "TestFlight builds",
+      "App Store submission",
+      "Sign in with Apple",
+      "In-app purchases",
+      "Push notifications",
+      "Updates & support",
+    ],
+    pricing: { starting: null, timeline: "Scoped after a free consult" },
+    faqs: [
+      { q: "How much does an iPhone app cost in Perth?", a: "It depends on the features. A lean first version is very different to a full marketplace. After a free consult I'll scope it properly and send a fixed quote, with monthly payment options." },
+      { q: "How do I get my app featured by Apple?", a: "There's no guaranteed way, but Apple looks for apps that are well designed, genuinely useful and take advantage of what iPhone does well. My app MYSTIC* was featured worldwide, and I bring that same attention to detail to every iOS project." },
+      { q: "Can you get my app through App Store review?", a: "Yes. I prepare the listing, privacy details and review notes, and handle any back-and-forth with Apple so your launch doesn't get stuck." },
+      { q: "Do I need an Apple developer account?", a: "Yes, it should be in your business's name so you own the app. I'll walk you through setting it up, which costs about US$99 a year." },
+      { q: "Can you build for Android at the same time?", a: "Yes. Using React Native, most of the code is shared, so you can launch on the App Store and Google Play together." },
+    ],
+    relatedWork: ["Mystic", "Hunter Markets", "OZZ FM"],
+    related: ["react-native", "android-app-development", "app-design", "app-development"],
+  },
+
+  nextjs: {
+    title: "Next.js Developer Perth",
+    slug: "nextjs",
+    tag: "Next.js",
+    group: "platform",
+    showInServices: false,
+    art: "structure",
+    metaTitle: "Next.js Developer Perth | React & Headless Website Development",
+    metaDescription:
+      "Next.js developer in Perth building fast React websites and web apps with headless CMSs. Helped build the Brisbane 2032 Olympic site in Next.js. Free chat.",
+    h1: "Next.js development in Perth for fast, modern websites.",
+    kicker: "Next.js · React · Headless CMS · Vercel",
+    images: { square: "services/web-design-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "Next.js development in Perth for fast, modern websites.",
+      subheadline: "React websites and web apps that load fast and rank well.",
+      description:
+        "I'm a Next.js developer in Perth. I helped build the Brisbane 2032 Olympic and Paralympic Games website in Next.js as part of the VML team, and this site is built with it too. I use it for business websites, headless CMS builds and web apps that need to be quick.",
+      cta: "Talk Next.js",
+    },
+    story:
+      "Next.js is the framework a lot of the web's fastest sites run on. Pages can be pre-built so they load instantly, search engines see real content, and it scales from a five-page site to a full web app without changing tools. Paired with a headless CMS, your team still gets an easy editor while the front end stays fast and fully custom.",
+    benefits: [
+      { title: "Seriously fast", description: "Static and server rendering, image optimisation and edge hosting for great Core Web Vitals." },
+      { title: "Built for search", description: "Real HTML for Google and AI search, structured data and metadata handled per page." },
+      { title: "Easy to edit", description: "A headless CMS like Sanity, Contentful or WordPress so your team can update content safely." },
+      { title: "Room to grow", description: "Add logins, dashboards, payments or AI features later on the same codebase." },
+    ],
+    process: [
+      { step: 1, title: "Plan", description: "Content, integrations and whether static, server or hybrid rendering fits best." },
+      { step: 2, title: "Design", description: "Custom design in Figma, shaped into a reusable component system." },
+      { step: 3, title: "Build", description: "Next.js and React development with preview links for every change." },
+      { step: 4, title: "Launch", description: "Deployment on Vercel or your preferred host, analytics and ongoing support." },
+    ],
+    features: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Headless CMS",
+      "Tailwind CSS",
+      "Static & server rendering",
+      "API integrations",
+      "Vercel hosting",
+      "Technical SEO",
+      "Migrations",
+    ],
+    pricing: { starting: null, timeline: "Scoped after a free chat" },
+    faqs: [
+      { q: "What is Next.js?", a: "Next.js is a React framework for building websites and web apps. It's known for speed and SEO because pages can be pre-rendered, and it's used by companies of every size." },
+      { q: "Is Next.js good for a small business website?", a: "It can be, especially if speed, custom design or future features matter. For a simple site you'll edit a lot yourself, WordPress or Squarespace may be simpler, and I'll tell you honestly which suits you." },
+      { q: "Can I edit a Next.js website myself?", a: "Yes. I connect it to a headless CMS so you can edit pages, posts and images in a friendly editor without touching code." },
+      { q: "Can you move my WordPress site to Next.js?", a: "Yes. I can keep WordPress as the editor and build a faster Next.js front end, or move everything across, with redirects so you keep your Google rankings." },
+      { q: "Where is a Next.js site hosted?", a: "Usually on Vercel, which is built by the team behind Next.js, but Netlify, AWS and other hosts work too." },
+    ],
+    relatedWork: ["Olympics / Brisbane 2032"],
+    related: ["web-development", "web-design", "seo", "ai-development"],
+  },
+
+  joomla: {
+    title: "Joomla Developer Perth",
+    slug: "joomla",
+    tag: "Joomla",
+    group: "platform",
+    showInServices: false,
+    art: "layers",
+    metaTitle: "Joomla Developer Perth | Joomla Support, Upgrades & Migrations",
+    metaDescription:
+      "Joomla developer in Perth for fixes, security updates, Joomla 3 to 5 upgrades, redesigns and migrations to WordPress or other platforms. Fixed quotes, free first chat.",
+    h1: "Joomla development and support in Perth.",
+    kicker: "Joomla · Upgrades · Fixes · Migrations",
+    images: { square: "services/wordpress-developer-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "Joomla development and support in Perth.",
+      subheadline: "Keep your Joomla site running, or move on from it safely.",
+      description:
+        "Plenty of Perth businesses still run on Joomla, and the developer who built it has long since moved on. I help keep those sites secure and working, upgrade them to the latest Joomla, or plan a clean move to a platform that's easier to run.",
+      cta: "Get Joomla help",
+    },
+    story:
+      "Older Joomla sites tend to become a worry: out-of-date versions, extensions that no longer get updates, and a nagging feeling something will break. You don't always need to start again. Sometimes the right answer is a careful upgrade and a tidy-up. Sometimes it's time to move. I'll look at what you have and give you a straight answer either way.",
+    benefits: [
+      { title: "Security first", description: "Core and extension updates, backups and hardening so your site isn't an easy target." },
+      { title: "Upgrades without drama", description: "Joomla 3 and 4 sites upgraded to Joomla 5, with extensions and templates checked along the way." },
+      { title: "Fixes and changes", description: "Broken pages, forms, templates and extensions sorted, plus new content and features." },
+      { title: "A way out if you want one", description: "Migrations to WordPress or another platform, with redirects so you keep your Google rankings." },
+    ],
+    process: [
+      { step: 1, title: "Health check", description: "A look at your Joomla version, extensions, hosting and backups." },
+      { step: 2, title: "Recommendation", description: "Fix, upgrade or migrate, with a fixed quote for whichever makes sense." },
+      { step: 3, title: "Do the work", description: "Changes made on a staging copy first, so your live site keeps running." },
+      { step: 4, title: "Look after it", description: "Ongoing updates and support if you'd like someone keeping an eye on it." },
+    ],
+    features: [
+      "Joomla support",
+      "Security updates",
+      "Joomla 5 upgrades",
+      "Extension fixes",
+      "Template changes",
+      "Backups & hardening",
+      "Speed improvements",
+      "Redesigns",
+      "Migration to WordPress",
+      "SEO redirects",
+    ],
+    pricing: { starting: null, timeline: "Quoted after a quick look" },
+    faqs: [
+      { q: "My Joomla developer has disappeared. Can you take over?", a: "Yes. With your hosting and admin access I can review the site, get it backed up and secure, and take over updates and changes." },
+      { q: "Should I upgrade Joomla or move to another platform?", a: "If your site works well and mostly needs updating, an upgrade is often the cheaper option. If it's hard to edit or relies on abandoned extensions, moving to WordPress or another platform can save money long term. I'll give you an honest recommendation." },
+      { q: "Is an old Joomla site a security risk?", a: "It can be. Old Joomla versions and extensions stop receiving security fixes, which makes them a common target. Getting it updated or migrated is worth doing sooner rather than later." },
+      { q: "Will I lose my Google rankings if I move off Joomla?", a: "Not if it's done carefully. I map old URLs to new ones with redirects and carry across titles and content so search engines follow the move." },
+    ],
+    relatedWork: [],
+    related: ["web-development", "wordpress", "drupal", "seo"],
+  },
+
+  drupal: {
+    title: "Drupal Developer Perth",
+    slug: "drupal",
+    tag: "Drupal",
+    group: "platform",
+    showInServices: false,
+    art: "layers",
+    metaTitle: "Drupal Developer Perth | Drupal Support, Upgrades & Migrations",
+    metaDescription:
+      "Drupal developer in Perth for support, Drupal 7 migrations, upgrades to the latest Drupal, theming and integrations. Fixed quotes and a free first chat.",
+    h1: "Drupal development and support in Perth.",
+    kicker: "Drupal · Drupal 7 migrations · Theming",
+    images: { square: "services/wordpress-developer-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "Drupal development and support in Perth.",
+      subheadline: "Support, upgrades and migrations for Drupal sites of every age.",
+      description:
+        "Drupal powers a lot of government, university, association and enterprise websites. I help Perth organisations keep Drupal sites secure and up to date, move off Drupal 7, and improve the design and editing experience.",
+      cta: "Get Drupal help",
+    },
+    story:
+      "Drupal is powerful, but upgrades between major versions are real projects, and Drupal 7 has reached end of life. If you're still on it, or your site has grown hard to manage, you need someone who'll look at the content, modules and integrations and plan a sensible path forward, whether that's the latest Drupal or a different platform altogether.",
+    benefits: [
+      { title: "Off Drupal 7", description: "A planned migration to the latest Drupal or another platform, content and URLs intact." },
+      { title: "Kept secure", description: "Core and module updates, backups and monitoring so the site stays supported." },
+      { title: "Better to edit", description: "Cleaner content types, editor-friendly layouts and less training needed for your team." },
+      { title: "Modern front end", description: "Theme refreshes, accessibility improvements or a headless Next.js front end when speed matters." },
+    ],
+    process: [
+      { step: 1, title: "Audit", description: "Drupal version, modules, custom code, content model and integrations." },
+      { step: 2, title: "Plan", description: "Upgrade, rebuild or migrate, with a fixed quote and a clear timeline." },
+      { step: 3, title: "Build", description: "Work done on staging with your team reviewing as we go." },
+      { step: 4, title: "Launch & support", description: "Careful go-live with redirects, then ongoing updates and support." },
+    ],
+    features: [
+      "Drupal support",
+      "Drupal 7 migrations",
+      "Drupal 10 & 11 upgrades",
+      "Module updates",
+      "Theming",
+      "Accessibility",
+      "Integrations",
+      "Headless Drupal",
+      "Migration to WordPress",
+      "SEO redirects",
+    ],
+    pricing: { starting: null, timeline: "Quoted after an audit" },
+    faqs: [
+      { q: "We're still on Drupal 7. What should we do?", a: "Drupal 7 no longer receives official security support, so it's time to plan a move. That might be the latest Drupal, or a simpler platform if you don't need everything Drupal offers. I'll help you weigh it up." },
+      { q: "Is upgrading Drupal a big job?", a: "Moving between minor versions of modern Drupal is usually straightforward. Jumping from Drupal 7 is closer to a rebuild, because the content and modules need to be migrated. An audit tells us exactly what's involved." },
+      { q: "Can you take over support of our Drupal site?", a: "Yes. I can review the codebase, set up proper backups and staging, and handle updates and changes from there." },
+      { q: "Should we stay on Drupal?", a: "If you have complex content, lots of editors or strict permission needs, Drupal is a strong choice. If not, WordPress or another platform may be cheaper to run. I'll give you an honest recommendation." },
+    ],
+    relatedWork: [],
+    related: ["web-development", "nextjs", "joomla", "wordpress"],
+  },
 
   shopify: {
     title: "Shopify Developer Perth",

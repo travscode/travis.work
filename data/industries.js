@@ -75,6 +75,34 @@ export const industries = [
       { q: "Do you work with wineries outside Perth?", a: "Yes. I've worked with wineries in the Great Southern, Margaret River and the Barossa, mostly remotely." },
     ],
   },
+  {
+    // Creative/artist intent in the Hills. The business-website intent
+    // ("web designer perth hills") stays with /locations/perth-hills.
+    slug: "creative-web-developer-perth-hills",
+    name: "Creative Web Developer & Digital Artist, Perth Hills",
+    short: "creatives in the Hills",
+    group: "Industries",
+    metaTitle: "Creative Web Developer & Designer Perth Hills | Digital Artist",
+    metaDescription:
+      "Creative web developer, designer and digital artist in the Perth Hills. Interactive websites, generative and AI art, festival branding and portfolios for artists, galleries and makers.",
+    h1: "A creative web developer and digital artist in the Perth Hills.",
+    intro:
+      "Not every project wants a standard business website. I'm a Perth Hills web developer, designer and digital artist who works where code and art overlap: interactive websites, generative and AI-driven art, motion, illustration and print. If you're an artist, gallery, festival, maker or anyone after something a little more creative, let's talk.",
+    context:
+      "My art projects are made in the Hills and beyond. Paint With Your Mind is a live AI painting that listens to a room and paints how it feels, most recently run at Scitech. I also sit on the Darlington Arts Festival committee and design its print materials, and fill sketchbooks on the train with an iPad and a pencil.",
+    suburbs: ["Interactive websites", "Generative & AI art", "Creative coding", "Artist portfolios", "Online galleries & shops", "Motion & animation", "Festival & event branding", "Posters & print"],
+    work: ["Paint with our minds", "Darlington Arts Festival", "Personal train art"],
+    focus: ["web-design", "web-development", "ai-development", "graphic-design"],
+    inPerson: true,
+    cta: "Let's make something a bit different.",
+    faqs: [
+      { q: "Do you make websites for artists and makers?", a: "Yes. Portfolio sites, online galleries and small shops for artists, ceramicists, photographers and makers, designed so the work is the hero and easy for you to update." },
+      { q: "What is a creative web developer?", a: "Someone who treats the website as a creative medium, not just a template. That can mean custom animation, interactive or generative visuals, WebGL, sound or AI, built properly so it still loads fast and works on phones." },
+      { q: "Can you create an interactive art piece or installation?", a: "Yes. Paint With Your Mind turns what people say into a live painting using AI sentiment analysis. It started as an experiment for Murdoch University and has since run live at Scitech. I'm happy to explore ideas for exhibitions, festivals, events and brand activations." },
+      { q: "Are you actually based in the Perth Hills?", a: "Yes. I'm a Hills local, on the Darlington Arts Festival committee, and happy to meet in Darlington, Kalamunda, Mundaring or anywhere nearby." },
+      { q: "Do you also do regular business websites in the Hills?", a: "Of course. See the Perth Hills page for websites, branding and SEO for Hills businesses, from wineries and cafes to tradies." },
+    ],
+  },
 ];
 
 export const getIndustry = (slug) => industries.find((i) => i.slug === slug) || null;

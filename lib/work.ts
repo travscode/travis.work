@@ -22,6 +22,8 @@ export interface Stat {
 export interface ProjectDetails {
   headline?: string;
   intro?: string;
+  /** Overrides the generated <title> when a project is searched for by name */
+  metaTitle?: string;
   stats: Stat[];
   quote?: { text: string; by?: string; source?: string };
   highlights: string[];
@@ -73,6 +75,7 @@ export function getDetails(project: Project): ProjectDetails | null {
   return {
     headline: data.headline,
     intro: data.intro,
+    metaTitle: data.metaTitle,
     stats: Array.isArray(data.stats) ? data.stats : [],
     quote: data.quote,
     highlights: Array.isArray(data.highlights) ? data.highlights : [],

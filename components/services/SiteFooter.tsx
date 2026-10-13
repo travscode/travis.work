@@ -44,7 +44,7 @@ export default function SiteFooter() {
         </nav>
 
         <nav aria-label="Platforms" className="md:col-span-2">
-          <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-50">Platforms</div>
+          <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-50">Platforms & tech</div>
           <ul className="mt-4 grid gap-y-2 text-sm">
             {platforms.map((s) => (
               <li key={s.slug}>
@@ -62,6 +62,11 @@ export default function SiteFooter() {
         <div className="md:col-span-3">
           <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-50">Elsewhere</div>
           <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link href="/about" className="hover:text-tw-accent transition-colors">
+                About
+              </Link>
+            </li>
             <li>
               <Link href="/work" className="hover:text-tw-accent transition-colors">
                 Work
