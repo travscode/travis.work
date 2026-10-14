@@ -46,7 +46,10 @@ export default function ServicesPage() {
     });
   const all = getAllServices();
   const services = all.filter((s) => s.showInServices).map(toSummary);
-  const platforms = all.filter((s) => !s.showInServices).map(toSummary);
+  const design = all.filter((s) => s.group === "design").map(toSummary);
+  const platforms = all
+    .filter((s) => !s.showInServices && s.group !== "design")
+    .map(toSummary);
 
   const jsonLd = {
     "@graph": [
@@ -60,7 +63,7 @@ export default function ServicesPage() {
         about: { "@id": BUSINESS_ID },
         mainEntity: {
           "@type": "ItemList",
-          itemListElement: [...services, ...platforms].map((s, i) => ({
+          itemListElement: [...services, ...design, ...platforms].map((s, i) => ({
             "@type": "ListItem",
             position: i + 1,
             url: `${SITE_URL}/services/${s.slug}`,
@@ -78,7 +81,7 @@ export default function ServicesPage() {
   return (
     <>
       <JsonLd data={jsonLd} />
-      <ServicesIndex services={services} platforms={platforms} />
+      <ServicesIndex services={services} design={design} platforms={platforms} />
     </>
   );
 }

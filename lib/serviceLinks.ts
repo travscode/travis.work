@@ -10,8 +10,12 @@ const RULES: [RegExp, string][] = [
   [/\bai\b|gen ai|conversational|voice model|prompt|computer vision|machine learning|sentiment/i, "/services/ai-development"],
   [/ui\s*\/?\s*ux|\bux\b|\bui\b|digital experience|product design|innovation|webgl|chat/i, "/services/ui-ux"],
   [/web ?design|web ?dev|nextjs|website/i, "/services/web-design"],
+  [/packag|label/i, "/services/packaging-design"],
   [/brand|identity|packag|naming|creative direction|concept|ideation/i, "/services/brand"],
-  [/graphic|print|illustration|poster|digital art|in-store/i, "/services/graphic-design"],
+  [/illustration|digital art/i, "/services/illustration"],
+  [/poster/i, "/services/poster-design"],
+  [/in-store|signage|display/i, "/services/signage-design"],
+  [/graphic|print/i, "/services/graphic-design"],
   [/^design$|^development$|consult/i, "/services"],
 ];
 

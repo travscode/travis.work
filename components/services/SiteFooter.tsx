@@ -5,13 +5,14 @@ import { industries } from "@/data/industries";
 export default function SiteFooter() {
   const all = getAllServices();
   const services = all.filter((s) => s.showInServices);
-  const platforms = all.filter((s) => !s.showInServices);
+  const design = all.filter((s) => s.group === "design");
+  const platforms = all.filter((s) => !s.showInServices && s.group !== "design");
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-tw-black text-tw-white px-5 md:px-10 pt-20 pb-10 border-t border-tw-white/10">
       <div className="grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-4">
+        <div className="md:col-span-3">
           <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-50">
             Travis Weerts
           </div>
@@ -27,10 +28,26 @@ export default function SiteFooter() {
           </address>
         </div>
 
-        <nav aria-label="Services" className="md:col-span-3">
+        <nav aria-label="Services" className="md:col-span-2">
           <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-50">Services</div>
           <ul className="mt-4 grid gap-y-2 text-sm">
             {services.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="hover:text-tw-accent transition-colors"
+                >
+                  {s.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav aria-label="Graphic design" className="md:col-span-2">
+          <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-50">Graphic design</div>
+          <ul className="mt-4 grid gap-y-2 text-sm">
+            {design.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}

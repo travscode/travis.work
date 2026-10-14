@@ -35,11 +35,47 @@ interface ServiceSummary {
   features: string[];
 }
 
+function CardGrid({ items }: { items: ServiceSummary[] }) {
+  return (
+    <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-tw-black/15 border border-tw-black/15 rounded-[28px] overflow-hidden">
+      {items.map((p, i) => (
+        <Reveal as="li" key={p.slug} delay={i * 0.05} y={16} className="bg-tw-white">
+          <Link
+            href={`/services/${p.slug}`}
+            className="group relative flex flex-col h-full min-h-[15rem] p-7 md:p-8 overflow-hidden"
+          >
+            <span className="absolute inset-0 bg-tw-black origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)]" />
+            <span className="relative flex items-start justify-between">
+              <span className="font-mono text-xs opacity-50 group-hover:text-tw-white transition-colors">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="w-10 h-10 rounded-full border border-current flex items-center justify-center group-hover:text-tw-white group-hover:rotate-[-45deg] transition-all duration-500">
+                →
+              </span>
+            </span>
+            <h3 className="relative mt-auto pt-10 font-object-heavy text-4xl md:text-5xl tracking-[-0.045em] group-hover:text-tw-white transition-colors duration-500">
+              {p.tag}
+            </h3>
+            <p className="relative mt-3 text-sm leading-snug text-tw-black/65 group-hover:text-tw-white/70 transition-colors duration-500">
+              {p.subheadline}
+            </p>
+            <span className="relative mt-4 text-xs font-object-bold group-hover:text-tw-accent transition-colors duration-500">
+              {p.price}
+            </span>
+          </Link>
+        </Reveal>
+      ))}
+    </ul>
+  );
+}
+
 export default function ServicesIndex({
   services,
+  design = [],
   platforms = [],
 }: {
   services: ServiceSummary[];
+  design?: ServiceSummary[];
   platforms?: ServiceSummary[];
 }) {
   const router = useRouter();
@@ -211,12 +247,31 @@ export default function ServicesIndex({
             </motion.div>
           </section>
 
+          {/* ---------------- GRAPHIC DESIGN ---------------- */}
+          {design.length > 0 && (
+            <section className="px-5 md:px-10 pb-28 md:pb-40">
+              <div className="grid lg:grid-cols-12 gap-8 mb-12">
+                <div className="lg:col-span-5">
+                  <Eyebrow index="02">Graphic design</Eyebrow>
+                  <h2 className="mt-6 font-object-heavy text-5xl md:text-6xl tracking-[-0.04em] leading-[0.95]">
+                    Print, packaging and everything in between.
+                  </h2>
+                </div>
+                <p className="lg:col-span-5 lg:col-start-8 self-end text-lg leading-snug text-tw-black/70">
+                  Labels, posters, menus, signs and decks. The pieces people pick up,
+                  walk past and hold onto, designed with the same care as a brand.
+                </p>
+              </div>
+              <CardGrid items={design} />
+            </section>
+          )}
+
           {/* ---------------- PLATFORMS ---------------- */}
           {platforms.length > 0 && (
             <section className="px-5 md:px-10 pb-28 md:pb-40">
               <div className="grid lg:grid-cols-12 gap-8 mb-12">
                 <div className="lg:col-span-5">
-                  <Eyebrow index="02">Platforms</Eyebrow>
+                  <Eyebrow index={design.length ? "03" : "02"}>Platforms</Eyebrow>
                   <h2 className="mt-6 font-object-heavy text-5xl md:text-6xl tracking-[-0.04em] leading-[0.95]">
                     Already on a platform? I build on all the big ones.
                   </h2>
@@ -226,35 +281,7 @@ export default function ServicesIndex({
                   care, whichever tool suits your business best.
                 </p>
               </div>
-              <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-tw-black/15 border border-tw-black/15 rounded-[28px] overflow-hidden">
-                {platforms.map((p, i) => (
-                  <Reveal as="li" key={p.slug} delay={i * 0.05} y={16} className="bg-tw-white">
-                    <Link
-                      href={`/services/${p.slug}`}
-                      className="group relative flex flex-col h-full min-h-[15rem] p-7 md:p-8 overflow-hidden"
-                    >
-                      <span className="absolute inset-0 bg-tw-black origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)]" />
-                      <span className="relative flex items-start justify-between">
-                        <span className="font-mono text-xs opacity-50 group-hover:text-tw-white transition-colors">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span className="w-10 h-10 rounded-full border border-current flex items-center justify-center group-hover:text-tw-white group-hover:rotate-[-45deg] transition-all duration-500">
-                          →
-                        </span>
-                      </span>
-                      <h3 className="relative mt-auto pt-10 font-object-heavy text-4xl md:text-5xl tracking-[-0.045em] group-hover:text-tw-white transition-colors duration-500">
-                        {p.tag}
-                      </h3>
-                      <p className="relative mt-3 text-sm leading-snug text-tw-black/65 group-hover:text-tw-white/70 transition-colors duration-500">
-                        {p.subheadline}
-                      </p>
-                      <span className="relative mt-4 text-xs font-object-bold group-hover:text-tw-accent transition-colors duration-500">
-                        {p.price}
-                      </span>
-                    </Link>
-                  </Reveal>
-                ))}
-              </ul>
+              <CardGrid items={platforms} />
             </section>
           )}
 
@@ -262,7 +289,7 @@ export default function ServicesIndex({
           <section className="px-5 md:px-10 pb-28 md:pb-40">
             <div className="grid lg:grid-cols-12 gap-10">
               <div className="lg:col-span-3">
-                <Eyebrow index={platforms.length ? "03" : "02"}>Who you&apos;ll work with</Eyebrow>
+                <Eyebrow index={String(2 + Number(design.length > 0) + Number(platforms.length > 0)).padStart(2, "0")}>Who you&apos;ll work with</Eyebrow>
                 <Reveal className="mt-10">
                   <div className="relative w-48 aspect-[3/4] rounded-2xl overflow-hidden rotate-[-3deg] shadow-xl">
                     <Image

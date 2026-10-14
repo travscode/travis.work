@@ -7,6 +7,8 @@
 // relatedWork: project labels from data/projects.js
 // related: other service slugs to cross-link
 
+import { designServices } from "./designServices";
+
 export const services = {
   "web-design": {
     title: "Web Design Perth",
@@ -1048,7 +1050,21 @@ export const services = {
       "Incubus / Make yourself Foundation",
       "CODA",
     ],
-    related: ["brand", "web-design", "ui-ux"],
+    related: [
+      "packaging-design",
+      "wine-label-design",
+      "poster-design",
+      "brochure-design",
+      "menu-design",
+      "signage-design",
+      "social-media-design",
+      "illustration",
+      "presentation-design",
+      "business-card-design",
+      "report-design",
+      "freelance-graphic-designer",
+      "brand",
+    ],
   },
 
   wordpress: {
@@ -1776,6 +1792,8 @@ export const services = {
     relatedWork: ["IOOKI Labs", "Xingo", "Looksee"],
     related: ["webflow", "web-design", "ui-ux", "brand"],
   },
+
+  ...designServices,
 };
 
 // "From $X" when a starting price is published, otherwise a quote prompt
