@@ -112,7 +112,7 @@ const siteJsonLd = {
         "@type": "Place",
         name: "Perth, Western Australia",
       },
-      worksFor: [{ "@id": BUSINESS_ID }, { "@type": "Organization", name: "IOOKI Labs" }],
+      worksFor: [{ "@id": BUSINESS_ID }, { "@type": "Organization", name: "IOOKI Labs", url: "https://iooki.io" }],
       award: [
         "Featured by Apple",
         "Top 5 AI Startup in Australia",
