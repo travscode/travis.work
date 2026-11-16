@@ -51,6 +51,20 @@ export interface Service {
   features: string[];
   pricing: { starting: string | null; timeline: string };
   faqs: { q: string; a: string }[];
+  hosting?: {
+    note: string;
+    plans: HostingPlan[];
+  };
+}
+
+export interface HostingPlan {
+  name: string;
+  blurb: string;
+  monthly: number;
+  annual: number;
+  featured?: boolean;
+  specs: string[];
+  extras: string[];
 }
 
 export interface WorkItem {
@@ -266,6 +280,154 @@ function Process({ steps }: { steps: Service["process"] }) {
   );
 }
 
+function Plans({
+  hosting,
+  onPick,
+}: {
+  hosting: NonNullable<Service["hosting"]>;
+  onPick: (plan: string, billing: "monthly" | "annual") => void;
+}) {
+  const [billing, setBilling] = useState<"monthly" | "annual">("annual");
+  return (
+    <>
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+        <div>
+          <Eyebrow index="04">Plans & pricing</Eyebrow>
+          <h2 className="mt-6 font-object-heavy text-5xl md:text-7xl tracking-[-0.04em] leading-[0.95] max-w-3xl">
+            Honest prices. Same at renewal.
+          </h2>
+        </div>
+        <div
+          role="radiogroup"
+          aria-label="Billing period"
+          className="self-start md:self-auto relative inline-flex rounded-full border border-tw-black/25 p-1 text-sm font-object-bold"
+        >
+          {(["monthly", "annual"] as const).map((b) => (
+            <button
+              key={b}
+              role="radio"
+              aria-checked={billing === b}
+              onClick={() => setBilling(b)}
+              className="relative z-10 px-5 py-2.5 rounded-full cursor-pointer"
+            >
+              {billing === b && (
+                <motion.span
+                  layoutId="billing-pill"
+                  className="absolute inset-0 -z-10 rounded-full bg-tw-black"
+                  transition={{ duration: 0.4, ease: EASE_OUT }}
+                />
+              )}
+              <span className={cn("transition-colors", billing === b && "text-tw-white")}>
+                <span className="capitalize">{b}</span>
+                {b === "annual" && (
+                  <span
+                    className={cn(
+                      "ml-2 rounded-full px-2 py-0.5 text-[11px]",
+                      billing === b ? "bg-tw-accent text-tw-black" : "bg-tw-black/10",
+                    )}
+                  >
+                    2 months free
+                  </span>
+                )}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-4">
+        {hosting.plans.map((p, i) => {
+          const dark = p.featured;
+          const price = billing === "annual" ? p.annual : p.monthly;
+          return (
+            <Reveal key={p.name} delay={i * 0.1}>
+              <article
+                className={cn(
+                  "relative h-full rounded-[28px] p-8 md:p-10 flex flex-col overflow-hidden",
+                  dark ? "bg-tw-black text-tw-white" : "bg-tw-white text-tw-black",
+                )}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-object-heavy text-3xl md:text-4xl tracking-[-0.04em]">
+                    {p.name}
+                  </h3>
+                  {p.featured && (
+                    <span className="rounded-full bg-tw-accent text-tw-black px-3 py-1 text-[11px] font-object-bold uppercase tracking-wider">
+                      Most popular
+                    </span>
+                  )}
+                </div>
+                <p className="mt-3 text-sm opacity-70">{p.blurb}</p>
+
+                <div className="mt-8 flex items-end gap-2">
+                  <span className="relative h-[4.5rem] overflow-hidden font-object-heavy text-6xl md:text-7xl leading-none tracking-[-0.05em]">
+                    <AnimatePresence mode="popLayout" initial={false}>
+                      <motion.span
+                        key={price}
+                        className="block"
+                        initial={{ y: "100%" }}
+                        animate={{ y: "0%" }}
+                        exit={{ y: "-100%" }}
+                        transition={{ duration: 0.5, ease: EASE_OUT }}
+                      >
+                        ${price}
+                      </motion.span>
+                    </AnimatePresence>
+                  </span>
+                  <span className="pb-2 text-sm opacity-60">
+                    /{billing === "annual" ? "year" : "month"}
+                  </span>
+                </div>
+                <p className="mt-2 text-xs opacity-60 min-h-[1rem]">
+                  {billing === "annual"
+                    ? `Works out to $${(p.annual / 12).toFixed(2)}/mo · save $${p.monthly * 12 - p.annual}`
+                    : `Or $${p.annual}/year, two months free`}
+                </p>
+
+                <ul className={cn("mt-8 border-t", dark ? "border-tw-white/20" : "border-tw-black/15")}>
+                  {p.specs.map((t) => (
+                    <li
+                      key={t}
+                      className={cn(
+                        "py-3 border-b font-object-bold text-sm",
+                        dark ? "border-tw-white/10" : "border-tw-black/10",
+                      )}
+                    >
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="mt-6 space-y-2.5 text-sm">
+                  {p.extras.map((t) => (
+                    <li key={t} className="flex gap-3">
+                      <span className={dark ? "text-tw-accent" : ""}>✓</span>
+                      <span className="opacity-80">{t}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex-1" />
+                <button
+                  onClick={() => onPick(p.name, billing)}
+                  className={cn(
+                    "mt-10 w-full rounded-full py-4 font-object-bold transition-colors duration-300 cursor-pointer",
+                    dark
+                      ? "bg-tw-accent text-tw-black hover:bg-tw-white"
+                      : "bg-tw-black text-tw-white hover:bg-tw-accent hover:text-tw-black",
+                  )}
+                >
+                  Choose {p.name} →
+                </button>
+              </article>
+            </Reveal>
+          );
+        })}
+      </div>
+      <p className="mt-8 text-sm text-tw-black/60 max-w-2xl">{hosting.note}</p>
+    </>
+  );
+}
+
 export default function ServicePage({
   service,
   work,
@@ -422,6 +584,7 @@ export default function ServicePage({
                     <Image
                       src="/assets/media/trav_bio.jpg"
                       alt="Travis Weerts, designer and developer in the Perth Hills"
+                      title="Travis Weerts"
                       fill
                       sizes="160px"
                       className="object-cover"
@@ -506,7 +669,48 @@ export default function ServicePage({
             <Process steps={service.process} />
           </section>
 
+          {/* ---------------- HOSTING PLANS ---------------- */}
+          {service.hosting && (
+            <section id="pricing" className="px-5 md:px-10 py-28 md:py-40 bg-tw-paper scroll-mt-24">
+              <Plans
+                hosting={service.hosting}
+                onPick={(plan, billing) =>
+                  router.push(
+                    `/contact?service=${service.slug}&plan=${plan.toLowerCase()}-${billing}`,
+                  )
+                }
+              />
+            </section>
+          )}
+
           {/* ---------------- INCLUDED + PRICING ---------------- */}
+          {service.hosting ? (
+            <section className="px-5 md:px-10 py-28 md:py-40">
+              <Eyebrow index="05">Every plan includes</Eyebrow>
+              <h2 className="mt-6 font-object-heavy text-5xl md:text-7xl tracking-[-0.04em] leading-[0.95]">
+                The spec sheet.
+              </h2>
+              <dl className="mt-12 grid md:grid-cols-2 md:gap-x-12 border-t border-tw-black">
+                {service.features.map((f, i) => (
+                  <Reveal
+                    key={f}
+                    delay={(i % 10) * 0.03}
+                    y={12}
+                    className="flex items-baseline gap-4 py-4 border-b border-tw-black/15"
+                  >
+                    <dt className="font-mono text-xs opacity-40 w-8">
+                      {String(i + 1).padStart(2, "0")}
+                    </dt>
+                    <dd className="font-object-bold text-lg md:text-xl tracking-[-0.02em]">
+                      {f}
+                    </dd>
+                    <span className="flex-1 border-b border-dotted border-tw-black/30 translate-y-[-4px]" />
+                    <span className="text-sm">✓</span>
+                  </Reveal>
+                ))}
+              </dl>
+            </section>
+          ) : (
           <section id="pricing" className="px-5 md:px-10 py-28 md:py-40 bg-tw-paper scroll-mt-24">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-7">
@@ -584,7 +788,6 @@ export default function ServicePage({
                         className="mt-10 w-full rounded-full bg-tw-white text-tw-black py-4 font-object-bold hover:bg-tw-accent transition-colors duration-300 cursor-pointer"
                       >
                         Get a quote →
-                      title="Travis Weerts"
                       </button>
                     </div>
                   </Reveal>
@@ -592,6 +795,7 @@ export default function ServicePage({
               </div>
             </div>
           </section>
+          )}
 
           {/* ---------------- WORK ---------------- */}
           {work.length > 0 && (

@@ -122,7 +122,26 @@ export default async function Page({ params }: ServicePageProps) {
             itemOffered: { "@type": "Service", name: f },
           })),
         },
-        offers: {
+        offers: service.hosting
+          ? service.hosting.plans.flatMap(
+              (plan: { name: string; monthly: number; annual: number }) =>
+                (["monthly", "annual"] as const).map((billing) => ({
+                  "@type": "Offer",
+                  name: `${plan.name} (${billing})`,
+                  url,
+                  price: plan[billing],
+                  priceCurrency: "AUD",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: plan[billing],
+                    priceCurrency: "AUD",
+                    valueAddedTaxIncluded: true,
+                    unitCode: billing === "annual" ? "ANN" : "MON",
+                  },
+                  availability: "https://schema.org/InStock",
+                })),
+            )
+          : {
           "@type": "Offer",
           url,
           priceCurrency: "AUD",

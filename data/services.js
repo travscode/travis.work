@@ -92,11 +92,11 @@ export const services = {
       "Hosting setup",
       "Launch training",
     ],
-    pricing: { starting: "$1,500", timeline: "2–4 weeks" },
+    pricing: { starting: "$2,500", timeline: "2–4 weeks" },
     faqs: [
       {
         q: "How much does a website cost in Perth?",
-        a: "It depends on what you need — a few focused pages is a very different job to a custom web app. Smaller sites start from around $1,500. After a free chat I'll give you a fixed quote, and you can spread the cost over monthly payments if that's easier.",
+        a: "It depends on what you need — a few focused pages is a very different job to a custom web app. Smaller sites start from around $2,500. After a free chat I'll give you a fixed quote, and you can spread the cost over monthly payments if that's easier.",
       },
       {
         q: "How long does it take to build a website?",
@@ -178,7 +178,7 @@ export const services = {
       },
       {
         q: "How much does a web developer cost in Perth?",
-        a: "It depends on what's being built. A straightforward business website starts from around $1,500, while custom web apps and integrations are quoted after a free chat. You'll always get a fixed quote, and monthly payments are available.",
+        a: "It depends on what's being built. A straightforward business website starts from around $2,500, while custom web apps and integrations are quoted after a free chat. You'll always get a fixed quote, and monthly payments are available.",
       },
       {
         q: "Can you fix or speed up my existing website?",
@@ -1149,11 +1149,11 @@ export const services = {
       "Care plans",
       "Team training",
     ],
-    pricing: { starting: "$1,500", timeline: "2–4 weeks" },
+    pricing: { starting: "$2,500", timeline: "2–4 weeks" },
     faqs: [
       {
         q: "How much does a WordPress website cost?",
-        a: "Custom WordPress websites start from around $1,500 for a small site. Larger sites and WooCommerce stores are quoted on scope after a free chat, with monthly payment options.",
+        a: "Custom WordPress websites start from around $2,500 for a small site. Larger sites and WooCommerce stores are quoted on scope after a free chat, with monthly payment options.",
       },
       {
         q: "Can you fix or speed up my existing WordPress site?",
@@ -1167,15 +1167,226 @@ export const services = {
         q: "Do you offer WordPress maintenance?",
         a: "Yes — care plans include updates, backups, uptime monitoring, security and a bank of time for small changes each month.",
       },
+      {
+        q: "Do you host WordPress sites too?",
+        a: "Yes. WordPress hosting on Australian servers with cPanel, daily backups, staging and free migration starts at $19 a month. See the WordPress hosting page for plans.",
+      },
     ],
     relatedWork: ["The Raveonettes", "DUET", "Space Collective"],
-    related: ["web-design", "woocommerce", "shopify", "seo"],
+    related: ["wordpress-hosting", "web-design", "woocommerce", "seo"],
   },
 
   // ---------------------------------------------------------------------
   // Platform pages: real pages for search, listed on /services and in the
   // footer, but kept out of the header dropdown (showInServices: false).
   // ---------------------------------------------------------------------
+
+  // Hosting is a product, not a project, so it carries `hosting` plans
+  // (monthly + annual) that ServicePage renders as a pricing table.
+  // Priced against AU hosts in Oct 2026: VentraIP WordPress renews at
+  // ~$18.50/mo, Perth Web Hosting $25-49/mo ex GST, managed hosting from
+  // Perth agencies starts around $50/mo.
+  "wordpress-hosting": {
+    title: "WordPress Hosting Perth",
+    slug: "wordpress-hosting",
+    tag: "WordPress Hosting",
+    group: "platform",
+    showInServices: false,
+    art: "layers",
+    metaTitle: "WordPress Hosting Perth WA | Fast, Managed, Australian Servers",
+    metaDescription:
+      "Fast WordPress hosting for Perth businesses. Australian servers, cPanel, free SSL, daily backups, staging and real local support. Plans from $19/month or save with annual billing.",
+    h1: "WordPress hosting in Perth, looked after by a human.",
+    kicker: "cPanel · Australian servers · Daily backups",
+    images: { square: "services/wordpress-developer-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "WordPress hosting in Perth, looked after by a human.",
+      subheadline:
+        "Fast, secure WordPress hosting on Australian servers, with someone local who actually picks up.",
+      description:
+        "Every plan comes with cPanel, one-click WordPress, the latest PHP, free SSL, email and daily backups. No intro price that doubles at renewal, no ticket queue overseas. Just quick hosting and a Perth developer who knows WordPress inside out.",
+      cta: "Move my site across",
+    },
+    story:
+      "Cheap hosting is cheap until something breaks. Then you're stuck in a chat queue while your site's down and your plugins are fighting each other. I host WordPress sites on fast Australian servers, keep them backed up and patched, and when you need help you're talking to the same person who can fix the code.",
+    benefits: [
+      {
+        title: "Quick in Australia",
+        description:
+          "NVMe storage, LiteSpeed caching and Australian data centres, so pages load fast for your Perth and east coast customers.",
+      },
+      {
+        title: "Everything a WordPress person wants",
+        description:
+          "cPanel, SSH, WP-CLI, Git, staging, PHP version switching, phpMyAdmin and Let's Encrypt SSL. All the knobs, none of the upsells.",
+      },
+      {
+        title: "Backed up and locked down",
+        description:
+          "Daily off-site backups, malware scanning, a web application firewall and automatic security patches.",
+      },
+      {
+        title: "Free migration",
+        description:
+          "I'll move your existing WordPress site, email and DNS across for free, with no downtime and no lost rankings.",
+      },
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Pick a plan",
+        description:
+          "Choose monthly or annual. Not sure which plan fits? Send me your current site and I'll tell you honestly.",
+      },
+      {
+        step: 2,
+        title: "Free migration",
+        description:
+          "I copy your site, database and email across, test it on a temporary link and check everything works.",
+      },
+      {
+        step: 3,
+        title: "Switch over",
+        description:
+          "DNS gets pointed at the new server at a quiet time, SSL goes live and your site keeps running the whole way through.",
+      },
+      {
+        step: 4,
+        title: "Looked after",
+        description:
+          "Backups, updates and monitoring run in the background. If something looks off, I usually know before you do.",
+      },
+    ],
+    features: [
+      "cPanel control panel",
+      "One-click WordPress install",
+      "PHP 8.2, 8.3 & 8.4 (switchable)",
+      "MariaDB / MySQL databases",
+      "phpMyAdmin",
+      "Free SSL certificates",
+      "NVMe SSD storage",
+      "LiteSpeed web server & cache",
+      "Free CDN (Cloudflare)",
+      "Daily off-site backups",
+      "One-click staging sites",
+      "SSH, WP-CLI & Git access",
+      "SFTP & file manager",
+      "Business email accounts",
+      "Malware scanning & firewall",
+      "Automatic WordPress core updates",
+      "WooCommerce ready",
+      "99.9% uptime monitoring",
+      "Australian data centres",
+      "Free site migration",
+      "Local Perth support",
+    ],
+    pricing: { starting: "$19/mo", timeline: "Monthly or annual" },
+    hosting: {
+      // Annual = 10 x monthly, i.e. two months free.
+      note: "All prices AUD including GST. Same price when you renew. Cancel monthly plans any time.",
+      plans: [
+        {
+          name: "Starter",
+          blurb: "One small business site or portfolio.",
+          monthly: 19,
+          annual: 190,
+          specs: [
+            "1 WordPress site",
+            "10 GB NVMe storage",
+            "Unmetered bandwidth",
+            "5 email accounts",
+            "Free SSL",
+            "Daily backups, kept 14 days",
+          ],
+          extras: [
+            "cPanel & one-click WordPress",
+            "PHP 8.x, SSH & WP-CLI",
+            "Malware scanning",
+            "Free migration",
+          ],
+        },
+        {
+          name: "Business",
+          blurb: "Busy sites, small shops and growing teams.",
+          monthly: 39,
+          annual: 390,
+          featured: true,
+          specs: [
+            "Up to 5 WordPress sites",
+            "40 GB NVMe storage",
+            "Unmetered bandwidth",
+            "Unlimited email accounts",
+            "Free SSL",
+            "Daily backups, kept 30 days",
+          ],
+          extras: [
+            "Everything in Starter",
+            "One-click staging",
+            "Cloudflare CDN set up",
+            "Plugin & theme updates handled",
+            "Uptime monitoring",
+          ],
+        },
+        {
+          name: "Managed",
+          blurb: "WooCommerce and sites that can't go down.",
+          monthly: 79,
+          annual: 790,
+          specs: [
+            "Up to 10 WordPress sites",
+            "100 GB NVMe storage",
+            "Unmetered bandwidth",
+            "Unlimited email accounts",
+            "Free SSL",
+            "Hourly backups, kept 30 days",
+          ],
+          extras: [
+            "Everything in Business",
+            "WooCommerce tuned",
+            "Monthly speed & security check",
+            "30 min of small edits each month",
+            "Priority same-day support",
+          ],
+        },
+      ],
+    },
+    faqs: [
+      {
+        q: "How much does WordPress hosting cost in Perth?",
+        a: "Plans start at $19 a month, or $190 a year if you pay annually (two months free). Business is $39 a month and Managed is $79 a month. All prices include GST, and unlike most big hosts they don't jump up at renewal.",
+      },
+      {
+        q: "Do I get cPanel?",
+        a: "Yes. Every plan includes full cPanel, so you can manage files, databases, email, DNS, SSL and PHP settings yourself, or leave it all to me.",
+      },
+      {
+        q: "Which PHP versions do you support?",
+        a: "PHP 8.2, 8.3 and 8.4, switchable per site from cPanel. Older versions can be enabled temporarily while we update an old theme or plugin.",
+      },
+      {
+        q: "Where are the servers?",
+        a: "In Australian data centres, so your site is quick for Australian visitors and your data stays onshore. A Cloudflare CDN sits in front for visitors overseas.",
+      },
+      {
+        q: "Can you move my existing WordPress site?",
+        a: "Yes, for free on every plan. I migrate the site, database, email and DNS, test everything on a temporary link first and switch over without downtime.",
+      },
+      {
+        q: "What's the difference between monthly and annual billing?",
+        a: "Same plan, same features. Monthly can be cancelled any time. Annual is paid up front and works out to two months free.",
+      },
+      {
+        q: "Is email included?",
+        a: "Yes. Starter includes 5 business email accounts and Business and Managed include unlimited accounts on your own domain, with webmail and IMAP for your phone and laptop. Microsoft 365 or Google Workspace can be set up instead if you prefer.",
+      },
+      {
+        q: "Do I need the Managed plan?",
+        a: "Only if your site makes you money every hour, like a WooCommerce store, or you'd rather never think about updates. Most brochure sites are perfectly happy on Starter or Business.",
+      },
+    ],
+    relatedWork: ["The Raveonettes", "DUET", "Space Collective"],
+    related: ["wordpress", "woocommerce", "web-design", "seo"],
+  },
 
   "react-native": {
     title: "React Native Developer Perth",
@@ -1557,9 +1768,9 @@ export const services = {
       { step: 4, title: "Launch", description: "Go live, analytics, training and ongoing support as you grow." },
     ],
     features: ["Store setup", "Custom theme design", "Theme development", "Product import", "Payments & shipping", "App integrations", "Store migration", "Speed optimisation", "Shopify SEO", "Training"],
-    pricing: { starting: "$1,500", timeline: "2–5 weeks" },
+    pricing: { starting: "$2,500", timeline: "2–5 weeks" },
     faqs: [
-      { q: "How much does a Shopify store cost in Perth?", a: "Store setups start from around $1,500, and custom theme builds are quoted on scope after a free chat. Monthly payment options are available." },
+      { q: "How much does a Shopify store cost in Perth?", a: "Store setups start from around $2,500, and custom theme builds are quoted on scope after a free chat. Monthly payment options are available." },
       { q: "Can you move my store to Shopify from another platform?", a: "Yes. I migrate products, customers, orders and SEO redirects from WooCommerce, Squarespace, Wix and others, so you keep your rankings." },
       { q: "Can you customise my existing Shopify theme?", a: "Absolutely. I can refine an existing theme, fix speed issues or build custom sections without starting from scratch." },
       { q: "Do you build custom Shopify apps?", a: "For specific needs, yes. Often an existing app does the job, so I'll recommend the simplest option first." },
@@ -1603,11 +1814,11 @@ export const services = {
       { step: 4, title: "Launch & care", description: "Go live with monitoring, backups and ongoing support." },
     ],
     features: ["Custom WooCommerce themes", "Payments & shipping", "Subscriptions", "Speed optimisation", "Plugin clean-up", "Security hardening", "Store migration", "SEO setup", "Care plans", "Training"],
-    pricing: { starting: "$1,500", timeline: "2–5 weeks" },
+    pricing: { starting: "$2,500", timeline: "2–5 weeks" },
     faqs: [
       { q: "Should I choose WooCommerce or Shopify?", a: "Shopify is simpler to run; WooCommerce gives you more control and no platform fees. After a quick chat about your products and plans, I'll recommend the right fit honestly." },
       { q: "Can you speed up my slow WooCommerce store?", a: "Yes. Most slow stores suffer from heavy themes and too many plugins. I clean up, optimise and often rebuild key templates for a big speed boost." },
-      { q: "How much does a WooCommerce store cost?", a: "Stores start from around $1,500 depending on products and features. You'll get a fixed quote after a free chat, with monthly payment options." },
+      { q: "How much does a WooCommerce store cost?", a: "Stores start from around $2,500 depending on products and features. You'll get a fixed quote after a free chat, with monthly payment options." },
     ],
     relatedWork: ["The Raveonettes", "Space Collective"],
     related: ["wordpress", "shopify", "web-design", "seo"],
@@ -1693,9 +1904,9 @@ export const services = {
       { step: 4, title: "Launch", description: "Go live, training and ongoing improvements." },
     ],
     features: ["Custom Webflow design", "Webflow development", "Interactions & animation", "CMS setup", "Webflow e-commerce", "Migrations to Webflow", "SEO setup", "Integrations", "Training", "Ongoing support"],
-    pricing: { starting: "$1,500", timeline: "2–5 weeks" },
+    pricing: { starting: "$2,500", timeline: "2–5 weeks" },
     faqs: [
-      { q: "How much does a Webflow website cost?", a: "Webflow sites start from around $1,500. Larger sites with CMS and custom interactions are quoted after a free chat, with monthly payment options." },
+      { q: "How much does a Webflow website cost?", a: "Webflow sites start from around $2,500. Larger sites with CMS and custom interactions are quoted after a free chat, with monthly payment options." },
       { q: "Can you move my site to Webflow?", a: "Yes. I migrate content and set up redirects from WordPress, Squarespace, Wix and others so you keep your search rankings." },
       { q: "Is Webflow good for SEO?", a: "Very. It produces clean code, fast pages and gives full control over metadata and structure." },
     ],

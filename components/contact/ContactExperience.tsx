@@ -87,9 +87,16 @@ export default function ContactExperience({
 
   // Arriving from a service page (/contact?service=seo) pre-selects it
   useEffect(() => {
-    const slug = new URLSearchParams(window.location.search).get("service");
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("service");
     const match = services.find((s) => s.slug === slug);
     if (match) setHelp([match.tag]);
+    // Hosting plan buttons send ?plan=business-annual
+    const plan = params.get("plan")?.match(/^([a-z]+)-(monthly|annual)$/);
+    if (plan) {
+      const name = plan[1][0].toUpperCase() + plan[1].slice(1);
+      setDetails(`I'd like the ${name} hosting plan, billed ${plan[2]}.`);
+    }
   }, [services]);
 
   // Focus the input whenever a typing step appears

@@ -124,7 +124,7 @@ export const locations = [
       { q: "Are you local to Mundaring?", a: "Yes. I'm a Perth Hills local and on the Darlington Arts Festival committee, so I'm happy to meet in Mundaring, Darlington or Glen Forrest." },
       { q: "Do you design websites for artists and makers?", a: "Yes. Portfolio sites, online shops and galleries that put the work first. If you're after something more experimental, see my creative web development page for the Perth Hills." },
       { q: "Can you help with posters and print for a local event?", a: "Yes. I design the Darlington Arts Festival's print materials and regularly do posters, flyers, signage and programmes alongside websites." },
-      { q: "Can a small Hills business afford a good website?", a: "Yes. Websites start from around $1,500 with a fixed quote, and you can spread the cost over monthly payments." },
+      { q: "Can a small Hills business afford a good website?", a: "Yes. Websites start from around $2,500 with a fixed quote, and you can spread the cost over monthly payments." },
     ],
   },
   {

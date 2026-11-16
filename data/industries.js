@@ -21,7 +21,7 @@ export const industries = [
     inPerson: false,
     cta: "Let's get your phone ringing.",
     faqs: [
-      { q: "How much does a website for a tradie cost?", a: "Simple, effective tradie websites start from around $1,500 with a fixed quote. Monthly payment plans are available so you can get online without a big upfront cost." },
+      { q: "How much does a website for a tradie cost?", a: "Simple, effective tradie websites start from around $2,500 with a fixed quote. Monthly payment plans are available so you can get online without a big upfront cost." },
       { q: "Do I need a website if I already get work from word of mouth?", a: "Even referrals look you up before they call. A professional site with your work and reviews builds trust and helps new customers find you on Google." },
       { q: "Can you help me show up on Google Maps?", a: "Yes. I set up and optimise your Google Business Profile, service area and reviews strategy, and build pages for the areas you actually work in." },
       { q: "Will I be able to update it myself?", a: "Yes. I'll set it up so adding job photos or changing your services takes a couple of minutes, and I'm a phone call away if you get stuck." },
