@@ -40,6 +40,7 @@ export default function WorkIndex({ work }: { work: WorkCard[] }) {
                     <Image
                       src={w.imageUrl}
                       alt={`${w.label} by Travis Weerts`}
+                      title={w.label}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"

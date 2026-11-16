@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import { motion, MotionConfig, type Variants } from "motion/react";
+import { AnimatePresence, motion, MotionConfig, type Variants } from "motion/react";
+import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import FillPill from "@/components/FillPill";
@@ -107,6 +108,13 @@ const MoreLink = ({ href }: { href: string }) => (
   </FillPill>
 );
 
+// The raw files in /public are huge (some PNGs are 5MB). Route them through
+// Next's image optimiser so the browser gets a resized WebP/AVIF instead.
+const optimized = (src: string, w = 1920) =>
+  src.startsWith("/")
+    ? `/_next/image?url=${encodeURIComponent(src)}&w=${w}&q=80`
+    : src;
+
 // Preload an image and resolve with its aspect ratio (w / h)
 const loadAspect = (src: string) =>
   new Promise<number>((resolve) => {
@@ -115,6 +123,14 @@ const loadAspect = (src: string) =>
     img.onerror = () => resolve(0.75);
     img.src = src;
   });
+
+const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+// How many cards must be fully loaded before the preloader lifts. The rest
+// keep loading in the background, in order, so the next cards are always ready.
+const PRELOAD_COUNT = 6;
+// Never hold the site hostage on a slow connection
+const PRELOAD_MAX_MS = 6000;
 
 const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   projects,
@@ -131,6 +147,9 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [aspects, setAspects] = useState<Record<number, number>>({});
   const [loaded, setLoaded] = useState<Record<number, boolean>>({});
+  const [revealed, setRevealed] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [progressTotal, setProgressTotal] = useState(PRELOAD_COUNT);
 
   useEffect(() => {
     // Check if we're on mobile
@@ -149,33 +168,58 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
     };
   }, []);
 
-  // Intro: spines slide into the rack, the first image loads, then the first card opens
+  // Intro: preloader holds until fonts + the first few images are in, then
+  // fades out, the spines slide into the rack and the first card opens
   useEffect(() => {
     let cancelled = false;
-    const minDelay = new Promise((r) => setTimeout(r, 1100));
-    const firstImage = Promise.race([
-      loadAspect(projects[0].imageUrl).then((a) => {
-        if (!cancelled) setAspects((prev) => ({ ...prev, 0: a }));
-      }),
-      new Promise((r) => setTimeout(r, 2500)),
+    const desktop = window.innerWidth >= 768;
+    const document_ = window.document;
+    document_.documentElement.style.overflow = "hidden";
+
+    const measure = (index: number) =>
+      loadAspect(optimized(projects[index].imageUrl)).then((a) => {
+        if (cancelled) return;
+        setAspects((prev) => ({ ...prev, [index]: a }));
+        setProgress((p) => p + 1);
+      });
+
+    const critical = desktop
+      ? projects.slice(0, PRELOAD_COUNT).map((_, i) => measure(i))
+      : [];
+    setProgressTotal(Math.max(1, critical.length));
+
+    const assetsReady = Promise.race([
+      Promise.all([document_.fonts?.ready, ...critical]),
+      wait(PRELOAD_MAX_MS),
     ]);
 
-    Promise.all([minDelay, firstImage]).then(() => {
+    (async () => {
+      await Promise.all([assetsReady, wait(700)]);
       if (cancelled) return;
-      setActiveIndex(0);
-      setTimeout(() => !cancelled && setReady(true), 900);
-    });
+      setRevealed(true); // preloader fades, spines slide in
+      document_.documentElement.style.overflow = "";
+      await wait(750);
+      if (cancelled) return;
+      setActiveIndex(0); // first card slides open
+      await wait(900);
+      if (!cancelled) setReady(true);
+    })();
 
-    // Measure the rest in the background so every card knows its width before it opens
-    projects.forEach((project, index) => {
-      if (index === 0) return;
-      loadAspect(project.imageUrl).then((a) => {
-        if (!cancelled) setAspects((prev) => ({ ...prev, [index]: a }));
-      });
-    });
+    // Then the rest, a couple at a time in order, so we don't flood the connection
+    if (desktop) {
+      (async () => {
+        await assetsReady;
+        let next = PRELOAD_COUNT;
+        const worker = async () => {
+          while (!cancelled && next < projects.length) await measure(next++);
+        };
+        await Promise.all([worker(), worker()]);
+      })();
+    }
 
     return () => {
       cancelled = true;
+      document_.documentElement.style.overflow = "";
     };
   }, [projects]);
 
@@ -297,6 +341,37 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
 
   return (
     <MotionConfig reducedMotion="user">
+      {/* Preloader: blacks out the page until the first cards are ready */}
+      <AnimatePresence>
+        {!revealed && (
+          <motion.div
+            key="preloader"
+            className="fixed inset-0 z-[9999] bg-tw-black text-tw-white flex flex-col items-center justify-center gap-6"
+            initial={false}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6, ease: EASE_OUT }}
+            aria-label="Loading"
+            role="status"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.6, ease: EASE_OUT }}
+            >
+              <Logo className="preloader-pulse" />
+            </motion.div>
+            <div className="h-px w-40 bg-tw-white/15 overflow-hidden">
+              <motion.div
+                className="h-full bg-tw-white origin-left"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: Math.min(1, progress / progressTotal) }}
+                transition={{ duration: 0.4, ease: EASE_OUT }}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <section className="bg-tw-black">
         {!isMobile ? (
           <div className="pin-height h-[300vh] overflow-hidden">
@@ -319,12 +394,13 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                     }}
                     className={cn(
                       `
-                    spine-in project relative h-full min-w-[4vw] shrink-0 cursor-pointer
+                    project relative h-full min-w-[4vw] shrink-0 cursor-pointer
                     md:border-r border-tw-grey
                     transition-colors duration-300
                     hover:bg-tw-white hover:text-tw-black
                     flex flex-row
                   `,
+                      revealed ? "spine-in" : "opacity-0",
                       isActive
                         ? "on bg-tw-black hover:bg-tw-black hover:text-tw-white text-tw-white"
                         : "text-tw-grey",
@@ -390,8 +466,10 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                             }}
                             className={mediaClass}
                             style={aspect ? { aspectRatio: aspect } : undefined}
-                            src={project.videoUrl}
-                            poster={project.imageUrl}
+                            src={aspect || isActive ? project.videoUrl : undefined}
+                            aria-label={`${project.title || project.label} by Travis Weerts`}
+                            title={project.label}
+                            poster={aspect || isActive ? optimized(project.imageUrl) : undefined}
                             loop
                             muted
                             playsInline
@@ -404,8 +482,9 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
                             className={mediaClass}
-                            src={project.imageUrl}
-                            alt={project.title || project.label}
+                            src={aspect || isActive ? optimized(project.imageUrl) : undefined}
+                            alt={`${project.title || project.label} by Travis Weerts`}
+                            title={project.label}
                             decoding="async"
                             fetchPriority={index === 0 ? "high" : "auto"}
                             onLoad={() =>
@@ -583,6 +662,8 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                               : "h-[80vh]",
                           )}
                           src={project.videoUrl}
+                          aria-label={`${project.title || project.label} by Travis Weerts`}
+                          title={project.label}
                           poster={project.imageUrl}
                           autoPlay
                           loop
@@ -598,7 +679,8 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                               : "h-[80vh]",
                           )}
                           src={project.imageUrl}
-                          alt={project.title || project.label}
+                          alt={`${project.title || project.label} by Travis Weerts`}
+                          title={project.label}
                           width={300}
                           height={600}
                         />

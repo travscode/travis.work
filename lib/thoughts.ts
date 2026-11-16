@@ -89,7 +89,13 @@ export function getPost(slug: string): Post | null {
     body = body.split("\n").slice(1).join("\n");
   }
   const html = embed(marked.parse(body, { async: false }) as string)
-    .replace(/<img /g, '<img loading="lazy" ');
+    .replace(/<img /g, '<img loading="lazy" ')
+    // Images with no alt text get the post title, and every image gets a title
+    .replace(/<img ([^>]*?)alt="([^"]*)"([^>]*)>/g, (_m, pre, alt, post) => {
+      const text = alt || `${info.title.replace(/"/g, "&quot;")}, illustration`;
+      const title = /\btitle="/.test(pre + post) ? "" : ` title="${text}"`;
+      return `<img ${pre}alt="${text}"${title}${post}>`;
+    });
   return {
     ...info,
     html,

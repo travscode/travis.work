@@ -110,7 +110,7 @@ export default async function Page({ params }: Props) {
           {post.cover && (
             <div className="rise mt-12 max-w-5xl mx-auto" style={{ animationDelay: "0.35s" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={post.cover} alt="" className="w-full rounded-[28px] max-h-[70vh] object-cover" />
+              <img src={post.cover} alt={post.title} title={post.title} className="w-full rounded-[28px] max-h-[70vh] object-cover" />
             </div>
           )}
 
@@ -167,7 +167,7 @@ export default async function Page({ params }: Props) {
                       <div className="aspect-[16/10] rounded-[20px] overflow-hidden bg-tw-black">
                         {p.cover && (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img src={p.cover} alt="" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                          <img src={p.cover} alt={p.title} title={p.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                         )}
                       </div>
                       <h3 className="mt-4 font-object-bold text-xl leading-tight tracking-[-0.02em] group-hover:underline underline-offset-4">{p.title}</h3>

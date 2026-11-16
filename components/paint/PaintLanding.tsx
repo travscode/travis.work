@@ -98,6 +98,8 @@ function Clip({ clip, className, eager }: { clip: PaintClip; className?: string;
       }}
       src={clip.video}
       poster={clip.poster}
+      aria-label={"title" in clip ? `${clip.title}, a Paint with our minds artwork` : "Paint with our minds, AI artwork painted by a live crowd"}
+      title={"title" in clip ? String(clip.title) : "Paint with our minds"}
       muted
       loop
       playsInline
@@ -358,7 +360,8 @@ function Stories() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={s.poster}
-                      alt=""
+                      alt={`${s.title}, a Paint with our minds artwork`}
+                      title={s.title}
                       className="h-full w-full object-cover"
                       style={{
                         filter: s.hue ? `hue-rotate(${s.hue}deg)` : undefined,
@@ -379,7 +382,7 @@ function Stories() {
             {/* Peeking neighbours */}
             <div className="hidden xl:block w-40 shrink-0 aspect-[9/16] overflow-hidden rounded-[22px] opacity-30 scale-90">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={stories[(index - 1 + stories.length) % stories.length].poster} alt="" className="h-full w-full object-cover" />
+              <img src={stories[(index - 1 + stories.length) % stories.length].poster} alt={`${stories[(index - 1 + stories.length) % stories.length].title}, previous story`} title={stories[(index - 1 + stories.length) % stories.length].title} className="h-full w-full object-cover" />
             </div>
 
             <div
@@ -446,7 +449,7 @@ function Stories() {
 
             <div className="hidden xl:block w-40 shrink-0 aspect-[9/16] overflow-hidden rounded-[22px] opacity-30 scale-90">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={stories[(index + 1) % stories.length].poster} alt="" className="h-full w-full object-cover" />
+              <img src={stories[(index + 1) % stories.length].poster} alt={`${stories[(index + 1) % stories.length].title}, next story`} title={stories[(index + 1) % stories.length].title} className="h-full w-full object-cover" />
             </div>
           </div>
         </div>

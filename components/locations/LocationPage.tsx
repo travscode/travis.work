@@ -142,7 +142,7 @@ export default function LocationPage({
                 <Reveal as="li" key={s.href} delay={i * 0.08}>
                   <Link href={s.href} className="group block h-full rounded-[24px] bg-tw-paper border border-tw-black/10 overflow-hidden">
                     <div className="relative aspect-square overflow-hidden">
-                      <Image src={s.image} alt="" fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
+                      <Image src={s.image} alt={`${s.title} by Travis Weerts`} title={s.title} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
                     </div>
                     <div className="p-6">
                       <h3 className="font-object-heavy text-2xl tracking-[-0.035em]">{s.title}</h3>
@@ -168,7 +168,7 @@ export default function LocationPage({
                   <Reveal as="li" key={w.href} delay={i * 0.1}>
                     <Link href={w.href} className="group block">
                       <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden bg-tw-black/10">
-                        <Image src={w.image} alt={`${w.title} by Travis Weerts`} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
+                        <Image src={w.image} alt={`${w.title} by Travis Weerts`} title={w.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
                       </div>
                       <h3 className="mt-4 font-object-bold text-xl tracking-[-0.02em]">{w.title}</h3>
                       {w.line && <p className="mt-1 text-sm text-tw-black/60">{w.line}</p>}

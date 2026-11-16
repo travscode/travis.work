@@ -577,7 +577,8 @@ export default function ContactExperience({
                   <div className="relative w-16 h-16 shrink-0 rounded-full overflow-hidden">
                     <Image
                       src="/assets/media/trav_bio.jpg"
-                      alt="Travis Weerts"
+                      alt="Travis Weerts, designer and developer in Perth"
+                      title="Travis Weerts"
                       fill
                       sizes="64px"
                       className="object-cover object-top"

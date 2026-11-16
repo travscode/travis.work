@@ -584,6 +584,7 @@ export default function ServicePage({
                         className="mt-10 w-full rounded-full bg-tw-white text-tw-black py-4 font-object-bold hover:bg-tw-accent transition-colors duration-300 cursor-pointer"
                       >
                         Get a quote →
+                      title="Travis Weerts"
                       </button>
                     </div>
                   </Reveal>
@@ -616,7 +617,8 @@ export default function ServicePage({
                       <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden bg-tw-black/10">
                         <Image
                           src={w.imageUrl}
-                          alt={`${w.label} — ${w.services ?? service.tag} by Travis Weerts`}
+                          alt={`${w.label}, ${w.services ?? service.tag} by Travis Weerts`}
+                          title={w.label}
                           fill
                           sizes="(min-width: 768px) 33vw, 100vw"
                           className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"

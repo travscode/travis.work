@@ -56,7 +56,7 @@ export default function ThoughtsPage() {
               <div className="lg:col-span-7 aspect-[16/10] rounded-[28px] overflow-hidden bg-tw-black">
                 {lead.cover && (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={lead.cover} alt="" className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
+                  <img src={lead.cover} alt={lead.title} title={lead.title} className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-105" />
                 )}
               </div>
               <div className="lg:col-span-5">

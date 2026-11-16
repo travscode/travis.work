@@ -97,7 +97,7 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-12 gap-10 items-start">
               <Reveal className="lg:col-span-4">
                 <div className="relative w-56 md:w-72 aspect-[3/4] rounded-[24px] overflow-hidden rotate-[-3deg] shadow-xl">
-                  <Image src="/assets/media/trav_bio.jpg" alt="Travis Weerts, designer and developer in Perth" fill sizes="288px" className="object-cover" priority />
+                  <Image src="/assets/media/trav_bio.jpg" alt="Travis Weerts, designer and developer in Perth" title="Travis Weerts" fill sizes="288px" className="object-cover" priority />
                 </div>
               </Reveal>
               <div className="lg:col-span-8">

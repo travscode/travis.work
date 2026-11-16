@@ -19,7 +19,7 @@ const OFFERS = [
     no: "01",
     title: "Get online",
     line: "A fast, good-looking website that brings in enquiries.",
-    price: "Websites from $1,500",
+    price: "Websites from $2,500",
     href: "/services/web-design",
     points: ["Designed around your customers", "Mobile-first and fast", "Set up for Google from day one"],
     tone: "bg-tw-paper",
@@ -118,7 +118,7 @@ export default function StartPage() {
             <div className="grid lg:grid-cols-12 gap-10 items-center">
               <Reveal className="lg:col-span-4">
                 <div className="relative w-56 md:w-64 aspect-[3/4] rounded-[24px] overflow-hidden rotate-[-3deg] shadow-xl">
-                  <Image src="/assets/media/trav_bio.jpg" alt="Travis Weerts, web designer for small businesses in Perth" fill sizes="256px" className="object-cover" />
+                  <Image src="/assets/media/trav_bio.jpg" alt="Travis Weerts, web designer for small businesses in Perth" title="Travis Weerts" fill sizes="256px" className="object-cover" />
                 </div>
               </Reveal>
               <div className="lg:col-span-8">

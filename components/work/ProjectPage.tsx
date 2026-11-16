@@ -140,6 +140,8 @@ export default function ProjectPage({
                     className="w-full h-full object-cover"
                     src={project.videoUrl}
                     poster={project.imageUrl}
+                    aria-label={`${project.label} by Travis Weerts`}
+                    title={project.label}
                     autoPlay
                     muted
                     loop
@@ -148,7 +150,8 @@ export default function ProjectPage({
                 ) : (
                   <Image
                     src={project.imageUrl}
-                    alt={`${project.label}${project.services ? ` — ${project.services}` : ""} by Travis Weerts`}
+                    alt={`${project.label}${project.services ? `, ${project.services}` : ""} by Travis Weerts`}
+                    title={project.label}
                     fill
                     priority
                     sizes="100vw"
@@ -300,7 +303,7 @@ export default function ProjectPage({
               >
                 <span className="absolute inset-0 bg-tw-black origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)]" />
                 <div className="relative w-20 h-20 md:w-28 md:h-28 shrink-0 rounded-2xl overflow-hidden bg-tw-black/10">
-                  <Image src={n.imageUrl} alt="" fill sizes="112px" className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <Image src={n.imageUrl} alt={`${n.label} by Travis Weerts`} title={n.label} fill sizes="112px" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="relative min-w-0">
                   <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-50 group-hover:text-tw-white transition-colors">

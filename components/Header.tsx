@@ -247,6 +247,7 @@ const Header: FC<HeaderProps> = ({ variant = "dark" }) => {
                   <Image
                     src={`/assets/media/${preview.images.square}`}
                     alt={`${preview.title} by Travis Weerts`}
+                    title={preview.title}
                     fill
                     sizes="(min-width: 1024px) 33vw, 40vw"
                     className="object-cover"

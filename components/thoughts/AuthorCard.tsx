@@ -6,7 +6,7 @@ export default function AuthorCard() {
   return (
     <aside className="mt-20 rounded-[28px] bg-tw-black text-tw-white p-8 md:p-10 flex flex-col md:flex-row gap-8 md:items-center">
       <div className="relative w-24 h-24 shrink-0 rounded-full overflow-hidden">
-        <Image src="/assets/media/trav_bio.jpg" alt="Travis Weerts" fill sizes="96px" className="object-cover object-top" />
+        <Image src="/assets/media/trav_bio.jpg" alt="Travis Weerts, designer and developer in Perth" title="Travis Weerts" fill sizes="96px" className="object-cover object-top" />
       </div>
       <div className="flex-1">
         <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-50">Written by</div>

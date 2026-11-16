@@ -234,7 +234,8 @@ export default function ServicesIndex({
                       >
                         <Image
                           src={`/assets/media/${services[hovered].image}`}
-                          alt=""
+                          alt={`${services[hovered].title} by Travis Weerts`}
+                          title={services[hovered].title}
                           fill
                           sizes="288px"
                           className="object-cover"
@@ -295,6 +296,7 @@ export default function ServicesIndex({
                     <Image
                       src="/assets/media/trav_bio.jpg"
                       alt="Travis Weerts, web designer and developer in Perth"
+                      title="Travis Weerts"
                       fill
                       sizes="192px"
                       className="object-cover"
