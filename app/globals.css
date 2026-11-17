@@ -311,6 +311,12 @@
   letter-spacing: -0.02em;
   color: #111;
 }
+.prose-tw img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  margin-block: 1.5rem;
+}
 .prose-tw strong {
   font-family: var(--font-object-bold);
   color: #111;

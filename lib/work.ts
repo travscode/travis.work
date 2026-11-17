@@ -9,6 +9,7 @@ import { projectSlug } from "@/lib/slug";
 export type Project = (typeof projects)[number] & {
   slug?: string;
   details?: string;
+  portrait?: boolean;
 };
 
 export interface Stat {

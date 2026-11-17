@@ -24,6 +24,8 @@ export interface ProjectView {
   services?: string;
   imageUrl: string;
   videoUrl?: string;
+  /** Vertical (9:16) video: shown whole over a blurred fill instead of cropped. */
+  portrait?: boolean;
   notesHtml?: string;
 }
 
@@ -129,13 +131,29 @@ export default function ProjectPage({
           <section className="px-5 md:px-10">
             <motion.div
               ref={mediaRef}
-              className="relative overflow-hidden rounded-[28px] bg-tw-black/10 aspect-[16/10] md:aspect-[16/8]"
+              className={`relative overflow-hidden rounded-[28px] bg-tw-black/10 ${project.portrait ? "aspect-[4/5] md:aspect-[16/8]" : "aspect-[16/10] md:aspect-[16/8]"}`}
               initial={{ clipPath: "inset(12% 6% 12% 6% round 28px)" }}
               animate={{ clipPath: "inset(0% 0% 0% 0% round 28px)" }}
               transition={{ duration: 1.3, delay: 0.3, ease: EASE_SLIDE }}
             >
               <motion.div className="absolute inset-[-6%_0]" style={{ y: mediaY }}>
-                {project.videoUrl ? (
+                {project.videoUrl && project.portrait ? (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={project.imageUrl} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-70" />
+                    <video
+                      className="relative mx-auto h-full w-auto max-w-full object-contain"
+                      src={project.videoUrl}
+                      poster={project.imageUrl}
+                      aria-label={`${project.label} by Travis Weerts`}
+                      title={project.label}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  </>
+                ) : project.videoUrl ? (
                   <video
                     className="w-full h-full object-cover"
                     src={project.videoUrl}

@@ -31,6 +31,24 @@ export const projects = [
     ],
   },
   {
+    label: "Houston Texans / Find Your H-Town",
+    details: "work/houston-texans-find-your-h-town.md",
+    year: "2026",
+    imageUrl: "/assets/media/houston_texans_find_your_htown_blue_tile_project.jpg",
+    videoUrl:
+      "/assets/media/houston_texans_bluetileproject_collab_with_travis_weerts.mp4",
+    portrait: true,
+    services: "Web Development, UI/UX, Interactive Maps, Campaign",
+    client: "Houston Texans + Bud Light",
+    agency: "Blue Tile Project",
+    agencyLink: "https://bluetileproject.org",
+    link: "https://www.houstontexans.com/fans/findyourhtown",
+    linkLabel: "Join the hunt",
+    date: "Nov 2026",
+    notes:
+      "Find Your H-Town is a citywide scavenger hunt with the NFL's Houston Texans and Blue Tile Project, celebrating the reveal of the Texans' new blue tile-inspired jerseys. 25 blue tile signs hidden all over Houston, with tickets, sideline passes, tailgate gear and even Bud Light beer for a year up for grabs.<br /><br /><a href='https://www.houstontexans.com/fans/findyourhtown' class='underline'>Join the hunt</a><br /><a href='https://bluetileproject.org' class='underline'>Check out the Blue Tile Project</a>",
+  },
+  {
     label: "Paint with our minds",
     details: "work/paint-with-your-mind.md",
     year: "2026",

@@ -83,6 +83,7 @@ export default async function Page({ params }: Props) {
           services: project.services,
           imageUrl: project.imageUrl,
           videoUrl: project.videoUrl,
+          portrait: project.portrait,
           notesHtml: project.notes || project.other,
         }}
         details={details}
