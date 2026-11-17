@@ -9,6 +9,155 @@
 
 import { designServices } from "./designServices";
 
+// ---------------------------------------------------------------------
+// SEO pricing. One source for the SEO page (plans + audit + add-ons) and
+// the standalone /services/seo-audit page.
+// Priced so the audit alone (~2.5 months of Local) makes a monthly plan,
+// which includes the same audit free in month one, the obvious choice.
+// ---------------------------------------------------------------------
+export const SEO_AUDIT = {
+  price: 1290,
+  turnaround: "5 business days",
+  credit: 500,
+  href: "/services/seo-audit",
+  blurb:
+    "A full, hands-on review of where your website stands on Google today, what's holding it back and exactly what to fix first. You keep the report whether we work together after or not.",
+  highlights: [
+    "On-page and technical audit",
+    "Off-page, backlink and authority audit",
+    "Local SEO and Google Business Profile review",
+    "Competitor and keyword gap analysis",
+    "AI search (ChatGPT, Gemini, AI Overviews) check",
+    "Prioritised action plan: quick wins, 30 and 90 days",
+    "45-minute walkthrough call, recorded",
+  ],
+  onPage: [
+    { title: "Crawl & indexing", description: "Every page crawled. Broken links, redirect chains, orphan pages, canonicals, robots.txt, sitemap and what Google has (and hasn't) indexed." },
+    { title: "Speed & Core Web Vitals", description: "LCP, INP and CLS on mobile and desktop, with the specific images, scripts and plugins slowing you down." },
+    { title: "Titles, meta & headings", description: "Missing, duplicate or truncated titles and descriptions, heading structure and click-through opportunities." },
+    { title: "Content quality", description: "Thin, duplicate and outdated pages, keyword cannibalisation and pages that should be merged, expanded or retired." },
+    { title: "Keyword mapping", description: "Which page should rank for which search, the keywords you already nearly rank for and the ones you're missing entirely." },
+    { title: "Internal linking & structure", description: "How authority flows through your site, URL structure, navigation and the pages that need more links pointing at them." },
+    { title: "Schema & structured data", description: "LocalBusiness, Service, FAQ, Product and review markup, validated and checked for rich result eligibility." },
+    { title: "Mobile, images & accessibility", description: "Mobile usability, image sizes and alt text, and the accessibility issues that also hurt rankings." },
+  ],
+  offPage: [
+    { title: "Backlink profile", description: "Total links and referring domains, link quality, anchor text spread and any toxic or spammy links worth disavowing." },
+    { title: "Domain authority", description: "Your domain authority and rating benchmarked against the competitors outranking you, and the gap you need to close." },
+    { title: "Competitor link gap", description: "Sites linking to your competitors but not to you. A ready-made shortlist of link building targets." },
+    { title: "Local citations & NAP", description: "Your business name, address and phone checked across Australian directories for missing or inconsistent listings." },
+    { title: "Google Business Profile", description: "Categories, services, photos, posts, Q&A and reviews compared against the businesses in your local map pack." },
+    { title: "Reviews & reputation", description: "Review volume, rating, velocity and response rate versus competitors, plus a simple plan to get more." },
+    { title: "Brand mentions & AI visibility", description: "Where you're mentioned online, and whether ChatGPT, Gemini and Google's AI Overviews recommend you or a competitor." },
+  ],
+  deliverables: [
+    "Detailed PDF report with scores for every area",
+    "Prioritised action plan: quick wins, 30 days, 90 days",
+    "Keyword opportunity list with search volumes",
+    "Competitor snapshot and backlink target list",
+    "45-minute walkthrough call (recorded for your team)",
+    "Fixed-price quote for anything you'd like me to implement",
+  ],
+};
+
+export const SEO_PLANS = {
+  note: "All prices AUD including GST. 3-month minimum, then month to month. Every plan starts with the full SEO audit in month one, included free.",
+  plans: [
+    {
+      name: "Local",
+      slug: "local",
+      blurb: "Trades, clinics and local businesses that want the map pack.",
+      monthly: 500,
+      specs: [
+        "Full SEO audit in month one",
+        "Up to 10 tracked keywords",
+        "Google Business Profile optimisation",
+        "On-page fixes, up to 5 pages a month",
+        "20 directory & citation submissions",
+        "Monthly plain-English report",
+      ],
+      extras: [
+        "Technical fixes & schema",
+        "Search Console & GA4 set up",
+        "Review request strategy",
+      ],
+    },
+    {
+      name: "Growth",
+      slug: "growth",
+      blurb: "Businesses competing across Perth for bigger searches.",
+      monthly: 950,
+      featured: true,
+      specs: [
+        "Everything in Local",
+        "Up to 30 tracked keywords",
+        "1 new landing page or article a month",
+        "2 quality backlinks a month",
+        "40 directory & citation submissions",
+        "Competitor rank tracking",
+      ],
+      extras: [
+        "Internal linking & content refresh",
+        "Core Web Vitals improvements",
+        "Monthly 30-minute strategy call",
+      ],
+    },
+    {
+      name: "Authority",
+      slug: "authority",
+      blurb: "Competitive industries and businesses going national.",
+      monthly: 1750,
+      specs: [
+        "Everything in Growth",
+        "Up to 60 tracked keywords",
+        "2 new pages or articles a month",
+        "5 quality backlinks a month",
+        "Domain authority building & digital PR",
+        "GEO / AI search visibility",
+      ],
+      extras: [
+        "Backlink clean-up & disavow",
+        "Fortnightly strategy calls",
+        "Priority turnaround",
+      ],
+    },
+  ],
+  addOns: [
+    {
+      name: "Directory & citation pack",
+      slug: "citations",
+      price: "$390",
+      unit: "one-off",
+      description:
+        "30 hand-submitted Australian business directories and citation sites, with your name, address and phone made consistent everywhere.",
+    },
+    {
+      name: "Link building",
+      slug: "links",
+      price: "$450",
+      unit: "per month",
+      description:
+        "4 relevant, quality backlinks a month through outreach, guest articles and local partnerships. No link farms, no PBNs, nothing that risks a penalty.",
+    },
+    {
+      name: "Authority campaign",
+      slug: "authority-campaign",
+      price: "$1,200",
+      unit: "per campaign",
+      description:
+        "A one-off digital PR push to lift your domain authority: a link-worthy asset, targeted outreach and placements on respected sites.",
+    },
+    {
+      name: "Backlink clean-up",
+      slug: "disavow",
+      price: "$290",
+      unit: "one-off",
+      description:
+        "Review every link pointing at your site, remove or disavow the toxic ones and stop old spam dragging your rankings down.",
+    },
+  ],
+};
+
 export const services = {
   "web-design": {
     title: "Web Design Perth",
@@ -324,7 +473,8 @@ export const services = {
         "Get found by the people already searching for exactly what you do.",
       description:
         "Honest, technical, measurable SEO for Perth businesses. I fix what's holding your site back, build pages that deserve to rank, and get your Google Business Profile working as hard as you do.",
-      cta: "Get a free SEO check",
+      cta: "Get an SEO audit",
+      ctaHref: "/services/seo-audit",
     },
     story:
       "Somewhere in Perth, right now, someone is typing exactly what you sell into Google. SEO is just making sure they find you — not a competitor with a worse product and a better website. No smoke, no secret sauce: solid foundations, genuinely useful content and patience.",
@@ -388,11 +538,20 @@ export const services = {
       "Link building",
       "Monthly reporting",
     ],
-    pricing: { starting: "$500/month", timeline: "Ongoing · cancel anytime after 3 months" },
+    pricing: { starting: "$500/month", timeline: "Monthly plans or a one-time audit" },
+    seoPlans: SEO_PLANS,
     faqs: [
       {
         q: "How much does SEO cost in Perth?",
-        a: "SEO starts from $500 per month for local businesses, scaling with how competitive your industry is and how much content is needed. One-off audits and fixes are quoted separately.",
+        a: "Monthly SEO plans are $500, $950 or $1,750 a month depending on how competitive your industry is and how much content and link building you need. If you just want to know where you stand, a one-time SEO audit is $1,290 and delivered in 5 business days. Every monthly plan includes that same audit free in month one.",
+      },
+      {
+        q: "Can I just get a one-time SEO audit?",
+        a: "Yes. The one-time SEO audit is $1,290, delivered in 5 business days, and covers on-page, technical, off-page, backlinks, local SEO and AI search. You get a detailed report, a prioritised action plan and a walkthrough call, with no ongoing commitment.",
+      },
+      {
+        q: "Do you do link building and directory submissions?",
+        a: "Yes. Growth and Authority plans include monthly backlinks and citation building. You can also add a directory & citation pack ($390), ongoing link building (from $450 a month) or a one-off authority campaign to any plan or audit.",
       },
       {
         q: "How long does SEO take to work?",
@@ -413,6 +572,127 @@ export const services = {
     ],
     relatedWork: ["Olympics / Brisbane 2032", "HBF / Digital Transformation"],
     related: ["geo", "web-design", "wordpress"],
+  },
+
+  // One-off product page, linked from the SEO plans and shareable on its
+  // own (/seo-audit redirects here). Kept out of the header and the
+  // "Platforms & tech" lists via group: "offer".
+  "seo-audit": {
+    title: "SEO Audit Perth",
+    slug: "seo-audit",
+    tag: "SEO Audit",
+    group: "offer",
+    showInServices: false,
+    art: "signal",
+    metaTitle: "SEO Audit Perth WA | One-Time Website SEO Audit & Report",
+    metaDescription:
+      "A one-time SEO audit for Perth businesses. On-page, technical, backlinks, domain authority, local SEO and AI search, delivered as a detailed report and action plan in 5 business days. $1,290 fixed.",
+    h1: "A one-time SEO audit that tells you exactly what to fix.",
+    kicker: "One-time audit · Fixed price · 5 business days",
+    images: { square: "services/seo-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "A one-time SEO audit that tells you exactly what to fix.",
+      subheadline:
+        "Find out where your website really stands on Google, and what's stopping it ranking.",
+      description:
+        "I go through your site page by page, then look at everything happening off it: backlinks, domain authority, directories, your Google Business Profile and the competitors beating you. You get a detailed report, a prioritised plan and a call to walk through it. One fixed price, no ongoing contract.",
+      cta: "Book my SEO audit",
+      ctaHref: "/contact?service=seo&plan=seo-audit",
+    },
+    story:
+      "Most SEO problems aren't mysterious. They're a slow page here, a missing listing there, a competitor with forty more backlinks and a Google profile nobody's touched since 2019. The audit puts all of it in one place, in plain English, ranked by what will move the needle first... so you can fix it yourself, hand it to your developer or have me do it.",
+    benefits: [
+      {
+        title: "On-page and off-page",
+        description:
+          "Not just a robot crawl. Your content, code and structure, plus your backlinks, authority, citations and local presence.",
+      },
+      {
+        title: "Done by a developer",
+        description:
+          "I write code, so technical findings come with the actual cause and the actual fix, not a vague warning from a tool.",
+      },
+      {
+        title: "Prioritised, not overwhelming",
+        description:
+          "Every issue ranked by impact and effort, so you know the five things to do this week and what can wait.",
+      },
+      {
+        title: "Yours to keep",
+        description:
+          "No lock-in. Use the report with any developer or agency, or move to a monthly plan and get a $500 credit.",
+      },
+    ],
+    process: [
+      {
+        step: 1,
+        title: "Book & brief",
+        description:
+          "Book the audit and answer a short questionnaire about your business, your customers and your competitors. Read-only access to Search Console and Analytics helps if you have it.",
+      },
+      {
+        step: 2,
+        title: "On-page audit",
+        description:
+          "Days 1 to 2. A full crawl plus a manual review of speed, content, keywords, structure and schema.",
+      },
+      {
+        step: 3,
+        title: "Off-page audit",
+        description:
+          "Days 3 to 4. Backlinks, domain authority, competitor link gaps, directories, Google Business Profile, reviews and AI visibility.",
+      },
+      {
+        step: 4,
+        title: "Report & walkthrough",
+        description:
+          "Day 5. Your report and action plan land in your inbox, then we jump on a 45-minute call to go through it together.",
+      },
+    ],
+    features: [
+      "Technical SEO crawl",
+      "Core Web Vitals",
+      "On-page & content review",
+      "Keyword research & mapping",
+      "Schema markup check",
+      "Backlink profile analysis",
+      "Domain authority benchmark",
+      "Competitor link gap",
+      "Local citations & NAP audit",
+      "Google Business Profile review",
+      "AI search visibility",
+      "Prioritised action plan",
+    ],
+    pricing: { starting: "$1,290", timeline: "One-time · 5 business days", fixed: true },
+    audit: SEO_AUDIT,
+    faqs: [
+      {
+        q: "How much does an SEO audit cost?",
+        a: "The one-time SEO audit is a fixed $1,290 AUD including GST. That covers the full on-page and off-page audit, the written report, the action plan and a 45-minute walkthrough call.",
+      },
+      {
+        q: "Why isn't the audit free?",
+        a: "Free audits are usually an automated tool report used as a sales pitch. This is several days of hands-on work by a developer, covering things tools miss, and the report is genuinely useful whether or not you hire me afterwards.",
+      },
+      {
+        q: "What's the difference between on-page and off-page SEO?",
+        a: "On-page is everything on your website: speed, content, keywords, structure and code. Off-page is everything elsewhere that tells Google you're trustworthy: backlinks, domain authority, directory listings, your Google Business Profile and reviews. The audit covers both.",
+      },
+      {
+        q: "What do you need from me?",
+        a: "Your website address, a short questionnaire about your business and competitors, and ideally read-only access to Google Search Console and Analytics. If you don't have those set up, that's fine, it'll go in the report.",
+      },
+      {
+        q: "Can you fix the issues you find?",
+        a: "Yes. The report includes a fixed-price quote for any fixes you'd like me to handle. If you move to a monthly SEO plan within 30 days, $500 of the audit comes off your first month.",
+      },
+      {
+        q: "Do you do link building and directory submissions too?",
+        a: "Yes. After the audit you can add a directory & citation pack ($390), ongoing link building (from $450 a month) or an authority campaign to grow your domain authority. The audit tells you which of those you actually need.",
+      },
+    ],
+    relatedWork: ["Olympics / Brisbane 2032", "HBF / Digital Transformation"],
+    related: ["seo", "geo", "web-design"],
   },
 
   geo: {
@@ -2007,9 +2287,14 @@ export const services = {
   ...designServices,
 };
 
-// "From $X" when a starting price is published, otherwise a quote prompt
+// "$X fixed" for one-off products, "From $X" when a starting price is
+// published, otherwise a quote prompt
 export const priceLabel = (service) =>
-  service.pricing.starting ? `From ${service.pricing.starting}` : "Custom quote";
+  service.pricing.fixed
+    ? `${service.pricing.starting} fixed`
+    : service.pricing.starting
+      ? `From ${service.pricing.starting}`
+      : "Custom quote";
 
 export const servicesList = Object.keys(services);
 

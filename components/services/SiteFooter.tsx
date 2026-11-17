@@ -6,7 +6,9 @@ export default function SiteFooter() {
   const all = getAllServices();
   const services = all.filter((s) => s.showInServices);
   const design = all.filter((s) => s.group === "design");
-  const platforms = all.filter((s) => !s.showInServices && s.group !== "design");
+  const platforms = all.filter(
+    (s) => !s.showInServices && s.group !== "design" && s.group !== "offer",
+  );
   const year = new Date().getFullYear();
 
   return (

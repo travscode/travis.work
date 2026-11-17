@@ -25,7 +25,7 @@ import {
   Eyebrow,
   EASE_OUT,
 } from "@/components/services/motion";
-import { priceLabel } from "@/data/services";
+import { priceLabel, SEO_AUDIT, SEO_PLANS } from "@/data/services";
 import { cn } from "@/lib/utils";
 
 export interface Service {
@@ -44,17 +44,46 @@ export interface Service {
     subheadline: string;
     description: string;
     cta: string;
+    ctaHref?: string;
   };
   story: string;
   benefits: { title: string; description: string }[];
   process: { step: number; title: string; description: string }[];
   features: string[];
-  pricing: { starting: string | null; timeline: string };
+  pricing: { starting: string | null; timeline: string; fixed?: boolean };
   faqs: { q: string; a: string }[];
   hosting?: {
     note: string;
     plans: HostingPlan[];
   };
+  seoPlans?: SeoPlans;
+  audit?: SeoAudit;
+}
+
+export interface SeoPlans {
+  note: string;
+  plans: {
+    name: string;
+    slug: string;
+    blurb: string;
+    monthly: number;
+    featured?: boolean;
+    specs: string[];
+    extras: string[];
+  }[];
+  addOns: { name: string; slug: string; price: string; unit: string; description: string }[];
+}
+
+export interface SeoAudit {
+  price: number;
+  turnaround: string;
+  credit: number;
+  href: string;
+  blurb: string;
+  highlights: string[];
+  onPage: { title: string; description: string }[];
+  offPage: { title: string; description: string }[];
+  deliverables: string[];
 }
 
 export interface HostingPlan {
@@ -428,6 +457,430 @@ function Plans({
   );
 }
 
+
+const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
+
+/* Link-building and authority add-ons, shared by the SEO and audit pages */
+function AddOns({
+  addOns,
+  onPick,
+  index,
+}: {
+  addOns: SeoPlans["addOns"];
+  onPick: (slug: string) => void;
+  index: string;
+}) {
+  return (
+    <div className="mt-24">
+      <Eyebrow index={index}>Add-ons</Eyebrow>
+      <div className="mt-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <h3 className="font-object-heavy text-4xl md:text-6xl tracking-[-0.04em] leading-[0.95] max-w-3xl">
+          Build your link profile.
+        </h3>
+        <p className="max-w-md text-tw-black/70 leading-relaxed">
+          Backlinks, directory submissions and domain authority building. Add
+          them to any plan or audit, or on their own.
+        </p>
+      </div>
+      <div className="mt-10 grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
+        {addOns.map((a, i) => (
+          <Reveal key={a.slug} delay={i * 0.08}>
+            <button
+              onClick={() => onPick(a.slug)}
+              className="group h-full w-full text-left rounded-[24px] border border-tw-black/15 bg-tw-white p-7 flex flex-col cursor-pointer hover:border-tw-black transition-colors duration-300"
+            >
+              <span className="font-mono text-xs opacity-40">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="mt-6 font-object-bold text-2xl tracking-[-0.03em] leading-tight">
+                {a.name}
+              </span>
+              <span className="mt-3 text-sm leading-relaxed text-tw-black/70">
+                {a.description}
+              </span>
+              <span className="flex-1" />
+              <span className="mt-8 flex items-end justify-between gap-4">
+                <span>
+                  <span className="font-object-heavy text-3xl tracking-[-0.04em]">{a.price}</span>
+                  <span className="ml-2 text-xs opacity-60">{a.unit}</span>
+                </span>
+                <span className="w-10 h-10 shrink-0 rounded-full border border-tw-black/25 flex items-center justify-center transition-all duration-500 group-hover:bg-tw-black group-hover:text-tw-white group-hover:rotate-[-45deg]">
+                  →
+                </span>
+              </span>
+            </button>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* SEO pricing: monthly plans or a one-time audit, plus add-ons */
+function SeoPricing({
+  seo,
+  audit,
+  onPick,
+}: {
+  seo: SeoPlans;
+  audit: SeoAudit;
+  onPick: (pick: string) => void;
+}) {
+  const [mode, setMode] = useState<"monthly" | "audit">("monthly");
+  const local = seo.plans[0];
+  return (
+    <>
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+        <div>
+          <Eyebrow index="04">Plans & pricing</Eyebrow>
+          <h2 className="mt-6 font-object-heavy text-5xl md:text-7xl tracking-[-0.04em] leading-[0.95] max-w-3xl">
+            Ongoing SEO, or a one-time audit.
+          </h2>
+        </div>
+        <div
+          role="radiogroup"
+          aria-label="How you'd like to start"
+          className="self-start md:self-auto relative inline-flex rounded-full border border-tw-black/25 p-1 text-sm font-object-bold"
+        >
+          {(
+            [
+              ["monthly", "Monthly SEO"],
+              ["audit", "One-time audit"],
+            ] as const
+          ).map(([m, label]) => (
+            <button
+              key={m}
+              role="radio"
+              aria-checked={mode === m}
+              onClick={() => setMode(m)}
+              className="relative z-10 px-4 sm:px-5 py-2.5 whitespace-nowrap rounded-full cursor-pointer"
+            >
+              {mode === m && (
+                <motion.span
+                  layoutId="seo-mode-pill"
+                  className="absolute inset-0 -z-10 rounded-full bg-tw-black"
+                  transition={{ duration: 0.4, ease: EASE_OUT }}
+                />
+              )}
+              <span className={cn("transition-colors", mode === m && "text-tw-white")}>
+                {label}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <AnimatePresence mode="wait" initial={false}>
+        {mode === "monthly" ? (
+          <motion.div
+            key="monthly"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.4, ease: EASE_OUT }}
+          >
+            <div className="grid md:grid-cols-3 gap-4">
+              {seo.plans.map((p) => {
+                const dark = p.featured;
+                return (
+                  <article
+                    key={p.slug}
+                    className={cn(
+                      "relative h-full rounded-[28px] p-8 md:p-10 flex flex-col overflow-hidden",
+                      dark ? "bg-tw-black text-tw-white" : "bg-tw-white text-tw-black",
+                    )}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="font-object-heavy text-3xl md:text-4xl tracking-[-0.04em]">
+                        {p.name}
+                      </h3>
+                      {p.featured && (
+                        <span className="rounded-full bg-tw-accent text-tw-black px-3 py-1 text-[11px] font-object-bold uppercase tracking-wider">
+                          Most popular
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-3 text-sm opacity-70">{p.blurb}</p>
+                    <div className="mt-8 flex items-end gap-2">
+                      <span className="font-object-heavy text-6xl md:text-7xl leading-none tracking-[-0.05em]">
+                        {money(p.monthly)}
+                      </span>
+                      <span className="pb-2 text-sm opacity-60">/month</span>
+                    </div>
+                    <p className="mt-2 text-xs opacity-60">
+                      Includes the {money(audit.price)} audit, free
+                    </p>
+                    <ul className={cn("mt-8 border-t", dark ? "border-tw-white/20" : "border-tw-black/15")}>
+                      {p.specs.map((t) => (
+                        <li
+                          key={t}
+                          className={cn(
+                            "py-3 border-b font-object-bold text-sm",
+                            dark ? "border-tw-white/10" : "border-tw-black/10",
+                          )}
+                        >
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                    <ul className="mt-6 space-y-2.5 text-sm">
+                      {p.extras.map((t) => (
+                        <li key={t} className="flex gap-3">
+                          <span className={dark ? "text-tw-accent" : ""}>✓</span>
+                          <span className="opacity-80">{t}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex-1" />
+                    <button
+                      onClick={() => onPick(`seo-${p.slug}`)}
+                      className={cn(
+                        "mt-10 w-full rounded-full py-4 font-object-bold transition-colors duration-300 cursor-pointer",
+                        dark
+                          ? "bg-tw-accent text-tw-black hover:bg-tw-white"
+                          : "bg-tw-black text-tw-white hover:bg-tw-accent hover:text-tw-black",
+                      )}
+                    >
+                      Choose {p.name} →
+                    </button>
+                  </article>
+                );
+              })}
+            </div>
+            <p className="mt-8 text-sm text-tw-black/60 max-w-2xl">{seo.note}</p>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="audit"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.4, ease: EASE_OUT }}
+          >
+            <article className="rounded-[28px] bg-tw-black text-tw-white p-8 md:p-12 grid lg:grid-cols-12 gap-10">
+              <div className="lg:col-span-5 flex flex-col">
+                <span className="self-start rounded-full bg-tw-accent text-tw-black px-3 py-1 text-[11px] font-object-bold uppercase tracking-wider">
+                  One-time · No contract
+                </span>
+                <h3 className="mt-6 font-object-heavy text-4xl md:text-5xl tracking-[-0.04em]">
+                  SEO Audit
+                </h3>
+                <p className="mt-4 text-tw-white/75 leading-relaxed">{audit.blurb}</p>
+                <div className="mt-8 flex items-end gap-2">
+                  <span className="font-object-heavy text-6xl md:text-7xl leading-none tracking-[-0.05em]">
+                    {money(audit.price)}
+                  </span>
+                  <span className="pb-2 text-sm opacity-60">one-time</span>
+                </div>
+                <p className="mt-2 text-xs opacity-60">
+                  AUD inc GST · delivered in {audit.turnaround}
+                </p>
+                <div className="flex-1" />
+                <div className="mt-10 flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => onPick("seo-audit")}
+                    className="flex-1 rounded-full bg-tw-accent text-tw-black py-4 px-6 font-object-bold hover:bg-tw-white transition-colors duration-300 cursor-pointer"
+                  >
+                    Book the audit →
+                  </button>
+                  <Link
+                    href={audit.href}
+                    className="flex-1 text-center rounded-full border border-tw-white/30 py-4 px-6 font-object-bold hover:bg-tw-white hover:text-tw-black transition-colors duration-300"
+                  >
+                    What&apos;s in it
+                  </Link>
+                </div>
+              </div>
+              <div className="lg:col-span-7">
+                <ul className="border-t border-tw-white/20">
+                  {audit.highlights.map((h) => (
+                    <li
+                      key={h}
+                      className="flex gap-4 py-4 border-b border-tw-white/10 font-object-bold"
+                    >
+                      <span className="text-tw-accent">✓</span>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+
+            {/* The anchor: same audit comes free with a plan */}
+            <div className="mt-4 rounded-[28px] bg-tw-white p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-1">
+                <div className="font-object-bold text-2xl tracking-[-0.03em]">
+                  Or get the same audit free.
+                </div>
+                <p className="mt-2 text-tw-black/70 leading-relaxed max-w-2xl">
+                  Every monthly plan starts with this exact audit, then I
+                  actually do the work. Local SEO is {money(local.monthly)} a
+                  month. Already bought the audit? Start a plan within 30 days
+                  and {money(audit.credit)} comes off your first month.
+                </p>
+              </div>
+              <button
+                onClick={() => setMode("monthly")}
+                className="shrink-0 rounded-full bg-tw-black text-tw-white px-7 py-4 font-object-bold hover:bg-tw-accent hover:text-tw-black transition-colors duration-300 cursor-pointer"
+              >
+                See monthly plans →
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AddOns addOns={seo.addOns} onPick={(slug) => onPick(`seo-${slug}`)} index="05" />
+    </>
+  );
+}
+
+/* The standalone audit page: what's in the report + the price card */
+function AuditReport({
+  audit,
+  addOns,
+  planFrom,
+  onBook,
+  onPick,
+}: {
+  audit: SeoAudit;
+  addOns?: SeoPlans["addOns"];
+  planFrom?: number;
+  onBook: () => void;
+  onPick: (pick: string) => void;
+}) {
+  const columns = [
+    { label: "On-page findings", sub: "Everything on your website", items: audit.onPage },
+    { label: "Off-page findings", sub: "Everything elsewhere that Google weighs up", items: audit.offPage },
+  ];
+  return (
+    <>
+      <Eyebrow index="04">What&apos;s in the report</Eyebrow>
+      <h2 className="mt-6 font-object-heavy text-5xl md:text-7xl tracking-[-0.04em] leading-[0.95] max-w-4xl">
+        On-page. Off-page. All of it.
+      </h2>
+      <div className="mt-14 grid lg:grid-cols-2 gap-4">
+        {columns.map((c, ci) => (
+          <Reveal key={c.label} delay={ci * 0.1}>
+            <div
+              className={cn(
+                "h-full rounded-[28px] p-8 md:p-10",
+                ci === 0 ? "bg-tw-white text-tw-black" : "bg-tw-black text-tw-white",
+              )}
+            >
+              <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-50">
+                {c.sub}
+              </div>
+              <h3 className="mt-3 font-object-heavy text-3xl md:text-4xl tracking-[-0.04em]">
+                {c.label}
+              </h3>
+              <ul className={cn("mt-8 border-t", ci === 0 ? "border-tw-black/15" : "border-tw-white/20")}>
+                {c.items.map((it, i) => (
+                  <li
+                    key={it.title}
+                    className={cn(
+                      "py-5 border-b flex gap-5",
+                      ci === 0 ? "border-tw-black/10" : "border-tw-white/10",
+                    )}
+                  >
+                    <span className="font-mono text-xs opacity-40 pt-1.5 w-6 shrink-0">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <div className="font-object-bold text-lg tracking-[-0.02em]">{it.title}</div>
+                      <p className="mt-1.5 text-sm leading-relaxed opacity-70">{it.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+
+      <div className="mt-24 grid lg:grid-cols-12 gap-12">
+        <div className="lg:col-span-7">
+          <Eyebrow index="05">What you get</Eyebrow>
+          <h2 className="mt-6 font-object-heavy text-5xl md:text-7xl tracking-[-0.04em] leading-[0.95]">
+            The deliverables.
+          </h2>
+          <dl className="mt-12 border-t border-tw-black">
+            {audit.deliverables.map((f, i) => (
+              <Reveal
+                key={f}
+                delay={i * 0.03}
+                y={12}
+                className="flex items-baseline gap-4 py-4 border-b border-tw-black/15"
+              >
+                <dt className="font-mono text-xs opacity-40 w-8">
+                  {String(i + 1).padStart(2, "0")}
+                </dt>
+                <dd className="font-object-bold text-lg md:text-xl tracking-[-0.02em]">{f}</dd>
+                <span className="flex-1 border-b border-dotted border-tw-black/30 translate-y-[-4px]" />
+                <span className="text-sm">✓</span>
+              </Reveal>
+            ))}
+          </dl>
+        </div>
+        <div className="lg:col-span-5">
+          <div className="lg:sticky lg:top-32">
+            <Reveal>
+              <div className="relative rounded-[32px] bg-tw-black text-tw-white p-8 md:p-10 overflow-hidden">
+                <motion.div
+                  aria-hidden
+                  className="absolute -top-24 -right-24 w-72 h-72 rounded-full border border-tw-white/10"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                >
+                  <span className="absolute top-1/2 -left-1.5 w-3 h-3 rounded-full bg-tw-accent" />
+                </motion.div>
+                <div className="font-mono text-sm uppercase opacity-60">SEO Audit · Perth</div>
+                <div className="mt-8 text-sm opacity-60">One fixed price</div>
+                <div className="font-object-heavy text-6xl md:text-7xl tracking-[-0.05em]">
+                  {money(audit.price)}
+                </div>
+                <div className="mt-2 text-sm opacity-60">
+                  AUD inc GST · delivered in {audit.turnaround}
+                </div>
+                <ul className="mt-8 space-y-3 text-sm">
+                  {[
+                    "On-page and off-page audit",
+                    "Detailed report and action plan",
+                    "45-minute walkthrough call",
+                    `${money(audit.credit)} credit if you start a monthly plan within 30 days`,
+                  ].map((t) => (
+                    <li key={t} className="flex gap-3">
+                      <span className="text-tw-accent">●</span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  onClick={onBook}
+                  className="mt-10 w-full rounded-full bg-tw-accent text-tw-black py-4 font-object-bold hover:bg-tw-white transition-colors duration-300 cursor-pointer"
+                >
+                  Book my SEO audit →
+                </button>
+                {planFrom && (
+                  <p className="mt-6 text-xs leading-relaxed text-tw-white/60">
+                    Want the work done too? Monthly SEO starts at{" "}
+                    {money(planFrom)} a month and includes this audit free.{" "}
+                    <Link href="/services/seo#pricing" className="underline underline-offset-4 hover:text-tw-accent">
+                      Compare plans
+                    </Link>
+                  </p>
+                )}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+
+      {addOns && <AddOns addOns={addOns} onPick={(slug) => onPick(`seo-${slug}`)} index="06" />}
+    </>
+  );
+}
+
 export default function ServicePage({
   service,
   work,
@@ -448,6 +901,8 @@ export default function ServicePage({
   });
 
   const openContact = () => router.push(`/contact?service=${service.slug}`);
+  const pickSeo = (pick: string) => router.push(`/contact?service=seo&plan=${pick}`);
+  const ctaHref = service.hero.ctaHref;
 
   // Parallax for the CTA block
   const ctaRef = useRef<HTMLElement>(null);
@@ -528,7 +983,7 @@ export default function ServicePage({
                 >
                   <Magnetic>
                     <button
-                      onClick={openContact}
+                      onClick={() => (ctaHref ? router.push(ctaHref) : openContact())}
                       className="group relative overflow-hidden rounded-full bg-tw-black text-tw-white pl-7 pr-3 py-3 font-object-bold inline-flex items-center gap-4 cursor-pointer"
                     >
                       <span className="relative z-10">{service.hero.cta}</span>
@@ -683,10 +1138,30 @@ export default function ServicePage({
             </section>
           )}
 
+          {/* ---------------- SEO PLANS / AUDIT ---------------- */}
+          {service.seoPlans && (
+            <section id="pricing" className="px-5 md:px-10 py-28 md:py-40 bg-tw-paper scroll-mt-24">
+              <SeoPricing seo={service.seoPlans} audit={SEO_AUDIT} onPick={pickSeo} />
+            </section>
+          )}
+          {service.audit && (
+            <section id="pricing" className="px-5 md:px-10 py-28 md:py-40 bg-tw-paper scroll-mt-24">
+              <AuditReport
+                audit={service.audit}
+                addOns={SEO_PLANS.addOns}
+                planFrom={SEO_PLANS.plans[0].monthly}
+                onBook={() => pickSeo("seo-audit")}
+                onPick={pickSeo}
+              />
+            </section>
+          )}
+
           {/* ---------------- INCLUDED + PRICING ---------------- */}
-          {service.hosting ? (
+          {service.audit ? null : service.hosting || service.seoPlans ? (
             <section className="px-5 md:px-10 py-28 md:py-40">
-              <Eyebrow index="05">Every plan includes</Eyebrow>
+              <Eyebrow index={service.seoPlans ? "06" : "05"}>
+                {service.seoPlans ? "What I work on" : "Every plan includes"}
+              </Eyebrow>
               <h2 className="mt-6 font-object-heavy text-5xl md:text-7xl tracking-[-0.04em] leading-[0.95]">
                 The spec sheet.
               </h2>
@@ -962,10 +1437,10 @@ export default function ServicePage({
                   <span className="opacity-60"> · {priceLabel(service).toLowerCase()}</span>
                 </span>
                 <button
-                  onClick={openContact}
+                  onClick={() => (ctaHref ? router.push(ctaHref) : openContact())}
                   className="rounded-full bg-tw-accent text-tw-black px-5 py-2.5 text-sm font-object-bold hover:bg-tw-white transition-colors cursor-pointer"
                 >
-                  Book a free chat →
+                  {ctaHref ? service.hero.cta : "Book a free chat"} →
                 </button>
               </div>
             </motion.div>

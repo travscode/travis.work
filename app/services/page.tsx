@@ -48,7 +48,7 @@ export default function ServicesPage() {
   const services = all.filter((s) => s.showInServices).map(toSummary);
   const design = all.filter((s) => s.group === "design").map(toSummary);
   const platforms = all
-    .filter((s) => !s.showInServices && s.group !== "design")
+    .filter((s) => !s.showInServices && s.group !== "design" && s.group !== "offer")
     .map(toSummary);
 
   const jsonLd = {

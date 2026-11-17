@@ -61,6 +61,17 @@ function usePerthTime() {
   return { time, status };
 }
 
+const SEO_PICKS: Record<string, string> = {
+  "seo-audit": "I'd like to book the one-time SEO audit. My website is: ",
+  "seo-local": "I'd like the Local SEO plan. My website is: ",
+  "seo-growth": "I'd like the Growth SEO plan. My website is: ",
+  "seo-authority": "I'd like the Authority SEO plan. My website is: ",
+  "seo-citations": "I'm interested in the directory & citation pack. My website is: ",
+  "seo-links": "I'm interested in monthly link building. My website is: ",
+  "seo-authority-campaign": "I'm interested in an authority campaign to build my domain authority. My website is: ",
+  "seo-disavow": "I'm interested in a backlink clean-up. My website is: ",
+};
+
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
 export default function ContactExperience({
@@ -97,6 +108,9 @@ export default function ContactExperience({
       const name = plan[1][0].toUpperCase() + plan[1].slice(1);
       setDetails(`I'd like the ${name} hosting plan, billed ${plan[2]}.`);
     }
+    // SEO plan, audit and add-on buttons send ?plan=seo-growth etc.
+    const seo = SEO_PICKS[params.get("plan") ?? ""];
+    if (seo) setDetails(seo);
   }, [services]);
 
   // Focus the input whenever a typing step appears

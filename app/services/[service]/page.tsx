@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getService, servicesList, priceLabel } from "@/data/services";
+import { getService, servicesList, priceLabel, SEO_AUDIT } from "@/data/services";
 import { projects } from "@/data/projects";
 import { projectHref } from "@/lib/slug";
 import ServicePage from "@/components/services/ServicePage";
@@ -141,6 +141,48 @@ export default async function Page({ params }: ServicePageProps) {
                   availability: "https://schema.org/InStock",
                 })),
             )
+          : service.seoPlans
+          ? [
+              ...service.seoPlans.plans.map(
+                (plan: { name: string; monthly: number }) => ({
+                  "@type": "Offer",
+                  name: `${plan.name} SEO plan`,
+                  url,
+                  price: plan.monthly,
+                  priceCurrency: "AUD",
+                  priceSpecification: {
+                    "@type": "UnitPriceSpecification",
+                    price: plan.monthly,
+                    priceCurrency: "AUD",
+                    valueAddedTaxIncluded: true,
+                    unitCode: "MON",
+                  },
+                  availability: "https://schema.org/InStock",
+                }),
+              ),
+              {
+                "@type": "Offer",
+                name: "One-time SEO audit",
+                url: `${SITE_URL}${SEO_AUDIT.href}`,
+                price: SEO_AUDIT.price,
+                priceCurrency: "AUD",
+                availability: "https://schema.org/InStock",
+              },
+            ]
+          : service.pricing.fixed && price
+          ? {
+              "@type": "Offer",
+              url,
+              price,
+              priceCurrency: "AUD",
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                price,
+                priceCurrency: "AUD",
+                valueAddedTaxIncluded: true,
+              },
+              availability: "https://schema.org/InStock",
+            }
           : {
           "@type": "Offer",
           url,
