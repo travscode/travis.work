@@ -65,6 +65,13 @@ export const SEO_AUDIT = {
 // Kept out of data/projects.js so they don't appear on the homepage.
 export const SEO_PROOF = [
   {
+    label: "Summit Geomatics",
+    href: "https://summit-geomatics.com",
+    imageUrl: "/assets/media/summit-geomatics-seo-san-antonio.jpg",
+    services: "#1 on Google for land surveying in San Antonio, Texas",
+    year: "SEO",
+  },
+  {
     label: "Prime Locate",
     href: "https://primelocate.com.au",
     imageUrl: "/assets/media/prime-locate-seo-perth.jpg",
@@ -587,7 +594,8 @@ export const services = {
         a: "Increasingly, yes. People now ask ChatGPT, Gemini and Google's AI Overviews for recommendations. Good SEO is the foundation, and GEO builds on it so AI tools understand and cite your business too.",
       },
     ],
-    relatedWork: ["Olympics / Brisbane 2032", "HBF / Digital Transformation"],
+    // Object form overrides the project's services caption on this page
+    relatedWork: [{ label: "Olympics / Brisbane 2032", services: "On-page SEO optimisation" }],
     related: ["geo", "web-design", "wordpress"],
   },
 
@@ -709,7 +717,7 @@ export const services = {
         a: "Yes. After the audit you can add a directory & citation pack ($390), ongoing link building (from $450 a month) or an authority campaign to grow your domain authority. The audit tells you which of those you actually need.",
       },
     ],
-    relatedWork: ["Olympics / Brisbane 2032", "HBF / Digital Transformation"],
+    relatedWork: [{ label: "Olympics / Brisbane 2032", services: "On-page SEO optimisation" }],
     related: ["seo", "geo", "web-design"],
   },
 

@@ -71,19 +71,26 @@ export default async function Page({ params }: ServicePageProps) {
 
   const url = `${SITE_URL}/services/${serviceSlug}`;
 
+  // relatedWork entries are project labels, or { label, services } to
+  // override the caption on this page
+  type WorkRef = string | { label: string; services?: string };
   const work = [
     ...(service.proof || []),
     ...(service.relatedWork || [])
-    .map((label: string) => projects.find((p) => p.label === label))
-    .filter(Boolean)
-    .map((p: (typeof projects)[number]) => ({
-      label: p.label,
-      href: projectHref(p),
-      imageUrl: p.imageUrl,
-      services: p.services,
-      client: p.client,
-      year: p.year,
-    })),
+      .map((ref: WorkRef) => {
+        const label = typeof ref === "string" ? ref : ref.label;
+        const p = projects.find((x) => x.label === label);
+        if (!p) return null;
+        return {
+          label: p.label,
+          href: projectHref(p),
+          imageUrl: p.imageUrl,
+          services: (typeof ref === "string" ? undefined : ref.services) ?? p.services,
+          client: p.client,
+          year: p.year,
+        };
+      })
+      .filter(Boolean),
   ].slice(0, 3);
 
   const related = (service.related || [])
