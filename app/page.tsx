@@ -4,6 +4,8 @@ import ProjectGallery from "@/components/ProjectGallery";
 import { projects } from "@/data/projects";
 import { SITE_URL, PERSON_ID, JsonLd } from "@/lib/seo";
 import { projectHref } from "@/lib/slug";
+import HomeIntro from "@/components/HomeIntro";
+import SiteFooter from "@/components/services/SiteFooter";
 
 export const metadata: Metadata = {
   alternates: {
@@ -39,8 +41,9 @@ export default function Home() {
         <Header title="Travis Weerts Design" />
         <main className="flex-grow">
           <ProjectGallery projects={projects} paddingTop={paddingTop} />
-
+          <HomeIntro />
         </main>
+        <SiteFooter />
       </div>
     </>
   );

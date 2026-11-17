@@ -12,7 +12,12 @@ export function GET() {
 
   const body = `# Travis Weerts
 
-> Award-winning digital designer, developer and creative consultant based in Perth, Western Australia. Designs and builds websites, apps, brands and AI products for businesses in Perth, across Australia and worldwide.
+> Freelance web designer, web developer and iOS and Android app developer in Perth, Western Australia. Award-winning designer and developer who designs and builds websites, mobile apps, brands and AI products for businesses across Perth (CBD, Fremantle, Joondalup, Rockingham, the Perth Hills and beyond), Australia and worldwide. Available for freelance projects.
+
+Also known as: Travis A. Weerts, Travis Aweerts.
+
+- Available for freelance web design, web development, iOS app development, Android app development, React Native, UI/UX, branding and graphic design in Perth.
+- Apps shipped: Mystic (iOS photo app, featured by Apple worldwide), Hunter Markets (iOS and Android social marketplace, #5 in Shopping on the Australian App Store), OZZ FM (AI radio stations, https://ozz.fm).
 
 - Work featured by Apple; recognised at Cannes Lions, D&AD, The One Show, Spike Awards and AWARD Awards.
 - Clients and collaborators include Google, the United Nations, Wendy's, the Australian Open, HBF, VML and Wunderman Thompson.
