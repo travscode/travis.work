@@ -12,8 +12,9 @@ import { designServices } from "./designServices";
 // ---------------------------------------------------------------------
 // SEO pricing. One source for the SEO page (plans + audit + add-ons) and
 // the standalone /services/seo-audit page.
-// Priced so the audit alone (~2.5 months of Local) makes a monthly plan,
-// which includes the same audit free in month one, the obvious choice.
+// Growth and Authority include the full audit free in month one, so the
+// $1,290 standalone audit anchors Growth at $850 x 3 months = $2,550.
+// Local is the cheap entry point and doesn't include the full audit.
 // ---------------------------------------------------------------------
 export const SEO_AUDIT = {
   price: 1290,
@@ -61,7 +62,7 @@ export const SEO_AUDIT = {
 };
 
 export const SEO_PLANS = {
-  note: "All prices AUD including GST. 3-month minimum, then month to month. Every plan starts with the full SEO audit in month one, included free.",
+  note: "All prices AUD including GST. 3-month minimum, then month to month. Growth and Authority start with the full $1,290 SEO audit in month one, included free.",
   plans: [
     {
       name: "Local",
@@ -69,7 +70,7 @@ export const SEO_PLANS = {
       blurb: "Trades, clinics and local businesses that want the map pack.",
       monthly: 500,
       specs: [
-        "Full SEO audit in month one",
+        "Technical health check in month one",
         "Up to 10 tracked keywords",
         "Google Business Profile optimisation",
         "On-page fixes, up to 5 pages a month",
@@ -86,9 +87,11 @@ export const SEO_PLANS = {
       name: "Growth",
       slug: "growth",
       blurb: "Businesses competing across Perth for bigger searches.",
-      monthly: 950,
+      monthly: 850,
       featured: true,
+      includesAudit: true,
       specs: [
+        "Full $1,290 SEO audit, included free",
         "Everything in Local",
         "Up to 30 tracked keywords",
         "1 new landing page or article a month",
@@ -107,6 +110,7 @@ export const SEO_PLANS = {
       slug: "authority",
       blurb: "Competitive industries and businesses going national.",
       monthly: 1750,
+      includesAudit: true,
       specs: [
         "Everything in Growth",
         "Up to 60 tracked keywords",
@@ -543,7 +547,7 @@ export const services = {
     faqs: [
       {
         q: "How much does SEO cost in Perth?",
-        a: "Monthly SEO plans are $500, $950 or $1,750 a month depending on how competitive your industry is and how much content and link building you need. If you just want to know where you stand, a one-time SEO audit is $1,290 and delivered in 5 business days. Every monthly plan includes that same audit free in month one.",
+        a: "Monthly SEO plans are $500, $850 or $1,750 a month, with a 3-month minimum, depending on how competitive your industry is and how much content and link building you need. If you just want to know where you stand, a one-time SEO audit is $1,290 and delivered in 5 business days. The Growth and Authority plans include that same audit free in month one.",
       },
       {
         q: "Can I just get a one-time SEO audit?",
@@ -620,7 +624,7 @@ export const services = {
       {
         title: "Yours to keep",
         description:
-          "No lock-in. Use the report with any developer or agency, or move to a monthly plan and get a $500 credit.",
+          "No lock-in. Use the report with any developer or agency, or get it free as part of the Growth SEO plan.",
       },
     ],
     process: [

@@ -68,6 +68,7 @@ export interface SeoPlans {
     blurb: string;
     monthly: number;
     featured?: boolean;
+    includesAudit?: boolean;
     specs: string[];
     extras: string[];
   }[];
@@ -527,7 +528,7 @@ function SeoPricing({
   onPick: (pick: string) => void;
 }) {
   const [mode, setMode] = useState<"monthly" | "audit">("monthly");
-  const local = seo.plans[0];
+  const growth = seo.plans.find((p) => p.includesAudit) ?? seo.plans[0];
   return (
     <>
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
@@ -607,8 +608,10 @@ function SeoPricing({
                       </span>
                       <span className="pb-2 text-sm opacity-60">/month</span>
                     </div>
-                    <p className="mt-2 text-xs opacity-60">
-                      Includes the {money(audit.price)} audit, free
+                    <p className="mt-2 text-xs opacity-60 min-h-[1rem]">
+                      {p.includesAudit
+                        ? `Includes the ${money(audit.price)} audit, free`
+                        : "3-month minimum"}
                     </p>
                     <ul className={cn("mt-8 border-t", dark ? "border-tw-white/20" : "border-tw-black/15")}>
                       {p.specs.map((t) => (
@@ -713,10 +716,11 @@ function SeoPricing({
                   Or get the same audit free.
                 </div>
                 <p className="mt-2 text-tw-black/70 leading-relaxed max-w-2xl">
-                  Every monthly plan starts with this exact audit, then I
-                  actually do the work. Local SEO is {money(local.monthly)} a
-                  month. Already bought the audit? Start a plan within 30 days
-                  and {money(audit.credit)} comes off your first month.
+                  The {growth.name} plan is {money(growth.monthly)} a month for
+                  a minimum of 3 months. It starts with this exact audit, free,
+                  then I actually do the work. Already bought the audit? Start
+                  a plan within 30 days and {money(audit.credit)} comes off
+                  your first month.
                 </p>
               </div>
               <button
@@ -863,8 +867,9 @@ function AuditReport({
                 </button>
                 {planFrom && (
                   <p className="mt-6 text-xs leading-relaxed text-tw-white/60">
-                    Want the work done too? Monthly SEO starts at{" "}
-                    {money(planFrom)} a month and includes this audit free.{" "}
+                    Want the work done too? The Growth SEO plan is{" "}
+                    {money(planFrom)} a month (3-month minimum) and includes
+                    this audit free.{" "}
                     <Link href="/services/seo#pricing" className="underline underline-offset-4 hover:text-tw-accent">
                       Compare plans
                     </Link>
@@ -1149,7 +1154,7 @@ export default function ServicePage({
               <AuditReport
                 audit={service.audit}
                 addOns={SEO_PLANS.addOns}
-                planFrom={SEO_PLANS.plans[0].monthly}
+                planFrom={(SEO_PLANS.plans.find((p) => p.includesAudit) ?? SEO_PLANS.plans[0]).monthly}
                 onBook={() => pickSeo("seo-audit")}
                 onPick={pickSeo}
               />
