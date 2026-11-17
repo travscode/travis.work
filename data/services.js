@@ -1169,7 +1169,7 @@ export const services = {
       },
       {
         q: "Do you host WordPress sites too?",
-        a: "Yes. WordPress hosting on Australian servers with cPanel, daily backups, staging and free migration starts at $19 a month. See the WordPress hosting page for plans.",
+        a: "Yes. WordPress hosting on Australian servers with cPanel, daily backups, staging and free migration starts at $49 a month. See the WordPress hosting page for plans.",
       },
     ],
     relatedWork: ["The Raveonettes", "DUET", "Space Collective"],
@@ -1195,7 +1195,7 @@ export const services = {
     art: "layers",
     metaTitle: "WordPress Hosting Perth WA | Fast, Managed, Australian Servers",
     metaDescription:
-      "Fast WordPress hosting for Perth businesses. Australian servers, cPanel, free SSL, daily backups, staging and real local support. Plans from $19/month or save with annual billing.",
+      "Fast WordPress hosting for Perth businesses. Australian servers, cPanel, free SSL, daily backups, staging and real local support. Plans from $49/month or save with annual billing.",
     h1: "WordPress hosting in Perth, looked after by a human.",
     kicker: "cPanel · Australian servers · Daily backups",
     images: { square: "services/wordpress-developer-perth-travis-weerts.jpg" },
@@ -1280,7 +1280,7 @@ export const services = {
       "Free site migration",
       "Local Perth support",
     ],
-    pricing: { starting: "$19/mo", timeline: "Monthly or annual" },
+    pricing: { starting: "$49/mo", timeline: "Monthly or annual" },
     hosting: {
       // Annual = 10 x monthly, i.e. two months free.
       note: "All prices AUD including GST. Same price when you renew. Cancel monthly plans any time.",
@@ -1288,8 +1288,8 @@ export const services = {
         {
           name: "Starter",
           blurb: "One small business site or portfolio.",
-          monthly: 19,
-          annual: 190,
+          monthly: 49,
+          annual: 490,
           specs: [
             "1 WordPress site",
             "10 GB NVMe storage",
@@ -1308,8 +1308,8 @@ export const services = {
         {
           name: "Business",
           blurb: "Busy sites, small shops and growing teams.",
-          monthly: 39,
-          annual: 390,
+          monthly: 89,
+          annual: 890,
           featured: true,
           specs: [
             "Up to 5 WordPress sites",
@@ -1330,8 +1330,8 @@ export const services = {
         {
           name: "Managed",
           blurb: "WooCommerce and sites that can't go down.",
-          monthly: 79,
-          annual: 790,
+          monthly: 149,
+          annual: 1490,
           specs: [
             "Up to 10 WordPress sites",
             "100 GB NVMe storage",
@@ -1353,7 +1353,7 @@ export const services = {
     faqs: [
       {
         q: "How much does WordPress hosting cost in Perth?",
-        a: "Plans start at $19 a month, or $190 a year if you pay annually (two months free). Business is $39 a month and Managed is $79 a month. All prices include GST, and unlike most big hosts they don't jump up at renewal.",
+        a: "Plans start at $49 a month, or $490 a year if you pay annually (two months free). Business is $89 a month and Managed is $149 a month. All prices include GST, and unlike most big hosts they don't jump up at renewal.",
       },
       {
         q: "Do I get cPanel?",

@@ -294,12 +294,12 @@ export default function ServicesIndex({
                 <Reveal className="mt-10">
                   <div className="relative w-48 aspect-[3/4] rounded-2xl overflow-hidden rotate-[-3deg] shadow-xl">
                     <Image
-                      src="/assets/media/trav_bio.jpg"
+                      src="/assets/media/welcome4.jpg"
                       alt="Travis Weerts, web designer and developer in Perth"
                       title="Travis Weerts"
                       fill
                       sizes="192px"
-                      className="object-cover"
+                      className="object-cover object-[50%_25%]"
                     />
                   </div>
                 </Reveal>

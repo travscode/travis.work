@@ -582,12 +582,12 @@ export default function ServicePage({
                 <Reveal className="mt-10 hidden lg:block">
                   <div className="relative w-40 aspect-[3/4] rounded-2xl overflow-hidden rotate-[-3deg] shadow-xl">
                     <Image
-                      src="/assets/media/trav_bio.jpg"
+                      src="/assets/media/welcome4.jpg"
                       alt="Travis Weerts, designer and developer in the Perth Hills"
                       title="Travis Weerts"
                       fill
                       sizes="160px"
-                      className="object-cover"
+                      className="object-cover object-[50%_25%]"
                     />
                   </div>
                   <p className="mt-5 text-xs leading-relaxed text-tw-black/60 max-w-[12rem]">
