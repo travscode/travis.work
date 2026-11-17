@@ -61,6 +61,18 @@ export const SEO_AUDIT = {
   ],
 };
 
+// SEO client results shown in "Proof, not promises" on the SEO pages only.
+// Kept out of data/projects.js so they don't appear on the homepage.
+export const SEO_PROOF = [
+  {
+    label: "Prime Locate",
+    href: "https://primelocate.com.au",
+    imageUrl: "/assets/media/prime-locate-seo-perth.jpg",
+    services: "First page on Google for utility locating in Perth",
+    year: "SEO",
+  },
+];
+
 export const SEO_PLANS = {
   note: "All prices AUD including GST. 3-month minimum, then month to month. Growth and Authority start with the full $1,290 SEO audit in month one, included free.",
   plans: [
@@ -544,6 +556,7 @@ export const services = {
     ],
     pricing: { starting: "$500/month", timeline: "Monthly plans or a one-time audit" },
     seoPlans: SEO_PLANS,
+    proof: SEO_PROOF,
     faqs: [
       {
         q: "How much does SEO cost in Perth?",
@@ -669,6 +682,7 @@ export const services = {
     ],
     pricing: { starting: "$1,290", timeline: "One-time · 5 business days", fixed: true },
     audit: SEO_AUDIT,
+    proof: SEO_PROOF,
     faqs: [
       {
         q: "How much does an SEO audit cost?",

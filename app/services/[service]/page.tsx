@@ -71,7 +71,9 @@ export default async function Page({ params }: ServicePageProps) {
 
   const url = `${SITE_URL}/services/${serviceSlug}`;
 
-  const work = (service.relatedWork || [])
+  const work = [
+    ...(service.proof || []),
+    ...(service.relatedWork || [])
     .map((label: string) => projects.find((p) => p.label === label))
     .filter(Boolean)
     .map((p: (typeof projects)[number]) => ({
@@ -81,7 +83,8 @@ export default async function Page({ params }: ServicePageProps) {
       services: p.services,
       client: p.client,
       year: p.year,
-    }));
+    })),
+  ].slice(0, 3);
 
   const related = (service.related || [])
     .map((slug: string) => getService(slug))

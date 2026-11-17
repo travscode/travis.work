@@ -473,14 +473,15 @@ function AddOns({
 }) {
   return (
     <div className="mt-24">
-      <Eyebrow index={index}>Add-ons</Eyebrow>
+      <Eyebrow index={index}>Optional extras</Eyebrow>
       <div className="mt-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <h3 className="font-object-heavy text-4xl md:text-6xl tracking-[-0.04em] leading-[0.95] max-w-3xl">
-          Build your link profile.
+          Add-ons to build your link profile.
         </h3>
         <p className="max-w-md text-tw-black/70 leading-relaxed">
-          Backlinks, directory submissions and domain authority building. Add
-          them to any plan or audit, or on their own.
+          <b className="font-object-bold text-tw-black">These go on top of a monthly plan or audit.</b>{" "}
+          Extra backlinks, directory submissions and domain authority building
+          when you want to push harder.
         </p>
       </div>
       <div className="mt-10 grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -490,8 +491,13 @@ function AddOns({
               onClick={() => onPick(a.slug)}
               className="group h-full w-full text-left rounded-[24px] border border-tw-black/15 bg-tw-white p-7 flex flex-col cursor-pointer hover:border-tw-black transition-colors duration-300"
             >
-              <span className="font-mono text-xs opacity-40">
-                {String(i + 1).padStart(2, "0")}
+              <span className="flex items-center justify-between">
+                <span className="font-mono text-xs opacity-40">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="rounded-full bg-tw-black/10 px-2.5 py-1 text-[10px] font-object-bold uppercase tracking-wider">
+                  Add-on
+                </span>
               </span>
               <span className="mt-6 font-object-bold text-2xl tracking-[-0.03em] leading-tight">
                 {a.name}
@@ -502,7 +508,7 @@ function AddOns({
               <span className="flex-1" />
               <span className="mt-8 flex items-end justify-between gap-4">
                 <span>
-                  <span className="font-object-heavy text-3xl tracking-[-0.04em]">{a.price}</span>
+                  <span className="font-object-heavy text-3xl tracking-[-0.04em]">+{a.price}</span>
                   <span className="ml-2 text-xs opacity-60">{a.unit}</span>
                 </span>
                 <span className="w-10 h-10 shrink-0 rounded-full border border-tw-black/25 flex items-center justify-center transition-all duration-500 group-hover:bg-tw-black group-hover:text-tw-white group-hover:rotate-[-45deg]">
@@ -1297,7 +1303,13 @@ export default function ServicePage({
               <div className="grid md:grid-cols-3 gap-5">
                 {work.map((w, i) => (
                   <Reveal key={w.label} delay={i * 0.12}>
-                    <Link href={w.href} className="group block">
+                    <Link
+                      href={w.href}
+                      className="group block"
+                      {...(w.href.startsWith("http")
+                        ? { target: "_blank", rel: "noopener" }
+                        : {})}
+                    >
                       <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden bg-tw-black/10">
                         <Image
                           src={w.imageUrl}
