@@ -10,11 +10,12 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import FillPill from "@/components/FillPill";
 import { serviceHref, splitServices } from "@/lib/serviceLinks";
-import { projectHref } from "@/lib/slug";
+import { projectHref, projectSlug } from "@/lib/slug";
 import { BOOKING_URL, BOOKING_LABEL } from "@/data/site";
 
 interface Project {
   label: string;
+  slug?: string;
   year: string;
   imageUrl: string;
   videoUrl?: string;
@@ -126,6 +127,17 @@ const loadAspect = (src: string) =>
 
 const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+// Deep links: /?project=<slug> opens that card after the preloader.
+// A query string (not a #hash) so the browser never jumps the page.
+const PROJECT_PARAM = "project";
+
+const linkedIndex = (projects: Project[]) => {
+  const slug = new URLSearchParams(window.location.search).get(PROJECT_PARAM);
+  if (!slug) return 0;
+  const i = projects.findIndex((p) => projectSlug(p) === slug);
+  return i > 0 ? i : 0;
+};
+
 // How many cards must be fully loaded before the preloader lifts. The rest
 // keep loading in the background, in order, so the next cards are always ready.
 const PRELOAD_COUNT = 6;
@@ -184,9 +196,13 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
         setProgress((p) => p + 1);
       });
 
-    const critical = desktop
-      ? projects.slice(0, PRELOAD_COUNT).map((_, i) => measure(i))
-      : [];
+    const start = linkedIndex(projects);
+    const criticalIdx = new Set(
+      desktop
+        ? [...Array(Math.min(PRELOAD_COUNT, projects.length)).keys(), start]
+        : [],
+    );
+    const critical = [...criticalIdx].map((i) => measure(i));
     setProgressTotal(Math.max(1, critical.length));
 
     const assetsReady = Promise.race([
@@ -197,11 +213,18 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
     (async () => {
       await Promise.all([assetsReady, wait(700)]);
       if (cancelled) return;
+      // Linked card: move the rack there while the preloader still covers it
+      if (start > 0) jumpToIndex(start);
       setRevealed(true); // preloader fades, spines slide in
       document_.documentElement.style.overflow = "";
       await wait(750);
       if (cancelled) return;
-      setActiveIndex(0); // first card slides open
+      setActiveIndex(start); // first (or linked) card slides open
+      if (start > 0 && !desktop) {
+        document_
+          .querySelector(`[data-project-index="${start}"]`)
+          ?.scrollIntoView({ block: "start" });
+      }
       await wait(900);
       if (!cancelled) setReady(true);
     })();
@@ -212,7 +235,10 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
         await assetsReady;
         let next = PRELOAD_COUNT;
         const worker = async () => {
-          while (!cancelled && next < projects.length) await measure(next++);
+          while (!cancelled && next < projects.length) {
+          const i = next++;
+          if (!criticalIdx.has(i)) await measure(i);
+        }
         };
         await Promise.all([worker(), worker()]);
       })();
@@ -222,6 +248,8 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
       cancelled = true;
       document_.documentElement.style.overflow = "";
     };
+    // jumpToIndex only reads refs, so the intro never needs to re-run for it
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projects]);
 
   // Only the open card's video plays
@@ -252,6 +280,27 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
       window.scrollTo({ top: target, behavior: "smooth" });
     }
   };
+
+  // Instant scroll, used under the preloader for deep links
+  const jumpToIndex = (index: number) => {
+    const st = scrollTriggerRef.current;
+    if (!st) return;
+    const target = st.start + (index / (projects.length - 1)) * (st.end - st.start);
+    if (lenisRef.current) lenisRef.current.scrollTo(target, { immediate: true, force: true });
+    else window.scrollTo({ top: target });
+    st.update();
+  };
+
+  // Keep the address bar pointing at the open card, without a reload or history spam
+  useEffect(() => {
+    if (!ready) return;
+    const url = new URL(window.location.href);
+    if (activeIndex <= 0) url.searchParams.delete(PROJECT_PARAM);
+    else url.searchParams.set(PROJECT_PARAM, projectSlug(projects[activeIndex]));
+    if (url.href !== window.location.href) {
+      window.history.replaceState(window.history.state, "", url);
+    }
+  }, [activeIndex, ready, projects]);
 
   const handleProjectClick = (index: number) => {
     if (isMobile) {
@@ -650,10 +699,11 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
               {projects.map((project, index) => (
                 <div
                   key={index}
+                  data-project-index={index}
                   onClick={() => handleProjectClick(index)}
                   className={cn(
                     `
-                  project relative cursor-pointer border-b border-tw-grey-dark pb-15
+                  project relative cursor-pointer scroll-mt-20 border-b border-tw-grey-dark pb-15
                   transition-all duration-300
                   text-tw-white
                 `,
