@@ -6,6 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { AnimatePresence, motion, MotionConfig, type Variants } from "motion/react";
 import Logo from "@/components/Logo";
+import SpinePreview from "@/components/SpinePreview";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import FillPill from "@/components/FillPill";
@@ -138,6 +139,12 @@ const linkedIndex = (projects: Project[]) => {
   return i > 0 ? i : 0;
 };
 
+// Hover preview: how long it lingers after leaving the spines, and how long
+// it stays off while a card is sliding open (so a spine passing under a
+// still cursor can't pop it back up)
+const PREVIEW_LINGER_MS = 1600;
+const PREVIEW_SUPPRESS_MS = 2000;
+
 // How many cards must be fully loaded before the preloader lifts. The rest
 // keep loading in the background, in order, so the next cards are always ready.
 const PRELOAD_COUNT = 6;
@@ -163,6 +170,10 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   const [revealed, setRevealed] = useState(false);
   const [progress, setProgress] = useState(0);
   const [progressTotal, setProgressTotal] = useState(PRELOAD_COUNT);
+  const [hoverIndex, setHoverIndex] = useState(-1);
+  const [previewIndex, setPreviewIndex] = useState(-1);
+  const previewTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const suppressUntil = useRef(0);
 
   useEffect(() => {
     // Check if we're on mobile
@@ -302,7 +313,44 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
     }
   }, [activeIndex, ready, projects]);
 
+  // ---- Hover preview over closed spines ----
+  const clearPreviewTimer = () => {
+    if (previewTimer.current) clearTimeout(previewTimer.current);
+    previewTimer.current = null;
+  };
+
+  const hidePreview = (suppress = false) => {
+    clearPreviewTimer();
+    setPreviewIndex(-1);
+    if (suppress) suppressUntil.current = performance.now() + PREVIEW_SUPPRESS_MS;
+  };
+
+  const onSpineEnter = (index: number) => {
+    setHoverIndex(index);
+    if (!readyRef.current || index === activeIndex) return;
+    if (performance.now() < suppressUntil.current) return;
+    clearPreviewTimer();
+    setPreviewIndex(index);
+  };
+
+  const onSpineLeave = (index: number) => {
+    setHoverIndex((h) => (h === index ? -1 : h));
+    // Moving straight onto the next spine re-arms it; otherwise let it linger, then drop
+    clearPreviewTimer();
+    previewTimer.current = setTimeout(() => setPreviewIndex(-1), PREVIEW_LINGER_MS);
+  };
+
+  // Any card opening (click, scroll, arrow keys) clears the preview and
+  // keeps it off while the accordion animates
+  useEffect(() => {
+    hidePreview(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIndex]);
+
+  useEffect(() => clearPreviewTimer, []);
+
   const handleProjectClick = (index: number) => {
+    hidePreview(true);
     if (isMobile) {
       setActiveIndex(index === activeIndex ? -1 : index); // Toggle active state on mobile
       return;
@@ -435,6 +483,19 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
           </motion.div>
         )}
       </AnimatePresence>
+      {!isMobile && (
+        <SpinePreview
+          item={
+            previewIndex >= 0 && previewIndex !== activeIndex
+              ? {
+                  index: previewIndex,
+                  src: optimized(projects[previewIndex].imageUrl),
+                  label: projects[previewIndex].label,
+                }
+              : null
+          }
+        />
+      )}
       <section className="bg-tw-black">
         {!isMobile ? (
           <div className="pin-height h-[300vh] overflow-hidden">
@@ -451,6 +512,8 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                   <div
                     key={index}
                     onClick={() => handleProjectClick(index)}
+                    onMouseEnter={() => onSpineEnter(index)}
+                    onMouseLeave={() => onSpineLeave(index)}
                     style={{
                       paddingTop: paddingTop * (115 / 150) + "px",
                       animationDelay: `${100 + Math.min(index, 24) * 30}ms`,
@@ -487,11 +550,11 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                         className="year text-[1.25vw]"
                         initial={false}
                         animate={{
-                          opacity: isActive ? 1 : 0,
-                          x: isActive ? 0 : -12,
+                          opacity: isActive || hoverIndex === index ? 1 : 0,
+                          x: isActive || hoverIndex === index ? 0 : -12,
                         }}
                         transition={{
-                          duration: 0.5,
+                          duration: isActive ? 0.5 : 0.3,
                           delay: isActive ? 0.4 : 0,
                           ease: EASE_OUT,
                         }}
