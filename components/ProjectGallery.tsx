@@ -144,6 +144,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   // Nothing is open on first paint — the intro opens the first card
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   const [ready, setReady] = useState(false);
+  const readyRef = useRef(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [aspects, setAspects] = useState<Record<number, number>>({});
   const [loaded, setLoaded] = useState<Record<number, boolean>>({});
@@ -260,8 +261,19 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
     scrollToIndex(index);
   };
 
+  // Scroll stays locked until the intro has finished
   useEffect(() => {
-    if (isMobile || !ready) return; // Skip GSAP setup on mobile / until the intro is done
+    readyRef.current = ready;
+    if (ready) lenisRef.current?.start();
+  }, [ready]);
+
+  // Set up pinning straight away, while the preloader still covers the page.
+  // Pinning moves the rack into a wrapper element, and moving an element
+  // restarts its CSS animations, so doing it after the intro made every
+  // spine slide in twice and the first card blink.
+  useEffect(() => {
+    // Skip GSAP setup on mobile (checked directly too, since isMobile starts false)
+    if (isMobile || window.innerWidth < 768) return;
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
@@ -283,6 +295,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
       },
     });
     lenisRef.current = lenis;
+    if (!readyRef.current) lenis.stop();
 
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -297,6 +310,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
       start: "top top",
       end: "bottom bottom",
       onUpdate: (self) => {
+        if (!readyRef.current) return; // the intro opens the first card
         const closestIndex = Math.round(self.progress * (projects.length - 1));
         setActiveIndex(closestIndex);
       },
@@ -331,7 +345,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
       lenisRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [projects.length, isMobile, ready]);
+  }, [projects.length, isMobile]);
 
   const mediaClass = cn(`
     media h-[calc(100%-2.6vw)] w-auto m-[1.3vw_1.3vw_0_4vw]
