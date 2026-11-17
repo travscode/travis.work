@@ -327,7 +327,14 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
 
   const onSpineEnter = (index: number) => {
     setHoverIndex(index);
-    if (!readyRef.current || index === activeIndex) return;
+    if (!readyRef.current) return;
+    // Over the open card: shrink away straight away, no linger. No cooldown
+    // either, so moving back onto a closed spine brings it right back.
+    if (index === activeIndex) {
+      clearPreviewTimer();
+      setPreviewIndex(-1);
+      return;
+    }
     if (performance.now() < suppressUntil.current) return;
     clearPreviewTimer();
     setPreviewIndex(index);

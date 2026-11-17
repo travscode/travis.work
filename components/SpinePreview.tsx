@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 
 const EASE_OUT = [0.22, 1, 0.36, 1] as const;
+const EASE_IN = [0.55, 0, 0.75, 0.2] as const;
 
 // Gap between the cursor and the card
 const OFFSET = 28;
@@ -73,13 +74,25 @@ export default function SpinePreview({ item }: { item: SpinePreviewItem | null }
         {item && (
           <motion.div
             key="card"
+            style={{ transformOrigin: "50% 50%" }}
             className="relative h-[50vh] aspect-[9/16] rounded-[0.8vw] overflow-hidden bg-tw-grey-dark border border-tw-grey-dark shadow-2xl"
-            initial={{ opacity: 0, scale: 0.82, y: 40, rotate: tilt - 4 }}
-            animate={{ opacity: 1, scale: 1, y: 0, rotate: tilt }}
-            exit={{ opacity: 0, scale: 0.88, y: 70, rotate: tilt + 3 }}
-            transition={{
-              default: { duration: 0.5, ease: EASE_OUT },
-              rotate: { type: "spring", stiffness: 260, damping: 18 },
+            // Grows out of nothing, and shrinks back to nothing
+            initial={{ opacity: 0, scale: 0, rotate: tilt - 6 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              rotate: tilt,
+              transition: {
+                opacity: { duration: 0.3, ease: EASE_OUT },
+                scale: { type: "spring", stiffness: 320, damping: 24 },
+                rotate: { type: "spring", stiffness: 260, damping: 18 },
+              },
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0,
+              rotate: tilt + 6,
+              transition: { duration: 0.35, ease: EASE_IN },
             }}
           >
             <AnimatePresence initial={false}>
