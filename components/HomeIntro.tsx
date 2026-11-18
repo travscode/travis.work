@@ -6,6 +6,7 @@ const LINKS = [
   { href: "/services/web-design", label: "Web designer Perth" },
   { href: "/services/web-development", label: "Web developer Perth" },
   { href: "/services/app-development", label: "App developer Perth" },
+  { href: "/services/freelance-app-developer", label: "Freelance app developer Perth" },
   { href: "/services/ios-app-development", label: "iOS app developer Perth" },
   { href: "/services/android-app-development", label: "Android app developer Perth" },
   { href: "/services/react-native", label: "React Native developer Perth" },

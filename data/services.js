@@ -1867,6 +1867,64 @@ export const services = {
     related: ["react-native", "android-app-development", "app-design", "app-development"],
   },
 
+  "freelance-app-developer": {
+    title: "Freelance App Developer Perth",
+    slug: "freelance-app-developer",
+    tag: "Freelance App Developer",
+    showInServices: false,
+    art: "touch",
+    metaTitle: "Freelance App Developer Perth | iOS & Android, Direct to You",
+    metaDescription:
+      "Freelance app developer in Perth who designs and builds iOS and Android apps end to end. Featured by Apple. Work directly with the developer, fixed quotes and monthly payments.",
+    h1: "A freelance app developer in Perth who designs it and builds it.",
+    kicker: "Freelance · iOS · Android · React Native",
+    images: { square: "services/app-development-perth-travis-weerts.jpg" },
+    hero: {
+      headline: "A freelance app developer in Perth who designs it and builds it.",
+      subheadline: "Agency-quality apps, with one person you can actually call.",
+      description:
+        "I'm a freelance app developer in Perth who designs and builds iPhone and Android apps from first sketch to App Store. My app MYSTIC* was featured by Apple worldwide, and the Hunter Markets app reached #5 in Shopping on the Australian App Store. You work with me directly, the whole way through.",
+      cta: "Talk about your app",
+    },
+    story:
+      "Most app projects go wrong in the gaps: between the strategist and the designer, the designer and the developer, the developer and the person who has to keep it running. As a freelancer I cover all of it, so the decisions you make in week one still make sense at launch. You get a fixed quote, regular builds on your own phone and one person who knows every screen of your app.",
+    benefits: [
+      { title: "Designer and developer in one", description: "The person who designs your screens writes the code, so nothing gets lost in a hand-off." },
+      { title: "Direct contact", description: "No account managers or project coordinators. You message me, I answer." },
+      { title: "Lean on purpose", description: "No agency overheads, so more of your budget goes into the app itself." },
+      { title: "Agencies welcome", description: "Happy to build white-label for Perth agencies, like the Hunter Markets app I built with Dilate." },
+    ],
+    process: [
+      { step: 1, title: "Free chat", description: "Your idea, who it's for and what the smallest useful version looks like." },
+      { step: 2, title: "Fixed quote", description: "Scope, timeline and price agreed up front, with monthly payment options." },
+      { step: 3, title: "Design & build", description: "A clickable prototype first, then weekly test builds on your phone." },
+      { step: 4, title: "Launch & support", description: "App Store and Google Play submission, then updates as your users ask for more." },
+    ],
+    features: [
+      "iOS app development",
+      "Android app development",
+      "React Native",
+      "App design & prototyping",
+      "MVPs for startups",
+      "White-label agency builds",
+      "Backend & admin dashboards",
+      "Payments & subscriptions",
+      "App Store & Google Play launch",
+      "Ongoing updates & support",
+    ],
+    pricing: { starting: null, timeline: "Scoped after a free consult" },
+    faqs: [
+      { q: "How much does a freelance app developer cost in Perth?", a: "Usually less than an agency for the same app, because you're not paying for account managers and office overheads. Every app is different, so after a free chat I send a fixed quote, and you can pay it off monthly." },
+      { q: "Can one freelancer really build a whole app?", a: "For most business apps and startup MVPs, yes. I design, build and launch apps end to end, and bring in trusted specialists if a project needs extra hands, so you still have one point of contact." },
+      { q: "Do you build for iPhone and Android?", a: "Yes. I usually build with React Native, which gives you an iPhone app and an Android app from one codebase, and use native code where the app needs it." },
+      { q: "Who owns the app and the code?", a: "You do. The App Store and Google Play accounts are set up in your business's name, and you get the full source code at the end." },
+      { q: "Do you work with Perth agencies?", a: "Yes. I build apps under agency brands and alongside in-house teams. Hunter Markets was built in collaboration with Dilate." },
+      { q: "Are you only in the Perth Hills?", a: "No. I'm based in the Perth Hills and work with businesses across Perth, from the CBD to Joondalup and Rockingham, and remotely Australia wide. Happy to meet in person around Perth." },
+    ],
+    relatedWork: ["Hunter Markets", "Mystic", "OZZ FM"],
+    related: ["app-development", "ios-app-development", "android-app-development", "react-native"],
+  },
+
   nextjs: {
     title: "Next.js Developer Perth",
     slug: "nextjs",
