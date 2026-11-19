@@ -72,6 +72,43 @@ const SEO_PICKS: Record<string, string> = {
   "seo-disavow": "I'm interested in a backlink clean-up. My website is: ",
 };
 
+const SOCIALS = [
+  {
+    label: "LinkedIn",
+    href: "https://au.linkedin.com/in/travisweerts",
+    icon: (
+      <svg viewBox="0 0 40 40" className="w-full h-full" aria-hidden>
+        <rect width="40" height="40" fill="#0A66C2" />
+        <path
+          fill="#fff"
+          d="M10.5 15.5h4.2V29h-4.2zM12.6 9a2.4 2.4 0 1 1 0 4.8 2.4 2.4 0 0 1 0-4.8zM17.3 15.5h4v1.85h.06c.56-1.06 1.93-2.18 3.97-2.18 4.25 0 5.04 2.8 5.04 6.44V29h-4.2v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.53 1.72-2.53 3.49V29h-4.2z"
+        />
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/tr_____av",
+    icon: (
+      <svg viewBox="0 0 40 40" className="w-full h-full" aria-hidden>
+        <defs>
+          <radialGradient id="ig-grad" cx="0.28" cy="1.05" r="1.25">
+            <stop offset="0" stopColor="#FFD776" />
+            <stop offset="0.25" stopColor="#F9A13A" />
+            <stop offset="0.5" stopColor="#E1306C" />
+            <stop offset="0.75" stopColor="#C13584" />
+            <stop offset="1" stopColor="#5B51D8" />
+          </radialGradient>
+        </defs>
+        <rect width="40" height="40" fill="url(#ig-grad)" />
+        <rect x="9.5" y="9.5" width="21" height="21" rx="6" fill="none" stroke="#fff" strokeWidth="2.4" />
+        <circle cx="20" cy="20" r="5" fill="none" stroke="#fff" strokeWidth="2.4" />
+        <circle cx="26.3" cy="13.7" r="1.5" fill="#fff" />
+      </svg>
+    ),
+  },
+];
+
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
 export default function ContactExperience({
@@ -240,6 +277,7 @@ export default function ContactExperience({
     { label: "Details", value: details.trim() },
     { label: "Reply to", value: email.trim() },
   ];
+  const hasBrief = briefRows.some((row) => row.value);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -535,112 +573,109 @@ export default function ContactExperience({
             {/* ---------------- SIDEBAR ---------------- */}
             <aside className="lg:col-span-4">
               <div className="lg:sticky lg:top-32 flex flex-col gap-4">
-                {/* Live brief */}
+                {/* Human bit + DMs */}
                 <motion.div
-                  className="rounded-[28px] bg-tw-black text-tw-white p-7"
+                  className="rounded-[28px] bg-tw-paper border border-tw-black/10 p-7"
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9, duration: 0.9, ease: EASE_OUT }}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs uppercase tracking-[0.18em] opacity-60">
-                      Your brief
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[10px] font-object-bold uppercase tracking-wider">
-                      <motion.span
-                        className="w-1.5 h-1.5 rounded-full bg-tw-accent"
-                        animate={{ opacity: [1, 0.2, 1] }}
-                        transition={{ duration: 1.4, repeat: Infinity }}
+                  <div className="flex gap-5 items-center">
+                    <div className="relative w-16 h-16 shrink-0 rounded-full overflow-hidden">
+                      <Image
+                        src="/assets/media/trav_avatar.jpg"
+                        alt="Travis Weerts, designer and developer in Perth"
+                        title="Travis Weerts"
+                        fill
+                        sizes="64px"
+                        className="object-cover object-center"
                       />
-                      Drafting
-                    </span>
-                  </div>
-                  <dl className="mt-6 space-y-4">
-                    {briefRows.map((row) => (
-                      <div key={row.label} className="flex gap-4 text-sm">
-                        <dt className="w-20 shrink-0 opacity-50">{row.label}</dt>
-                        <dd className="flex-1 min-w-0">
-                          <AnimatePresence mode="wait" initial={false}>
-                            {row.value ? (
-                              <motion.span
-                                key={row.value}
-                                className="block font-object-bold break-words line-clamp-3"
-                                initial={{ opacity: 0, x: -8 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.35 }}
-                              >
-                                {row.value}
-                              </motion.span>
-                            ) : (
-                              <motion.span
-                                key="empty"
-                                className="block h-3 mt-1 rounded-full bg-tw-white/10 w-2/3"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                              />
-                            )}
-                          </AnimatePresence>
-                        </dd>
+                    </div>
+                    <div className="text-sm leading-snug">
+                      <div className="font-object-bold">
+                        {time ? `It's ${time} in Perth` : "Perth, Western Australia"}
                       </div>
-                    ))}
-                  </dl>
-                </motion.div>
-
-                {/* Human bit */}
-                <motion.div
-                  className="rounded-[28px] bg-tw-paper border border-tw-black/10 p-7 flex gap-5 items-center"
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.05, duration: 0.9, ease: EASE_OUT }}
-                >
-                  <div className="relative w-16 h-16 shrink-0 rounded-full overflow-hidden">
-                    <Image
-                      src="/assets/media/trav_bio.jpg"
-                      alt="Travis Weerts, designer and developer in Perth"
-                      title="Travis Weerts"
-                      fill
-                      sizes="64px"
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div className="text-sm leading-snug">
-                    <div className="font-object-bold">
-                      {time ? `It's ${time} in Perth` : "Perth, Western Australia"}
-                    </div>
-                    <div className="text-tw-black/60 mt-1">
-                      {perthStatus || "Replies within one business day."}
+                      <div className="text-tw-black/60 mt-1">
+                        {perthStatus || "Replies within one business day."}
+                      </div>
                     </div>
                   </div>
+
+                  <div className="mt-6 pt-6 border-t border-tw-black/10">
+                    <div className="font-mono text-xs uppercase tracking-[0.18em] opacity-60">
+                      Rather chat? DM me on
+                    </div>
+                    <div className="mt-4 grid grid-cols-2 gap-3">
+                      {SOCIALS.map((s) => (
+                        <a
+                          key={s.label}
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => sendGAEvent("event", "social_click", { network: s.label, source: "Contact page" })}
+                          className="group flex items-center gap-3 rounded-2xl bg-white border border-tw-black/10 p-3 pr-4 shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:border-tw-black hover:-translate-y-0.5 transition-all duration-300"
+                        >
+                          <span className="w-10 h-10 shrink-0 rounded-xl overflow-hidden shadow-sm">
+                            {s.icon}
+                          </span>
+                          <span className="font-object-bold text-sm leading-tight">
+                            {s.label}
+                            <span className="block font-object-regular text-xs text-tw-black/50 group-hover:text-tw-black transition-colors">
+                              Message ↗
+                            </span>
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </motion.div>
 
-                <motion.div
-                  className="flex flex-wrap gap-2 text-sm"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.2, duration: 0.8 }}
-                >
-                  <a
-                    href="https://au.linkedin.com/in/travisweerts"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-tw-black/20 px-4 py-2 hover:bg-tw-black hover:text-tw-white transition-colors"
-                  >
-                    LinkedIn ↗
-                  </a>
-                  <a
-                    href="https://instagram.com/tr_____av"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-tw-black/20 px-4 py-2 hover:bg-tw-black hover:text-tw-white transition-colors"
-                  >
-                    Instagram ↗
-                  </a>
-                  <span className="rounded-full px-4 py-2 text-tw-black/60">
-                    Perth, WA
-                  </span>
-                </motion.div>
+                {/* Live brief: only once there's something in it */}
+                <AnimatePresence>
+                  {hasBrief && status !== "sent" && (
+                    <motion.div
+                      key="brief"
+                      className="rounded-[28px] bg-tw-black text-tw-white p-7"
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.6, ease: EASE_OUT }}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-xs uppercase tracking-[0.18em] opacity-60">
+                          Your brief
+                        </span>
+                        <span className="flex items-center gap-1.5 text-[10px] font-object-bold uppercase tracking-wider">
+                          <motion.span
+                            className="w-1.5 h-1.5 rounded-full bg-tw-accent"
+                            animate={{ opacity: [1, 0.2, 1] }}
+                            transition={{ duration: 1.4, repeat: Infinity }}
+                          />
+                          Drafting
+                        </span>
+                      </div>
+                      <dl className="mt-6 space-y-4">
+                        {briefRows
+                          .filter((row) => row.value)
+                          .map((row) => (
+                            <motion.div
+                              layout
+                              key={row.label}
+                              className="flex gap-4 text-sm"
+                              initial={{ opacity: 0, x: -8 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.35 }}
+                            >
+                              <dt className="w-20 shrink-0 opacity-50">{row.label}</dt>
+                              <dd className="flex-1 min-w-0 font-object-bold break-words line-clamp-3">
+                                {row.value}
+                              </dd>
+                            </motion.div>
+                          ))}
+                      </dl>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </aside>
           </div>
